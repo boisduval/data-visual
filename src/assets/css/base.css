@@ -17,6 +17,17 @@ body {
   margin: 0 10px;
   /* min-height: 900px; */
 }
+.flex{
+  flex: 1;
+  overflow: hidden;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+}
 @media screen and (max-width: 1300px) {
   html,
   body {

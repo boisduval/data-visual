@@ -10,8 +10,8 @@
         y="0px"
         width="100%"
         height="100%"
-        viewBox="0 0 230 230"
-        enable-background="new 0 0 230 230"
+        viewBox="0 0 1380 460"
+        enable-background="new 0 0 1380 460"
         xml:space="preserve"
         preserveAspectRatio="none"
       >
@@ -37,18 +37,18 @@
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
-          x1="229.5"
+          x1="1379.5"
           y1="1"
-          x2="229.5"
+          x2="1379.5"
           y2="16"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
-          x1="215"
+          x1="1365"
           y1="0.5"
-          x2="230"
+          x2="1380"
           y2="0.5"
         />
         <line
@@ -56,88 +56,116 @@
           stroke="#2BD0E3"
           stroke-miterlimit="10"
           x1="1"
-          y1="229.5"
+          y1="459.5"
           x2="16"
-          y2="229.5"
+          y2="459.5"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
           x1="0.5"
-          y1="215"
+          y1="445"
           x2="0.5"
+          y2="460"
+        />
+        <line
+          fill="#2BD0E3"
+          stroke="#2BD0E3"
+          stroke-miterlimit="10"
+          x1="1379.5"
+          y1="459"
+          x2="1379.5"
+          y2="444"
+        />
+        <line
+          fill="#2BD0E3"
+          stroke="#2BD0E3"
+          stroke-miterlimit="10"
+          x1="1365"
+          y1="459.5"
+          x2="1380"
+          y2="459.5"
+        />
+        <linearGradient
+          id="右_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_"
+          gradientUnits="userSpaceOnUse"
+          x1="1363"
+          y1="230"
+          x2="1379"
           y2="230"
-        />
-        <line
-          fill="#2BD0E3"
-          stroke="#2BD0E3"
-          stroke-miterlimit="10"
-          x1="229.5"
-          y1="229"
-          x2="229.5"
-          y2="214"
-        />
-        <line
-          fill="#2BD0E3"
-          stroke="#2BD0E3"
-          stroke-miterlimit="10"
-          x1="215"
-          y1="229.5"
-          x2="230"
-          y2="229.5"
+        >
+          <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
+          <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
+        </linearGradient>
+        <rect
+          id="右_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big"
+          x="1363"
+          y="1"
+          fill="url(#右_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_)"
+          width="16"
+          height="458"
         />
         <linearGradient
-          id="SVGID_1_"
+          id="左_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_"
           gradientUnits="userSpaceOnUse"
-          x1="213"
-          y1="115"
-          x2="229"
-          y2="115"
+          x1="1453"
+          y1="230"
+          x2="1469"
+          y2="230"
+          gradientTransform="matrix(-1 0 0 1 1470 0)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
-        <rect x="213" y="1" fill="url(#SVGID_1_)" width="16" height="228" />
+        <rect
+          id="左_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big"
+          x="1"
+          y="1"
+          fill="url(#左_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_)"
+          width="16"
+          height="458"
+        />
         <linearGradient
-          id="SVGID_2_"
+          id="上_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_"
           gradientUnits="userSpaceOnUse"
-          x1="303"
-          y1="115"
-          x2="319"
-          y2="115"
-          gradientTransform="matrix(-1 0 0 1 320 0)"
+          x1="953"
+          y1="190"
+          x2="969"
+          y2="190"
+          gradientTransform="matrix(0 -1 1 0 500.0005 970)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
-        <rect x="1" y="1" fill="url(#SVGID_2_)" width="16" height="228" />
+        <rect
+          id="上_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big"
+          x="1"
+          y="1"
+          fill="url(#上_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_)"
+          width="1378"
+          height="16"
+        />
         <linearGradient
-          id="SVGID_3_"
+          id="下_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_"
           gradientUnits="userSpaceOnUse"
-          x1="263"
-          y1="75"
-          x2="279"
-          y2="75"
-          gradientTransform="matrix(0 -1 1 0 40.0005 280)"
+          x1="943"
+          y1="190"
+          x2="959"
+          y2="190"
+          gradientTransform="matrix(0 1 1 0 500.0005 -500)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
-        <rect x="1" y="1" fill="url(#SVGID_3_)" width="228" height="16" />
-        <linearGradient
-          id="SVGID_4_"
-          gradientUnits="userSpaceOnUse"
-          x1="253"
-          y1="75"
-          x2="269"
-          y2="75"
-          gradientTransform="matrix(0 1 1 0 40.0005 -40)"
-        >
-          <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
-          <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
-        </linearGradient>
-        <rect x="1" y="213" fill="url(#SVGID_4_)" width="228" height="16" />
+        <rect
+          id="下_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big"
+          x="1"
+          y="443"
+          fill="url(#下_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_)"
+          width="1378"
+          height="16"
+        />
       </svg>
     </div>
     <p id="title">
@@ -175,7 +203,9 @@ export default {
 .border-content {
   width: 100%;
   height: 100%;
+  /* padding: 30px 20px; */
   padding: 1vh 25px;
+  /* padding: 3vh 20px 1vh; */
   box-sizing: border-box;
 }
 #title {

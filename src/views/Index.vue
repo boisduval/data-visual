@@ -77,7 +77,7 @@
             <div class="bottom-l">
               <BorderBg title="电费高峰统计"></BorderBg>
               <BorderBg style="margin-top:10px;" title="装机设备统计">
-                <div class="device-count">
+                <div class="device-count flex-column">
                   <div
                     class="device-row"
                     v-for="(item, index) in deviceCount"
@@ -121,7 +121,9 @@
         </BorderRight>
         <!-- 第二块结束 -->
         <!-- 第三块开始 -->
-        <BorderRight class="box-r" title="事件统计"></BorderRight>
+        <BorderRight class="box-r" title="事件统计">
+          <div id="myChart8" class="charts"></div>
+        </BorderRight>
         <!-- 第三块结束 -->
         <!-- 第四块开始 -->
         <BorderRight class="box-r" title="系统当前电量曲线">
@@ -409,6 +411,53 @@ export default {
           }
         ]
       });
+      // 第八个图
+      var myChart8 = this.$echarts.init(document.getElementById("myChart8"));
+      myChart8.setOption({
+        radar: {
+          // shape: 'circle',
+          center: ["50%", "50%"],
+          // 圆中心坐标，数组的第一项是横坐标，第二项是纵坐标。[ default: ['50%', '50%'] ]
+          radius: "50%",
+          name: {
+            textStyle: {
+              color: "#fff",
+              // backgroundColor: "#999",
+              borderRadius: 3,
+              padding: [3, 5]
+            }
+          },
+          indicator: [
+            { name: "销售", max: 6500 },
+            { name: "管理", max: 16000 },
+            { name: "信息技术", max: 30000 },
+            { name: "客服", max: 38000 },
+            { name: "研发", max: 52000 },
+            { name: "市场", max: 25000 }
+          ],
+          splitArea: {
+            show: false
+          }
+        },
+        series: [
+          {
+            name: "预算 vs 开销（Budget vs spending）",
+            type: "radar",
+            // areaStyle: {normal: {}},
+            data: [
+              {
+                value: [4300, 10000, 28000, 35000, 50000, 19000],
+                name: "预算分配"
+              },
+              {
+                value: [5000, 14000, 28000, 31000, 42000, 21000],
+                name: "实际开销"
+              }
+            ]
+          }
+        ],
+        grid: this.grid
+      });
       // 第九个图
       var myChart9 = this.$echarts.init(document.getElementById("myChart9"));
       myChart9.setOption({
@@ -447,6 +496,7 @@ export default {
           myChart5.resize();
           myChart6.resize();
           myChart7.resize();
+          myChart8.resize();
           myChart9.resize();
         };
       }, 200);
@@ -558,8 +608,6 @@ border-bg {
 
 /* 设备统计 */
 .device-count {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   height: 100%;
   margin-top: 5px;
@@ -586,7 +634,6 @@ border-bg {
 .circle-box .circle {
   flex: 1;
 }
-
 @media screen and (max-width: 1300px) {
   .device-row .row-r .num {
     width: 12px;

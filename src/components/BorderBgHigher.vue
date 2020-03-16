@@ -10,8 +10,8 @@
         y="0px"
         width="100%"
         height="100%"
-        viewBox="0 0 230 230"
-        enable-background="new 0 0 230 230"
+        viewBox="0 0 230 460"
+        enable-background="new 0 0 230 460"
         xml:space="preserve"
         preserveAspectRatio="none"
       >
@@ -56,88 +56,102 @@
           stroke="#2BD0E3"
           stroke-miterlimit="10"
           x1="1"
-          y1="229.5"
+          y1="459.5"
           x2="16"
-          y2="229.5"
+          y2="459.5"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
           x1="0.5"
-          y1="215"
+          y1="445"
           x2="0.5"
-          y2="230"
+          y2="460"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
           x1="229.5"
-          y1="229"
+          y1="459"
           x2="229.5"
-          y2="214"
+          y2="444"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
           x1="215"
-          y1="229.5"
+          y1="459.5"
           x2="230"
-          y2="229.5"
+          y2="459.5"
         />
         <linearGradient
-          id="SVGID_1_"
+          id="右_1_"
           gradientUnits="userSpaceOnUse"
           x1="213"
-          y1="115"
+          y1="230"
           x2="229"
-          y2="115"
+          y2="230"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
-        <rect x="213" y="1" fill="url(#SVGID_1_)" width="16" height="228" />
+        <rect
+          id="右"
+          x="213"
+          y="1"
+          fill="url(#右_1_)"
+          width="16"
+          height="458"
+        />
         <linearGradient
-          id="SVGID_2_"
+          id="左_1_"
           gradientUnits="userSpaceOnUse"
           x1="303"
-          y1="115"
+          y1="230"
           x2="319"
-          y2="115"
+          y2="230"
           gradientTransform="matrix(-1 0 0 1 320 0)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
-        <rect x="1" y="1" fill="url(#SVGID_2_)" width="16" height="228" />
+        <rect id="左" x="1" y="1" fill="url(#左_1_)" width="16" height="458" />
         <linearGradient
-          id="SVGID_3_"
+          id="上_1_"
           gradientUnits="userSpaceOnUse"
-          x1="263"
-          y1="75"
-          x2="279"
-          y2="75"
-          gradientTransform="matrix(0 -1 1 0 40.0005 280)"
+          x1="378"
+          y1="190"
+          x2="394"
+          y2="190"
+          gradientTransform="matrix(0 -1 1 0 -75 395)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
-        <rect x="1" y="1" fill="url(#SVGID_3_)" width="228" height="16" />
+        <rect id="上" x="1" y="1" fill="url(#上_1_)" width="228" height="16" />
         <linearGradient
-          id="SVGID_4_"
+          id="下_1_"
           gradientUnits="userSpaceOnUse"
-          x1="253"
-          y1="75"
-          x2="269"
-          y2="75"
-          gradientTransform="matrix(0 1 1 0 40.0005 -40)"
+          x1="-48"
+          y1="190"
+          x2="-64"
+          y2="190"
+          gradientTransform="matrix(0 -1 1 0 -75 395)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
-        <rect x="1" y="213" fill="url(#SVGID_4_)" width="228" height="16" />
+        <rect
+          id="下"
+          x="1"
+          y="443"
+          fill="url(#下_1_)"
+          width="228"
+          height="16"
+        />
       </svg>
     </div>
     <p id="title">
@@ -175,7 +189,9 @@ export default {
 .border-content {
   width: 100%;
   height: 100%;
+  /* padding: 30px 20px; */
   padding: 1vh 25px;
+  /* padding: 3vh 20px 1vh; */
   box-sizing: border-box;
 }
 #title {
