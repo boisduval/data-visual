@@ -203,7 +203,7 @@ export default {
 .border-content {
   width: 100%;
   height: 100%;
-  padding: 2% 5%;
+  padding: 1% 25px;
   box-sizing: border-box;
 }
 #title {

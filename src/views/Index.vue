@@ -75,7 +75,9 @@
         <BorderMain class="box-c">
           <div class="bottom">
             <div class="bottom-l">
-              <BorderBg title="电费高峰统计"></BorderBg>
+              <BorderBg title="电费高峰统计">
+                <div id="myChart3" class="charts"></div>
+              </BorderBg>
               <BorderBg style="margin-top:10px;" title="装机设备统计">
                 <div class="device-count flex-column">
                   <div
@@ -98,7 +100,9 @@
             </div>
             <div class="bottom-c"></div>
             <div class="bottom-r">
-              <BorderBg title="用电高峰统计"></BorderBg>
+              <BorderBg title="用电高峰统计">
+                <div id="myChart4" class="charts"></div>
+              </BorderBg>
               <BorderBg style="margin-top:10px;" title="充放电曲线">
                 <div id="myChart5" class="charts"></div>
               </BorderBg>
@@ -218,6 +222,12 @@ export default {
       // 第一个图
       var myChart1 = this.$echarts.init(document.getElementById("myChart1"));
       myChart1.setOption({
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "shadow"
+          }
+        },
         xAxis: {
           type: "category",
           data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -295,14 +305,123 @@ export default {
           }
         ]
       });
+      // 第三个图
+      var myChart3 = this.$echarts.init(document.getElementById("myChart3"));
+      myChart3.setOption({
+        color: "#84C739",
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            // 坐标轴指示器，坐标轴触发有效
+            type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        grid: {
+          left: "0",
+          right: "20%",
+          top: "20%",
+          bottom: "3%",
+          containLabel: true
+        },
+        xAxis: {
+          type: "value",
+          splitLine: {
+            show: false
+          },
+          show: false
+        },
+        yAxis: {
+          type: "category",
+          data: ["周一", "周二", "周三", "周四", "周五"],
+          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            //y轴刻度线
+            show: false
+          }
+        },
+        series: [
+          {
+            name: "直接访问",
+            type: "bar",
+            stack: "总量",
+            label: {
+              show: true,
+              position: "right",
+              color: "#46a6b5",
+              fontSize: "10px"
+            },
+            data: [320, 302, 301, 334, 390]
+          }
+        ]
+      });
+      // 第四个图
+      var myChart4 = this.$echarts.init(document.getElementById("myChart4"));
+      myChart4.setOption({
+        color: "#F7931F",
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            // 坐标轴指示器，坐标轴触发有效
+            type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        grid: {
+          left: "0",
+          right: "20%",
+          top: "20%",
+          bottom: "3%",
+          containLabel: true
+        },
+        xAxis: {
+          type: "value",
+          splitLine: {
+            show: false
+          },
+          show: false
+        },
+        yAxis: {
+          type: "category",
+          data: ["周一", "周二", "周三", "周四", "周五"],
+          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            //y轴刻度线
+            show: false
+          }
+        },
+        series: [
+          {
+            name: "直接访问",
+            type: "bar",
+            stack: "总量",
+            label: {
+              show: true,
+              position: "right",
+              color: "#46a6b5",
+              fontSize: "10px"
+            },
+            data: [320, 302, 301, 334, 390]
+          }
+        ]
+      });
       // 第五个图
       var myChart5 = this.$echarts.init(document.getElementById("myChart5"));
       myChart5.setOption({
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "shadow"
+          }
+        },
         xAxis: {
           type: "category",
           data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
           axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
-
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
@@ -334,6 +453,12 @@ export default {
       // 第六个图
       var myChart6 = this.$echarts.init(document.getElementById("myChart6"));
       myChart6.setOption({
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "shadow"
+          }
+        },
         xAxis: {
           type: "category",
           data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -493,6 +618,8 @@ export default {
         window.onresize = () => {
           myChart1.resize();
           myChart2.resize();
+          myChart3.resize();
+          myChart4.resize();
           myChart5.resize();
           myChart6.resize();
           myChart7.resize();
@@ -561,11 +688,6 @@ section {
 }
 border-bg {
   flex: 1;
-}
-/* 图表部分 */
-.charts {
-  width: 100%;
-  height: 100%;
 }
 
 /* 排行榜 */

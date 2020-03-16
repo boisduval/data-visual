@@ -23,8 +23,8 @@
           <!-- 右边开始 -->
           <div class="right">
             <BorderRightLonger>
-              <!-- 右左开始 -->
               <div class="right-box">
+                <!-- 右左开始 -->
                 <div class="flex-column flex" style="margin-right:2px;">
                   <div class="flex" style="margin-bottom:2px;">
                     <BorderBg></BorderBg>
@@ -48,12 +48,18 @@
                     </BorderBg>
                   </div>
                 </div>
+                <!-- 右左结束 -->
+                <!-- 右中开始 -->
                 <div class="flex" style="margin-right:2px;">
                   <BorderBgHigher></BorderBgHigher>
                 </div>
+                <!-- 右中结束 -->
+                <!-- 右右开始 -->
                 <div class="right-right flex-column">
                   <div class="flex" style="margin-bottom:2px;">
-                    <BorderBgLonger></BorderBgLonger>
+                    <BorderBgLonger>
+                      <div id="myChart1" class="charts"></div>
+                    </BorderBgLonger>
                   </div>
                   <div class="flex">
                     <BorderBgLonger>
@@ -83,8 +89,8 @@
                     </BorderBgLonger>
                   </div>
                 </div>
+                <!-- 右右结束 -->
               </div>
-              <!-- 右左结束 -->
             </BorderRightLonger>
           </div>
           <!-- 右边结束 -->
@@ -131,8 +137,87 @@ export default {
           label: "状态",
           value: "充电"
         }
-      ]
+      ],
+      seriesLabel: {
+        normal: {
+          show: true,
+          textBorderColor: "#333",
+          textBorderWidth: 2
+        }
+      }
     };
+  },
+  methods: {
+    getEcharts() {
+      // 第一个图
+      var myChart1 = this.$echarts.init(document.getElementById("myChart1"));
+      myChart1.setOption({
+        color: ["#F7931F", "#029246", "#D4155A"],
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "shadow"
+          }
+        },
+        grid: {
+          left: "2%",
+          right: "5%",
+          top: "20%",
+          bottom: "10%",
+          containLabel: true
+        },
+
+        xAxis: {
+          type: "value",
+          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          axisLine: {
+            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+          },
+          splitLine: {
+            show: false
+          }
+        },
+        yAxis: {
+          type: "category",
+          inverse: true,
+          data: ["Sunny", "Cloudy"],
+          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          axisLine: {
+            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+          }
+        },
+        series: [
+          {
+            name: "U",
+            type: "bar",
+            data: [165, 170],
+            label: this.seriesLabel
+          },
+          {
+            name: "V",
+            type: "bar",
+            label: this.seriesLabel,
+            data: [150, 105]
+          },
+          {
+            name: "W",
+            type: "bar",
+            label: this.seriesLabel,
+            data: [220, 82]
+          }
+        ]
+      });
+      setTimeout(function() {
+        window.onresize = () => {
+          myChart1.resize();
+        };
+      }, 200);
+    }
+  },
+  created() {
+    this.$nextTick(() => {
+      this.getEcharts();
+    });
   }
 };
 </script>
@@ -148,13 +233,16 @@ section {
 .box-right .right-top {
   flex: 1;
   display: flex;
+  min-height: 0;
 }
 .box-right .right-top .left {
   height: 100%;
   flex: 2;
+  min-height: 0;
 }
 .box-right .right-top .right {
   flex: 5;
+  min-height: 0;
 }
 .left .usp-content {
   padding: 0 10px;
