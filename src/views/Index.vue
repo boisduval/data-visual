@@ -1,3 +1,4 @@
+￿
 <template>
   <div class="content">
     <section>
@@ -6,32 +7,43 @@
         <!-- 第一块开始 -->
         <BorderLeft class="box-l" title="系统电量统计">
           <div class="circle-box">
-            <Semicircle color="#0071bc" title="系统装机电量" class="circle">
+            <Semicircle
+              color="#0071bc"
+              :title="Installed_system_power.name"
+              class="circle"
+            >
               <div class="num">
-                <p>1000</p>
+                <p>{{ Installed_system_power.value }}</p>
               </div>
               <div class="units">
-                <p>Kwh</p>
+                <p>{{ Installed_system_power.unit }}</p>
               </div>
             </Semicircle>
 
-            <Semicircle title="SOC" class="circle">
-              <p>11.1%</p>
+            <Semicircle :title="SOC.name" class="circle">
+              <p>{{ SOC.value }}</p>
             </Semicircle>
 
-            <Semicircle color="#39b54a" title="系统剩余电量" class="circle">
+            <Semicircle
+              color="#39b54a"
+              :title="System_residual_power.name"
+              class="circle"
+            >
               <div class="num">
-                <p>1000</p>
+                <p>{{ System_residual_power.value }}</p>
               </div>
               <div class="units">
-                <p>Kwh</p>
+                <p>{{ System_residual_power.unit }}</p>
               </div>
             </Semicircle>
           </div>
         </BorderLeft>
         <!-- 第一块结束 -->
         <!-- 第二块开始 -->
-        <BorderLeft class="box-l" title="系统当前电量曲线">
+        <BorderLeft
+          class="box-l"
+          :title="Current_power_trend_of_the_system.Name"
+        >
           <div id="myChart1" class="charts"></div>
         </BorderLeft>
         <!-- 第二块结束 -->
@@ -40,25 +52,28 @@
           <div class="energy-order">
             <div
               class="order-row"
-              v-for="(item, index) in batterOrder"
+              v-for="(item, index) in Electricity_leaderboard"
               :key="index"
             >
               <div class="row-l">
                 <div class="num">
                   {{ index + 1 }}
                 </div>
-                {{ item.Name }}
+                {{ item.name }}
               </div>
               <div class="row-r">
-                {{ item.Value }}
-                Kwh
+                {{ item.value }}
+                {{ item.unit }}
               </div>
             </div>
           </div>
         </BorderLeft>
         <!-- 第三块结束 -->
         <!-- 第四块开始 -->
-        <BorderLeft class="box-l" title="充放电周统计">
+        <BorderLeft
+          class="box-l"
+          :title="Charge_and_discharge_week_statistics.Name"
+        >
           <div id="myChart2" class="charts"></div>
         </BorderLeft>
         <!-- 第四块结束 -->
@@ -75,24 +90,26 @@
         <BorderMain class="box-c">
           <div class="bottom">
             <div class="bottom-l">
-              <BorderBg title="电费高峰统计">
+              <BorderBg :title="Peak_statistics.Name">
                 <div id="myChart3" class="charts"></div>
               </BorderBg>
               <BorderBg style="margin-top:10px;" title="装机设备统计">
                 <div class="device-count flex-column">
                   <div
                     class="device-row"
-                    v-for="(item, index) in deviceCount"
+                    v-for="(item, index) in Installation_statistics"
                     :key="index"
                   >
                     <p class="row-l">
-                      {{ item.label }}
+                      {{ item.name }}
                     </p>
                     <div class="row-r">
                       <p class="num">
-                        {{ item.Value }}
+                        {{ item.value }}
                       </p>
-                      <p style="display:inline-block">个</p>
+                      <p style="display:inline-block">
+                        {{ item.unit }}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -100,10 +117,13 @@
             </div>
             <div class="bottom-c"></div>
             <div class="bottom-r">
-              <BorderBg title="用电高峰统计">
+              <BorderBg :title="Peak_electricity_consumption_statistics.Name">
                 <div id="myChart4" class="charts"></div>
               </BorderBg>
-              <BorderBg style="margin-top:10px;" title="充放电曲线">
+              <BorderBg
+                style="margin-top:10px;"
+                :title="Trend_of_charge_and_discharge.Name"
+              >
                 <div id="myChart5" class="charts"></div>
               </BorderBg>
             </div>
@@ -115,22 +135,28 @@
       <!-- 右边开始 -->
       <div class="content-right">
         <!-- 第一块开始 -->
-        <BorderRight class="box-r" title="直流电气统计">
+        <BorderRight class="box-r" :title="Dc_electrical_statistics.Name">
           <div id="myChart6" class="charts"></div>
         </BorderRight>
         <!-- 第一块结束 -->
         <!-- 第二块开始 -->
-        <BorderRight class="box-r" title="月耗能统计">
+        <BorderRight
+          class="box-r"
+          :title="Monthly_energy_consumption_statistics.Name"
+        >
           <div id="myChart7" class="charts"></div>
         </BorderRight>
         <!-- 第二块结束 -->
         <!-- 第三块开始 -->
-        <BorderRight class="box-r" title="事件统计">
+        <BorderRight class="box-r" :title="Event_statistics.Name">
           <div id="myChart8" class="charts"></div>
         </BorderRight>
         <!-- 第三块结束 -->
         <!-- 第四块开始 -->
-        <BorderRight class="box-r" title="系统当前电量曲线">
+        <BorderRight
+          class="box-r"
+          :title="Time_distribution_of_electricity_consumption.Name"
+        >
           <div id="myChart9" class="charts"></div>
         </BorderRight>
         <!-- 第四块结束 -->
@@ -144,59 +170,7 @@
 export default {
   data() {
     return {
-      batterOrder: [
-        {
-          Name: "控制器",
-          Value: "333"
-        },
-        {
-          Name: "控制器",
-          Value: "333"
-        },
-        {
-          Name: "控制器",
-          Value: "333"
-        },
-        {
-          Name: "控制器",
-          Value: "333"
-        },
-        {
-          Name: "控制器",
-          Value: "333"
-        },
-        {
-          Name: "控制器",
-          Value: "333"
-        },
-        {
-          Name: "控制器",
-          Value: "333"
-        }
-      ],
       interval: "",
-      deviceCount: [
-        {
-          label: "控制器",
-          Value: "7"
-        },
-        {
-          label: "控制器",
-          Value: "7"
-        },
-        {
-          label: "控制器",
-          Value: "7"
-        },
-        {
-          label: "控制器",
-          Value: "7"
-        },
-        {
-          label: "控制器",
-          Value: "7"
-        }
-      ],
       grid: {
         left: "6%",
         right: "8%",
@@ -206,7 +180,7 @@ export default {
       },
       yAxis: {
         type: "value",
-        axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+        axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
 
         axisLine: {
           lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -214,7 +188,36 @@ export default {
         splitLine: {
           show: false
         }
-      }
+      },
+      Installed_system_power: {
+        name: "",
+        value: "",
+        unit: ""
+      },
+      SOC: {
+        name: "",
+        value: "",
+        unit: ""
+      },
+      System_residual_power: {
+        name: "",
+        value: "",
+        unit: ""
+      },
+      Current_power_trend_of_the_system: {
+        XAxisData: [],
+        SeriesData: {}
+      },
+      Electricity_leaderboard: [],
+      Charge_and_discharge_week_statistics: {},
+      Dc_electrical_statistics: [],
+      Monthly_energy_consumption_statistics: {},
+      Peak_statistics: {},
+      Installation_statistics: [],
+      Peak_electricity_consumption_statistics: {},
+      Trend_of_charge_and_discharge: {},
+      Event_statistics: {},
+      Time_distribution_of_electricity_consumption: {}
     };
   },
   methods: {
@@ -230,9 +233,8 @@ export default {
         },
         xAxis: {
           type: "category",
-          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
-
+          data: this.Current_power_trend_of_the_system.XAxisData,
+          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
@@ -241,9 +243,10 @@ export default {
         grid: this.grid,
         series: [
           {
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            data: this.Current_power_trend_of_the_system.SeriesData[0].data,
             type: "line",
             symbol: "triangle",
+            name: this.Current_power_trend_of_the_system.SeriesData[0].name,
             symbolSize: 7,
             lineStyle: {
               color: "rgb(243, 128, 25)",
@@ -268,8 +271,8 @@ export default {
         xAxis: {
           type: "category",
           axisTick: { show: false },
-          data: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          data: this.Charge_and_discharge_week_statistics.XAxisData,
+          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           },
@@ -281,27 +284,37 @@ export default {
         grid: this.grid,
         series: [
           {
-            name: "Forest",
+            name: this.Charge_and_discharge_week_statistics.SeriesData[0].name,
             type: "bar",
             barGap: 0,
-            data: [320, 332, 301, 334, 390, 334, 390],
-            label: {
-              show: true,
-              position: "top",
-              fontSize: "10px",
-              color: "rgba(247,147,31,0.5)"
-            }
+            data: this.Charge_and_discharge_week_statistics.SeriesData[0].data,
+            // label: {
+            //   show: true,
+            //   position: "insideBottom",
+            //   // fontSize: "14px",
+            //   // color: "rgba(58,181,75,0.5)"
+            //   color: "#fff",
+            //   verticalAlign: "middle",
+            //   rotate: 90,
+            //   distance: 15,
+            //   align: "left"
+            // }
           },
           {
-            name: "Steppe",
+            name: this.Charge_and_discharge_week_statistics.SeriesData[1].name,
             type: "bar",
-            data: [220, 182, 191, 234, 290, 234, 290],
-            label: {
-              show: true,
-              position: "top",
-              fontSize: "10px",
-              color: "rgba(58,181,75,0.5)"
-            }
+            data: this.Charge_and_discharge_week_statistics.SeriesData[1].data,
+            // label: {
+            //   show: true,
+            //   position: "insideBottom",
+            //   // fontSize: "14px",
+            //   // color: "rgba(58,181,75,0.5)"
+            //   color: "#fff",
+            //   verticalAlign: "middle",
+            //   rotate: 90,
+            //   distance: 15,
+            //   align: "left"
+            // }
           }
         ]
       });
@@ -332,8 +345,8 @@ export default {
         },
         yAxis: {
           type: "category",
-          data: ["周一", "周二", "周三", "周四", "周五"],
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          data: this.Peak_statistics.XAxisData,
+          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
           axisLine: {
             show: false
           },
@@ -344,16 +357,15 @@ export default {
         },
         series: [
           {
-            name: "直接访问",
+            name: this.Peak_statistics.SeriesData[0].name,
             type: "bar",
-            stack: "总量",
             label: {
               show: true,
               position: "right",
               color: "#46a6b5",
-              fontSize: "10px"
+              fontSize: "12px"
             },
-            data: [320, 302, 301, 334, 390]
+            data: this.Peak_statistics.SeriesData[0].data
           }
         ]
       });
@@ -384,8 +396,8 @@ export default {
         },
         yAxis: {
           type: "category",
-          data: ["周一", "周二", "周三", "周四", "周五"],
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          data: this.Peak_electricity_consumption_statistics.XAxisData,
+          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
           axisLine: {
             show: false
           },
@@ -396,16 +408,18 @@ export default {
         },
         series: [
           {
-            name: "直接访问",
+            name: this.Peak_electricity_consumption_statistics.SeriesData[0]
+              .name,
             type: "bar",
             stack: "总量",
             label: {
               show: true,
               position: "right",
               color: "#46a6b5",
-              fontSize: "10px"
+              fontSize: "12px"
             },
-            data: [320, 302, 301, 334, 390]
+            data: this.Peak_electricity_consumption_statistics.SeriesData[0]
+              .data
           }
         ]
       });
@@ -420,8 +434,8 @@ export default {
         },
         xAxis: {
           type: "category",
-          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          data: this.Trend_of_charge_and_discharge.XAxisData,
+          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
@@ -436,7 +450,8 @@ export default {
         },
         series: [
           {
-            data: [520, 632, 701, 734, 290, 330, 320],
+            data: this.Trend_of_charge_and_discharge.SeriesData[0].data,
+            name: this.Trend_of_charge_and_discharge.SeriesData[0].name,
             type: "line",
             symbol: "triangle",
             symbolSize: 7,
@@ -446,6 +461,20 @@ export default {
             },
             itemStyle: {
               color: "rgb(243, 128, 25)"
+            }
+          },
+          {
+            data: this.Trend_of_charge_and_discharge.SeriesData[1].data,
+            name: this.Trend_of_charge_and_discharge.SeriesData[1].name,
+            type: "line",
+            symbol: "triangle",
+            symbolSize: 7,
+            lineStyle: {
+              color: "#36AA49",
+              width: 1
+            },
+            itemStyle: {
+              color: "#36AA49"
             }
           }
         ]
@@ -461,8 +490,8 @@ export default {
         },
         xAxis: {
           type: "category",
-          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          data: this.Dc_electrical_statistics.XAxisData,
+          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
 
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -472,8 +501,10 @@ export default {
         grid: this.grid,
         series: [
           {
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            data: this.Dc_electrical_statistics.SeriesData[0].data,
             type: "line",
+            name: this.Dc_electrical_statistics.SeriesData[0].name,
+            stack: this.Dc_electrical_statistics.SeriesData[0].stack,
             symbol: "triangle",
             symbolSize: 7,
             lineStyle: {
@@ -482,6 +513,36 @@ export default {
             },
             itemStyle: {
               color: "rgb(243, 128, 25)"
+            }
+          },
+          {
+            data: this.Dc_electrical_statistics.SeriesData[1].data,
+            type: "line",
+            name: this.Dc_electrical_statistics.SeriesData[1].name,
+            stack: this.Dc_electrical_statistics.SeriesData[1].stack,
+            symbol: "triangle",
+            symbolSize: 7,
+            lineStyle: {
+              color: "#36AA49",
+              width: 1
+            },
+            itemStyle: {
+              color: "#36AA49"
+            }
+          },
+          {
+            data: this.Dc_electrical_statistics.SeriesData[2].data,
+            type: "line",
+            name: this.Dc_electrical_statistics.SeriesData[2].name,
+            stack: this.Dc_electrical_statistics.SeriesData[2].stack,
+            symbol: "triangle",
+            symbolSize: 7,
+            lineStyle: {
+              color: "#ED1E7A",
+              width: 1
+            },
+            itemStyle: {
+              color: "#ED1E7A"
             }
           }
         ]
@@ -499,8 +560,8 @@ export default {
         xAxis: {
           type: "category",
           axisTick: { show: false },
-          data: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          data: this.Monthly_energy_consumption_statistics.XAxisData,
+          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           },
@@ -512,27 +573,37 @@ export default {
         grid: this.grid,
         series: [
           {
-            name: "Forest",
+            name: this.Monthly_energy_consumption_statistics.SeriesData[0].name,
             type: "bar",
             barGap: 0,
-            data: [320, 332, 301, 334, 390, 334, 390],
-            label: {
-              show: true,
-              position: "top",
-              fontSize: "10px",
-              color: "rgba(247,147,31,0.5)"
-            }
+            data: this.Monthly_energy_consumption_statistics.SeriesData[0].data,
+            // label: {
+            //   show: true,
+            //   position: "insideBottom",
+            //   // fontSize: "14px",
+            //   // color: "rgba(58,181,75,0.5)"
+            //   color: "#fff",
+            //   verticalAlign: "middle",
+            //   rotate: 90,
+            //   distance: 15,
+            //   align: "left"
+            // }
           },
           {
-            name: "Steppe",
+            name: this.Monthly_energy_consumption_statistics.SeriesData[1].name,
             type: "bar",
-            data: [220, 182, 191, 234, 290, 234, 290],
-            label: {
-              show: true,
-              position: "top",
-              fontSize: "10px",
-              color: "rgba(58,181,75,0.5)"
-            }
+            data: this.Monthly_energy_consumption_statistics.SeriesData[1].data,
+            // label: {
+            //   show: true,
+            //   position: "insideBottom",
+            //   // fontSize: "14px",
+            //   // color: "rgba(58,181,75,0.5)"
+            //   color: "#fff",
+            //   verticalAlign: "middle",
+            //   rotate: 90,
+            //   distance: 15,
+            //   align: "left"
+            // }
           }
         ]
       });
@@ -546,41 +617,56 @@ export default {
           radius: "50%",
           name: {
             textStyle: {
-              color: "#fff",
-              // backgroundColor: "#999",
-              borderRadius: 3,
+              color: "#46a6b5",
+              // fontSize: "14px",
               padding: [3, 5]
             }
           },
-          indicator: [
-            { name: "销售", max: 6500 },
-            { name: "管理", max: 16000 },
-            { name: "信息技术", max: 30000 },
-            { name: "客服", max: 38000 },
-            { name: "研发", max: 52000 },
-            { name: "市场", max: 25000 }
-          ],
+          indicator: this.Event_statistics.IndicatorList,
+          // [{ name: this.Event_statistics.IndicatorList[0].Name, max: this.Event_statistics.IndicatorList.Max },],
           splitArea: {
             show: false
+          },
+          axisLine: {
+            lineStyle: {
+              color: "rgba(179, 228, 161, 0.5)"
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              color: [
+                "rgba(179, 228, 161, 0.1)",
+                "rgba(179, 228, 161, 0.2)",
+                "rgba(179, 228, 161, 0.4)",
+                "rgba(179, 228, 161, 0.6)",
+                "rgba(179, 228, 161, 0.8)",
+                "rgba(179, 228, 161, 1)"
+              ].reverse()
+            }
           }
         },
         series: [
           {
-            name: "预算 vs 开销（Budget vs spending）",
+            name: this.Event_statistics.Datas[0].name,
             type: "radar",
             // areaStyle: {normal: {}},
-            data: [
-              {
-                value: [4300, 10000, 28000, 35000, 50000, 19000],
-                name: "预算分配"
-              },
-              {
-                value: [5000, 14000, 28000, 31000, 42000, 21000],
-                name: "实际开销"
+            data: [{ value: this.Event_statistics.Datas[0].values }],
+            itemStyle: {
+              color: "#B3E4A1"
+            },
+            symbol: "none",
+            areaStyle: {
+              opacity: 0.05
+            },
+            lineStyle: {
+              normal: {
+                width: 1,
+                opacity: 1
               }
-            ]
+            }
           }
         ],
+        tooltip: {},
         grid: this.grid
       });
       // 第九个图
@@ -592,27 +678,33 @@ export default {
         },
         series: [
           {
-            name: "访问来源",
             type: "pie",
+            name: this.Time_distribution_of_electricity_consumption.Name,
             radius: "55%",
             center: ["50%", "60%"],
-            data: [
-              { value: 335, name: "直接访问", color: "#cacaca" },
-              { value: 310, name: "邮件营销" },
-              { value: 234, name: "联盟广告" },
-              { value: 135, name: "视频广告" },
-              { value: 1548, name: "搜索引擎" }
-            ],
+            data: this.Time_distribution_of_electricity_consumption.Datas,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
                 shadowColor: "rgba(0, 0, 0, 0.5)"
               }
+            },
+            label: {
+              color: "#46a6b5"
+              // fontSize: "14px"
+            },
+            labelLine: {
+              lineStyle: {
+                color: "#46a6b5"
+              },
+              smooth: 0.2,
+              length: 10,
+              length2: 20
             }
           }
-        ],
-        color: ["#549D6B", "#F5AE52", "#CACACA", "#6ABFBC", "#E7E67E"]
+        ]
+        // color: ["#549D6B", "#F5AE52", "#CACACA", "#6ABFBC", "#E7E67E"]
       });
       setTimeout(function() {
         window.onresize = () => {
@@ -627,12 +719,47 @@ export default {
           myChart9.resize();
         };
       }, 200);
+    },
+    getData() {
+      var url = "/api/Statement/GetSystemPage?SystemToken=0";
+      this.$axios
+        .get(url)
+        .then(res => {
+          if (res.data.code === 0) {
+            var data = res.data.data;
+            this.Installed_system_power = data.Installed_system_power;
+            this.SOC = data.SOC;
+            this.System_residual_power = data.System_residual_power;
+            this.Current_power_trend_of_the_system =
+              data.Current_power_trend_of_the_system;
+            this.Electricity_leaderboard = data.Electricity_leaderboard;
+            this.Charge_and_discharge_week_statistics =
+              data.Charge_and_discharge_week_statistics;
+            this.Dc_electrical_statistics = data.Dc_electrical_statistics;
+            this.Monthly_energy_consumption_statistics =
+              data.Monthly_energy_consumption_statistics;
+            this.Peak_statistics = data.Peak_statistics;
+            this.Installation_statistics = data.Installation_statistics;
+            this.Peak_electricity_consumption_statistics =
+              data.Peak_electricity_consumption_statistics;
+            this.Trend_of_charge_and_discharge =
+              data.Trend_of_charge_and_discharge;
+            this.Event_statistics = data.Event_statistics;
+            this.Time_distribution_of_electricity_consumption =
+              data.Time_distribution_of_electricity_consumption;
+            this.$nextTick(() => {
+              this.getEcharts();
+            });
+          }
+        })
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        });
     }
   },
   created() {
-    this.$nextTick(() => {
-      this.getEcharts();
-    });
+    this.getData();
   }
 };
 </script>
@@ -642,59 +769,69 @@ section {
   height: 100%;
   display: flex;
 }
+
 .content-left,
 .content-right {
   flex: 1;
 }
+
 .content-center {
   flex: 2;
   /* margin: 0 10px; */
 }
+
 .content-left,
 .content-right,
 .content-center {
   display: flex;
   flex-direction: column;
 }
+
 .box-l,
 .box-r {
   flex: 1;
   margin-top: 10px;
   /* min-height: 0; */
 }
+
 .box-c {
   flex: 1;
 }
+
 .box-c .img {
   height: 100%;
   width: 100%;
   background: url("../assets/img/home_system_diagram.png") center no-repeat;
   background-size: contain;
 }
+
 .bottom {
   height: 100%;
   display: flex;
 }
+
 .bottom-l,
 .bottom-r {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+
 .bottom-c {
   flex: 2;
   background: url("../assets/img/home_container.gif") center no-repeat;
   background-size: contain;
 }
+
 border-bg {
   flex: 1;
 }
 
 /* 排行榜 */
 .order-row .row-l .num {
-  width: 18px;
-  height: 18px;
-  line-height: 18px;
+  /*width: 18px;*/
+  /*height: 18px;*/
+  /*line-height: 18px;*/
   border-radius: 50%;
   color: #fff;
   background-color: #46a6b5;
@@ -702,28 +839,32 @@ border-bg {
   text-align: center;
   margin-right: 5px;
 }
+
 .energy-order {
   font-size: 16px;
   padding: 5vh 5vh;
-  overflow: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .order-row {
   display: flex;
   justify-content: space-between;
   margin: 0;
   color: #46a6b5;
 }
+
 .order-row .row-l,
 .order-row .row-r {
   flex: 1;
 }
+
 .order-row .row-l {
   text-align: left;
 }
+
 .order-row .row-r {
   text-align: right;
 }
@@ -734,17 +875,20 @@ border-bg {
   height: 100%;
   margin-top: 5px;
 }
+
 .device-row {
   display: flex;
   justify-content: space-between;
   color: #46a6b5;
   margin-top: calc(1vh - 3px);
 }
+
 .device-row .row-r .num {
   display: inline-block;
-  width: 30px;
+  width: 35px;
   color: #f59b23;
 }
+
 /* 左一 */
 .circle-box {
   width: 100%;
@@ -753,71 +897,84 @@ border-bg {
   display: flex;
   /* padding: 5vh 20px; */
 }
+
 .circle-box .circle {
   flex: 1;
 }
+
 @media screen and (max-width: 1300px) {
-  .device-row .row-r .num {
+  .order-row .row-l .num {
     width: 12px;
     height: 12px;
     line-height: 12px;
     font-size: 10px;
   }
+
   .energy-order {
     font-size: 10px;
     padding: 0 10px;
-    overflow: auto;
   }
+
   .device-row {
     font-size: 12px;
   }
+
   .circle-box .circle .num {
     font-size: 14px;
   }
+
   .circle-box .circle .units {
     font-size: 10px;
   }
 }
+
 @media screen and (min-width: 1300px) {
-  .device-row .row-r .num {
+  .order-row .row-l .num {
     width: 14px;
     height: 14px;
     line-height: 14px;
     font-size: 10px;
   }
+
   .energy-order {
     font-size: 12px;
     padding: 0 20px;
-    overflow: auto;
   }
+
   .device-row {
     font-size: 12px;
   }
+
   .circle-box .circle .num {
     font-size: 16px;
   }
+
   .circle-box .circle .units {
     font-size: 12px;
   }
 }
+
 @media screen and (min-width: 1500px) {
-  .device-row .row-r .num {
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
-    font-size: 14px;
+  .order-row .row-l .num {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
   }
+
   .energy-order {
     font-size: 16px;
     padding: 0 30px;
-    overflow: auto;
   }
+
   .device-row {
     font-size: 16px;
   }
+
   .circle-box .circle .num {
     font-size: 18px;
   }
+
   .circle-box .circle .units {
     font-size: 14px;
   }

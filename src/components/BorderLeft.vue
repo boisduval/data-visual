@@ -326,7 +326,7 @@ export default {
   /* padding: 30px 20px; */
   padding: 0 5%;
   box-sizing: border-box;
-  overflow: hidden;
+  min-height: 0;
 }
 .border-title {
   position: absolute;

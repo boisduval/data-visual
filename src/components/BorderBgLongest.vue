@@ -168,9 +168,11 @@
         />
       </svg>
     </div>
-    <p id="title">
-      {{ title }}
-    </p>
+    <div id="title" class="flex-column flex-center">
+      <p>
+        {{ title }}
+      </p>
+    </div>
     <div class="border-content">
       <slot></slot>
     </div>
@@ -204,15 +206,16 @@ export default {
   width: 100%;
   height: 100%;
   /* padding: 30px 20px; */
-  padding: 1vh 25px;
+  padding: calc(2%) calc(2% + 20px) calc(2% + 20px);
   /* padding: 3vh 20px 1vh; */
   box-sizing: border-box;
 }
 #title {
   color: #46a6b5;
   position: absolute;
-  top: calc(2vh - 5px);
-  left: 20px;
+  height: 100%;
+  left: 1.5%;
+  width: 20px;
 }
 @media screen and (max-width: 1500px) {
   #title {
@@ -221,7 +224,7 @@ export default {
 }
 @media screen and (min-width: 1500px) {
   #title {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 </style>

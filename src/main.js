@@ -28,6 +28,7 @@ import BorderCenter from "./components/BorderCenter.vue";
 import Usp from "./components/Usp.vue";
 import Thermometer from "./components/Thermometer.vue";
 import IndicatingInstrument from "./components/IndicatingInstrument.vue";
+import Battery from "./components/Battery.vue";
 Vue.config.productionTip = false;
 
 Vue.use(VueAwesomeSwiper);
@@ -52,6 +53,7 @@ Vue.component("BorderCenter", BorderCenter);
 Vue.component("Usp", Usp);
 Vue.component("Thermometer", Thermometer);
 Vue.component("IndicatingInstrument", IndicatingInstrument);
+Vue.component("Battery", Battery);
 
 new Vue({
   router,

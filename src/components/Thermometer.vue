@@ -156,7 +156,7 @@ export default {
     font-size: 12px;
   }
   .thermometer-svg {
-    height: 70%;
+    height: 65%;
   }
 }
 @media screen and (min-width: 1500px) {

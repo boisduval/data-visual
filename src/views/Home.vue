@@ -20,7 +20,8 @@
           class="nav-item"
           v-for="(item, index) in rightNav"
           :key="index"
-          @click="toDetail(item, $event)"
+          :id="item.path"
+          @click="$router.push({ name: item.path })"
         >
           <h1>{{ item.label }}</h1>
         </div>

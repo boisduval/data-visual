@@ -27,7 +27,85 @@
                 <!-- 右左开始 -->
                 <div class="flex-column flex" style="margin-right:2px;">
                   <div class="flex" style="margin-bottom:2px;">
-                    <BorderBg></BorderBg>
+                    <BorderBg>
+                      <div
+                        class="flex-column font-small flex-space-between"
+                        style="height:100%;padding:8% 1% 0;"
+                      >
+                        <!-- 第一块开始 -->
+                        <p style="color:#46A6B5">
+                          输入输出电压
+                        </p>
+                        <div class="text-bottom flex-column flex">
+                          <div class="flex-column flex-center flex">
+                            <div class="flex-row">
+                              <p class="title flex">
+                                U相
+                              </p>
+                              <p class="data flex">
+                                382.5V
+                              </p>
+                              <p class="data flex" style="text-align: right;">
+                                380.1V
+                              </p>
+                            </div>
+                            <div class="flex-row">
+                              <p class="title flex">
+                                V相
+                              </p>
+                              <p class="data flex">
+                                382.5V
+                              </p>
+                              <p class="data flex" style="text-align: right;">
+                                380.1V
+                              </p>
+                            </div>
+                            <div class="flex-row">
+                              <p class="title flex">
+                                W相
+                              </p>
+                              <p class="data flex">
+                                382.5V
+                              </p>
+                              <p class="data flex" style="text-align: right;">
+                                380.1V
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 第一块结束 -->
+                        <!-- 第二块开始 -->
+                        <div class="text-bottom flex-column flex">
+                          <div class="flex-column flex-center flex">
+                            <div class="flex-row">
+                              <p class="title flex5">
+                                U相输出电流
+                              </p>
+                              <p class="data flex3" style="text-align: right;">
+                                60.5A
+                              </p>
+                            </div>
+                            <div class="flex-row">
+                              <p class="title flex5">
+                                V相输出电流
+                              </p>
+                              <p class="data flex3" style="text-align: right;">
+                                60.5A
+                              </p>
+                            </div>
+                            <div class="flex-row">
+                              <p class="title flex5">
+                                W相输出电流
+                              </p>
+                              <p class="data flex3" style="text-align: right;">
+                                60.5A
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 第二块结束 -->
+                      </div>
+                    </BorderBg>
                   </div>
                   <div class="flex">
                     <BorderBg>
@@ -51,7 +129,158 @@
                 <!-- 右左结束 -->
                 <!-- 右中开始 -->
                 <div class="flex" style="margin-right:2px;">
-                  <BorderBgHigher></BorderBgHigher>
+                  <BorderBgHigher>
+                    <div
+                      class="flex-column font-small flex-space-between"
+                      style="height:100%;padding:8% 1% 0"
+                    >
+                      <!-- 第一块开始 -->
+                      <p style="color:#46A6B5">
+                        设备信息
+                      </p>
+                      <div class="text-bottom flex-column flex">
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              U相PF值
+                            </p>
+                            <p class="data flex3">
+                              0.99
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              V相PF值
+                            </p>
+                            <p class="data flex3">
+                              0.99
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              W相PF值
+                            </p>
+                            <p class="data flex3">
+                              0.99
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 第一块结束 -->
+                      <!-- 第二块开始 -->
+                      <div class="text-bottom flex-column flex">
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              U相负载量
+                            </p>
+                            <p class="data flex3">
+                              10%
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              V相负载量
+                            </p>
+                            <p class="data flex3">
+                              10%
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              W相PF值
+                            </p>
+                            <p class="data flex3">
+                              10%
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 第二块结束 -->
+                      <!-- 第三块开始 -->
+                      <div class="text-bottom flex-column flex">
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              离网频率
+                            </p>
+                            <p class="data flex3">
+                              50.0Hz
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              电网频率
+                            </p>
+                            <p class="data flex3">
+                              50.0Hz
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              交流漏电流
+                            </p>
+                            <p class="data flex3">
+                              0.1A
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 第三块结束 -->
+                      <!-- 第四块开始 -->
+                      <div class="text-bottom flex-column flex">
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              直流电压
+                            </p>
+                            <p class="data flex3">
+                              53.6V
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              直流电流
+                            </p>
+                            <p class="data flex3">
+                              124.2A
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              总直流功率
+                            </p>
+                            <p class="data flex3">
+                              6.7kw
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 第四块结束 -->
+                      <!-- 第五块开始 -->
+                      <div class="text-bottom flex-column flex">
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              并离网状态
+                            </p>
+                            <p class="data flex3">
+                              并网
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex5">
+                              远控状态
+                            </p>
+                            <p class="data flex3">
+                              开启
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 第五块结束 -->
+                    </div>
+                  </BorderBgHigher>
                 </div>
                 <!-- 右中结束 -->
                 <!-- 右右开始 -->
@@ -102,14 +331,159 @@
             <div class="bottom-box">
               <div class="flex-column flex" style="margin-right:2px;">
                 <div class="flex" style="margin-bottom:2px;">
-                  <BorderBg></BorderBg>
+                  <BorderBg>
+                    <div
+                      class="flex-column font-small"
+                      style="height:100%;padding:10px 0;"
+                    >
+                      <!-- 电压开始 -->
+                      <div class="text-bottom flex-column flex">
+                        <p class="title">
+                          电压及位置
+                        </p>
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex">
+                              最高
+                            </p>
+                            <p class="data flex" style="text-align: center;">
+                              3.67V
+                            </p>
+                            <p class="data flex" style="text-align: right;">
+                              15号
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex">
+                              最低
+                            </p>
+                            <p class="data flex" style="text-align: center;">
+                              3.67V
+                            </p>
+                            <p class="data flex" style="text-align: right;">
+                              15号
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 电压结束 -->
+                      <!-- 温度开始 -->
+                      <div class="text-bottom flex-column flex">
+                        <p class="title">
+                          温度及位置
+                        </p>
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex">
+                              最高
+                            </p>
+                            <p class="data flex" style="text-align: center;">
+                              34℃
+                            </p>
+                            <p class="data flex" style="text-align: right;">
+                              15号
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex">
+                              最低
+                            </p>
+                            <p class="data flex" style="text-align: center;">
+                              34℃
+                            </p>
+                            <p class="data flex" style="text-align: right;">
+                              15号
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 温度结束 -->
+                    </div>
+                  </BorderBg>
                 </div>
                 <div class="flex">
-                  <BorderBg></BorderBg>
+                  <BorderBg>
+                    <div
+                      class="flex-column font-small"
+                      style="height:100%;padding:10px 0;"
+                    >
+                      <!-- 内阻开始 -->
+                      <div class="text-bottom flex-column flex">
+                        <p class="title">
+                          内阻及位置
+                        </p>
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex">
+                              最高
+                            </p>
+                            <p class="data flex" style="text-align: center;">
+                              15.2mΩ
+                            </p>
+                            <p class="data flex" style="text-align: right;">
+                              15号
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex">
+                              最低
+                            </p>
+                            <p class="data flex" style="text-align: center;">
+                              15.2mΩ
+                            </p>
+                            <p class="data flex" style="text-align: right;">
+                              15号
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 内阻结束 -->
+                      <!-- 绝缘开始 -->
+                      <div class="text-bottom flex-column flex">
+                        <p class="title">
+                          绝缘及位置
+                        </p>
+                        <div class="flex-column flex-center flex">
+                          <div class="flex-row">
+                            <p class="title flex">
+                              最高
+                            </p>
+                            <p class="data flex" style="text-align: center;">
+                              13.2kΩ
+                            </p>
+                            <p class="data flex" style="text-align: right;">
+                              15号
+                            </p>
+                          </div>
+                          <div class="flex-row">
+                            <p class="title flex">
+                              最低
+                            </p>
+                            <p class="data flex" style="text-align: center;">
+                              13.2kΩ
+                            </p>
+                            <p class="data flex" style="text-align: right;">
+                              15号
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 绝缘结束 -->
+                    </div>
+                  </BorderBg>
                 </div>
               </div>
               <div class="bottom-right">
-                <BorderBgLongest></BorderBgLongest>
+                <BorderBgLongest title="电池单体电压">
+                  <div class="flex-row batter-box">
+                    <div v-for="item in battery" :key="item.id" class="battery">
+                      <Battery
+                        :batteryNum="item.num"
+                        :batteryValue="item.value"
+                      ></Battery>
+                    </div>
+                  </div>
+                </BorderBgLongest>
               </div>
             </div>
           </BorderRightLongest>
@@ -144,7 +518,178 @@ export default {
           textBorderColor: "#333",
           textBorderWidth: 2
         }
-      }
+      },
+      battery: [
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "111号",
+          value: "3.33"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        },
+        {
+          num: "1号",
+          value: "3.337"
+        }
+      ]
     };
   },
   methods: {
@@ -227,23 +772,28 @@ section {
   height: 100%;
   display: flex;
 }
+
 .box-right {
   flex: 7;
 }
+
 .box-right .right-top {
   flex: 1;
   display: flex;
   min-height: 0;
 }
+
 .box-right .right-top .left {
   height: 100%;
   flex: 2;
   min-height: 0;
 }
+
 .box-right .right-top .right {
   flex: 5;
   min-height: 0;
 }
+
 .left .usp-content {
   padding: 0 10px;
   height: calc(80%);
@@ -259,36 +809,64 @@ section {
   align-items: center;
   justify-content: space-between;
 }
+
 .left .usp-text .text-box {
   flex: 1;
   text-align: center;
 }
+
 .left .usp-text .text-box .label {
   display: inline-block;
   margin-right: 5px;
   color: #46a6b5;
 }
+
 .left .usp-text .text-box .value {
   display: inline-block;
   color: #f7931f;
 }
+
 .right-box,
 .bottom-box {
   display: flex;
   width: 100%;
   height: 100%;
 }
+
 .right-box .right-right {
   flex: 3;
 }
+
 .bottom-box .bottom-right {
   flex: 7;
 }
+
+.text-bottom .title {
+  color: #46a6b5;
+}
+
+.text-bottom .data {
+  color: #f7931f;
+}
+
+.batter-box {
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.battery {
+  width: 4.6%;
+  height: 50%;
+  margin-left: 1px;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1500px) {
   .left .usp-text .text-box p {
     font-size: 14px;
   }
 }
+
 @media screen and (min-width: 1500px) {
   .left .usp-text .text-box p {
     font-size: 16px;

@@ -17,7 +17,7 @@ body {
   margin: 0 10px;
   /* min-height: 900px; */
 }
-.flex{
+.flex {
   flex: 1;
   min-height: 0;
 }
@@ -27,6 +27,24 @@ body {
 }
 .flex-row {
   display: flex;
+}
+.flex-space-between {
+  justify-content: space-between;
+}
+.flex-center {
+  justify-content: center;
+}
+.flex2 {
+  flex: 2;
+  min-height: 0;
+}
+.flex3 {
+  flex: 3;
+  min-height: 0;
+}
+.flex5 {
+  flex: 5;
+  min-height: 0;
 }
 /* 图表部分 */
 .charts {
@@ -38,17 +56,44 @@ body {
   body {
     min-height: 700px;
   }
+  .font-small {
+    font-size: 10px;
+  }
+  .font-medium {
+    font-size: 12px;
+  }
+  .font-large {
+    font-size: 14px;
+  }
 }
 @media screen and (min-width: 1300px) {
   html,
   body {
     min-height: 760px;
   }
+  .font-small {
+    font-size: 12px;
+  }
+  .font-medium {
+    font-size: 14px;
+  }
+  .font-large {
+    font-size: 16px;
+  }
 }
 @media screen and (min-width: 1500px) {
   html,
   body {
     min-height: 900px;
+  }
+  .font-small {
+    font-size: 14px;
+  }
+  .font-medium {
+    font-size: 16px;
+  }
+  .font-large {
+    font-size: 18px;
   }
 }
 div {

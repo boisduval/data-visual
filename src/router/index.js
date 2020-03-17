@@ -41,8 +41,8 @@ const routes = [
           import(/* webpackChunkName: "Extreme" */ "../views/Extreme.vue")
       },
       {
-        path: "/Abnormal",
-        name: "Abnormal",
+        path: "/abnormal",
+        name: "abnormal",
         component: () =>
           import(/* webpackChunkName: "Abnormal" */ "../views/Abnormal.vue")
       }
