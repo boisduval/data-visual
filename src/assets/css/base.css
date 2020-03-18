@@ -42,6 +42,10 @@ body {
   flex: 3;
   min-height: 0;
 }
+.flex4 {
+    flex: 4;
+    min-height: 0;
+}
 .flex5 {
   flex: 5;
   min-height: 0;

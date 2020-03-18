@@ -1,6 +1,6 @@
 <template>
-  <div class="thermometer-box">
-    <div class="thermometer-svg">
+  <div class="thermometer-kw-box">
+    <div class="thermometer-kw-svg">
       <svg
         version="1.1"
         id="图层_1"
@@ -14,14 +14,17 @@
         enable-background="new 0 0 180 180"
         xml:space="preserve"
       >
-        <g :transform="'rotate(' + rotate + ',90,119)'">
-          <circle fill="#F7931E" cx="89.479" cy="119.523" r="11.749" />
+        <g
+          id="indicating_x5F_instrument_x5F_pointer"
+          :transform="'rotate(' + rotate + ',90,119)'"
+        >
+          <circle :fill="scaleColor" cx="89.63" cy="119.505" r="11.749" />
           <polygon
-            fill="#F7931E"
-            points="85.927,126.347 62.341,100.69 94.649,113.757"
+            :fill="scaleColor"
+            points="84.948,125.676 63.368,98.311 94.598,113.781"
           />
         </g>
-        <g>
+        <g id="indicating_x5F_instrument_x5F_scale">
           <g>
             <circle
               fill="none"
@@ -64,7 +67,7 @@
           </g>
           <line
             fill="none"
-            stroke="#F7931E"
+            :stroke="scaleColor"
             stroke-width="5"
             stroke-miterlimit="10"
             x1="58.976"
@@ -74,7 +77,7 @@
           />
           <line
             fill="none"
-            stroke="#F7931E"
+            :stroke="scaleColor"
             stroke-width="5"
             stroke-miterlimit="10"
             x1="123.801"
@@ -84,7 +87,7 @@
           />
           <line
             fill="none"
-            stroke="#F7931E"
+            :stroke="scaleColor"
             stroke-width="5"
             stroke-miterlimit="10"
             x1="28.321"
@@ -94,7 +97,7 @@
           />
           <line
             fill="none"
-            stroke="#F7931E"
+            :stroke="scaleColor"
             stroke-width="5"
             stroke-miterlimit="10"
             x1="151.097"
@@ -104,7 +107,7 @@
           />
           <line
             fill="none"
-            stroke="#F7931E"
+            :stroke="scaleColor"
             stroke-width="5"
             stroke-miterlimit="10"
             x1="45.214"
@@ -114,7 +117,7 @@
           />
           <line
             fill="none"
-            stroke="#F7931E"
+            :stroke="scaleColor"
             stroke-width="5"
             stroke-miterlimit="10"
             x1="138.228"
@@ -124,7 +127,7 @@
           />
           <line
             fill="none"
-            stroke="#F7931E"
+            :stroke="scaleColor"
             stroke-width="5"
             stroke-miterlimit="10"
             x1="92.799"
@@ -133,16 +136,28 @@
             y2="37.692"
           />
         </g>
+        <text
+          transform="matrix(1 0 0 1 73.25 156.25)"
+          fill="#46A6B5"
+          font-family="'MicrosoftYaHei-Bold'"
+          font-size="18"
+        >
+          KW
+        </text>
+        <text
+          transform="translate(90 76)"
+          :fill="textColor"
+          font-family="'MicrosoftYaHei-Bold'"
+          font-size="20"
+          text-anchor="middle"
+        >
+          {{ value }}
+        </text>
       </svg>
     </div>
     <div class="title">
       <p>
         {{ title }}
-      </p>
-    </div>
-    <div class="value">
-      <p>
-        {{ value }}
       </p>
     </div>
   </div>
@@ -151,7 +166,11 @@
 <script>
 export default {
   props: {
-    color: {
+    scaleColor: {
+      type: String,
+      default: "#F7931E"
+    },
+    textColor: {
       type: String,
       default: "#F7931E"
     },
@@ -159,48 +178,40 @@ export default {
     value: String,
     rotate: {
       type: String,
-      default: "20"
+      default: "0"
     }
   }
 };
 </script>
 
 <style scoped>
-.thermometer-box {
+.thermometer-kw-box {
   width: 100%;
   height: 100%;
 }
-.thermometer-box p {
+.thermometer-kw-svg {
+  height: 85%;
+}
+.thermometer-kw-box p {
   text-align: center;
 }
-.thermometer-box .title {
+.thermometer-kw-box .title {
   color: #46a6b5;
 }
-.thermometer-box .value {
-  color: #f7931f;
-}
 @media screen and (max-width: 1300px) {
-  .thermometer-box p {
+  .thermometer-kw-box p {
     transform: scale(0.7);
-  }
-  .thermometer-svg {
-    height: 50%;
   }
 }
 @media screen and (min-width: 1300px) {
-  .thermometer-box p {
-    font-size: 12px;
-  }
-  .thermometer-svg {
-    height: 70%;
+  .thermometer-kw-box p {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 1500px) {
-  .thermometer-box p {
-    font-size: 16px;
-  }
-  .thermometer-svg {
-    height: 70%;
+  .thermometer-kw-box p {
+    font-size: 22px;
+    font-weight: 500;
   }
 }
 </style>

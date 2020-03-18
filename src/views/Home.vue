@@ -132,7 +132,7 @@ export default {
   /* margin-top: 10px; */
 }
 .header-name {
-  padding: 0 calc(5vh + 20px);
+  padding: 0 calc(3% + 20px);
 }
 .left-nav h1,
 .right-nav h1 {

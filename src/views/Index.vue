@@ -189,25 +189,10 @@ export default {
           show: false
         }
       },
-      Installed_system_power: {
-        name: "",
-        value: "",
-        unit: ""
-      },
-      SOC: {
-        name: "",
-        value: "",
-        unit: ""
-      },
-      System_residual_power: {
-        name: "",
-        value: "",
-        unit: ""
-      },
-      Current_power_trend_of_the_system: {
-        XAxisData: [],
-        SeriesData: {}
-      },
+      Installed_system_power: {},
+      SOC: {},
+      System_residual_power: {},
+      Current_power_trend_of_the_system: {},
       Electricity_leaderboard: [],
       Charge_and_discharge_week_statistics: {},
       Dc_electrical_statistics: [],
@@ -287,7 +272,7 @@ export default {
             name: this.Charge_and_discharge_week_statistics.SeriesData[0].name,
             type: "bar",
             barGap: 0,
-            data: this.Charge_and_discharge_week_statistics.SeriesData[0].data,
+            data: this.Charge_and_discharge_week_statistics.SeriesData[0].data
             // label: {
             //   show: true,
             //   position: "insideBottom",
@@ -303,7 +288,7 @@ export default {
           {
             name: this.Charge_and_discharge_week_statistics.SeriesData[1].name,
             type: "bar",
-            data: this.Charge_and_discharge_week_statistics.SeriesData[1].data,
+            data: this.Charge_and_discharge_week_statistics.SeriesData[1].data
             // label: {
             //   show: true,
             //   position: "insideBottom",
@@ -576,7 +561,7 @@ export default {
             name: this.Monthly_energy_consumption_statistics.SeriesData[0].name,
             type: "bar",
             barGap: 0,
-            data: this.Monthly_energy_consumption_statistics.SeriesData[0].data,
+            data: this.Monthly_energy_consumption_statistics.SeriesData[0].data
             // label: {
             //   show: true,
             //   position: "insideBottom",
@@ -592,7 +577,7 @@ export default {
           {
             name: this.Monthly_energy_consumption_statistics.SeriesData[1].name,
             type: "bar",
-            data: this.Monthly_energy_consumption_statistics.SeriesData[1].data,
+            data: this.Monthly_energy_consumption_statistics.SeriesData[1].data
             // label: {
             //   show: true,
             //   position: "insideBottom",

@@ -297,21 +297,21 @@
                           <IndicatingInstrument
                             title="总负载量"
                             value="30%"
-                            rotate="-10"
+                            rotate="0"
                           ></IndicatingInstrument>
                         </div>
                         <div class="flex">
                           <IndicatingInstrument
                             title="当日充电量"
                             value="15.111Kwh"
-                            rotate="30"
+                            rotate="112"
                           ></IndicatingInstrument>
                         </div>
                         <div class="flex">
                           <IndicatingInstrument
                             title="当日放电量"
                             value="15.111Kwh"
-                            rotate="55"
+                            rotate="45"
                           ></IndicatingInstrument>
                         </div>
                       </div>

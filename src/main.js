@@ -25,10 +25,14 @@ import Semicircle from "./components/Semicircle.vue";
 import Nav from "./components/Nav.vue";
 import NavBorder from "./components/NavBorder.vue";
 import BorderCenter from "./components/BorderCenter.vue";
+import BorderCenterLonger from "./components/BorderCenterLonger.vue";
 import Usp from "./components/Usp.vue";
 import Thermometer from "./components/Thermometer.vue";
 import IndicatingInstrument from "./components/IndicatingInstrument.vue";
 import Battery from "./components/Battery.vue";
+import BorderCenterLongest from "./components/BorderCenterLongest";
+import IndicatingInstrumentKw from "./components/IndicatingInstrumentKw";
+import EnergyEarnings from "./components/EnergyEarnings";
 Vue.config.productionTip = false;
 
 Vue.use(VueAwesomeSwiper);
@@ -50,10 +54,15 @@ Vue.component("Semicircle", Semicircle);
 Vue.component("Nav", Nav);
 Vue.component("NavBorder", NavBorder);
 Vue.component("BorderCenter", BorderCenter);
+Vue.component("BorderCenterLonger", BorderCenterLonger);
+Vue.component("BorderCenterLonger", BorderCenterLonger);
+Vue.component("BorderCenterLongest", BorderCenterLongest);
 Vue.component("Usp", Usp);
 Vue.component("Thermometer", Thermometer);
 Vue.component("IndicatingInstrument", IndicatingInstrument);
+Vue.component("IndicatingInstrumentKw", IndicatingInstrumentKw);
 Vue.component("Battery", Battery);
+Vue.component("EnergyEarnings", EnergyEarnings);
 
 new Vue({
   router,
