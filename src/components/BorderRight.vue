@@ -3,7 +3,6 @@
     <div class="border-svg">
       <svg
         version="1.1"
-        id="图层_1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
@@ -14,188 +13,195 @@
         enable-background="new 0 0 475 250"
         xml:space="preserve"
         preserveAspectRatio="none"
+        style=""
       >
-        <g id="线框_x5F_带标题" opacity="0.4">
-          <line
+        <g :opacity="opacity">
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="231.48"
-            y1="11.7"
-            x2="99.397"
-            y2="11.7"
-          />
-          <line
+            d="M231.48,11.7L99.397,11.7"
+            class="BcvKUBTp_0"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="444.896"
-            y1="14.922"
-            x2="3.145"
-            y2="14.922"
-          />
-          <line
+            d="M444.896,14.922L3.145,14.922"
+            class="BcvKUBTp_1"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="3.147"
-            y1="14.396"
-            x2="3.147"
-            y2="222.942"
-          />
-          <line
+            d="M3.147,14.396L3.147,222.942"
+            class="BcvKUBTp_2"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="468.771"
-            y1="246.133"
-            x2="26.522"
-            y2="246.133"
-          />
-          <line
+            d="M468.771,246.133L26.522,246.133"
+            class="BcvKUBTp_3"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="468.771"
-            y1="38.063"
-            x2="468.771"
-            y2="246.521"
-          />
-          <line
+            d="M468.771,38.063L468.771,246.521"
+            class="BcvKUBTp_4"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="468.771"
-            y1="38.5"
-            x2="444.896"
-            y2="14.78"
-          />
-          <line
+            d="M468.771,38.5L444.896,14.78"
+            class="BcvKUBTp_5"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="27.073"
-            y1="246.334"
-            x2="3.147"
-            y2="222.406"
-          />
-          <line
+            d="M27.073,246.334L3.147,222.406"
+            class="BcvKUBTp_6"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="217.23"
-            y1="8.877"
-            x2="99.397"
-            y2="8.877"
-          />
-          <line
+            d="M217.23,8.877L99.397,8.877"
+            class="BcvKUBTp_7"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="202.813"
-            y1="6.166"
-            x2="99.397"
-            y2="6.166"
-          />
+            d="M202.813,6.166L99.397,6.166"
+            class="BcvKUBTp_8"
+          ></path>
         </g>
-        <g id="方块" opacity="0.4">
-          <polygon
+        <g :opacity="opacity">
+          <path
             fill="#46A6B5"
-            points="3.145,3.939 9.299,3.939 12.971,11.815 6.819,11.815 	"
-          />
-          <polygon
+            d="M3.145,3.939L9.299,3.939L12.971,11.815L6.819,11.815Z"
+            class="BcvKUBTp_9"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="10.53,3.939 16.682,3.939 20.356,11.815 14.202,11.815 	"
-          />
-          <polygon
+            d="M10.53,3.939L16.682,3.939L20.356,11.815L14.202,11.815Z"
+            class="BcvKUBTp_10"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="17.913,3.939 24.067,3.939 27.739,11.815 21.586,11.815 	"
-          />
-          <polygon
+            d="M17.913,3.939L24.067,3.939L27.739,11.815L21.586,11.815Z"
+            class="BcvKUBTp_11"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="25.297,3.939 31.45,3.939 35.124,11.815 28.969,11.815 	"
-          />
-          <polygon
+            d="M25.297,3.939L31.45,3.939L35.124,11.815L28.969,11.815Z"
+            class="BcvKUBTp_12"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="32.68,3.939 38.834,3.939 42.506,11.815 36.354,11.815 	"
-          />
-          <polygon
+            d="M32.68,3.939L38.834,3.939L42.506,11.815L36.354,11.815Z"
+            class="BcvKUBTp_13"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="40.065,3.939 46.217,3.939 49.891,11.815 43.737,11.815 	"
-          />
-          <polygon
+            d="M40.065,3.939L46.217,3.939L49.891,11.815L43.737,11.815Z"
+            class="BcvKUBTp_14"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="47.448,3.939 53.6,3.939 57.274,11.815 51.122,11.815 	"
-          />
-          <polygon
+            d="M47.448,3.939L53.6,3.939L57.274,11.815L51.122,11.815Z"
+            class="BcvKUBTp_15"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="54.833,3.939 60.985,3.939 64.659,11.815 58.504,11.815 	"
-          />
-          <polygon
+            d="M54.833,3.939L60.985,3.939L64.659,11.815L58.504,11.815Z"
+            class="BcvKUBTp_16"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="62.215,3.939 68.368,3.939 72.042,11.815 65.887,11.815 	"
-          />
-          <polygon
+            d="M62.215,3.939L68.368,3.939L72.042,11.815L65.887,11.815Z"
+            class="BcvKUBTp_17"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="69.598,3.939 75.752,3.939 79.424,11.815 73.272,11.815 	"
-          />
-          <polygon
+            d="M69.598,3.939L75.752,3.939L79.424,11.815L73.272,11.815Z"
+            class="BcvKUBTp_18"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="76.983,3.939 83.135,3.939 86.809,11.815 80.655,11.815 	"
-          />
-          <polygon
+            d="M76.983,3.939L83.135,3.939L86.809,11.815L80.655,11.815Z"
+            class="BcvKUBTp_19"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="84.366,3.939 90.52,3.939 94.192,11.815 88.04,11.815 	"
-          />
-          <g id="方块_1_">
-            <polygon
+            d="M84.366,3.939L90.52,3.939L94.192,11.815L88.04,11.815Z"
+            class="BcvKUBTp_20"
+          ></path>
+          <g>
+            <path
               fill="#46A6B5"
-              points="372.257,235.574 378.409,235.574 382.081,243.449 375.929,243.449 		"
-            />
-            <polygon
+              d="M372.257,235.574L378.409,235.574L382.081,243.449L375.929,243.449Z"
+              class="BcvKUBTp_21"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="379.64,235.574 385.794,235.574 389.466,243.449 383.313,243.449 		"
-            />
-            <polygon
+              d="M379.64,235.574L385.794,235.574L389.466,243.449L383.313,243.449Z"
+              class="BcvKUBTp_22"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="387.024,235.574 393.177,235.574 396.849,243.449 390.696,243.449 		"
-            />
-            <polygon
+              d="M387.024,235.574L393.177,235.574L396.849,243.449L390.696,243.449Z"
+              class="BcvKUBTp_23"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="394.407,235.574 400.562,235.574 404.233,243.449 398.081,243.449 		"
-            />
-            <polygon
+              d="M394.407,235.574L400.562,235.574L404.233,243.449L398.081,243.449Z"
+              class="BcvKUBTp_24"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="401.792,235.574 407.944,235.574 411.616,243.449 405.464,243.449 		"
-            />
-            <polygon
+              d="M401.792,235.574L407.944,235.574L411.616,243.449L405.464,243.449Z"
+              class="BcvKUBTp_25"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="409.175,235.574 415.327,235.574 419.001,243.449 412.847,243.449 		"
-            />
-            <polygon
+              d="M409.175,235.574L415.327,235.574L419.001,243.449L412.847,243.449Z"
+              class="BcvKUBTp_26"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="416.558,235.574 422.712,235.574 426.384,243.449 420.231,243.449 		"
-            />
-            <polygon
+              d="M416.558,235.574L422.712,235.574L426.384,243.449L420.231,243.449Z"
+              class="BcvKUBTp_27"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="423.942,235.574 430.095,235.574 433.769,243.449 427.614,243.449 		"
-            />
-            <polygon
+              d="M423.942,235.574L430.095,235.574L433.769,243.449L427.614,243.449Z"
+              class="BcvKUBTp_28"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="431.325,235.574 437.479,235.574 441.151,243.449 434.999,243.449 		"
-            />
-            <polygon
+              d="M431.325,235.574L437.479,235.574L441.151,243.449L434.999,243.449Z"
+              class="BcvKUBTp_29"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="438.71,235.574 444.862,235.574 448.536,243.449 442.382,243.449 		"
-            />
-            <polygon
+              d="M438.71,235.574L444.862,235.574L448.536,243.449L442.382,243.449Z"
+              class="BcvKUBTp_30"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="446.093,235.574 452.247,235.574 455.919,243.449 449.767,243.449 		"
-            />
-            <polygon
+              d="M446.093,235.574L452.247,235.574L455.919,243.449L449.767,243.449Z"
+              class="BcvKUBTp_31"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="453.478,235.574 459.63,235.574 463.304,243.449 457.149,243.449 		"
-            />
+              d="M453.478,235.574L459.63,235.574L463.304,243.449L457.149,243.449Z"
+              class="BcvKUBTp_32"
+            ></path>
           </g>
         </g>
       </svg>
@@ -212,14 +218,19 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   props: {
     title: String
+  },
+  computed: {
+    ...mapState("opacity", ["opacity"])
   }
 };
 </script>
 
-<style scoped>
+<style scoped data-made-with="vivus-instant">
 .border-box {
   position: relative;
   width: 100%;
@@ -259,4 +270,185 @@ export default {
     font-size: 14px;
   }
 }
+/*.BcvKUBTp_0 {*/
+/*  stroke-dasharray: 133 135;*/
+/*  stroke-dashoffset: 134;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 0ms forwards;*/
+/*}*/
+/*.BcvKUBTp_1 {*/
+/*  stroke-dasharray: 442 444;*/
+/*  stroke-dashoffset: 443;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 31ms forwards;*/
+/*}*/
+/*.BcvKUBTp_2 {*/
+/*  stroke-dasharray: 209 211;*/
+/*  stroke-dashoffset: 210;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 62ms forwards;*/
+/*}*/
+/*.BcvKUBTp_3 {*/
+/*  stroke-dasharray: 443 445;*/
+/*  stroke-dashoffset: 444;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 93ms forwards;*/
+/*}*/
+/*.BcvKUBTp_4 {*/
+/*  stroke-dasharray: 209 211;*/
+/*  stroke-dashoffset: 210;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 125ms forwards;*/
+/*}*/
+/*.BcvKUBTp_5 {*/
+/*  stroke-dasharray: 34 36;*/
+/*  stroke-dashoffset: 35;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 156ms forwards;*/
+/*}*/
+/*.BcvKUBTp_6 {*/
+/*  stroke-dasharray: 34 36;*/
+/*  stroke-dashoffset: 35;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 187ms forwards;*/
+/*}*/
+/*.BcvKUBTp_7 {*/
+/*  stroke-dasharray: 118 120;*/
+/*  stroke-dashoffset: 119;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 218ms forwards;*/
+/*}*/
+/*.BcvKUBTp_8 {*/
+/*  stroke-dasharray: 104 106;*/
+/*  stroke-dashoffset: 105;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 250ms forwards;*/
+/*}*/
+/*.BcvKUBTp_9 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 281ms forwards;*/
+/*}*/
+/*.BcvKUBTp_10 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 312ms forwards;*/
+/*}*/
+/*.BcvKUBTp_11 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 343ms forwards;*/
+/*}*/
+/*.BcvKUBTp_12 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 375ms forwards;*/
+/*}*/
+/*.BcvKUBTp_13 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 406ms forwards;*/
+/*}*/
+/*.BcvKUBTp_14 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 437ms forwards;*/
+/*}*/
+/*.BcvKUBTp_15 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 468ms forwards;*/
+/*}*/
+/*.BcvKUBTp_16 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 500ms forwards;*/
+/*}*/
+/*.BcvKUBTp_17 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 531ms forwards;*/
+/*}*/
+/*.BcvKUBTp_18 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 562ms forwards;*/
+/*}*/
+/*.BcvKUBTp_19 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 593ms forwards;*/
+/*}*/
+/*.BcvKUBTp_20 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 625ms forwards;*/
+/*}*/
+/*.BcvKUBTp_21 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 656ms forwards;*/
+/*}*/
+/*.BcvKUBTp_22 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 687ms forwards;*/
+/*}*/
+/*.BcvKUBTp_23 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 718ms forwards;*/
+/*}*/
+/*.BcvKUBTp_24 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 750ms forwards;*/
+/*}*/
+/*.BcvKUBTp_25 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 781ms forwards;*/
+/*}*/
+/*.BcvKUBTp_26 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 812ms forwards;*/
+/*}*/
+/*.BcvKUBTp_27 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 843ms forwards;*/
+/*}*/
+/*.BcvKUBTp_28 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 875ms forwards;*/
+/*}*/
+/*.BcvKUBTp_29 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 906ms forwards;*/
+/*}*/
+/*.BcvKUBTp_30 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 937ms forwards;*/
+/*}*/
+/*.BcvKUBTp_31 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 968ms forwards;*/
+/*}*/
+/*.BcvKUBTp_32 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: BcvKUBTp_draw 2000ms linear 1000ms forwards;*/
+/*}*/
+/*@keyframes BcvKUBTp_draw {*/
+/*  100% {*/
+/*    stroke-dashoffset: 0;*/
+/*  }*/
+/*}*/
+/*@keyframes BcvKUBTp_fade {*/
+/*  0% {*/
+/*    stroke-opacity: 1;*/
+/*  }*/
+/*  94.44444444444444% {*/
+/*    stroke-opacity: 1;*/
+/*  }*/
+/*  100% {*/
+/*    stroke-opacity: 0;*/
+/*  }*/
+/*}*/
 </style>

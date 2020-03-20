@@ -3,7 +3,6 @@
     <div class="border-svg">
       <svg
         version="1.1"
-        id="图层_1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
@@ -14,251 +13,244 @@
         enable-background="new 0 0 830 350"
         xml:space="preserve"
         preserveAspectRatio="none"
+        style=""
       >
-        <g id="线框" opacity="0.4">
-          <line
+        <g :opacity="opacity">
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="814.462"
-            y1="3.484"
-            x2="16.424"
-            y2="3.484"
-          />
-          <line
+            d="M814.462,3.484L16.424,3.484"
+            class="FvTeLobV_0"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="16.716"
-            y1="113.065"
-            x2="3.708"
-            y2="96.551"
-          />
-          <line
+            d="M16.716,113.065L3.708,96.551"
+            class="FvTeLobV_1"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="16.944"
-            y1="3.178"
-            x2="3.936"
-            y2="19.693"
-          />
-          <line
+            d="M16.944,3.178L3.936,19.693"
+            class="FvTeLobV_2"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="3.936"
-            y1="18.674"
-            x2="3.936"
-            y2="97.229"
-          />
-          <line
+            d="M3.936,18.674L3.936,97.229"
+            class="FvTeLobV_3"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="16.755"
-            y1="346.023"
-            x2="3.747"
-            y2="329.508"
-          />
-          <line
+            d="M16.755,346.023L3.747,329.508"
+            class="FvTeLobV_4"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="3.963"
-            y1="251.623"
-            x2="3.963"
-            y2="330.178"
-          />
-          <line
+            d="M3.963,251.623L3.963,330.178"
+            class="FvTeLobV_5"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="814.084"
-            y1="346.715"
-            x2="16.239"
-            y2="346.715"
-          />
-          <line
+            d="M814.084,346.715L16.239,346.715"
+            class="FvTeLobV_6"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="16.754"
-            y1="235.844"
-            x2="3.745"
-            y2="252.357"
-          />
-          <line
+            d="M16.754,235.844L3.745,252.357"
+            class="FvTeLobV_7"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="16.424"
-            y1="112.271"
-            x2="16.424"
-            y2="236.941"
-          />
-          <line
+            d="M16.424,112.271L16.424,236.941"
+            class="FvTeLobV_8"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="826.906"
-            y1="96.528"
-            x2="813.898"
-            y2="113.043"
-          />
-          <line
+            d="M826.906,96.528L813.898,113.043"
+            class="FvTeLobV_9"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="827"
-            y1="19.4"
-            x2="813.99"
-            y2="2.885"
-          />
-          <line
+            d="M827,19.4L813.99,2.885"
+            class="FvTeLobV_10"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="826.68"
-            y1="97.206"
-            x2="826.68"
-            y2="18.652"
-          />
-          <line
+            d="M826.68,97.206L826.68,18.652"
+            class="FvTeLobV_11"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="826.869"
-            y1="330.486"
-            x2="813.859"
-            y2="347"
-          />
-          <line
+            d="M826.869,330.486L813.859,347"
+            class="FvTeLobV_12"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="826.652"
-            y1="331.156"
-            x2="826.652"
-            y2="252.602"
-          />
-          <line
+            d="M826.652,331.156L826.652,252.602"
+            class="FvTeLobV_13"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="826.871"
-            y1="253.336"
-            x2="813.861"
-            y2="236.82"
-          />
-          <line
+            d="M826.871,253.336L813.861,236.82"
+            class="FvTeLobV_14"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="814.191"
-            y1="237.5"
-            x2="814.191"
-            y2="112.249"
-          />
+            d="M814.191,237.5L814.191,112.249"
+            class="FvTeLobV_15"
+          ></path>
         </g>
-        <g id="方块" opacity="0.4">
-          <polygon
+        <g :opacity="opacity">
+          <path
             fill="#46A6B5"
-            points="103.797,17.977 97.645,17.977 101.316,10.101 107.471,10.101 	"
-          />
-          <polygon
+            d="M103.797,17.977L97.645,17.977L101.316,10.101L107.471,10.101Z"
+            class="FvTeLobV_16"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="96.414,17.977 90.26,17.977 93.934,10.101 100.086,10.101 	"
-          />
-          <polygon
+            d="M96.414,17.977L90.26,17.977L93.934,10.101L100.086,10.101Z"
+            class="FvTeLobV_17"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="89.029,17.977 82.877,17.977 86.549,10.101 92.703,10.101 	"
-          />
-          <polygon
+            d="M89.029,17.977L82.877,17.977L86.549,10.101L92.703,10.101Z"
+            class="FvTeLobV_18"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="81.646,17.977 75.492,17.977 79.166,10.101 85.318,10.101 	"
-          />
-          <polygon
+            d="M81.646,17.977L75.492,17.977L79.166,10.101L85.318,10.101Z"
+            class="FvTeLobV_19"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="74.262,17.977 68.109,17.977 71.781,10.101 77.936,10.101 	"
-          />
-          <polygon
+            d="M74.262,17.977L68.109,17.977L71.781,10.101L77.936,10.101Z"
+            class="FvTeLobV_20"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="66.879,17.977 60.725,17.977 64.398,10.101 70.551,10.101 	"
-          />
-          <polygon
+            d="M66.879,17.977L60.725,17.977L64.398,10.101L70.551,10.101Z"
+            class="FvTeLobV_21"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="59.494,17.977 53.342,17.977 57.016,10.101 63.168,10.101 	"
-          />
-          <polygon
+            d="M59.494,17.977L53.342,17.977L57.016,10.101L63.168,10.101Z"
+            class="FvTeLobV_22"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="52.111,17.977 45.957,17.977 49.631,10.101 55.783,10.101 	"
-          />
-          <polygon
+            d="M52.111,17.977L45.957,17.977L49.631,10.101L55.783,10.101Z"
+            class="FvTeLobV_23"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="44.729,17.977 38.574,17.977 42.248,10.101 48.4,10.101 	"
-          />
-          <polygon
+            d="M44.729,17.977L38.574,17.977L42.248,10.101L48.4,10.101Z"
+            class="FvTeLobV_24"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="37.344,17.977 31.191,17.977 34.863,10.101 41.018,10.101 	"
-          />
-          <polygon
+            d="M37.344,17.977L31.191,17.977L34.863,10.101L41.018,10.101Z"
+            class="FvTeLobV_25"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="29.961,17.977 23.807,17.977 27.48,10.101 33.633,10.101 	"
-          />
-          <polygon
+            d="M29.961,17.977L23.807,17.977L27.48,10.101L33.633,10.101Z"
+            class="FvTeLobV_26"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="22.576,17.977 16.424,17.977 20.096,10.101 26.25,10.101 	"
-          />
-          <g id="方块_1_">
-            <polygon
+            d="M22.576,17.977L16.424,17.977L20.096,10.101L26.25,10.101Z"
+            class="FvTeLobV_27"
+          ></path>
+          <g>
+            <path
               fill="#46A6B5"
-              points="722.953,10.101 729.105,10.101 732.777,17.977 726.625,17.977 		"
-            />
-            <polygon
+              d="M722.953,10.101L729.105,10.101L732.777,17.977L726.625,17.977Z"
+              class="FvTeLobV_28"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="730.336,10.101 736.49,10.101 740.162,17.977 734.01,17.977 		"
-            />
-            <polygon
+              d="M730.336,10.101L736.49,10.101L740.162,17.977L734.01,17.977Z"
+              class="FvTeLobV_29"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="737.721,10.101 743.873,10.101 747.545,17.977 741.393,17.977 		"
-            />
-            <polygon
+              d="M737.721,10.101L743.873,10.101L747.545,17.977L741.393,17.977Z"
+              class="FvTeLobV_30"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="745.104,10.101 751.258,10.101 754.93,17.977 748.777,17.977 		"
-            />
-            <polygon
+              d="M745.104,10.101L751.258,10.101L754.93,17.977L748.777,17.977Z"
+              class="FvTeLobV_31"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="752.488,10.101 758.641,10.101 762.313,17.977 756.16,17.977 		"
-            />
-            <polygon
+              d="M752.488,10.101L758.641,10.101L762.313,17.977L756.16,17.977Z"
+              class="FvTeLobV_32"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="759.871,10.101 766.023,10.101 769.697,17.977 763.543,17.977 		"
-            />
-            <polygon
+              d="M759.871,10.101L766.023,10.101L769.697,17.977L763.543,17.977Z"
+              class="FvTeLobV_33"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="767.254,10.101 773.408,10.101 777.08,17.977 770.928,17.977 		"
-            />
-            <polygon
+              d="M767.254,10.101L773.408,10.101L777.08,17.977L770.928,17.977Z"
+              class="FvTeLobV_34"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="774.639,10.101 780.791,10.101 784.465,17.977 778.311,17.977 		"
-            />
-            <polygon
+              d="M774.639,10.101L780.791,10.101L784.465,17.977L778.311,17.977Z"
+              class="FvTeLobV_35"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="782.021,10.101 788.176,10.101 791.848,17.977 785.695,17.977 		"
-            />
-            <polygon
+              d="M782.021,10.101L788.176,10.101L791.848,17.977L785.695,17.977Z"
+              class="FvTeLobV_36"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="789.406,10.101 795.559,10.101 799.232,17.977 793.078,17.977 		"
-            />
-            <polygon
+              d="M789.406,10.101L795.559,10.101L799.232,17.977L793.078,17.977Z"
+              class="FvTeLobV_37"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="796.789,10.101 802.943,10.101 806.615,17.977 800.463,17.977 		"
-            />
-            <polygon
+              d="M796.789,10.101L802.943,10.101L806.615,17.977L800.463,17.977Z"
+              class="FvTeLobV_38"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="804.174,10.101 810.326,10.101 814,17.977 807.846,17.977 		"
-            />
+              d="M804.174,10.101L810.326,10.101L814,17.977L807.846,17.977Z"
+              class="FvTeLobV_39"
+            ></path>
           </g>
         </g>
       </svg>
@@ -275,17 +267,21 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   props: {
     title: String
   },
   data() {
     return {};
+  },
+  computed: {
+    ...mapState("opacity", ["opacity"])
   }
 };
 </script>
 
-<style scoped>
+<style scoped data-made-with="vivus-instant">
 .border-box {
   position: relative;
   width: 100%;
@@ -325,4 +321,220 @@ export default {
     font-size: 14px;
   }
 }
+/*.FvTeLobV_0 {*/
+/*  stroke-dasharray: 799 801;*/
+/*  stroke-dashoffset: 800;*/
+/*  animation: FvTeLobV_draw 2000ms linear 0ms forwards;*/
+/*}*/
+/*.FvTeLobV_1 {*/
+/*  stroke-dasharray: 22 24;*/
+/*  stroke-dashoffset: 23;*/
+/*  animation: FvTeLobV_draw 2000ms linear 25ms forwards;*/
+/*}*/
+/*.FvTeLobV_2 {*/
+/*  stroke-dasharray: 22 24;*/
+/*  stroke-dashoffset: 23;*/
+/*  animation: FvTeLobV_draw 2000ms linear 51ms forwards;*/
+/*}*/
+/*.FvTeLobV_3 {*/
+/*  stroke-dasharray: 79 81;*/
+/*  stroke-dashoffset: 80;*/
+/*  animation: FvTeLobV_draw 2000ms linear 76ms forwards;*/
+/*}*/
+/*.FvTeLobV_4 {*/
+/*  stroke-dasharray: 22 24;*/
+/*  stroke-dashoffset: 23;*/
+/*  animation: FvTeLobV_draw 2000ms linear 102ms forwards;*/
+/*}*/
+/*.FvTeLobV_5 {*/
+/*  stroke-dasharray: 79 81;*/
+/*  stroke-dashoffset: 80;*/
+/*  animation: FvTeLobV_draw 2000ms linear 128ms forwards;*/
+/*}*/
+/*.FvTeLobV_6 {*/
+/*  stroke-dasharray: 798 800;*/
+/*  stroke-dashoffset: 799;*/
+/*  animation: FvTeLobV_draw 2000ms linear 153ms forwards;*/
+/*}*/
+/*.FvTeLobV_7 {*/
+/*  stroke-dasharray: 22 24;*/
+/*  stroke-dashoffset: 23;*/
+/*  animation: FvTeLobV_draw 2000ms linear 179ms forwards;*/
+/*}*/
+/*.FvTeLobV_8 {*/
+/*  stroke-dasharray: 125 127;*/
+/*  stroke-dashoffset: 126;*/
+/*  animation: FvTeLobV_draw 2000ms linear 205ms forwards;*/
+/*}*/
+/*.FvTeLobV_9 {*/
+/*  stroke-dasharray: 22 24;*/
+/*  stroke-dashoffset: 23;*/
+/*  animation: FvTeLobV_draw 2000ms linear 230ms forwards;*/
+/*}*/
+/*.FvTeLobV_10 {*/
+/*  stroke-dasharray: 22 24;*/
+/*  stroke-dashoffset: 23;*/
+/*  animation: FvTeLobV_draw 2000ms linear 256ms forwards;*/
+/*}*/
+/*.FvTeLobV_11 {*/
+/*  stroke-dasharray: 79 81;*/
+/*  stroke-dashoffset: 80;*/
+/*  animation: FvTeLobV_draw 2000ms linear 282ms forwards;*/
+/*}*/
+/*.FvTeLobV_12 {*/
+/*  stroke-dasharray: 22 24;*/
+/*  stroke-dashoffset: 23;*/
+/*  animation: FvTeLobV_draw 2000ms linear 307ms forwards;*/
+/*}*/
+/*.FvTeLobV_13 {*/
+/*  stroke-dasharray: 79 81;*/
+/*  stroke-dashoffset: 80;*/
+/*  animation: FvTeLobV_draw 2000ms linear 333ms forwards;*/
+/*}*/
+/*.FvTeLobV_14 {*/
+/*  stroke-dasharray: 22 24;*/
+/*  stroke-dashoffset: 23;*/
+/*  animation: FvTeLobV_draw 2000ms linear 358ms forwards;*/
+/*}*/
+/*.FvTeLobV_15 {*/
+/*  stroke-dasharray: 126 128;*/
+/*  stroke-dashoffset: 127;*/
+/*  animation: FvTeLobV_draw 2000ms linear 384ms forwards;*/
+/*}*/
+/*.FvTeLobV_16 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 410ms forwards;*/
+/*}*/
+/*.FvTeLobV_17 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 435ms forwards;*/
+/*}*/
+/*.FvTeLobV_18 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 461ms forwards;*/
+/*}*/
+/*.FvTeLobV_19 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 487ms forwards;*/
+/*}*/
+/*.FvTeLobV_20 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 512ms forwards;*/
+/*}*/
+/*.FvTeLobV_21 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 538ms forwards;*/
+/*}*/
+/*.FvTeLobV_22 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 564ms forwards;*/
+/*}*/
+/*.FvTeLobV_23 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 589ms forwards;*/
+/*}*/
+/*.FvTeLobV_24 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 615ms forwards;*/
+/*}*/
+/*.FvTeLobV_25 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 641ms forwards;*/
+/*}*/
+/*.FvTeLobV_26 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 666ms forwards;*/
+/*}*/
+/*.FvTeLobV_27 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 692ms forwards;*/
+/*}*/
+/*.FvTeLobV_28 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 717ms forwards;*/
+/*}*/
+/*.FvTeLobV_29 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 743ms forwards;*/
+/*}*/
+/*.FvTeLobV_30 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 769ms forwards;*/
+/*}*/
+/*.FvTeLobV_31 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 794ms forwards;*/
+/*}*/
+/*.FvTeLobV_32 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 820ms forwards;*/
+/*}*/
+/*.FvTeLobV_33 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 846ms forwards;*/
+/*}*/
+/*.FvTeLobV_34 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 871ms forwards;*/
+/*}*/
+/*.FvTeLobV_35 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 897ms forwards;*/
+/*}*/
+/*.FvTeLobV_36 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 923ms forwards;*/
+/*}*/
+/*.FvTeLobV_37 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 948ms forwards;*/
+/*}*/
+/*.FvTeLobV_38 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 974ms forwards;*/
+/*}*/
+/*.FvTeLobV_39 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: FvTeLobV_draw 2000ms linear 1000ms forwards;*/
+/*}*/
+/*@keyframes FvTeLobV_draw {*/
+/*  100% {*/
+/*    stroke-dashoffset: 0;*/
+/*  }*/
+/*}*/
+/*@keyframes FvTeLobV_fade {*/
+/*  0% {*/
+/*    stroke-opacity: 1;*/
+/*  }*/
+/*  94.44444444444444% {*/
+/*    stroke-opacity: 1;*/
+/*  }*/
+/*  100% {*/
+/*    stroke-opacity: 0;*/
+/*  }*/
+/*}*/
 </style>

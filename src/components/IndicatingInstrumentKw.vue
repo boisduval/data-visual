@@ -14,10 +14,18 @@
         enable-background="new 0 0 180 180"
         xml:space="preserve"
       >
-        <g
-          id="indicating_x5F_instrument_x5F_pointer"
-          :transform="'rotate(' + rotate + ',90,119)'"
-        >
+        <g class="rotate" :transform="'rotate(' + rotate + ',90,119)'">
+          <animateTransform
+            attributeType="XML"
+            attributeName="transform"
+            begin="0s"
+            dur="1.5s"
+            type="rotate"
+            from="0 90 119"
+            :to="this.rotate + ' 90 119'"
+            repeatCount="1"
+            fill="freeze"
+          />
           <circle :fill="scaleColor" cx="89.63" cy="119.505" r="11.749" />
           <polygon
             :fill="scaleColor"
@@ -198,6 +206,15 @@ export default {
 .thermometer-kw-box .title {
   color: #46a6b5;
 }
+.rotate {
+  /*animation: rotate_before 2.2s linear 1;*/
+  /*-webkit-animation: rotate_before 2.2s linear 1;*/
+  /*-webkit-transform-origin: 90 119;*/
+  /*transform: rotate(0);*/
+  /*animation-fill-mode: forwards;*/
+  /*transition: all 2s linear;*/
+}
+
 @media screen and (max-width: 1300px) {
   .thermometer-kw-box p {
     transform: scale(0.7);

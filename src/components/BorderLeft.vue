@@ -3,7 +3,6 @@
     <div class="border-svg">
       <svg
         version="1.1"
-        id="图层_1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
@@ -14,271 +13,262 @@
         enable-background="new 0 0 475 250"
         xml:space="preserve"
         preserveAspectRatio="none"
+        style=""
       >
-        <g id="线框_x5F_带标题" opacity="0.4">
-          <line
+        <g :opacity="opacity">
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="374.333"
-            y1="12.167"
-            x2="242.249"
-            y2="12.167"
-          />
-          <line
+            d="M374.333,12.167L242.249,12.167"
+            class="ouyjuwjA_0"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="472.348"
-            y1="15.444"
-            x2="32.083"
-            y2="15.444"
-          />
-          <line
+            d="M472.348,15.444L32.083,15.444"
+            class="ouyjuwjA_1"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="471.833"
-            y1="222.929"
-            x2="471.833"
-            y2="15.444"
-          />
-          <line
+            d="M471.833,222.929L471.833,15.444"
+            class="ouyjuwjA_2"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="447.906"
-            y1="246.654"
-            x2="7.664"
-            y2="246.654"
-          />
-          <line
+            d="M447.906,246.654L7.664,246.654"
+            class="ouyjuwjA_3"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="8.208"
-            y1="246.654"
-            x2="8.208"
-            y2="39.022"
-          />
-          <line
+            d="M8.208,246.654L8.208,39.022"
+            class="ouyjuwjA_4"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="32.083"
-            y1="15.302"
-            x2="8.208"
-            y2="39.022"
-          />
-          <line
+            d="M32.083,15.302L8.208,39.022"
+            class="ouyjuwjA_5"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="471.833"
-            y1="222.929"
-            x2="447.906"
-            y2="246.855"
-          />
-          <line
+            d="M471.833,222.929L447.906,246.855"
+            class="ouyjuwjA_6"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="374.333"
-            y1="9.344"
-            x2="256.499"
-            y2="9.344"
-          />
-          <line
+            d="M374.333,9.344L256.499,9.344"
+            class="ouyjuwjA_7"
+          ></path>
+          <path
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="374.333"
-            y1="6.632"
-            x2="270.917"
-            y2="6.632"
-          />
+            d="M374.333,6.632L270.917,6.632"
+            class="ouyjuwjA_8"
+          ></path>
         </g>
-        <g id="线框_x5F_原始" display="none">
-          <line
+        <g display="none">
+          <path
             display="inline"
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="400.833"
-            y1="17.222"
-            x2="31.325"
-            y2="17.222"
-          />
-          <line
+            d="M400.833,17.222L31.325,17.222"
+            class="ouyjuwjA_9"
+          ></path>
+          <path
             display="inline"
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="400.833"
-            y1="20.444"
-            x2="31.325"
-            y2="20.444"
-          />
-          <line
+            d="M400.833,20.444L31.325,20.444"
+            class="ouyjuwjA_10"
+          ></path>
+          <path
             display="inline"
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="400.833"
-            y1="187.333"
-            x2="400.833"
-            y2="20"
-          />
-          <line
+            d="M400.833,187.333L400.833,20"
+            class="ouyjuwjA_11"
+          ></path>
+          <path
             display="inline"
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="377.458"
-            y1="210.654"
-            x2="7.664"
-            y2="210.654"
-          />
-          <line
+            d="M377.458,210.654L7.664,210.654"
+            class="ouyjuwjA_12"
+          ></path>
+          <path
             display="inline"
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="8.208"
-            y1="210.654"
-            x2="8.208"
-            y2="43.542"
-          />
-          <line
+            d="M8.208,210.654L8.208,43.542"
+            class="ouyjuwjA_13"
+          ></path>
+          <path
             display="inline"
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="31.728"
-            y1="20.31"
-            x2="8.079"
-            y2="43.958"
-          />
-          <line
+            d="M31.728,20.31L8.079,43.958"
+            class="ouyjuwjA_14"
+          ></path>
+          <path
             display="inline"
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="31.459"
-            y1="17.088"
-            x2="12.708"
-            y2="35.839"
-          />
+            d="M31.459,17.088L12.708,35.839"
+            class="ouyjuwjA_15"
+          ></path>
 
-          <line
+          <path
             display="inline"
             fill="none"
             stroke="#46A6B5"
             stroke-miterlimit="10"
-            x1="400.833"
-            y1="186.929"
-            x2="376.906"
-            y2="210.855"
-          />
+            d="M400.833,186.929L376.906,210.855"
+            class="ouyjuwjA_16"
+          ></path>
         </g>
-        <g id="方块" opacity="0.4">
-          <polygon
+        <g :opacity="opacity">
+          <path
             fill="#46A6B5"
-            points="464.913,12.337 458.76,12.337 462.432,4.461 468.585,4.461 	"
-          />
-          <polygon
+            d="M464.913,12.337L458.76,12.337L462.432,4.461L468.585,4.461Z"
+            class="ouyjuwjA_17"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="457.529,12.337 451.375,12.337 455.048,4.461 461.202,4.461 	"
-          />
-          <polygon
+            d="M457.529,12.337L451.375,12.337L455.048,4.461L461.202,4.461Z"
+            class="ouyjuwjA_18"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="450.145,12.337 443.993,12.337 447.665,4.461 453.818,4.461 	"
-          />
-          <polygon
+            d="M450.145,12.337L443.993,12.337L447.665,4.461L453.818,4.461Z"
+            class="ouyjuwjA_19"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="442.761,12.337 436.608,12.337 440.281,4.461 446.434,4.461 	"
-          />
-          <polygon
+            d="M442.761,12.337L436.608,12.337L440.281,4.461L446.434,4.461Z"
+            class="ouyjuwjA_20"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="435.377,12.337 429.225,12.337 432.897,4.461 439.05,4.461 	"
-          />
-          <polygon
+            d="M435.377,12.337L429.225,12.337L432.897,4.461L439.05,4.461Z"
+            class="ouyjuwjA_21"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="427.995,12.337 421.84,12.337 425.514,4.461 431.667,4.461 	"
-          />
-          <polygon
+            d="M427.995,12.337L421.84,12.337L425.514,4.461L431.667,4.461Z"
+            class="ouyjuwjA_22"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="420.61,12.337 414.458,12.337 418.13,4.461 424.284,4.461 	"
-          />
-          <polygon
+            d="M420.61,12.337L414.458,12.337L418.13,4.461L424.284,4.461Z"
+            class="ouyjuwjA_23"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="413.227,12.337 407.073,12.337 410.747,4.461 416.899,4.461 	"
-          />
-          <polygon
+            d="M413.227,12.337L407.073,12.337L410.747,4.461L416.899,4.461Z"
+            class="ouyjuwjA_24"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="405.843,12.337 399.69,12.337 403.363,4.461 409.516,4.461 	"
-          />
-          <polygon
+            d="M405.843,12.337L399.69,12.337L403.363,4.461L409.516,4.461Z"
+            class="ouyjuwjA_25"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="398.459,12.337 392.306,12.337 395.979,4.461 402.132,4.461 	"
-          />
-          <polygon
+            d="M398.459,12.337L392.306,12.337L395.979,4.461L402.132,4.461Z"
+            class="ouyjuwjA_26"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="391.076,12.337 384.922,12.337 388.595,4.461 394.749,4.461 	"
-          />
-          <polygon
+            d="M391.076,12.337L384.922,12.337L388.595,4.461L394.749,4.461Z"
+            class="ouyjuwjA_27"
+          ></path>
+          <path
             fill="#46A6B5"
-            points="383.692,12.337 377.539,12.337 381.211,4.461 387.365,4.461 	"
-          />
-          <g id="方块_1_">
-            <polygon
+            d="M383.692,12.337L377.539,12.337L381.211,4.461L387.365,4.461Z"
+            class="ouyjuwjA_28"
+          ></path>
+          <g>
+            <path
               fill="#46A6B5"
-              points="104.328,243.769 98.175,243.769 101.847,235.893 108,235.893 		"
-            />
-            <polygon
+              d="M104.328,243.769L98.175,243.769L101.847,235.893L108,235.893Z"
+              class="ouyjuwjA_29"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="96.944,243.769 90.791,243.769 94.463,235.893 100.617,235.893 		"
-            />
-            <polygon
+              d="M96.944,243.769L90.791,243.769L94.463,235.893L100.617,235.893Z"
+              class="ouyjuwjA_30"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="89.56,243.769 83.408,243.769 87.08,235.893 93.233,235.893 		"
-            />
-            <polygon
+              d="M89.56,243.769L83.408,243.769L87.08,235.893L93.233,235.893Z"
+              class="ouyjuwjA_31"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="82.176,243.769 76.023,243.769 79.696,235.893 85.849,235.893 		"
-            />
-            <polygon
+              d="M82.176,243.769L76.023,243.769L79.696,235.893L85.849,235.893Z"
+              class="ouyjuwjA_32"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="74.792,243.769 68.64,243.769 72.312,235.893 78.465,235.893 		"
-            />
-            <polygon
+              d="M74.792,243.769L68.64,243.769L72.312,235.893L78.465,235.893Z"
+              class="ouyjuwjA_33"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="67.41,243.769 61.255,243.769 64.929,235.893 71.082,235.893 		"
-            />
-            <polygon
+              d="M67.41,243.769L61.255,243.769L64.929,235.893L71.082,235.893Z"
+              class="ouyjuwjA_34"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="60.025,243.769 53.873,243.769 57.545,235.893 63.699,235.893 		"
-            />
-            <polygon
+              d="M60.025,243.769L53.873,243.769L57.545,235.893L63.699,235.893Z"
+              class="ouyjuwjA_35"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="52.642,243.769 46.488,243.769 50.162,235.893 56.314,235.893 		"
-            />
-            <polygon
+              d="M52.642,243.769L46.488,243.769L50.162,235.893L56.314,235.893Z"
+              class="ouyjuwjA_36"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="45.258,243.769 39.105,243.769 42.778,235.893 48.931,235.893 		"
-            />
-            <polygon
+              d="M45.258,243.769L39.105,243.769L42.778,235.893L48.931,235.893Z"
+              class="ouyjuwjA_37"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="37.875,243.769 31.721,243.769 35.394,235.893 41.547,235.893 		"
-            />
-            <polygon
+              d="M37.875,243.769L31.721,243.769L35.394,235.893L41.547,235.893Z"
+              class="ouyjuwjA_38"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="30.491,243.769 24.337,243.769 28.01,235.893 34.164,235.893 		"
-            />
-            <polygon
+              d="M30.491,243.769L24.337,243.769L28.01,235.893L34.164,235.893Z"
+              class="ouyjuwjA_39"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="23.107,243.769 16.954,243.769 20.626,235.893 26.78,235.893 		"
-            />
+              d="M23.107,243.769L16.954,243.769L20.626,235.893L26.78,235.893Z"
+              class="ouyjuwjA_40"
+            ></path>
           </g>
         </g>
       </svg>
@@ -295,17 +285,22 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   props: {
     title: String
   },
   data() {
     return {};
+  },
+  computed: {
+    ...mapState("opacity", ["opacity"])
   }
 };
 </script>
 
-<style scoped>
+<style scoped data-made-with="vivus-instant">
 .border-box {
   position: relative;
   width: 100%;
@@ -345,4 +340,225 @@ export default {
     font-size: 14px;
   }
 }
+/*.ouyjuwjA_0 {*/
+/*  stroke-dasharray: 133 135;*/
+/*  stroke-dashoffset: 134;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 0ms forwards;*/
+/*}*/
+/*.ouyjuwjA_1 {*/
+/*  stroke-dasharray: 441 443;*/
+/*  stroke-dashoffset: 442;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 25ms forwards;*/
+/*}*/
+/*.ouyjuwjA_2 {*/
+/*  stroke-dasharray: 208 210;*/
+/*  stroke-dashoffset: 209;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 50ms forwards;*/
+/*}*/
+/*.ouyjuwjA_3 {*/
+/*  stroke-dasharray: 441 443;*/
+/*  stroke-dashoffset: 442;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 75ms forwards;*/
+/*}*/
+/*.ouyjuwjA_4 {*/
+/*  stroke-dasharray: 208 210;*/
+/*  stroke-dashoffset: 209;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 100ms forwards;*/
+/*}*/
+/*.ouyjuwjA_5 {*/
+/*  stroke-dasharray: 34 36;*/
+/*  stroke-dashoffset: 35;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 125ms forwards;*/
+/*}*/
+/*.ouyjuwjA_6 {*/
+/*  stroke-dasharray: 34 36;*/
+/*  stroke-dashoffset: 35;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 150ms forwards;*/
+/*}*/
+/*.ouyjuwjA_7 {*/
+/*  stroke-dasharray: 118 120;*/
+/*  stroke-dashoffset: 119;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 175ms forwards;*/
+/*}*/
+/*.ouyjuwjA_8 {*/
+/*  stroke-dasharray: 104 106;*/
+/*  stroke-dashoffset: 105;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 200ms forwards;*/
+/*}*/
+/*.ouyjuwjA_9 {*/
+/*  stroke-dasharray: 370 372;*/
+/*  stroke-dashoffset: 371;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 225ms forwards;*/
+/*}*/
+/*.ouyjuwjA_10 {*/
+/*  stroke-dasharray: 370 372;*/
+/*  stroke-dashoffset: 371;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 250ms forwards;*/
+/*}*/
+/*.ouyjuwjA_11 {*/
+/*  stroke-dasharray: 168 170;*/
+/*  stroke-dashoffset: 169;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 275ms forwards;*/
+/*}*/
+/*.ouyjuwjA_12 {*/
+/*  stroke-dasharray: 370 372;*/
+/*  stroke-dashoffset: 371;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 300ms forwards;*/
+/*}*/
+/*.ouyjuwjA_13 {*/
+/*  stroke-dasharray: 168 170;*/
+/*  stroke-dashoffset: 169;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 325ms forwards;*/
+/*}*/
+/*.ouyjuwjA_14 {*/
+/*  stroke-dasharray: 34 36;*/
+/*  stroke-dashoffset: 35;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 350ms forwards;*/
+/*}*/
+/*.ouyjuwjA_15 {*/
+/*  stroke-dasharray: 27 29;*/
+/*  stroke-dashoffset: 28;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 375ms forwards;*/
+/*}*/
+/*.ouyjuwjA_16 {*/
+/*  stroke-dasharray: 34 36;*/
+/*  stroke-dashoffset: 35;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 400ms forwards;*/
+/*}*/
+/*.ouyjuwjA_17 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 425ms forwards;*/
+/*}*/
+/*.ouyjuwjA_18 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 450ms forwards;*/
+/*}*/
+/*.ouyjuwjA_19 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 475ms forwards;*/
+/*}*/
+/*.ouyjuwjA_20 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 500ms forwards;*/
+/*}*/
+/*.ouyjuwjA_21 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 525ms forwards;*/
+/*}*/
+/*.ouyjuwjA_22 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 550ms forwards;*/
+/*}*/
+/*.ouyjuwjA_23 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 575ms forwards;*/
+/*}*/
+/*.ouyjuwjA_24 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 600ms forwards;*/
+/*}*/
+/*.ouyjuwjA_25 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 625ms forwards;*/
+/*}*/
+/*.ouyjuwjA_26 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 650ms forwards;*/
+/*}*/
+/*.ouyjuwjA_27 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 675ms forwards;*/
+/*}*/
+/*.ouyjuwjA_28 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 700ms forwards;*/
+/*}*/
+/*.ouyjuwjA_29 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 725ms forwards;*/
+/*}*/
+/*.ouyjuwjA_30 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 750ms forwards;*/
+/*}*/
+/*.ouyjuwjA_31 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 775ms forwards;*/
+/*}*/
+/*.ouyjuwjA_32 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 800ms forwards;*/
+/*}*/
+/*.ouyjuwjA_33 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 825ms forwards;*/
+/*}*/
+/*.ouyjuwjA_34 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 850ms forwards;*/
+/*}*/
+/*.ouyjuwjA_35 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 875ms forwards;*/
+/*}*/
+/*.ouyjuwjA_36 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 900ms forwards;*/
+/*}*/
+/*.ouyjuwjA_37 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 925ms forwards;*/
+/*}*/
+/*.ouyjuwjA_38 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 950ms forwards;*/
+/*}*/
+/*.ouyjuwjA_39 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 975ms forwards;*/
+/*}*/
+/*.ouyjuwjA_40 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: ouyjuwjA_draw 2000ms linear 1000ms forwards;*/
+/*}*/
+/*@keyframes ouyjuwjA_draw {*/
+/*  100% {*/
+/*    stroke-dashoffset: 0;*/
+/*  }*/
+/*}*/
+/*@keyframes ouyjuwjA_fade {*/
+/*  0% {*/
+/*    stroke-opacity: 1;*/
+/*  }*/
+/*  94.44444444444444% {*/
+/*    stroke-opacity: 1;*/
+/*  }*/
+/*  100% {*/
+/*    stroke-opacity: 0;*/
+/*  }*/
+/*}*/
 </style>

@@ -13,8 +13,9 @@
         enable-background="new 0 0 240 990"
         xml:space="preserve"
         preserveAspectRatio="none"
+        style=""
       >
-        <g id="图层_1" display="none">
+        <g display="none">
           <image
             display="inline"
             overflow="visible"
@@ -119,9 +120,7 @@ HDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHLgGL/8ZAG0/hnjw
             fill="#3FA9F5"
             font-family="'MicrosoftYaHeiLight'"
             font-size="14"
-          >
-            演示控制器一
-          </text>
+          ></text>
 
           <text
             transform="matrix(1 0 0 1 88.98 499.041)"
@@ -129,9 +128,7 @@ HDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHLgGL/8ZAG0/hnjw
             fill="#3FA9F5"
             font-family="'MicrosoftYaHeiLight'"
             font-size="14"
-          >
-            演示控制器二
-          </text>
+          ></text>
 
           <text
             transform="matrix(1 0 0 1 55.7881 649.626)"
@@ -139,165 +136,175 @@ HDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHLgGL/8ZAG0/hnjw
             fill="#3FA9F5"
             font-family="'MicrosoftYaHeiLight'"
             font-size="14"
-          >
-            演示控制器三
-          </text>
+          ></text>
         </g>
-        <g id="图层_2">
-          <g id="线框_x5F_带标题" opacity="0.4">
-            <line
+        <g>
+          <g :opacity="opacity">
+            <path
               fill="none"
               stroke="#46A6B5"
               stroke-miterlimit="10"
-              x1="237.25"
-              y1="3.444"
-              x2="26.875"
-              y2="3.444"
-            />
-            <line
+              d="M237.25,3.444L26.875,3.444"
+              class="GwWlCUmb_0"
+            ></path>
+            <path
               fill="none"
               stroke="#46A6B5"
               stroke-miterlimit="10"
-              x1="237.25"
-              y1="963.167"
-              x2="237.25"
-              y2="2.938"
-            />
-            <line
+              d="M237.25,963.167L237.25,2.938"
+              class="GwWlCUmb_1"
+            ></path>
+            <path
               fill="none"
               stroke="#46A6B5"
               stroke-miterlimit="10"
-              x1="213.917"
-              y1="986.799"
-              x2="3.54"
-              y2="986.799"
-            />
-            <line
+              d="M213.917,986.799L3.54,986.799"
+              class="GwWlCUmb_2"
+            ></path>
+            <path
               fill="none"
               stroke="#46A6B5"
               stroke-miterlimit="10"
-              x1="3.79"
-              y1="987.251"
-              x2="3.79"
-              y2="27.057"
-            />
-            <line
+              d="M3.79,987.251L3.79,27.057"
+              class="GwWlCUmb_3"
+            ></path>
+            <path
               fill="none"
               stroke="#46A6B5"
               stroke-miterlimit="10"
-              x1="27.665"
-              y1="3.337"
-              x2="3.79"
-              y2="27.057"
-            />
-            <line
+              d="M27.665,3.337L3.79,27.057"
+              class="GwWlCUmb_4"
+            ></path>
+            <path
               fill="none"
               stroke="#46A6B5"
               stroke-miterlimit="10"
-              x1="237.484"
-              y1="962.547"
-              x2="213.072"
-              y2="987"
-            />
+              d="M237.484,962.547L213.072,987"
+              class="GwWlCUmb_5"
+            ></path>
           </g>
-          <g id="方块" opacity="0.4">
-            <polygon
+          <g :opacity="opacity">
+            <path
               fill="#46A6B5"
-              points="228.768,14.136 222.615,14.136 226.287,6.259 232.439,6.259 		"
-            />
-            <polygon
+              d="M228.768,14.136L222.615,14.136L226.287,6.259L232.439,6.259Z"
+              class="GwWlCUmb_6"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="221.383,14.136 215.23,14.136 218.902,6.259 225.057,6.259 		"
-            />
-            <polygon
+              d="M221.383,14.136L215.23,14.136L218.902,6.259L225.057,6.259Z"
+              class="GwWlCUmb_7"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="214,14.136 207.848,14.136 211.52,6.259 217.672,6.259 		"
-            />
-            <polygon
+              d="M214,14.136L207.848,14.136L211.52,6.259L217.672,6.259Z"
+              class="GwWlCUmb_8"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="206.615,14.136 200.463,14.136 204.135,6.259 210.289,6.259 		"
-            />
-            <polygon
+              d="M206.615,14.136L200.463,14.136L204.135,6.259L210.289,6.259Z"
+              class="GwWlCUmb_9"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="199.232,14.136 193.08,14.136 196.752,6.259 202.904,6.259 		"
-            />
-            <polygon
+              d="M199.232,14.136L193.08,14.136L196.752,6.259L202.904,6.259Z"
+              class="GwWlCUmb_10"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="191.85,14.136 185.695,14.136 189.369,6.259 195.521,6.259 		"
-            />
-            <polygon
+              d="M191.85,14.136L185.695,14.136L189.369,6.259L195.521,6.259Z"
+              class="GwWlCUmb_11"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="184.465,14.136 178.313,14.136 181.984,6.259 188.139,6.259 		"
-            />
-            <polygon
+              d="M184.465,14.136L178.313,14.136L181.984,6.259L188.139,6.259Z"
+              class="GwWlCUmb_12"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="177.082,14.136 170.928,14.136 174.602,6.259 180.754,6.259 		"
-            />
-            <polygon
+              d="M177.082,14.136L170.928,14.136L174.602,6.259L180.754,6.259Z"
+              class="GwWlCUmb_13"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="169.697,14.136 163.545,14.136 167.217,6.259 173.371,6.259 		"
-            />
-            <polygon
+              d="M169.697,14.136L163.545,14.136L167.217,6.259L173.371,6.259Z"
+              class="GwWlCUmb_14"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="162.314,14.136 156.16,14.136 159.834,6.259 165.986,6.259 		"
-            />
-            <polygon
+              d="M162.314,14.136L156.16,14.136L159.834,6.259L165.986,6.259Z"
+              class="GwWlCUmb_15"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="154.93,14.136 148.777,14.136 152.449,6.259 158.604,6.259 		"
-            />
-            <polygon
+              d="M154.93,14.136L148.777,14.136L152.449,6.259L158.604,6.259Z"
+              class="GwWlCUmb_16"
+            ></path>
+            <path
               fill="#46A6B5"
-              points="147.547,14.136 141.393,14.136 145.066,6.259 151.219,6.259 		"
-            />
-            <g id="方块_1_">
-              <polygon
+              d="M147.547,14.136L141.393,14.136L145.066,6.259L151.219,6.259Z"
+              class="GwWlCUmb_17"
+            ></path>
+            <g>
+              <path
                 fill="#46A6B5"
-                points="101.468,984.12 95.315,984.12 98.987,976.245 105.141,976.245 			"
-              />
-              <polygon
+                d="M101.468,984.12L95.315,984.12L98.987,976.245L105.141,976.245Z"
+                class="GwWlCUmb_18"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="94.084,984.12 87.931,984.12 91.604,976.245 97.757,976.245 			"
-              />
-              <polygon
+                d="M94.084,984.12L87.931,984.12L91.604,976.245L97.757,976.245Z"
+                class="GwWlCUmb_19"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="86.7,984.12 80.548,984.12 84.22,976.245 90.373,976.245 			"
-              />
-              <polygon
+                d="M86.7,984.12L80.548,984.12L84.22,976.245L90.373,976.245Z"
+                class="GwWlCUmb_20"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="79.316,984.12 73.163,984.12 76.836,976.245 82.989,976.245 			"
-              />
-              <polygon
+                d="M79.316,984.12L73.163,984.12L76.836,976.245L82.989,976.245Z"
+                class="GwWlCUmb_21"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="71.933,984.12 65.78,984.12 69.452,976.245 75.605,976.245 			"
-              />
-              <polygon
+                d="M71.933,984.12L65.78,984.12L69.452,976.245L75.605,976.245Z"
+                class="GwWlCUmb_22"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="64.55,984.12 58.396,984.12 62.069,976.245 68.222,976.245 			"
-              />
-              <polygon
+                d="M64.55,984.12L58.396,984.12L62.069,976.245L68.222,976.245Z"
+                class="GwWlCUmb_23"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="57.165,984.12 51.013,984.12 54.686,976.245 60.839,976.245 			"
-              />
-              <polygon
+                d="M57.165,984.12L51.013,984.12L54.686,976.245L60.839,976.245Z"
+                class="GwWlCUmb_24"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="49.782,984.12 43.628,984.12 47.302,976.245 53.454,976.245 			"
-              />
-              <polygon
+                d="M49.782,984.12L43.628,984.12L47.302,976.245L53.454,976.245Z"
+                class="GwWlCUmb_25"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="42.398,984.12 36.245,984.12 39.918,976.245 46.071,976.245 			"
-              />
-              <polygon
+                d="M42.398,984.12L36.245,984.12L39.918,976.245L46.071,976.245Z"
+                class="GwWlCUmb_26"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="35.015,984.12 28.861,984.12 32.534,976.245 38.688,976.245 			"
-              />
-              <polygon
+                d="M35.015,984.12L28.861,984.12L32.534,976.245L38.688,976.245Z"
+                class="GwWlCUmb_27"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="27.631,984.12 21.478,984.12 25.15,976.245 31.304,976.245 			"
-              />
-              <polygon
+                d="M27.631,984.12L21.478,984.12L25.15,976.245L31.304,976.245Z"
+                class="GwWlCUmb_28"
+              ></path>
+              <path
                 fill="#46A6B5"
-                points="20.247,984.12 14.094,984.12 17.767,976.245 23.92,976.245 			"
-              />
+                d="M20.247,984.12L14.094,984.12L17.767,976.245L23.92,976.245Z"
+                class="GwWlCUmb_29"
+              ></path>
             </g>
           </g>
           <g opacity="0.4"></g>
@@ -311,17 +318,22 @@ HDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHDhw4MCBAwcOHLgGL/8ZAG0/hnjw
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   props: {
     title: String
   },
   data() {
     return {};
+  },
+  computed: {
+    ...mapState("opacity", ["opacity"])
   }
 };
 </script>
 
-<style scoped>
+<style scoped data-made-with="vivus-instant">
 .nav-border-box {
   position: relative;
   width: 100%;
@@ -346,4 +358,170 @@ export default {
   display: flex;
   align-items: center;
 }
+/*.GwWlCUmb_0 {*/
+/*  stroke-dasharray: 211 213;*/
+/*  stroke-dashoffset: 212;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 0ms forwards;*/
+/*}*/
+/*.GwWlCUmb_1 {*/
+/*  stroke-dasharray: 961 963;*/
+/*  stroke-dashoffset: 962;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 34ms forwards;*/
+/*}*/
+/*.GwWlCUmb_2 {*/
+/*  stroke-dasharray: 211 213;*/
+/*  stroke-dashoffset: 212;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 68ms forwards;*/
+/*}*/
+/*.GwWlCUmb_3 {*/
+/*  stroke-dasharray: 961 963;*/
+/*  stroke-dashoffset: 962;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 103ms forwards;*/
+/*}*/
+/*.GwWlCUmb_4 {*/
+/*  stroke-dasharray: 34 36;*/
+/*  stroke-dashoffset: 35;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 137ms forwards;*/
+/*}*/
+/*.GwWlCUmb_5 {*/
+/*  stroke-dasharray: 35 37;*/
+/*  stroke-dashoffset: 36;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 172ms forwards;*/
+/*}*/
+/*.GwWlCUmb_6 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 206ms forwards;*/
+/*}*/
+/*.GwWlCUmb_7 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 241ms forwards;*/
+/*}*/
+/*.GwWlCUmb_8 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 275ms forwards;*/
+/*}*/
+/*.GwWlCUmb_9 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 310ms forwards;*/
+/*}*/
+/*.GwWlCUmb_10 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 344ms forwards;*/
+/*}*/
+/*.GwWlCUmb_11 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 379ms forwards;*/
+/*}*/
+/*.GwWlCUmb_12 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 413ms forwards;*/
+/*}*/
+/*.GwWlCUmb_13 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 448ms forwards;*/
+/*}*/
+/*.GwWlCUmb_14 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 482ms forwards;*/
+/*}*/
+/*.GwWlCUmb_15 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 517ms forwards;*/
+/*}*/
+/*.GwWlCUmb_16 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 551ms forwards;*/
+/*}*/
+/*.GwWlCUmb_17 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 586ms forwards;*/
+/*}*/
+/*.GwWlCUmb_18 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 620ms forwards;*/
+/*}*/
+/*.GwWlCUmb_19 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 655ms forwards;*/
+/*}*/
+/*.GwWlCUmb_20 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 689ms forwards;*/
+/*}*/
+/*.GwWlCUmb_21 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 724ms forwards;*/
+/*}*/
+/*.GwWlCUmb_22 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 758ms forwards;*/
+/*}*/
+/*.GwWlCUmb_23 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 793ms forwards;*/
+/*}*/
+/*.GwWlCUmb_24 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 827ms forwards;*/
+/*}*/
+/*.GwWlCUmb_25 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 862ms forwards;*/
+/*}*/
+/*.GwWlCUmb_26 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 896ms forwards;*/
+/*}*/
+/*.GwWlCUmb_27 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 931ms forwards;*/
+/*}*/
+/*.GwWlCUmb_28 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 965ms forwards;*/
+/*}*/
+/*.GwWlCUmb_29 {*/
+/*  stroke-dasharray: 30 32;*/
+/*  stroke-dashoffset: 31;*/
+/*  animation: GwWlCUmb_draw 2000ms linear 1000ms forwards;*/
+/*}*/
+/*@keyframes GwWlCUmb_draw {*/
+/*  100% {*/
+/*    stroke-dashoffset: 0;*/
+/*  }*/
+/*}*/
+/*@keyframes GwWlCUmb_fade {*/
+/*  0% {*/
+/*    stroke-opacity: 1;*/
+/*  }*/
+/*  94.44444444444444% {*/
+/*    stroke-opacity: 1;*/
+/*  }*/
+/*  100% {*/
+/*    stroke-opacity: 0;*/
+/*  }*/
+/*}*/
 </style>

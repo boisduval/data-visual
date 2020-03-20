@@ -610,7 +610,17 @@ export default {
           indicator: this.Event_statistics.IndicatorList,
           // [{ name: this.Event_statistics.IndicatorList[0].Name, max: this.Event_statistics.IndicatorList.Max },],
           splitArea: {
-            show: false
+            areaStyle: {
+              color: [
+                "rgba(147, 39, 143, 0.6)",
+                "rgba(237, 30, 121, 0.6)",
+                "rgba(0, 103, 188, 0.6)",
+                "rgba(34, 181, 115, 0.6)",
+                "rgba(76, 191, 191, 0.6)"
+              ],
+              shadowColor: "rgba(0, 0, 0, 0.6)",
+              shadowBlur: 10
+            }
           },
           axisLine: {
             lineStyle: {

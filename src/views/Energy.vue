@@ -12,7 +12,7 @@
                 title="当天充电"
                 scale-color="#fff"
                 text-color="#51D0AB"
-                rotate="20"
+                rotate="80"
                 value="3500"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
@@ -31,14 +31,14 @@
                 title="当天充电"
                 scale-color="#fff"
                 text-color="#D95854"
-                rotate="20"
+                rotate="80"
                 value="2000"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
                 title="当天充电"
                 scale-color="#fff"
                 text-color="#D4155A"
-                rotate="20"
+                rotate="50"
                 value="3000"
               ></IndicatingInstrumentKw>
             </div>
