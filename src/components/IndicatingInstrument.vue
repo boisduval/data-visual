@@ -1,6 +1,6 @@
 <template>
-  <div class="thermometer-box">
-    <div class="thermometer-svg">
+  <div class="indicating-instrument-box">
+    <div class="indicating-instrument-svg">
       <svg
         version="1.1"
         id="图层_1"
@@ -177,40 +177,40 @@ export default {
 </script>
 
 <style scoped>
-.thermometer-box {
+.indicating-instrument-box {
   width: 100%;
   height: 100%;
 }
-.thermometer-box p {
+.indicating-instrument-box p {
   text-align: center;
 }
-.thermometer-box .title {
+.indicating-instrument-box .title {
   color: #46a6b5;
 }
-.thermometer-box .value {
+.indicating-instrument-box .value {
   color: #f7931f;
 }
 @media screen and (max-width: 1300px) {
-  .thermometer-box p {
+  .indicating-instrument-box p {
     transform: scale(0.7);
   }
-  .thermometer-svg {
+  .indicating-instrument-svg {
     height: 50%;
   }
 }
 @media screen and (min-width: 1300px) {
-  .thermometer-box p {
+  .indicating-instrument-box p {
     font-size: 12px;
   }
-  .thermometer-svg {
+  .indicating-instrument-svg {
     height: 70%;
   }
 }
 @media screen and (min-width: 1500px) {
-  .thermometer-box p {
+  .indicating-instrument-box p {
     font-size: 16px;
   }
-  .thermometer-svg {
+  .indicating-instrument-svg {
     height: 70%;
   }
 }

@@ -84,13 +84,12 @@ export default {
   flex-direction: column;
   /* padding-bottom: 30px; */
   /* padding: 30px 20px; */
-  /* padding: calc(2vh + 5px) calc(3vh + 5px); */
   /* box-sizing: border-box; */
 }
 .semicircle-box .title {
   height: 30px;
   text-align: center;
-  margin-top: calc(-3vh + 5px);
+  margin-top: -20%;
   font-size: 18px;
 }
 @media screen and (max-width: 1300px) {

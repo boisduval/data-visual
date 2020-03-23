@@ -310,7 +310,7 @@ export default {
   width: 100%;
   height: 100%;
   /* padding: 30px 20px; */
-  padding: calc(2vh + 5px) calc(3vh + 5px);
+  padding: 3% 3% 2%;
   box-sizing: border-box;
 }
 /*.pQVGrsax_0 {*/

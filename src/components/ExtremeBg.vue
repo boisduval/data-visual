@@ -1,17 +1,17 @@
 <template>
-  <div class="border-box">
-    <div class="border-svg">
+  <div class="extreme-bg-box">
+    <div class="extreme-bg-svg">
       <svg
         version="1.1"
-        id="图层_1"
+        id="图层_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
         y="0px"
         width="100%"
         height="100%"
-        viewBox="0 0 1380 460"
-        enable-background="new 0 0 1380 460"
+        viewBox="0 0 624 230"
+        enable-background="new 0 0 624 230"
         xml:space="preserve"
         preserveAspectRatio="none"
       >
@@ -37,18 +37,18 @@
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
-          x1="1379.5"
+          x1="623.5"
           y1="1"
-          x2="1379.5"
+          x2="623.5"
           y2="16"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
-          x1="1365"
+          x1="609"
           y1="0.5"
-          x2="1380"
+          x2="624"
           y2="0.5"
         />
         <line
@@ -56,114 +56,114 @@
           stroke="#2BD0E3"
           stroke-miterlimit="10"
           x1="1"
-          y1="459.5"
+          y1="229.5"
           x2="16"
-          y2="459.5"
+          y2="229.5"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
           x1="0.5"
-          y1="445"
+          y1="215"
           x2="0.5"
-          y2="460"
+          y2="230"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
-          x1="1379.5"
-          y1="459"
-          x2="1379.5"
-          y2="444"
+          x1="623.5"
+          y1="229"
+          x2="623.5"
+          y2="214"
         />
         <line
           fill="#2BD0E3"
           stroke="#2BD0E3"
           stroke-miterlimit="10"
-          x1="1365"
-          y1="459.5"
-          x2="1380"
-          y2="459.5"
+          x1="609"
+          y1="229.5"
+          x2="624"
+          y2="229.5"
         />
         <linearGradient
-          id="右_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_"
+          id="右_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
           gradientUnits="userSpaceOnUse"
-          x1="1363"
-          y1="230"
-          x2="1379"
-          y2="230"
+          x1="607"
+          y1="115"
+          x2="623"
+          y2="115"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
         <rect
-          id="右_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big"
-          x="1363"
+          id="右_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
+          x="607"
           y="1"
-          fill="url(#右_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_)"
+          fill="url(#右_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
           width="16"
-          height="458"
+          height="228"
         />
         <linearGradient
-          id="左_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_"
+          id="左_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
           gradientUnits="userSpaceOnUse"
-          x1="1453"
-          y1="230"
-          x2="1469"
-          y2="230"
-          gradientTransform="matrix(-1 0 0 1 1470 0)"
+          x1="697"
+          y1="115"
+          x2="713"
+          y2="115"
+          gradientTransform="matrix(-1 0 0 1 714 0)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
         <rect
-          id="左_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big"
+          id="左_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
           x="1"
           y="1"
-          fill="url(#左_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_)"
+          fill="url(#左_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
           width="16"
-          height="458"
+          height="228"
         />
         <linearGradient
-          id="上_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_"
+          id="上_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
           gradientUnits="userSpaceOnUse"
-          x1="953"
-          y1="190"
-          x2="969"
-          y2="190"
-          gradientTransform="matrix(0 -1 1 0 500.0005 970)"
+          x1="460"
+          y1="75"
+          x2="476"
+          y2="75"
+          gradientTransform="matrix(0 -1 1 0 237.0005 477)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
         <rect
-          id="上_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big"
+          id="上_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
           x="1"
           y="1"
-          fill="url(#上_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_)"
-          width="1378"
+          fill="url(#上_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
+          width="622"
           height="16"
         />
         <linearGradient
-          id="下_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_"
+          id="下_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
           gradientUnits="userSpaceOnUse"
-          x1="943"
-          y1="190"
-          x2="959"
-          y2="190"
-          gradientTransform="matrix(0 1 1 0 500.0005 -500)"
+          x1="450"
+          y1="75"
+          x2="466"
+          y2="75"
+          gradientTransform="matrix(0 1 1 0 237.0005 -237)"
         >
           <stop offset="0" style="stop-color:#2BD0E3;stop-opacity:0" />
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
         <rect
-          id="下_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big"
+          id="下_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
           x="1"
-          y="443"
-          fill="url(#下_x5F_interior_x5F_panel_x5F_rectangle_x5F_crosswise_x5F_big_1_)"
-          width="1378"
+          y="213"
+          fill="url(#下_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
+          width="622"
           height="16"
         />
       </svg>
@@ -173,7 +173,7 @@
         {{ title }}
       </p>
     </div>
-    <div class="border-content">
+    <div class="extreme-bg-content">
       <slot></slot>
     </div>
   </div>
@@ -188,13 +188,13 @@ export default {
 </script>
 
 <style scoped>
-.border-box {
+.extreme-bg-box {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.border-svg {
+.extreme-bg-svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -202,17 +202,20 @@ export default {
   height: 100%;
 }
 
-.border-content {
+.extreme-bg-content {
   width: 100%;
   height: 100%;
-  padding: calc(2%) calc(2% + 20px) calc(2% + 20px);
+  padding: 1% 25px;
   box-sizing: border-box;
 }
 #title {
+  /*color: #46a6b5;*/
+  /*position: absolute;*/
+  /*left: 20px;*/
   color: #46a6b5;
   position: absolute;
   height: 100%;
-  left: 1.5%;
+  left: 3%;
   width: 20px;
 }
 @media screen and (max-width: 1500px) {
@@ -222,7 +225,7 @@ export default {
 }
 @media screen and (min-width: 1500px) {
   #title {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 </style>

@@ -64,8 +64,8 @@ export default {
           path: "extreme"
         },
         {
-          label: "异常信息",
-          path: "abnormal"
+          label: "系统安全",
+          path: "security"
         }
       ],
       interval: "",
@@ -103,18 +103,17 @@ export default {
 <style scoped>
 .home {
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
   background-position: center center;
   background-image: url("../assets/img/bg.png");
   height: 100%;
-  min-width: 1100px;
+  min-width: 1400px;
   overflow: hidden;
   position: relative;
 }
 .header {
-  margin: 0 auto;
-  width: 100%;
+  width: 90%;
+  margin: 0 5%;
   max-width: 1920px;
   background: url("../assets/img/header.png") center no-repeat;
   background-size: auto 100%;
@@ -125,23 +124,22 @@ export default {
   left: 0;
 }
 .header h1 {
-  margin-bottom: 1vh;
+  margin-bottom: 5%;
   text-align: center;
   font-size: 20px;
   color: rgba(128, 255, 255, 0.996078431372549);
   /* margin-top: 10px; */
 }
 .header-name {
-  padding: 0 calc(3.5% + 20px);
+  padding: 0 50px;
 }
 .left-nav h1,
 .right-nav h1 {
   margin: 0;
-  padding: 0;
   color: #46a6b5;
   font-size: 16px;
   display: inline;
-  padding-bottom: 5px;
+  /*padding-bottom: 5px;*/
   letter-spacing: 2px;
 }
 .left-nav,
@@ -150,6 +148,7 @@ export default {
   margin-top: 20px;
   text-align: center;
   align-items: center;
+  flex: 1;
 }
 .left-nav {
   justify-content: flex-end;
@@ -161,7 +160,7 @@ export default {
   flex: 1;
   border-right: 1px solid #666;
   cursor: pointer;
-  padding: 0 calc(10vh - 45px);
+  /*padding: 0 5%;*/
 }
 .nav-item:hover h1,
 .nav-item:focus h1,
@@ -175,8 +174,8 @@ export default {
 #time {
   color: #46a6b5;
   position: absolute;
-  right: 0;
-  top: calc(6vh + 5px);
+  right: -4%;
+  top: 105%;
   width: 200px;
 }
 @media screen and (max-width: 1300px) {

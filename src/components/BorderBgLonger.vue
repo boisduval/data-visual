@@ -209,7 +209,7 @@ export default {
 #title {
   color: #46a6b5;
   position: absolute;
-  top: calc(2vh - 5px);
+  top: 5%;
   left: 20px;
 }
 @media screen and (max-width: 1500px) {

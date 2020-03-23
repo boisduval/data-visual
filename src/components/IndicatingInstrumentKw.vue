@@ -1,6 +1,6 @@
 <template>
-  <div class="thermometer-kw-box">
-    <div class="thermometer-kw-svg">
+  <div class="indicating-instrument-kw-box">
+    <div class="indicating-instrument-kw-svg">
       <svg
         version="1.1"
         id="图层_1"
@@ -193,17 +193,17 @@ export default {
 </script>
 
 <style scoped>
-.thermometer-kw-box {
+.indicating-instrument-kw-box {
   width: 100%;
   height: 100%;
 }
-.thermometer-kw-svg {
+.indicating-instrument-kw-svg {
   height: 85%;
 }
-.thermometer-kw-box p {
+.indicating-instrument-kw-box p {
   text-align: center;
 }
-.thermometer-kw-box .title {
+.indicating-instrument-kw-box .title {
   color: #46a6b5;
 }
 .rotate {
@@ -216,17 +216,17 @@ export default {
 }
 
 @media screen and (max-width: 1300px) {
-  .thermometer-kw-box p {
+  .indicating-instrument-kw-box p {
     transform: scale(0.7);
   }
 }
 @media screen and (min-width: 1300px) {
-  .thermometer-kw-box p {
+  .indicating-instrument-kw-box p {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1500px) {
-  .thermometer-kw-box p {
+  .indicating-instrument-kw-box p {
     font-size: 22px;
     font-weight: 500;
   }

@@ -256,7 +256,7 @@ export default {
 .border-title {
   position: absolute;
   top: -5px;
-  right: 5vh;
+  right: 5%;
   color: #46a6b5;
   font-size: 12px;
 }

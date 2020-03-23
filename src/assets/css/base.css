@@ -12,10 +12,13 @@ body {
 }
 .content {
   height: 100%;
-  padding-top: calc(5vh + 30px);
+  padding-top: calc(2% + 30px);
   padding-bottom: 10px;
   margin: 0 10px;
   /* min-height: 900px; */
+}
+section {
+  height: 100%;
 }
 .flex {
   flex: 1;
@@ -43,12 +46,16 @@ body {
   min-height: 0;
 }
 .flex4 {
-    flex: 4;
-    min-height: 0;
+  flex: 4;
+  min-height: 0;
 }
 .flex5 {
   flex: 5;
   min-height: 0;
+}
+.flex7 {
+    flex: 7;
+    min-height: 0;
 }
 /* 图表部分 */
 .charts {
@@ -100,6 +107,13 @@ body {
     font-size: 18px;
   }
 }
-div {
+div,ul,li {
   box-sizing: border-box;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
 }

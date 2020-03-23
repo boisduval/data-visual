@@ -16,30 +16,30 @@
                 value="3500"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
-                title="当天充电"
+                title="当天放电"
                 scale-color="#fff"
                 text-color="#028C44"
                 rotate="20"
-                value="500"
+                value="3500"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
-                title="当天充电"
+                title="当前功率"
                 rotate="20"
-                value="1000"
+                value="3500"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
-                title="当天充电"
+                title="累计充电"
                 scale-color="#fff"
                 text-color="#D95854"
                 rotate="80"
-                value="2000"
+                value="3500"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
-                title="当天充电"
+                title="累计放电"
                 scale-color="#fff"
                 text-color="#D4155A"
                 rotate="50"
-                value="3000"
+                value="3500"
               ></IndicatingInstrumentKw>
             </div>
           </BorderCenterLongest>
@@ -129,7 +129,7 @@ export default {
           trigger: "axis"
         },
         legend: {
-          data: ["邮件营销", "联盟广告", "视频广告"],
+          data: ["收益趋势", "充电趋势", "放电趋势"],
           textStyle: {
             color: "#46a6b5"
           },
@@ -168,7 +168,7 @@ export default {
         },
         series: [
           {
-            name: "邮件营销",
+            name: "收益趋势",
             type: "line",
             stack: "总量",
             data: [120, 132, 101, 134, 90, 230, 210],
@@ -176,7 +176,7 @@ export default {
             symbol: "none"
           },
           {
-            name: "联盟广告",
+            name: "充电趋势",
             type: "line",
             stack: "总量",
             data: [220, 182, 191, 234, 290, 330, 310],
@@ -184,7 +184,7 @@ export default {
             symbol: "none"
           },
           {
-            name: "视频广告",
+            name: "放电趋势",
             type: "line",
             stack: "总量",
             data: [150, 232, 201, 154, 190, 330, 410],
@@ -262,7 +262,7 @@ export default {
           trigger: "axis"
         },
         legend: {
-          data: ["邮件营销", "联盟广告", "视频广告"],
+          data: ["当前电量曲线", "充电曲线", "放电曲线"],
           textStyle: {
             color: "#46a6b5"
           },
@@ -301,7 +301,7 @@ export default {
         },
         series: [
           {
-            name: "邮件营销",
+            name: "当前电量曲线",
             type: "line",
             stack: "总量",
             data: [120, 132, 101, 134, 90, 230, 210],
@@ -309,7 +309,7 @@ export default {
             symbol: "none"
           },
           {
-            name: "联盟广告",
+            name: "充电曲线",
             type: "line",
             stack: "总量",
             data: [220, 182, 191, 234, 290, 330, 310],
@@ -317,7 +317,7 @@ export default {
             symbol: "none"
           },
           {
-            name: "视频广告",
+            name: "放电曲线",
             type: "line",
             stack: "总量",
             data: [150, 232, 201, 154, 190, 330, 410],
@@ -346,7 +346,6 @@ export default {
 <style scoped>
 section {
   padding-top: 5px;
-  height: 100%;
   display: flex;
 }
 .box-right {

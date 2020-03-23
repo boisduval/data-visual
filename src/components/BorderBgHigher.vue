@@ -189,15 +189,13 @@ export default {
 .border-content {
   width: 100%;
   height: 100%;
-  /* padding: 30px 20px; */
-  padding: 1vh 25px;
-  /* padding: 3vh 20px 1vh; */
+  padding: 1% 25px;
   box-sizing: border-box;
 }
 #title {
   color: #46a6b5;
   position: absolute;
-  top: calc(2vh - 5px);
+  top: 5%;
   left: 20px;
 }
 @media screen and (max-width: 1500px) {

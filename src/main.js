@@ -8,9 +8,11 @@ import echarts from "echarts";
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import axios from "./httpConfig/http";
 import VueAxios from "vue-axios";
+import { HappyScroll } from "vue-happy-scroll";
 // 引入外部css
 import "swiper/dist/css/swiper.css";
 import "./assets/css/base.css";
+import "vue-happy-scroll/docs/happy-scroll.css";
 // 引入组件
 import BorderLeft from "./components/BorderLeft.vue";
 import BorderRight from "./components/BorderRight.vue";
@@ -33,6 +35,21 @@ import Battery from "./components/Battery.vue";
 import BorderCenterLongest from "./components/BorderCenterLongest";
 import IndicatingInstrumentKw from "./components/IndicatingInstrumentKw";
 import EnergyEarnings from "./components/EnergyEarnings";
+import FrameworkBorder from "./components/FrameworkBorder";
+import FrameworkBattery from "./components/FrameworkBattery";
+import ExtremeBorderMain from "./components/ExtremeBorderMain";
+import ExtremeBorderMainLonger from "./components/ExtremeBorderMainLonger";
+import ExtremeBorderRight from "./components/ExtremeBorderRight";
+import ExtremeBorderRightLonger from "./components/ExtremeBorderRightLonger";
+import ExtremeBg from "./components/ExtremeBg";
+import ExtremeBgSquare from "./components/ExtremeBgSquare";
+import ExtremeBgBigger from "./components/ExtremeBgBigger";
+import ExtremeInfo from "./components/ExtremeInfo";
+import SecurityBorderTop from "./components/SecurityBorderTop";
+import SecurityBorderMain from "./components/SecurityBorderMain";
+import SecurityBg from "./components/SecurityBg";
+import SecurityInfo from "./components/SecurityInfo";
+
 Vue.config.productionTip = false;
 
 Vue.use(VueAwesomeSwiper);
@@ -63,6 +80,21 @@ Vue.component("IndicatingInstrument", IndicatingInstrument);
 Vue.component("IndicatingInstrumentKw", IndicatingInstrumentKw);
 Vue.component("Battery", Battery);
 Vue.component("EnergyEarnings", EnergyEarnings);
+Vue.component("FrameworkBorder", FrameworkBorder);
+Vue.component("FrameworkBattery", FrameworkBattery);
+Vue.component("ExtremeBorderMain", ExtremeBorderMain);
+Vue.component("ExtremeBorderMainLonger", ExtremeBorderMainLonger);
+Vue.component("ExtremeBorderRight", ExtremeBorderRight);
+Vue.component("ExtremeBorderRightLonger", ExtremeBorderRightLonger);
+Vue.component("ExtremeBg", ExtremeBg);
+Vue.component("ExtremeBgSquare", ExtremeBgSquare);
+Vue.component("ExtremeBgBigger", ExtremeBgBigger);
+Vue.component("ExtremeInfo", ExtremeInfo);
+Vue.component("SecurityBorderTop", SecurityBorderTop);
+Vue.component("SecurityBorderMain", SecurityBorderMain);
+Vue.component("SecurityBg", SecurityBg);
+Vue.component("SecurityInfo", SecurityInfo);
+Vue.component("happy-scroll", HappyScroll);
 
 new Vue({
   router,

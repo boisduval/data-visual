@@ -143,7 +143,7 @@ section {
   flex: 1;
 }
 nav {
-  margin-top: -1vh;
+  margin-top: -1%;
   padding: 55px 0;
   width: 170px;
   height: 561px;

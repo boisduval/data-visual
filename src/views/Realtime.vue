@@ -109,7 +109,7 @@
                   </div>
                   <div class="flex">
                     <BorderBg>
-                      <div style="display:flex;height:100%">
+                      <div style="display:flex;height:90%;padding-top: 10%">
                         <div class="flex">
                           <Thermometer
                             title="内部温度"
@@ -515,8 +515,8 @@ export default {
       seriesLabel: {
         normal: {
           show: true,
-          textBorderColor: "#333",
-          textBorderWidth: 2
+          // textBorderColor: "#333",
+          // textBorderWidth: 2
         }
       },
       battery: [
@@ -714,7 +714,7 @@ export default {
 
         xAxis: {
           type: "value",
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           },
@@ -725,8 +725,8 @@ export default {
         yAxis: {
           type: "category",
           inverse: true,
-          data: ["Sunny", "Cloudy"],
-          axisLabel: { color: "#46a6b5", fontSize: 10 }, // x轴字体颜色
+          data: ["输出\n视在\n功率", "输出\n有功\n功率"],
+          axisLabel: { color: "#46a6b5", lineHeight: 18 }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
