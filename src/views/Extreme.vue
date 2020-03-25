@@ -7,7 +7,7 @@
       <div class="flex7 flex-row">
         <div class="flex2 flex-column">
           <div class="flex">
-            <ExtremeBorderMainLonger title="簇总电压差趋势">
+            <ExtremeBorderMainLonger :title="TotalElectricityStatistics.Name">
               <div id="myChart1" class="charts"></div>
             </ExtremeBorderMainLonger>
           </div>
@@ -15,7 +15,7 @@
             <ExtremeBorderMainLonger>
               <div class="flex-column" style="height: 100%">
                 <div class="flex" style="margin-bottom: 2px;">
-                  <ExtremeBg title="单体高低压统计">
+                  <ExtremeBg :title="MonomerHighLowPressure.Name">
                     <div id="myChart2" class="charts"></div>
                   </ExtremeBg>
                 </div>
@@ -35,12 +35,16 @@
                 <div class="flex-column" style="height: 100%">
                   <div>
                     <ExtremeInfo
-                      title1="环境温度"
-                      title2="单体平均电压"
-                      title3="簇平均电压"
-                      value1="28.3℃"
-                      value2="3.261V"
-                      value3="48.6V"
+                      :title1="EnvironmentTemp.name"
+                      :title2="MonomerAverageVoltage.name"
+                      :title3="ClusterAverageVoltage.name"
+                      :value1="EnvironmentTemp.value + EnvironmentTemp.unit"
+                      :value2="
+                        MonomerAverageVoltage.value + MonomerAverageVoltage.unit
+                      "
+                      :value3="
+                        ClusterAverageVoltage.value + ClusterAverageVoltage.unit
+                      "
                     ></ExtremeInfo>
                   </div>
                   <div class="flex info-box">
@@ -52,14 +56,17 @@
                     >
                       <ul>
                         <li
-                          v-for="(item, index) in batterys"
-                          :key="index"
+                          v-for="(val,
+                          key) in EachClusterInformation.valueUnits"
+                          :key="key"
                           class="flex-row"
                           style="justify-content: space-between"
                         >
-                          <p style="width: 50px">第{{ index + 1 }}簇</p>
-                          <p style="width: 120px">单体平均{{ item.vol }}</p>
-                          <p>功率温度{{ item.temperature }}</p>
+                          <p style="width: 50px">{{ val.name }}</p>
+                          <p style="width: 120px">
+                            {{ val.value.value }}{{ val.value.unit }}
+                          </p>
+                          <p>{{ val.position.value }}{{ val.position.unit }}</p>
                         </li>
                       </ul>
                     </happy-scroll>
@@ -68,7 +75,7 @@
               </ExtremeBorderMain>
             </div>
             <div class="flex">
-              <ExtremeBorderRight title="正负绝缘极值分布">
+              <ExtremeBorderRight :title="InsulationExtremum.Name">
                 <div id="myChart4" class="charts"></div>
               </ExtremeBorderRight>
             </div>
@@ -89,7 +96,7 @@
                   </div>
                 </div>
                 <div class="flex3">
-                  <ExtremeBgBigger title="单体压差趋势">
+                  <ExtremeBgBigger :title="SingleDifferentialPressure.Name">
                     <div id="myChart7" class="charts"></div>
                   </ExtremeBgBigger>
                 </div>
@@ -113,78 +120,28 @@ export default {
           show: true
         }
       },
-      batterys: [
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        },
-        {
-          vol: "3.333v",
-          state: "开启",
-          temperature: "34.6℃"
-        }
-      ]
+      TotalElectricityStatistics: "",
+      MonomerHighLowPressure: "",
+      EnvironmentTemp: {
+        name: "",
+        value: "",
+        unit: ""
+      },
+      MonomerAverageVoltage: {
+        name: "",
+        value: "",
+        unit: ""
+      },
+      ClusterAverageVoltage: {
+        name: "",
+        value: "",
+        unit: ""
+      },
+      EachClusterInformation: "",
+      InsulationExtremum: "",
+      MonomerMaximumVoltage: "",
+      MonomerMinimumVoltage: "",
+      SingleDifferentialPressure: ""
     };
   },
   methods: {
@@ -192,16 +149,24 @@ export default {
       // 第一个图
       var myChart1 = this.$echarts.init(document.getElementById("myChart1"));
       myChart1.setOption({
-        color: ["#51D0AB", "#F7931E", "#D4155A"],
+        // color: ["#51D0AB", "#F7931E", "#D4155A"],
         tooltip: {
           trigger: "axis"
         },
         legend: {
-          data: ["第1簇", "第2簇", "第3簇"],
+          data: [
+            this.TotalElectricityStatistics.SeriesData[0].name,
+            this.TotalElectricityStatistics.SeriesData[1].name,
+            this.TotalElectricityStatistics.SeriesData[2].name,
+            this.TotalElectricityStatistics.SeriesData[3].name,
+            this.TotalElectricityStatistics.SeriesData[4].name,
+            this.TotalElectricityStatistics.SeriesData[5].name
+          ],
           textStyle: {
             color: "#46a6b5"
           },
-          top: "10%"
+          top: "10%",
+          type: "scroll"
         },
         grid: {
           left: "1%",
@@ -213,7 +178,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          data: this.TotalElectricityStatistics.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -236,26 +201,50 @@ export default {
         },
         series: [
           {
-            name: "第1簇",
+            name: this.TotalElectricityStatistics.SeriesData[0].name,
             type: "line",
-            stack: "总量",
-            data: [120, 132, 101, 134, 90, 230, 210],
+            stack: this.TotalElectricityStatistics.SeriesData[0].stack,
+            data: this.TotalElectricityStatistics.SeriesData[0].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "第2簇",
+            name: this.TotalElectricityStatistics.SeriesData[1].name,
             type: "line",
-            stack: "总量",
-            data: [220, 182, 191, 234, 290, 330, 310],
+            stack: this.TotalElectricityStatistics.SeriesData[1].stack,
+            data: this.TotalElectricityStatistics.SeriesData[1].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "第3簇",
+            name: this.TotalElectricityStatistics.SeriesData[2].name,
             type: "line",
-            stack: "总量",
-            data: [150, 232, 201, 154, 190, 330, 410],
+            stack: this.TotalElectricityStatistics.SeriesData[2].stack,
+            data: this.TotalElectricityStatistics.SeriesData[2].data,
+            smooth: true,
+            symbol: "none"
+          },
+          {
+            name: this.TotalElectricityStatistics.SeriesData[3].name,
+            type: "line",
+            stack: this.TotalElectricityStatistics.SeriesData[3].stack,
+            data: this.TotalElectricityStatistics.SeriesData[3].data,
+            smooth: true,
+            symbol: "none"
+          },
+          {
+            name: this.TotalElectricityStatistics.SeriesData[4].name,
+            type: "line",
+            stack: this.TotalElectricityStatistics.SeriesData[4].stack,
+            data: this.TotalElectricityStatistics.SeriesData[4].data,
+            smooth: true,
+            symbol: "none"
+          },
+          {
+            name: this.TotalElectricityStatistics.SeriesData[5].name,
+            type: "line",
+            stack: this.TotalElectricityStatistics.SeriesData[5].stack,
+            data: this.TotalElectricityStatistics.SeriesData[5].data,
             smooth: true,
             symbol: "none"
           }
@@ -300,16 +289,22 @@ export default {
         },
         series: [
           {
-            name: "U",
+            name: this.MonomerHighLowPressure.SeriesData[0].name,
             type: "bar",
-            data: [165, 170, 200],
-            label: this.seriesLabel
+            data: [
+              this.MonomerHighLowPressure.SeriesData[0].data[0].value,
+              this.MonomerHighLowPressure.SeriesData[0].data[1].value,
+              this.MonomerHighLowPressure.SeriesData[0].data[2].value
+            ]
           },
           {
-            name: "V",
+            name: this.MonomerHighLowPressure.SeriesData[1].name,
             type: "bar",
-            label: this.seriesLabel,
-            data: [150, 105, 180]
+            data: [
+              this.MonomerHighLowPressure.SeriesData[1].data[0].value,
+              this.MonomerHighLowPressure.SeriesData[1].data[1].value,
+              this.MonomerHighLowPressure.SeriesData[1].data[2].value
+            ]
           }
         ]
       });
@@ -339,7 +334,7 @@ export default {
           },
           splitLine: {
             show: false
-          }
+          },
         },
         yAxis: {
           type: "category",
@@ -384,7 +379,7 @@ export default {
         },
         grid: {
           left: "3%",
-          right: "4%",
+          right: "6%",
           top: "20%",
           bottom: "10%",
           containLabel: true
@@ -413,71 +408,28 @@ export default {
             axisLine: {
               lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
             },
-            data: [
-              "第1簇",
-              "第2簇",
-              "第3簇",
-              "第4簇",
-              "第5簇",
-              "第6簇",
-              "第7簇",
-              "第8簇",
-              "第9簇",
-              "第10簇",
-              "第11簇",
-              "第12簇"
-            ]
+            data: this.InsulationExtremum.XAxisData
           }
         ],
         series: [
           {
             name: "负极绝缘值",
             type: "bar",
-            stack: "总量",
+            stack: "KΩ",
             label: {
               show: true
             },
-            data: [
-              320,
-              302,
-              341,
-              374,
-              390,
-              450,
-              420,
-              374,
-              390,
-              450,
-              420,
-              374,
-              390,
-              450,
-              420,
-              333
-            ],
+            data: this.InsulationExtremum.SeriesData[0].data,
             color: "#F7931F"
           },
           {
             name: "正极绝缘值",
             type: "bar",
-            stack: "总量",
+            stack: "KΩ",
             label: {
               show: true
             },
-            data: [
-              -120,
-              -132,
-              -101,
-              -134,
-              -190,
-              -230,
-              -210,
-              -134,
-              -190,
-              -230,
-              -210,
-              -134
-            ],
+            data: this.InsulationExtremum.SeriesData[1].data,
             color: "#D4155A"
           }
         ]
@@ -500,22 +452,16 @@ export default {
           min: 80,
           max: 600,
           inRange: {
-            colorLightness: [0, 1]
+            colorLightness: [0.2, 1]
           }
         },
         series: [
           {
-            name: "访问来源",
+            name: this.MonomerMaximumVoltage.Name,
             type: "pie",
             radius: "90%",
             center: ["55%", "50%"],
-            data: [
-              { value: 335, name: "直接访问" },
-              { value: 310, name: "邮件营销" },
-              { value: 274, name: "联盟广告" },
-              { value: 235, name: "视频广告" },
-              { value: 400, name: "搜索引擎" }
-            ].sort(function(a, b) {
+            data: this.MonomerMaximumVoltage.Datas.sort(function(a, b) {
               return a.value - b.value;
             }),
             roseType: "radius",
@@ -553,27 +499,21 @@ export default {
           min: 80,
           max: 600,
           inRange: {
-            colorLightness: [0, 1]
+            colorLightness: [0.2, 1]
           }
         },
         series: [
           {
-            name: "访问来源",
+            name: this.MonomerMinimumVoltage.Name,
             type: "pie",
             radius: "90%",
             center: ["55%", "50%"],
-            data: [
-              { value: 335, name: "直接访问" },
-              { value: 310, name: "邮件营销" },
-              { value: 274, name: "联盟广告" },
-              { value: 235, name: "视频广告" },
-              { value: 400, name: "搜索引擎" }
-            ].sort(function(a, b) {
+            data: this.MonomerMinimumVoltage.Datas.sort(function(a, b) {
               return a.value - b.value;
             }),
             roseType: "radius",
             label: {
-              color: "rgba(255, 255, 255, 0.3)",
+              color: "rgba(255, 255, 255, 0.8)",
               show: false
             },
             itemStyle: {
@@ -591,16 +531,24 @@ export default {
       // 第七个图
       var myChart7 = this.$echarts.init(document.getElementById("myChart7"));
       myChart7.setOption({
-        color: ["#51D0AB", "#F7931E", "#D4155A"],
+        // color: ["#51D0AB", "#F7931E", "#D4155A"],
         tooltip: {
           trigger: "axis"
         },
         legend: {
-          data: ["第1簇", "第2簇", "第3簇"],
+          data: [
+            this.SingleDifferentialPressure.SeriesData[0].name,
+            this.SingleDifferentialPressure.SeriesData[1].name,
+            this.SingleDifferentialPressure.SeriesData[2].name,
+            this.SingleDifferentialPressure.SeriesData[3].name,
+            this.SingleDifferentialPressure.SeriesData[4].name,
+            this.SingleDifferentialPressure.SeriesData[5].name,
+          ],
           textStyle: {
             color: "#46a6b5"
           },
-          top: "10%"
+          top: "10%",
+          type: "scroll"
         },
         grid: {
           left: "1%",
@@ -612,7 +560,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          data: this.SingleDifferentialPressure.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -635,29 +583,53 @@ export default {
         },
         series: [
           {
-            name: "第1簇",
+            name: this.SingleDifferentialPressure.SeriesData[0].name,
             type: "line",
-            stack: "总量",
-            data: [120, 300, 101, 134, 90, 230, 100],
+            stack: this.SingleDifferentialPressure.SeriesData[0].stack,
+            data: this.SingleDifferentialPressure.SeriesData[0].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "第2簇",
+            name: this.SingleDifferentialPressure.SeriesData[1].name,
             type: "line",
-            stack: "总量",
-            data: [220, 182, 191, 500, 290, 330, 100],
+            stack: this.SingleDifferentialPressure.SeriesData[1].stack,
+            data: this.SingleDifferentialPressure.SeriesData[1].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "第3簇",
+            name: this.SingleDifferentialPressure.SeriesData[2].name,
             type: "line",
-            stack: "总量",
-            data: [150, 232, 500, 300, 190, 330, 410],
+            stack: this.SingleDifferentialPressure.SeriesData[2].stack,
+            data: this.SingleDifferentialPressure.SeriesData[2].data,
             smooth: true,
             symbol: "none"
-          }
+          },
+          {
+            name: this.SingleDifferentialPressure.SeriesData[3].name,
+            type: "line",
+            stack: this.SingleDifferentialPressure.SeriesData[3].stack,
+            data: this.SingleDifferentialPressure.SeriesData[3].data,
+            smooth: true,
+            symbol: "none"
+          },
+          {
+            name: this.SingleDifferentialPressure.SeriesData[4].name,
+            type: "line",
+            stack: this.SingleDifferentialPressure.SeriesData[4].stack,
+            data: this.SingleDifferentialPressure.SeriesData[4].data,
+            smooth: true,
+            symbol: "none"
+          },
+          {
+            name: this.SingleDifferentialPressure.SeriesData[5].name,
+            type: "line",
+            stack: this.SingleDifferentialPressure.SeriesData[5].stack,
+            data: this.SingleDifferentialPressure.SeriesData[5].data,
+            smooth: true,
+            symbol: "none"
+          },
         ]
       });
       setTimeout(function() {
@@ -671,12 +643,39 @@ export default {
           myChart7.resize();
         };
       }, 200);
+    },
+    getData() {
+      let url =
+        "/api/Statement/GetExtremumStatistical?SystemToken=0&DeviceSystemID=637103628712992044";
+      this.$axios
+        .get(url)
+        .then(res => {
+          if (res.data.code === 0) {
+            let data = res.data.data;
+            console.log(data);
+            this.TotalElectricityStatistics = data.TotalElectricityStatistics;
+            this.MonomerHighLowPressure = data.MonomerHighLowPressure;
+            this.EnvironmentTemp = data.EnvironmentTemp;
+            this.MonomerAverageVoltage = data.MonomerAverageVoltage;
+            this.ClusterAverageVoltage = data.ClusterAverageVoltage;
+            this.EachClusterInformation = data.EachClusterInformation;
+            this.InsulationExtremum = data.InsulationExtremum;
+            this.MonomerMaximumVoltage = data.MonomerMaximumVoltage;
+            this.MonomerMinimumVoltage = data.MonomerMinimumVoltage;
+            this.SingleDifferentialPressure = data.SingleDifferentialPressure;
+            this.$nextTick(() => {
+              this.getEcharts();
+            });
+          }
+        })
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        });
     }
   },
   created() {
-    this.$nextTick(() => {
-      this.getEcharts();
-    });
+    this.getData();
   }
 };
 </script>
