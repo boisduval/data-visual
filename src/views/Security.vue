@@ -9,53 +9,63 @@
           <SecurityBorderTop>
             <div class="flex-row" style="height: 100%">
               <div class="flex" style="padding-right: 8px;">
-                <SecurityInfo title="警告次数汇总" value="3456"></SecurityInfo>
+                <SecurityInfo
+                  :title="SummaryOfWarningTimes.name"
+                  :value="SummaryOfWarningTimes.value"
+                  v-if="SummaryOfWarningTimes"
+                ></SecurityInfo>
               </div>
               <div class="flex" style="padding-right: 8px;">
                 <SecurityInfo
                   type="protect"
-                  title="保护次数汇总"
-                  value="2461"
+                  :title="ProtectionTimesSummary.name"
+                  :value="ProtectionTimesSummary.value"
+                  v-if="ProtectionTimesSummary"
                   bg-color="#F59B23"
                 ></SecurityInfo>
               </div>
               <div class="flex" style="padding-right: 8px;">
                 <SecurityInfo
                   type="close"
-                  title="停机次数汇总"
-                  value="1234"
+                  :title="SummaryOfStoppingTimes.name"
+                  :value="SummaryOfStoppingTimes.value"
+                  v-if="SummaryOfStoppingTimes"
                   bg-color="#00A7F0"
                 ></SecurityInfo>
               </div>
               <div class="flex" style="padding-right: 8px;">
                 <SecurityInfo
                   type="safe"
-                  title="安全指数"
-                  value="100%"
+                  :title="SafetyIndex.name"
+                  :value="SafetyIndex.value"
+                  v-if="SafetyIndex"
                   bg-color="#8500FF"
                 ></SecurityInfo>
               </div>
               <div class="flex" style="padding-right: 8px;">
                 <SecurityInfo
                   type="warning"
-                  title="当日告警次数"
-                  value="0"
+                  :title="NumberOfAlarmsOnThatDay.name"
+                  :value="NumberOfAlarmsOnThatDay.value"
+                  v-if="NumberOfAlarmsOnThatDay"
                   bg-color="#8081FF"
                 ></SecurityInfo>
               </div>
               <div class="flex" style="padding-right: 8px;">
                 <SecurityInfo
                   type="protect"
-                  title="当日保护次数"
-                  value="12"
+                  :title="ProtectionTimesOfTheDay.name"
+                  :value="ProtectionTimesOfTheDay.value"
+                  v-if="ProtectionTimesOfTheDay"
                   bg-color="#EC808E"
                 ></SecurityInfo>
               </div>
               <div class="flex" style="padding-right: 8px;">
                 <SecurityInfo
                   type="close"
-                  title="当日停机次数"
-                  value="5"
+                  :title="NumberOfDailyShutdowns.name"
+                  v-if="NumberOfDailyShutdowns"
+                  :value="NumberOfDailyShutdowns.value"
                   bg-color="#82D4F8"
                 ></SecurityInfo>
               </div>
@@ -64,12 +74,12 @@
         </div>
         <div class="flex3 flex-row">
           <div class="flex">
-            <SecurityBorderMain>
+            <SecurityBorderMain :title="MonthlyWarningShutdown.Name">
               <div id="myChart1" class="charts"></div>
             </SecurityBorderMain>
           </div>
           <div class="flex">
-            <SecurityBorderMain>
+            <SecurityBorderMain :title="AlarmShutdownTrend.Name">
               <div id="myChart2" class="charts"></div>
             </SecurityBorderMain>
           </div>
@@ -79,7 +89,7 @@
             <SecurityBorderMain>
               <div class="flex-row" style="height: 100%">
                 <div class="flex" style="margin-right: 2px;">
-                  <SecurityBg title="分类统计">
+                  <SecurityBg :title="ClassifiedStatistic.Name">
                     <div id="myChart3" class="charts"></div>
                   </SecurityBg>
                 </div>
@@ -102,14 +112,18 @@
                             <p class="time">发生时间</p>
                           </li>
                           <li
-                            v-for="(item, index) in infos"
-                            :key="index"
+                            v-for="(val, key) in TheAlarmList.valueUnits"
+                            :key="key"
                             class="flex-row"
                             style="justify-content: space-between"
                           >
-                            <p class="num">000{{ index + 1 }}</p>
-                            <p class="flex">{{ item.content }}</p>
-                            <p class="time">{{ item.time }}</p>
+                            <p class="num">{{ val.name }}</p>
+                            <p class="flex">
+                              {{ val.value.value }}{{ val.value.unit }}
+                            </p>
+                            <p class="time">
+                              {{ val.position.value + ' ' }}{{ val.position.unit }}
+                            </p>
                           </li>
                         </ul>
                       </happy-scroll>
@@ -123,12 +137,12 @@
             <SecurityBorderMain>
               <div class="flex-row" style="height: 100%">
                 <div class="flex" style="margin-right: 2px;">
-                  <SecurityBg title="告警top榜">
+                  <SecurityBg :title="TheAlarmListOfTheTop.Name">
                     <div id="myChart4" class="charts"></div>
                   </SecurityBg>
                 </div>
                 <div class="flex">
-                  <SecurityBg title="停机top榜">
+                  <SecurityBg :title="DownOnTheTopList.Name">
                     <div id="myChart5" class="charts"></div>
                   </SecurityBg>
                 </div>
@@ -150,7 +164,10 @@ export default {
       myChart1.setOption({
         color: ["#F7931E", "#D4155A"],
         legend: {
-          data: ["警告", "停机"],
+          data: [
+            this.MonthlyWarningShutdown.SeriesData[0].name,
+            this.MonthlyWarningShutdown.SeriesData[1].name
+          ],
           textStyle: {
             color: "#46a6b5"
           },
@@ -163,24 +180,28 @@ export default {
           bottom: "5%",
           containLabel: true
         },
-        tooltip: {},
-        dataset: {
-          source: [
-            ["product", "警告", "停机"],
-            ["01", 43.3, 85.8],
-            ["02", 83.1, 73.4],
-            ["03", 86.4, 65.2],
-            ["04", 72.4, 53.9],
-            ["05", 72.4, 53.9],
-            ["06", 72.4, 53.9],
-            ["07", 43.3, 85.8],
-            ["08", 83.1, 73.4],
-            ["09", 86.4, 65.2],
-            ["10", 72.4, 53.9],
-            ["11", 72.4, 53.9],
-            ["12", 72.4, 53.9]
-          ]
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "shadow"
+          }
         },
+        series: [
+          {
+            name: this.MonthlyWarningShutdown.SeriesData[0].name,
+            type: "bar",
+            stack: this.MonthlyWarningShutdown.SeriesData[0].stack,
+            data: this.MonthlyWarningShutdown.SeriesData[0].data,
+            barCategoryGap: "40%"
+          },
+          {
+            name: this.MonthlyWarningShutdown.SeriesData[1].name,
+            type: "bar",
+            stack: this.MonthlyWarningShutdown.SeriesData[1].stack,
+            data: this.MonthlyWarningShutdown.SeriesData[1].data,
+            barCategoryGap: "40%"
+          }
+        ],
         xAxis: {
           type: "category",
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
@@ -189,7 +210,8 @@ export default {
           },
           splitLine: {
             show: false
-          }
+          },
+          data: this.MonthlyWarningShutdown.XAxisData
         },
         yAxis: {
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
@@ -202,13 +224,9 @@ export default {
             // }
             show: false
           }
-        },
+        }
         // Declare several bar series, each will be mapped
         // to a column of dataset.source by default.
-        series: [
-          { type: "bar", barCategoryGap: "40%" },
-          { type: "bar", barCategoryGap: "40%" }
-        ]
       });
       // 第二个图
       var myChart2 = this.$echarts.init(document.getElementById("myChart2"));
@@ -218,7 +236,7 @@ export default {
           trigger: "axis"
         },
         legend: {
-          data: ["警告", "停机"],
+          data: [this.AlarmShutdownTrend.SeriesData[0].name, this.AlarmShutdownTrend.SeriesData[1].name],
           textStyle: {
             color: "#46a6b5"
           },
@@ -234,7 +252,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          data: this.AlarmShutdownTrend.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -258,18 +276,18 @@ export default {
         },
         series: [
           {
-            name: "警告",
+            name: this.AlarmShutdownTrend.SeriesData[0].name,
             type: "line",
-            stack: "总量",
-            data: [120, 132, 101, 134, 90, 230, 210],
+            stack: this.AlarmShutdownTrend.SeriesData[0].stack,
+            data: this.AlarmShutdownTrend.SeriesData[0].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "停机",
+            name: this.AlarmShutdownTrend.SeriesData[1].name,
             type: "line",
-            stack: "总量",
-            data: [220, 182, 191, 234, 290, 330, 310],
+            stack: this.AlarmShutdownTrend.SeriesData[1].stack,
+            data: this.AlarmShutdownTrend.SeriesData[1].data,
             smooth: true,
             symbol: "none"
           }
@@ -281,24 +299,21 @@ export default {
         color: ["#F7931F", "#FF0100"],
         tooltip: {},
         legend: {
-          data: ["停机情况", "告警情况"],
+          data: [
+            this.ClassifiedStatistic.Datas[0].name,
+            this.ClassifiedStatistic.Datas[1].name
+          ],
           textStyle: {
             color: "#46a6b5"
           },
-          top: "15%",
+          top: "10%",
           orient: "vertical",
           left: "5%",
           itemWidth: 20,
           itemHeight: 5
         },
         radar: {
-          indicator: [
-            { name: "数据一", max: 6500 },
-            { name: "数据二", max: 16000 },
-            { name: "数据三", max: 30000 },
-            { name: "数据四", max: 38000 },
-            { name: "数据五", max: 52000 }
-          ],
+          indicator: this.ClassifiedStatistic.IndicatorList,
           splitArea: {
             areaStyle: {
               color: [
@@ -312,7 +327,7 @@ export default {
               shadowBlur: 10
             }
           },
-          radius: "70%",
+          radius: "50%",
           center: ["50%", "60%"],
           axisLine: {
             lineStyle: {
@@ -334,17 +349,16 @@ export default {
         },
         series: [
           {
-            name: "预算 vs 开销（Budget vs spending）",
             type: "radar",
             // areaStyle: {normal: {}}
             data: [
               {
-                value: [4300, 10000, 28000, 35000, 50000, 19000],
-                name: "停机情况"
+                value: this.ClassifiedStatistic.Datas[0].values,
+                name: this.ClassifiedStatistic.Datas[0].name
               },
               {
-                value: [5000, 14000, 28000, 31000, 42000, 21000],
-                name: "告警情况"
+                value: this.ClassifiedStatistic.Datas[1].values,
+                name: this.ClassifiedStatistic.Datas[1].name
               }
             ]
           }
@@ -362,7 +376,7 @@ export default {
         },
         grid: {
           left: "3%",
-          right: "4%",
+          right: "6%",
           bottom: "8%",
           containLabel: true
         },
@@ -381,7 +395,7 @@ export default {
         },
         yAxis: {
           type: "category",
-          data: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+          data: this.TheAlarmListOfTheTop.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -395,13 +409,14 @@ export default {
         },
         series: [
           {
-            name: "直接访问",
-            type: "bar",
-            stack: "总量",
-            data: [320, 302, 301, 334, 390, 330, 320, 390, 330, 320, 200],
             color: "#F7931F",
-            barCategoryGap: "40%"
+            barCategoryGap: "40%",
+            name: this.TheAlarmListOfTheTop.SeriesData[0].name,
+            type: "bar",
+            stack: this.TheAlarmListOfTheTop.SeriesData[0].stack,
+            data: this.TheAlarmListOfTheTop.SeriesData[0].data,
           }
+
         ]
       });
       // 第五个图
@@ -416,7 +431,7 @@ export default {
         },
         grid: {
           left: "3%",
-          right: "4%",
+          right: "6%",
           bottom: "8%",
           containLabel: true
         },
@@ -435,7 +450,7 @@ export default {
         },
         yAxis: {
           type: "category",
-          data: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+          data: this.DownOnTheTopList.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -449,10 +464,10 @@ export default {
         },
         series: [
           {
-            name: "直接访问",
+            name: this.DownOnTheTopList.SeriesData[0].name,
             type: "bar",
-            stack: "总量",
-            data: [320, 302, 301, 334, 390, 330, 320, 390, 330, 320, 200],
+            stack: this.DownOnTheTopList.SeriesData[0].stack,
+            data: this.DownOnTheTopList.SeriesData[0].data,
             color: "#ED1E7A",
             barCategoryGap: "40%"
           }
@@ -467,65 +482,57 @@ export default {
           myChart5.resize();
         };
       }, 200);
+    },
+    getData() {
+      let url =
+        "/api/Statement/GetSystemSafety?SystemToken=0&DeviceSystemID=637103628712992044";
+      this.$axios
+        .get(url)
+        .then(res => {
+          if (res.data.code === 0) {
+            let data = res.data.data;
+            this.SummaryOfWarningTimes = data.SummaryOfWarningTimes;
+            this.ProtectionTimesSummary = data.ProtectionTimesSummary;
+            this.SummaryOfStoppingTimes = data.SummaryOfStoppingTimes;
+            this.SafetyIndex = data.SafetyIndex;
+            this.NumberOfAlarmsOnThatDay = data.NumberOfAlarmsOnThatDay;
+            this.ProtectionTimesOfTheDay = data.ProtectionTimesOfTheDay;
+            this.NumberOfDailyShutdowns = data.NumberOfDailyShutdowns;
+            this.MonthlyWarningShutdown = data.MonthlyWarningShutdown;
+            this.ClassifiedStatistic = data.ClassifiedStatistic;
+            this.TheAlarmList = data.TheAlarmList;
+            this.AlarmShutdownTrend = data.AlarmShutdownTrend;
+            this.TheAlarmListOfTheTop = data.TheAlarmListOfTheTop;
+            this.DownOnTheTopList = data.DownOnTheTopList;
+            this.$nextTick(() => {
+              this.getEcharts();
+            });
+          }
+        })
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        });
     }
   },
   created() {
-    this.$nextTick(() => {
-      this.getEcharts();
-    });
+    this.getData();
   },
   data() {
     return {
-      infos: [
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        },
-        {
-          content: "风机故障",
-          time: "2020-03-10 12:00"
-        }
-      ]
+      SummaryOfWarningTimes: "",
+      ProtectionTimesSummary: "",
+      SummaryOfStoppingTimes: "",
+      SafetyIndex: "",
+      NumberOfAlarmsOnThatDay: "",
+      ProtectionTimesOfTheDay: "",
+      NumberOfDailyShutdowns: "",
+      MonthlyWarningShutdown: "",
+      ClassifiedStatistic: "",
+      TheAlarmList: "",
+      AlarmShutdownTrend: "",
+      TheAlarmListOfTheTop: "",
+      DownOnTheTopList: ""
     };
   }
 };
@@ -578,7 +585,7 @@ li {
     width: 35px;
   }
   li .time {
-    width: 110px;
+    width: 125px;
   }
 }
 
@@ -590,7 +597,7 @@ li {
     width: 50px;
   }
   li .time {
-    width: 120px;
+    width: 140px;
   }
 }
 </style>
