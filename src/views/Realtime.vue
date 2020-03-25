@@ -9,12 +9,13 @@
         <div class="right-top">
           <!-- 左边开始 -->
           <div class="left">
+            <!--      usp      -->
             <BorderCenter>
               <Usp class="usp-content"></Usp>
               <div class="usp-text">
                 <div class="text-box" v-for="item in usp" :key="item.id">
-                  <p class="label">{{ item.label }}</p>
-                  <p class="value">{{ item.value }}</p>
+                  <p class="label">{{ item.name }}</p>
+                  <p class="value">{{ item.value }}{{ item.unit }}</p>
                 </div>
               </div>
             </BorderCenter>
@@ -38,37 +39,37 @@
                         </p>
                         <div class="text-bottom flex-column flex">
                           <div class="flex-column flex-center flex">
-                            <div class="flex-row">
+                            <div class="flex-row" v-if="VoltageAndPositionU">
                               <p class="title flex">
-                                U相
+                                {{VoltageAndPositionU.valueUnits.Input.name}}
                               </p>
                               <p class="data flex">
-                                382.5V
+                                {{VoltageAndPositionU.valueUnits.Input.value}}{{VoltageAndPositionU.valueUnits.Input.unit}}
                               </p>
                               <p class="data flex" style="text-align: right;">
-                                380.1V
+                                {{VoltageAndPositionU.valueUnits.Output.value}}{{VoltageAndPositionU.valueUnits.Output.unit}}
                               </p>
                             </div>
-                            <div class="flex-row">
+                            <div class="flex-row" v-if="VoltageAndPositionV">
                               <p class="title flex">
-                                V相
+                                {{VoltageAndPositionV.valueUnits.Input.name}}
                               </p>
                               <p class="data flex">
-                                382.5V
+                                {{VoltageAndPositionV.valueUnits.Input.value}}{{VoltageAndPositionV.valueUnits.Input.unit}}
                               </p>
                               <p class="data flex" style="text-align: right;">
-                                380.1V
+                                {{VoltageAndPositionV.valueUnits.Output.value}}{{VoltageAndPositionV.valueUnits.Output.unit}}
                               </p>
                             </div>
-                            <div class="flex-row">
+                            <div class="flex-row" v-if="VoltageAndPositionW">
                               <p class="title flex">
-                                W相
+                                {{VoltageAndPositionW.valueUnits.Input.name}}
                               </p>
                               <p class="data flex">
-                                382.5V
+                                {{VoltageAndPositionW.valueUnits.Input.value}}{{VoltageAndPositionW.valueUnits.Input.unit}}
                               </p>
                               <p class="data flex" style="text-align: right;">
-                                380.1V
+                                {{VoltageAndPositionW.valueUnits.Output.value}}{{VoltageAndPositionW.valueUnits.Output.unit}}
                               </p>
                             </div>
                           </div>
@@ -76,29 +77,29 @@
                         <!-- 第一块结束 -->
                         <!-- 第二块开始 -->
                         <div class="text-bottom flex-column flex">
-                          <div class="flex-column flex-center flex">
+                          <div class="flex-column flex-center flex" v-if="OutputCurrent">
                             <div class="flex-row">
                               <p class="title flex5">
-                                U相输出电流
+                                {{OutputCurrent.Uare.name}}
                               </p>
                               <p class="data flex3" style="text-align: right;">
-                                60.5A
+                                {{OutputCurrent.Uare.value}}{{OutputCurrent.Uare.unit}}
                               </p>
                             </div>
                             <div class="flex-row">
                               <p class="title flex5">
-                                V相输出电流
+                                {{OutputCurrent.Vare.name}}
                               </p>
                               <p class="data flex3" style="text-align: right;">
-                                60.5A
+                                {{OutputCurrent.Vare.value}}{{OutputCurrent.Vare.unit}}
                               </p>
                             </div>
                             <div class="flex-row">
                               <p class="title flex5">
-                                W相输出电流
+                                {{OutputCurrent.Vare.name}}
                               </p>
                               <p class="data flex3" style="text-align: right;">
-                                60.5A
+                                {{OutputCurrent.Vare.value}}{{OutputCurrent.Vare.unit}}
                               </p>
                             </div>
                           </div>
@@ -109,17 +110,17 @@
                   </div>
                   <div class="flex">
                     <BorderBg>
-                      <div style="display:flex;height:90%;padding-top: 10%">
+                      <div style="display:flex;height:90%;padding-top: 10%" v-if="PCSTemp">
                         <div class="flex">
                           <Thermometer
-                            title="内部温度"
-                            value="35.6℃"
+                            :title="PCSTemp.InternalTemp.name"
+                            :value="PCSTemp.InternalTemp.value+PCSTemp.InternalTemp.unit"
                           ></Thermometer>
                         </div>
                         <div class="flex">
                           <Thermometer
-                            title="散热器温度"
-                            value="35.6℃"
+                              :title="PCSTemp.RadiatorTemp.name"
+                              :value="PCSTemp.RadiatorTemp.value+PCSTemp.RadiatorTemp.unit"
                           ></Thermometer>
                         </div>
                       </div>
@@ -133,35 +134,36 @@
                     <div
                       class="flex-column font-small flex-space-between"
                       style="height:100%;padding:8% 1% 0"
+                      v-if="FacilityInfo"
                     >
                       <!-- 第一块开始 -->
                       <p style="color:#46A6B5">
-                        设备信息
+                        {{FacilityInfo.totalname}}
                       </p>
                       <div class="text-bottom flex-column flex">
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              U相PF值
+                              {{FacilityInfo.valueUnits.PFU.name}}
                             </p>
                             <p class="data flex3">
-                              0.99
+                              {{FacilityInfo.valueUnits.PFU.value}}{{FacilityInfo.valueUnits.PFU.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              V相PF值
+                              {{FacilityInfo.valueUnits.PFV.name}}
                             </p>
                             <p class="data flex3">
-                              0.99
+                              {{FacilityInfo.valueUnits.PFV.value}}{{FacilityInfo.valueUnits.PFV.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              W相PF值
+                              {{FacilityInfo.valueUnits.PFW.name}}
                             </p>
                             <p class="data flex3">
-                              0.99
+                              {{FacilityInfo.valueUnits.PFW.value}}{{FacilityInfo.valueUnits.PFW.unit}}
                             </p>
                           </div>
                         </div>
@@ -172,26 +174,26 @@
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              U相负载量
+                              {{FacilityInfo.valueUnits.ChargeNumberU.name}}
                             </p>
                             <p class="data flex3">
-                              10%
+                              {{FacilityInfo.valueUnits.ChargeNumberU.value}}{{FacilityInfo.valueUnits.ChargeNumberU.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              V相负载量
+                              {{FacilityInfo.valueUnits.ChargeNumberV.name}}
                             </p>
                             <p class="data flex3">
-                              10%
+                              {{FacilityInfo.valueUnits.ChargeNumberV.value}}{{FacilityInfo.valueUnits.ChargeNumberV.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              W相PF值
+                              {{FacilityInfo.valueUnits.ChargeNumberW.name}}
                             </p>
                             <p class="data flex3">
-                              10%
+                              {{FacilityInfo.valueUnits.ChargeNumberW.value}}{{FacilityInfo.valueUnits.ChargeNumberW.unit}}
                             </p>
                           </div>
                         </div>
@@ -202,26 +204,26 @@
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              离网频率
+                              {{FacilityInfo.valueUnits.OffGridFrequency.name}}
                             </p>
                             <p class="data flex3">
-                              50.0Hz
+                              {{FacilityInfo.valueUnits.OffGridFrequency.value}}{{FacilityInfo.valueUnits.OffGridFrequency.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              电网频率
+                              {{FacilityInfo.valueUnits.LineFrequency.name}}
                             </p>
                             <p class="data flex3">
-                              50.0Hz
+                              {{FacilityInfo.valueUnits.LineFrequency.value}}{{FacilityInfo.valueUnits.LineFrequency.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              交流漏电流
+                              {{FacilityInfo.valueUnits.AcLeakageCurrent.name}}
                             </p>
                             <p class="data flex3">
-                              0.1A
+                              {{FacilityInfo.valueUnits.AcLeakageCurrent.value}}{{FacilityInfo.valueUnits.AcLeakageCurrent.unit}}
                             </p>
                           </div>
                         </div>
@@ -232,26 +234,26 @@
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              直流电压
+                              {{FacilityInfo.valueUnits.DCVoltage.name}}
                             </p>
                             <p class="data flex3">
-                              53.6V
+                              {{FacilityInfo.valueUnits.DCVoltage.value}}{{FacilityInfo.valueUnits.DCVoltage.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              直流电流
+                              {{FacilityInfo.valueUnits.DCCurrent.name}}
                             </p>
                             <p class="data flex3">
-                              124.2A
+                              {{FacilityInfo.valueUnits.DCCurrent.value}}{{FacilityInfo.valueUnits.DCCurrent.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              总直流功率
+                              {{FacilityInfo.valueUnits.TotalDCPower.name}}
                             </p>
                             <p class="data flex3">
-                              6.7kw
+                              {{FacilityInfo.valueUnits.TotalDCPower.value}}{{FacilityInfo.valueUnits.TotalDCPower.unit}}
                             </p>
                           </div>
                         </div>
@@ -262,18 +264,18 @@
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              并离网状态
+                              {{FacilityInfo.valueUnits.AndOffTheGrid.name}}
                             </p>
                             <p class="data flex3">
-                              并网
+                              {{FacilityInfo.valueUnits.AndOffTheGrid.value}}{{FacilityInfo.valueUnits.AndOffTheGrid.unit}}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              远控状态
+                              {{FacilityInfo.valueUnits.StateOfTheRemote.name}}
                             </p>
                             <p class="data flex3">
-                              开启
+                              {{FacilityInfo.valueUnits.StateOfTheRemote.value}}{{FacilityInfo.valueUnits.StateOfTheRemote.unit}}
                             </p>
                           </div>
                         </div>
@@ -293,25 +295,25 @@
                   <div class="flex">
                     <BorderBgLonger>
                       <div style="display:flex;height:100%;">
-                        <div class="flex">
+                        <div class="flex" v-if="TotalLoad">
                           <IndicatingInstrument
-                            title="总负载量"
-                            value="30%"
-                            rotate="0"
+                            :title="TotalLoad.data.name"
+                            :value="TotalLoad.data.value+TotalLoad.data.unit"
+                            :rotate="TotalLoad.scale"
                           ></IndicatingInstrument>
                         </div>
-                        <div class="flex">
+                        <div class="flex" v-if="DailyCharge">
                           <IndicatingInstrument
-                            title="当日充电量"
-                            value="15.111Kwh"
-                            rotate="112"
+                              :title="DailyCharge.data.name"
+                              :value="DailyCharge.data.value+DailyCharge.data.unit"
+                              :rotate="DailyCharge.scale"
                           ></IndicatingInstrument>
                         </div>
-                        <div class="flex">
+                        <div class="flex" v-if="DailyDischarge">
                           <IndicatingInstrument
-                            title="当日放电量"
-                            value="15.111Kwh"
-                            rotate="45"
+                              :title="DailyDischarge.data.name"
+                              :value="DailyDischarge.data.value+DailyDischarge.data.unit"
+                              :rotate="DailyDischarge.scale"
                           ></IndicatingInstrument>
                         </div>
                       </div>
@@ -337,62 +339,92 @@
                       style="height:100%;padding:10px 0;"
                     >
                       <!-- 电压开始 -->
-                      <div class="text-bottom flex-column flex">
+                      <div
+                        class="text-bottom flex-column flex"
+                        v-if="VoltageAndPosition"
+                      >
                         <p class="title">
-                          电压及位置
+                          {{ VoltageAndPosition.totalname }}
                         </p>
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex">
-                              最高
+                              {{ VoltageAndPosition.valueUnits.Max.name }}
                             </p>
                             <p class="data flex" style="text-align: center;">
-                              3.67V
+                              {{ VoltageAndPosition.valueUnits.Max.value.value
+                              }}{{
+                                VoltageAndPosition.valueUnits.Max.value.unit
+                              }}
                             </p>
                             <p class="data flex" style="text-align: right;">
-                              15号
+                              {{
+                                VoltageAndPosition.valueUnits.Max.position
+                                  .value
+                              }}{{
+                                VoltageAndPosition.valueUnits.Max.position.unit
+                              }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex">
-                              最低
+                              {{ VoltageAndPosition.valueUnits.Min.name }}
                             </p>
                             <p class="data flex" style="text-align: center;">
-                              3.67V
+                              {{ VoltageAndPosition.valueUnits.Min.value.value
+                              }}{{
+                                VoltageAndPosition.valueUnits.Min.value.unit
+                              }}
                             </p>
                             <p class="data flex" style="text-align: right;">
-                              15号
+                              {{
+                                VoltageAndPosition.valueUnits.Min.position
+                                  .value
+                              }}{{
+                                VoltageAndPosition.valueUnits.Min.position.unit
+                              }}
                             </p>
                           </div>
                         </div>
                       </div>
                       <!-- 电压结束 -->
                       <!-- 温度开始 -->
-                      <div class="text-bottom flex-column flex">
+                      <div
+                        class="text-bottom flex-column flex"
+                        v-if="TempAndPosition"
+                      >
                         <p class="title">
-                          温度及位置
+                          {{ TempAndPosition.totalname }}
                         </p>
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex">
-                              最高
+                              {{ TempAndPosition.valueUnits.Max.name }}
                             </p>
                             <p class="data flex" style="text-align: center;">
-                              34℃
+                              {{ TempAndPosition.valueUnits.Max.value.value
+                              }}{{ TempAndPosition.valueUnits.Max.value.unit }}
                             </p>
                             <p class="data flex" style="text-align: right;">
-                              15号
+                              {{ TempAndPosition.valueUnits.Max.position.value
+                              }}{{
+                                TempAndPosition.valueUnits.Max.position.unit
+                              }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex">
-                              最低
+                              {{ TempAndPosition.valueUnits.Min.name }}
                             </p>
                             <p class="data flex" style="text-align: center;">
-                              34℃
+                              {{ TempAndPosition.valueUnits.Min.value.value
+                              }}{{ TempAndPosition.valueUnits.Min.value.unit }}
                             </p>
                             <p class="data flex" style="text-align: right;">
-                              15号
+                              {{ TempAndPosition.valueUnits.Min.position.value
+                              }}{{
+                                TempAndPosition.valueUnits.Min.position.unit
+                              }}
                             </p>
                           </div>
                         </div>
@@ -408,62 +440,120 @@
                       style="height:100%;padding:10px 0;"
                     >
                       <!-- 内阻开始 -->
-                      <div class="text-bottom flex-column flex">
+                      <div
+                        class="text-bottom flex-column flex"
+                        v-if="InternalResistanceAndPosition"
+                      >
                         <p class="title">
-                          内阻及位置
+                          {{ InternalResistanceAndPosition.totalname }}
                         </p>
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex">
-                              最高
+                              {{
+                                InternalResistanceAndPosition.valueUnits.Max
+                                  .name
+                              }}
                             </p>
                             <p class="data flex" style="text-align: center;">
-                              15.2mΩ
+                              {{
+                                InternalResistanceAndPosition.valueUnits.Max
+                                  .value.value
+                              }}{{
+                                InternalResistanceAndPosition.valueUnits.Max
+                                  .value.unit
+                              }}
                             </p>
                             <p class="data flex" style="text-align: right;">
-                              15号
+                              {{
+                                InternalResistanceAndPosition.valueUnits.Max
+                                  .position.value
+                              }}{{
+                                InternalResistanceAndPosition.valueUnits.Max
+                                  .position.unit
+                              }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex">
-                              最低
+                              {{
+                                InternalResistanceAndPosition.valueUnits.Min
+                                  .name
+                              }}
                             </p>
                             <p class="data flex" style="text-align: center;">
-                              15.2mΩ
+                              {{
+                                InternalResistanceAndPosition.valueUnits.Min
+                                  .value.value
+                              }}{{
+                                InternalResistanceAndPosition.valueUnits.Min
+                                  .value.unit
+                              }}
                             </p>
                             <p class="data flex" style="text-align: right;">
-                              15号
+                              {{
+                                InternalResistanceAndPosition.valueUnits.Min
+                                  .position.value
+                              }}{{
+                                InternalResistanceAndPosition.valueUnits.Min
+                                  .position.unit
+                              }}
                             </p>
                           </div>
                         </div>
                       </div>
                       <!-- 内阻结束 -->
                       <!-- 绝缘开始 -->
-                      <div class="text-bottom flex-column flex">
+                      <div
+                        class="text-bottom flex-column flex"
+                        v-if="InsulationAndPosition"
+                      >
                         <p class="title">
-                          绝缘及位置
+                          {{ InsulationAndPosition.totalname }}
                         </p>
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex">
-                              最高
+                              {{ InsulationAndPosition.valueUnits.Max.name }}
                             </p>
                             <p class="data flex" style="text-align: center;">
-                              13.2kΩ
+                              {{
+                                InsulationAndPosition.valueUnits.Max.value
+                                  .value
+                              }}{{
+                                InsulationAndPosition.valueUnits.Max.value.unit
+                              }}
                             </p>
                             <p class="data flex" style="text-align: right;">
-                              15号
+                              {{
+                                InsulationAndPosition.valueUnits.Max.position
+                                  .value
+                              }}{{
+                                InsulationAndPosition.valueUnits.Max.position
+                                  .unit
+                              }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex">
-                              最低
+                              {{ InsulationAndPosition.valueUnits.Min.name }}
                             </p>
                             <p class="data flex" style="text-align: center;">
-                              13.2kΩ
+                              {{
+                                InsulationAndPosition.valueUnits.Min.value
+                                  .value
+                              }}{{
+                                InsulationAndPosition.valueUnits.Min.value.unit
+                              }}
                             </p>
                             <p class="data flex" style="text-align: right;">
-                              15号
+                              {{
+                                InsulationAndPosition.valueUnits.Min.position
+                                  .value
+                              }}{{
+                                InsulationAndPosition.valueUnits.Min.position
+                                  .unit
+                              }}
                             </p>
                           </div>
                         </div>
@@ -498,23 +588,24 @@
 export default {
   data() {
     return {
-      usp: [
-        {
-          label: "SOC",
-          value: "86%"
-        },
-        {
-          label: "SOH",
-          value: "86%"
-        },
-        {
-          label: "状态",
-          value: "充电"
-        }
-      ],
+      usp: "",
+      VoltageAndPosition: "",
+      TempAndPosition: "",
+      InternalResistanceAndPosition: "",
+      InsulationAndPosition: "",
+      VoltageAndPositionU: "",
+      VoltageAndPositionV: "",
+      VoltageAndPositionW: "",
+      OutputCurrent: "",
+      PCSTemp: "",
+      FacilityInfo: "",
+      OutputPower: "",
+      TotalLoad:"",
+      DailyCharge: "",
+      DailyDischarge: "",
       seriesLabel: {
         normal: {
-          show: true,
+          show: true
           // textBorderColor: "#333",
           // textBorderWidth: 2
         }
@@ -702,13 +793,20 @@ export default {
           trigger: "axis",
           axisPointer: {
             type: "shadow"
+          },
+          formatter(value) {
+            let str = value[0].name + '<br/>'
+            value.forEach(item=> {
+              str += item.marker + item.seriesName + ': ' + item.data + 'KVA' + '<br/>'
+            })
+            return str
           }
         },
         grid: {
           left: "2%",
           right: "5%",
-          top: "20%",
-          bottom: "10%",
+          top: "10%",
+          bottom: "8%",
           containLabel: true
         },
 
@@ -726,29 +824,26 @@ export default {
           type: "category",
           inverse: true,
           data: ["输出\n视在\n功率", "输出\n有功\n功率"],
-          axisLabel: { color: "#46a6b5", lineHeight: 18 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5", lineHeight: 14 }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
         },
         series: [
           {
-            name: "U",
+            name: this.OutputPower.SeriesData[0].name,
             type: "bar",
-            data: [165, 170],
-            label: this.seriesLabel
+            data: [this.OutputPower.SeriesData[0].data[0].value, this.OutputPower.SeriesData[0].data[1].value],
           },
           {
-            name: "V",
+            name: this.OutputPower.SeriesData[1].name,
             type: "bar",
-            label: this.seriesLabel,
-            data: [150, 105]
+            data: [this.OutputPower.SeriesData[1].data[0].value, this.OutputPower.SeriesData[1].data[1].value],
           },
           {
-            name: "W",
+            name: this.OutputPower.SeriesData[2].name,
             type: "bar",
-            label: this.seriesLabel,
-            data: [220, 82]
+            data: [this.OutputPower.SeriesData[2].data[0].value, this.OutputPower.SeriesData[2].data[1].value],
           }
         ]
       });
@@ -757,12 +852,48 @@ export default {
           myChart1.resize();
         };
       }, 200);
+    },
+    getData() {
+      let url =
+        "/api/Statement/GetRealTimeStatus?SystemToken=0&DeviceSystemID=637103628712992044";
+      this.$axios
+        .get(url)
+        .then(res => {
+          if (res.data.code === 0) {
+            let data = res.data.data;
+            console.log(data);
+            this.usp = [];
+            this.usp.push(data.SOC);
+            this.usp.push(data.SOH);
+            this.usp.push(data.TotalState);
+            this.VoltageAndPosition = data.VoltageAndPosition;
+            this.TempAndPosition = data.TempAndPosition;
+            this.InsulationAndPosition = data.InsulationAndPosition;
+            this.InternalResistanceAndPosition =
+              data.InternalResistanceAndPosition;
+            this.VoltageAndPositionU = data.VoltageAndPositionU;
+            this.VoltageAndPositionV = data.VoltageAndPositionV;
+            this.VoltageAndPositionW = data.VoltageAndPositionW;
+            this.OutputCurrent = data.OutputCurrent;
+            this.PCSTemp = data.PCSTemp;
+            this.FacilityInfo = data.FacilityInfo;
+            this.OutputPower = data.OutputPower;
+            this.TotalLoad = data.TotalLoad;
+            this.DailyDischarge = data.DailyDischarge;
+            this.DailyCharge = data.DailyCharge;
+            this.$nextTick(() => {
+              this.getEcharts();
+            });
+          }
+        })
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        });
     }
   },
   created() {
-    this.$nextTick(() => {
-      this.getEcharts();
-    });
+    this.getData();
   }
 };
 </script>
@@ -802,9 +933,9 @@ section {
 
 .left .usp-text {
   height: 20%;
-  width: 70%;
-  margin-left: 15%;
-  border-top: 1px solid rgb(70, 166, 181, 0.4);
+  width: 80%;
+  margin-left: 10%;
+  border-top: 1px solid rgba(70, 166, 181, 0.4);
   display: flex;
   align-items: center;
   justify-content: space-between;
