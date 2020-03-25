@@ -41,35 +41,53 @@
                           <div class="flex-column flex-center flex">
                             <div class="flex-row" v-if="VoltageAndPositionU">
                               <p class="title flex">
-                                {{VoltageAndPositionU.valueUnits.Input.name}}
+                                {{ VoltageAndPositionU.valueUnits.Input.name }}
                               </p>
                               <p class="data flex">
-                                {{VoltageAndPositionU.valueUnits.Input.value}}{{VoltageAndPositionU.valueUnits.Input.unit}}
+                                {{ VoltageAndPositionU.valueUnits.Input.value
+                                }}{{
+                                  VoltageAndPositionU.valueUnits.Input.unit
+                                }}
                               </p>
                               <p class="data flex" style="text-align: right;">
-                                {{VoltageAndPositionU.valueUnits.Output.value}}{{VoltageAndPositionU.valueUnits.Output.unit}}
+                                {{ VoltageAndPositionU.valueUnits.Output.value
+                                }}{{
+                                  VoltageAndPositionU.valueUnits.Output.unit
+                                }}
                               </p>
                             </div>
                             <div class="flex-row" v-if="VoltageAndPositionV">
                               <p class="title flex">
-                                {{VoltageAndPositionV.valueUnits.Input.name}}
+                                {{ VoltageAndPositionV.valueUnits.Input.name }}
                               </p>
                               <p class="data flex">
-                                {{VoltageAndPositionV.valueUnits.Input.value}}{{VoltageAndPositionV.valueUnits.Input.unit}}
+                                {{ VoltageAndPositionV.valueUnits.Input.value
+                                }}{{
+                                  VoltageAndPositionV.valueUnits.Input.unit
+                                }}
                               </p>
                               <p class="data flex" style="text-align: right;">
-                                {{VoltageAndPositionV.valueUnits.Output.value}}{{VoltageAndPositionV.valueUnits.Output.unit}}
+                                {{ VoltageAndPositionV.valueUnits.Output.value
+                                }}{{
+                                  VoltageAndPositionV.valueUnits.Output.unit
+                                }}
                               </p>
                             </div>
                             <div class="flex-row" v-if="VoltageAndPositionW">
                               <p class="title flex">
-                                {{VoltageAndPositionW.valueUnits.Input.name}}
+                                {{ VoltageAndPositionW.valueUnits.Input.name }}
                               </p>
                               <p class="data flex">
-                                {{VoltageAndPositionW.valueUnits.Input.value}}{{VoltageAndPositionW.valueUnits.Input.unit}}
+                                {{ VoltageAndPositionW.valueUnits.Input.value
+                                }}{{
+                                  VoltageAndPositionW.valueUnits.Input.unit
+                                }}
                               </p>
                               <p class="data flex" style="text-align: right;">
-                                {{VoltageAndPositionW.valueUnits.Output.value}}{{VoltageAndPositionW.valueUnits.Output.unit}}
+                                {{ VoltageAndPositionW.valueUnits.Output.value
+                                }}{{
+                                  VoltageAndPositionW.valueUnits.Output.unit
+                                }}
                               </p>
                             </div>
                           </div>
@@ -77,29 +95,35 @@
                         <!-- 第一块结束 -->
                         <!-- 第二块开始 -->
                         <div class="text-bottom flex-column flex">
-                          <div class="flex-column flex-center flex" v-if="OutputCurrent">
+                          <div
+                            class="flex-column flex-center flex"
+                            v-if="OutputCurrent"
+                          >
                             <div class="flex-row">
                               <p class="title flex5">
-                                {{OutputCurrent.Uare.name}}
+                                {{ OutputCurrent.Uare.name }}
                               </p>
                               <p class="data flex3" style="text-align: right;">
-                                {{OutputCurrent.Uare.value}}{{OutputCurrent.Uare.unit}}
+                                {{ OutputCurrent.Uare.value
+                                }}{{ OutputCurrent.Uare.unit }}
                               </p>
                             </div>
                             <div class="flex-row">
                               <p class="title flex5">
-                                {{OutputCurrent.Vare.name}}
+                                {{ OutputCurrent.Vare.name }}
                               </p>
                               <p class="data flex3" style="text-align: right;">
-                                {{OutputCurrent.Vare.value}}{{OutputCurrent.Vare.unit}}
+                                {{ OutputCurrent.Vare.value
+                                }}{{ OutputCurrent.Vare.unit }}
                               </p>
                             </div>
                             <div class="flex-row">
                               <p class="title flex5">
-                                {{OutputCurrent.Vare.name}}
+                                {{ OutputCurrent.Vare.name }}
                               </p>
                               <p class="data flex3" style="text-align: right;">
-                                {{OutputCurrent.Vare.value}}{{OutputCurrent.Vare.unit}}
+                                {{ OutputCurrent.Vare.value
+                                }}{{ OutputCurrent.Vare.unit }}
                               </p>
                             </div>
                           </div>
@@ -110,17 +134,26 @@
                   </div>
                   <div class="flex">
                     <BorderBg>
-                      <div style="display:flex;height:90%;padding-top: 10%" v-if="PCSTemp">
+                      <div
+                        style="display:flex;height:90%;padding-top: 10%"
+                        v-if="PCSTemp"
+                      >
                         <div class="flex">
                           <Thermometer
                             :title="PCSTemp.InternalTemp.name"
-                            :value="PCSTemp.InternalTemp.value+PCSTemp.InternalTemp.unit"
+                            :value="
+                              PCSTemp.InternalTemp.value +
+                                PCSTemp.InternalTemp.unit
+                            "
                           ></Thermometer>
                         </div>
                         <div class="flex">
                           <Thermometer
-                              :title="PCSTemp.RadiatorTemp.name"
-                              :value="PCSTemp.RadiatorTemp.value+PCSTemp.RadiatorTemp.unit"
+                            :title="PCSTemp.RadiatorTemp.name"
+                            :value="
+                              PCSTemp.RadiatorTemp.value +
+                                PCSTemp.RadiatorTemp.unit
+                            "
                           ></Thermometer>
                         </div>
                       </div>
@@ -138,32 +171,35 @@
                     >
                       <!-- 第一块开始 -->
                       <p style="color:#46A6B5">
-                        {{FacilityInfo.totalname}}
+                        {{ FacilityInfo.totalname }}
                       </p>
                       <div class="text-bottom flex-column flex">
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.PFU.name}}
+                              {{ FacilityInfo.valueUnits.PFU.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.PFU.value}}{{FacilityInfo.valueUnits.PFU.unit}}
+                              {{ FacilityInfo.valueUnits.PFU.value
+                              }}{{ FacilityInfo.valueUnits.PFU.unit }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.PFV.name}}
+                              {{ FacilityInfo.valueUnits.PFV.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.PFV.value}}{{FacilityInfo.valueUnits.PFV.unit}}
+                              {{ FacilityInfo.valueUnits.PFV.value
+                              }}{{ FacilityInfo.valueUnits.PFV.unit }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.PFW.name}}
+                              {{ FacilityInfo.valueUnits.PFW.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.PFW.value}}{{FacilityInfo.valueUnits.PFW.unit}}
+                              {{ FacilityInfo.valueUnits.PFW.value
+                              }}{{ FacilityInfo.valueUnits.PFW.unit }}
                             </p>
                           </div>
                         </div>
@@ -174,26 +210,29 @@
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.ChargeNumberU.name}}
+                              {{ FacilityInfo.valueUnits.ChargeNumberU.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.ChargeNumberU.value}}{{FacilityInfo.valueUnits.ChargeNumberU.unit}}
+                              {{ FacilityInfo.valueUnits.ChargeNumberU.value
+                              }}{{ FacilityInfo.valueUnits.ChargeNumberU.unit }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.ChargeNumberV.name}}
+                              {{ FacilityInfo.valueUnits.ChargeNumberV.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.ChargeNumberV.value}}{{FacilityInfo.valueUnits.ChargeNumberV.unit}}
+                              {{ FacilityInfo.valueUnits.ChargeNumberV.value
+                              }}{{ FacilityInfo.valueUnits.ChargeNumberV.unit }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.ChargeNumberW.name}}
+                              {{ FacilityInfo.valueUnits.ChargeNumberW.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.ChargeNumberW.value}}{{FacilityInfo.valueUnits.ChargeNumberW.unit}}
+                              {{ FacilityInfo.valueUnits.ChargeNumberW.value
+                              }}{{ FacilityInfo.valueUnits.ChargeNumberW.unit }}
                             </p>
                           </div>
                         </div>
@@ -204,26 +243,37 @@
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.OffGridFrequency.name}}
+                              {{
+                                FacilityInfo.valueUnits.OffGridFrequency.name
+                              }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.OffGridFrequency.value}}{{FacilityInfo.valueUnits.OffGridFrequency.unit}}
+                              {{ FacilityInfo.valueUnits.OffGridFrequency.value
+                              }}{{
+                                FacilityInfo.valueUnits.OffGridFrequency.unit
+                              }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.LineFrequency.name}}
+                              {{ FacilityInfo.valueUnits.LineFrequency.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.LineFrequency.value}}{{FacilityInfo.valueUnits.LineFrequency.unit}}
+                              {{ FacilityInfo.valueUnits.LineFrequency.value
+                              }}{{ FacilityInfo.valueUnits.LineFrequency.unit }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.AcLeakageCurrent.name}}
+                              {{
+                                FacilityInfo.valueUnits.AcLeakageCurrent.name
+                              }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.AcLeakageCurrent.value}}{{FacilityInfo.valueUnits.AcLeakageCurrent.unit}}
+                              {{ FacilityInfo.valueUnits.AcLeakageCurrent.value
+                              }}{{
+                                FacilityInfo.valueUnits.AcLeakageCurrent.unit
+                              }}
                             </p>
                           </div>
                         </div>
@@ -234,26 +284,29 @@
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.DCVoltage.name}}
+                              {{ FacilityInfo.valueUnits.DCVoltage.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.DCVoltage.value}}{{FacilityInfo.valueUnits.DCVoltage.unit}}
+                              {{ FacilityInfo.valueUnits.DCVoltage.value
+                              }}{{ FacilityInfo.valueUnits.DCVoltage.unit }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.DCCurrent.name}}
+                              {{ FacilityInfo.valueUnits.DCCurrent.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.DCCurrent.value}}{{FacilityInfo.valueUnits.DCCurrent.unit}}
+                              {{ FacilityInfo.valueUnits.DCCurrent.value
+                              }}{{ FacilityInfo.valueUnits.DCCurrent.unit }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.TotalDCPower.name}}
+                              {{ FacilityInfo.valueUnits.TotalDCPower.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.TotalDCPower.value}}{{FacilityInfo.valueUnits.TotalDCPower.unit}}
+                              {{ FacilityInfo.valueUnits.TotalDCPower.value
+                              }}{{ FacilityInfo.valueUnits.TotalDCPower.unit }}
                             </p>
                           </div>
                         </div>
@@ -264,18 +317,24 @@
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.AndOffTheGrid.name}}
+                              {{ FacilityInfo.valueUnits.AndOffTheGrid.name }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.AndOffTheGrid.value}}{{FacilityInfo.valueUnits.AndOffTheGrid.unit}}
+                              {{ FacilityInfo.valueUnits.AndOffTheGrid.value
+                              }}{{ FacilityInfo.valueUnits.AndOffTheGrid.unit }}
                             </p>
                           </div>
                           <div class="flex-row">
                             <p class="title flex5">
-                              {{FacilityInfo.valueUnits.StateOfTheRemote.name}}
+                              {{
+                                FacilityInfo.valueUnits.StateOfTheRemote.name
+                              }}
                             </p>
                             <p class="data flex3">
-                              {{FacilityInfo.valueUnits.StateOfTheRemote.value}}{{FacilityInfo.valueUnits.StateOfTheRemote.unit}}
+                              {{ FacilityInfo.valueUnits.StateOfTheRemote.value
+                              }}{{
+                                FacilityInfo.valueUnits.StateOfTheRemote.unit
+                              }}
                             </p>
                           </div>
                         </div>
@@ -298,22 +357,27 @@
                         <div class="flex" v-if="TotalLoad">
                           <IndicatingInstrument
                             :title="TotalLoad.data.name"
-                            :value="TotalLoad.data.value+TotalLoad.data.unit"
-                            :rotate="TotalLoad.scale"
+                            :value="TotalLoad.data.value + TotalLoad.data.unit"
+                            :rotate="TotalLoad.scale + ''"
                           ></IndicatingInstrument>
                         </div>
                         <div class="flex" v-if="DailyCharge">
                           <IndicatingInstrument
-                              :title="DailyCharge.data.name"
-                              :value="DailyCharge.data.value+DailyCharge.data.unit"
-                              :rotate="DailyCharge.scale"
+                            :title="DailyCharge.data.name"
+                            :value="
+                              DailyCharge.data.value + DailyCharge.data.unit
+                            "
+                            :rotate="DailyCharge.scale + ''"
                           ></IndicatingInstrument>
                         </div>
                         <div class="flex" v-if="DailyDischarge">
                           <IndicatingInstrument
-                              :title="DailyDischarge.data.name"
-                              :value="DailyDischarge.data.value+DailyDischarge.data.unit"
-                              :rotate="DailyDischarge.scale"
+                            :title="DailyDischarge.data.name"
+                            :value="
+                              DailyDischarge.data.value +
+                                DailyDischarge.data.unit
+                            "
+                            :rotate="DailyDischarge.scale + ''"
                           ></IndicatingInstrument>
                         </div>
                       </div>
@@ -600,7 +664,7 @@ export default {
       PCSTemp: "",
       FacilityInfo: "",
       OutputPower: "",
-      TotalLoad:"",
+      TotalLoad: "",
       DailyCharge: "",
       DailyDischarge: "",
       seriesLabel: {
@@ -795,11 +859,17 @@ export default {
             type: "shadow"
           },
           formatter(value) {
-            let str = value[0].name + '<br/>'
-            value.forEach(item=> {
-              str += item.marker + item.seriesName + ': ' + item.data + 'KVA' + '<br/>'
-            })
-            return str
+            let str = value[0].name + "<br/>";
+            value.forEach(item => {
+              str +=
+                item.marker +
+                item.seriesName +
+                ": " +
+                item.data +
+                "KVA" +
+                "<br/>";
+            });
+            return str;
           }
         },
         grid: {
@@ -833,17 +903,26 @@ export default {
           {
             name: this.OutputPower.SeriesData[0].name,
             type: "bar",
-            data: [this.OutputPower.SeriesData[0].data[0].value, this.OutputPower.SeriesData[0].data[1].value],
+            data: [
+              this.OutputPower.SeriesData[0].data[0].value,
+              this.OutputPower.SeriesData[0].data[1].value
+            ]
           },
           {
             name: this.OutputPower.SeriesData[1].name,
             type: "bar",
-            data: [this.OutputPower.SeriesData[1].data[0].value, this.OutputPower.SeriesData[1].data[1].value],
+            data: [
+              this.OutputPower.SeriesData[1].data[0].value,
+              this.OutputPower.SeriesData[1].data[1].value
+            ]
           },
           {
             name: this.OutputPower.SeriesData[2].name,
             type: "bar",
-            data: [this.OutputPower.SeriesData[2].data[0].value, this.OutputPower.SeriesData[2].data[1].value],
+            data: [
+              this.OutputPower.SeriesData[2].data[0].value,
+              this.OutputPower.SeriesData[2].data[1].value
+            ]
           }
         ]
       });

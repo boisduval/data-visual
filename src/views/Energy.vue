@@ -9,56 +9,61 @@
           <BorderCenterLongest>
             <div class="energy-strument-box flex-row">
               <IndicatingInstrumentKw
-                title="当天充电"
+                v-if="DailyCharge"
+                :title="DailyCharge.data.name"
                 scale-color="#fff"
                 text-color="#51D0AB"
-                rotate="80"
-                value="3500"
+                :rotate="DailyCharge.scale + ''"
+                :value="DailyCharge.data.value"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
-                title="当天放电"
                 scale-color="#fff"
                 text-color="#028C44"
-                rotate="20"
-                value="3500"
+                v-if="DailyDischarge"
+                :title="DailyDischarge.data.name"
+                :rotate="DailyDischarge.scale + ''"
+                :value="DailyDischarge.data.value"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
-                title="当前功率"
-                rotate="20"
-                value="3500"
+                v-if="TheCurrentPower"
+                :title="TheCurrentPower.data.name"
+                :rotate="TheCurrentPower.scale + ''"
+                :value="TheCurrentPower.data.value"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
-                title="累计充电"
                 scale-color="#fff"
                 text-color="#D95854"
-                rotate="80"
-                value="3500"
+                v-if="TheCumulativeCharge"
+                :title="TheCumulativeCharge.data.name"
+                :rotate="TheCumulativeCharge.scale + ''"
+                :value="TheCumulativeCharge.data.value"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
-                title="累计放电"
                 scale-color="#fff"
                 text-color="#D4155A"
-                rotate="50"
-                value="3500"
+                v-if="TheCumulativeDischarge"
+                :title="TheCumulativeDischarge.data.name"
+                :rotate="TheCumulativeDischarge.scale + ''"
+                :value="TheCumulativeDischarge.data.value"
               ></IndicatingInstrumentKw>
             </div>
           </BorderCenterLongest>
         </div>
         <div class="flex5 flex-row">
           <div class="flex">
-            <BorderCenterLonger title="总电量统计趋势">
+            <BorderCenterLonger :title="TotalElectricityStatistics.Name">
               <div id="myChart1" class="charts"></div>
             </BorderCenterLonger>
           </div>
           <div class="flex">
-            <BorderCenterLonger title="收益年度统计情况">
+            <BorderCenterLonger :title="AnnualRevenueStatistics.Name">
               <div id="myChart2" class="charts"></div>
             </BorderCenterLonger>
           </div>
         </div>
         <div class="flex5 flex-row">
           <div class="flex">
-            <BorderCenterLonger title="月度收益趋势">
+            <BorderCenterLonger :title="MonthlyIncome.Name">
               <div id="myChart3" class="charts"></div>
             </BorderCenterLonger>
           </div>
@@ -116,7 +121,16 @@ export default {
           color: "#D4155A",
           value: "3456"
         }
-      ]
+      ],
+      DailyCharge: "",
+      DailyDischarge: "",
+      TheCurrentPower: "",
+      TheCumulativeCharge: "",
+      TheCumulativeDischarge: "",
+      TotalElectricityStatistics: "",
+      MonthlyIncome: "",
+      AnnualRevenueStatistics: "",
+      EnergyStorageRevenue: ""
     };
   },
   methods: {
@@ -129,7 +143,11 @@ export default {
           trigger: "axis"
         },
         legend: {
-          data: ["收益趋势", "充电趋势", "放电趋势"],
+          data: [
+            this.TotalElectricityStatistics.SeriesData[0].name,
+            this.TotalElectricityStatistics.SeriesData[1].name,
+            this.TotalElectricityStatistics.SeriesData[2].name
+          ],
           textStyle: {
             color: "#46a6b5"
           },
@@ -145,7 +163,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          data: this.TotalElectricityStatistics.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -168,26 +186,26 @@ export default {
         },
         series: [
           {
-            name: "收益趋势",
+            name: this.TotalElectricityStatistics.SeriesData[0].name,
             type: "line",
-            stack: "总量",
-            data: [120, 132, 101, 134, 90, 230, 210],
+            stack: this.TotalElectricityStatistics.SeriesData[0].stack,
+            data: this.TotalElectricityStatistics.SeriesData[0].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "充电趋势",
+            name: this.TotalElectricityStatistics.SeriesData[1].name,
             type: "line",
-            stack: "总量",
-            data: [220, 182, 191, 234, 290, 330, 310],
+            stack: this.TotalElectricityStatistics.SeriesData[1].stack,
+            data: this.TotalElectricityStatistics.SeriesData[1].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "放电趋势",
+            name: this.TotalElectricityStatistics.SeriesData[2].name,
             type: "line",
-            stack: "总量",
-            data: [150, 232, 201, 154, 190, 330, 410],
+            stack: this.TotalElectricityStatistics.SeriesData[2].stack,
+            data: this.TotalElectricityStatistics.SeriesData[2].data,
             smooth: true,
             symbol: "none"
           }
@@ -198,7 +216,11 @@ export default {
       myChart2.setOption({
         color: ["#F7931E", "#51D0AB", "#D4155A"],
         legend: {
-          data: ["收益", "充电", "放电"],
+          data: [
+            this.AnnualRevenueStatistics.SeriesData[0].name,
+            this.AnnualRevenueStatistics.SeriesData[1].name,
+            this.AnnualRevenueStatistics.SeriesData[2].name
+          ],
           textStyle: {
             color: "#46a6b5"
           },
@@ -211,24 +233,32 @@ export default {
           bottom: "5%",
           containLabel: true
         },
-        tooltip: {},
-        dataset: {
-          source: [
-            ["product", "收益", "充电", "放电"],
-            ["01", 43.3, 85.8, 93.7],
-            ["02", 83.1, 73.4, 55.1],
-            ["03", 86.4, 65.2, 82.5],
-            ["04", 72.4, 53.9, 39.1],
-            ["05", 72.4, 53.9, 39.1],
-            ["06", 72.4, 53.9, 39.1],
-            ["07", 43.3, 85.8, 93.7],
-            ["08", 83.1, 73.4, 55.1],
-            ["09", 86.4, 65.2, 82.5],
-            ["10", 72.4, 53.9, 39.1],
-            ["11", 72.4, 53.9, 39.1],
-            ["12", 72.4, 53.9, 39.1]
-          ]
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
+          }
         },
+        series: [
+          {
+            name: this.AnnualRevenueStatistics.SeriesData[0].name,
+            type: "bar",
+            stack: this.AnnualRevenueStatistics.SeriesData[0].stack,
+            data: this.AnnualRevenueStatistics.SeriesData[0].data
+          },
+          {
+            name: this.AnnualRevenueStatistics.SeriesData[1].name,
+            type: "bar",
+            stack: this.AnnualRevenueStatistics.SeriesData[1].stack,
+            data: this.AnnualRevenueStatistics.SeriesData[1].data
+          },
+          {
+            name: this.AnnualRevenueStatistics.SeriesData[2].name,
+            type: "bar",
+            stack: this.AnnualRevenueStatistics.SeriesData[2].stack,
+            data: this.AnnualRevenueStatistics.SeriesData[2].data
+          }
+        ],
         xAxis: {
           type: "category",
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
@@ -237,7 +267,8 @@ export default {
           },
           splitLine: {
             show: false
-          }
+          },
+          data: this.AnnualRevenueStatistics.XAxisData
         },
         yAxis: {
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
@@ -248,11 +279,9 @@ export default {
             lineStyle: {
               color: "rgba(70,166,181,0.5)"
             }
-          }
-        },
-        // Declare several bar series, each will be mapped
-        // to a column of dataset.source by default.
-        series: [{ type: "bar" }, { type: "bar" }, { type: "bar" }]
+          },
+          type: "value"
+        }
       });
       // 第三个图
       var myChart3 = this.$echarts.init(document.getElementById("myChart3"));
@@ -262,7 +291,11 @@ export default {
           trigger: "axis"
         },
         legend: {
-          data: ["当前电量曲线", "充电曲线", "放电曲线"],
+          data: [
+            this.MonthlyIncome.SeriesData[0].name,
+            this.MonthlyIncome.SeriesData[1].name,
+            this.MonthlyIncome.SeriesData[2].name
+          ],
           textStyle: {
             color: "#46a6b5"
           },
@@ -278,7 +311,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          data: this.MonthlyIncome.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -301,26 +334,26 @@ export default {
         },
         series: [
           {
-            name: "当前电量曲线",
+            name: this.MonthlyIncome.SeriesData[0].name,
             type: "line",
-            stack: "总量",
-            data: [120, 132, 101, 134, 90, 230, 210],
+            stack: this.MonthlyIncome.SeriesData[0].stack,
+            data: this.MonthlyIncome.SeriesData[0].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "充电曲线",
+            name: this.MonthlyIncome.SeriesData[1].name,
             type: "line",
-            stack: "总量",
-            data: [220, 182, 191, 234, 290, 330, 310],
+            stack: this.MonthlyIncome.SeriesData[1].stack,
+            data: this.MonthlyIncome.SeriesData[1].data,
             smooth: true,
             symbol: "none"
           },
           {
-            name: "放电曲线",
+            name: this.MonthlyIncome.SeriesData[2].name,
             type: "line",
-            stack: "总量",
-            data: [150, 232, 201, 154, 190, 330, 410],
+            stack: this.MonthlyIncome.SeriesData[2].stack,
+            data: this.MonthlyIncome.SeriesData[2].data,
             smooth: true,
             symbol: "none"
           }
@@ -333,12 +366,46 @@ export default {
           myChart3.resize();
         };
       }, 200);
+    },
+    getData() {
+      let url =
+        "/api/Statement/GetEnergyStatistics?SystemToken=0&DeviceSystemID=637103628712992044";
+      this.$axios
+        .get(url)
+        .then(res => {
+          if (res.data.code === 0) {
+            let data = res.data.data;
+            console.log(data);
+            this.DailyCharge = data.DailyCharge;
+            this.DailyDischarge = data.DailyDischarge;
+            this.TheCurrentPower = data.TheCurrentPower;
+            this.TheCumulativeCharge = data.TheCumulativeCharge;
+            this.TheCumulativeDischarge = data.TheCumulativeDischarge;
+            this.TotalElectricityStatistics = data.TotalElectricityStatistics;
+            this.MonthlyIncome = data.MonthlyIncome;
+            this.AnnualRevenueStatistics = data.AnnualRevenueStatistics;
+            this.EnergyStorageRevenue = data.EnergyStorageRevenue;
+            this.cube4[0].title = this.EnergyStorageRevenue.DayStorageIncome.name;
+            this.cube4[0].value = this.EnergyStorageRevenue.DayStorageIncome.value;
+            this.cube4[1].title = this.EnergyStorageRevenue.CumulativeTotalIncome.name;
+            this.cube4[1].value = this.EnergyStorageRevenue.CumulativeTotalIncome.value;
+            this.cube4[2].title = this.EnergyStorageRevenue.CurrentDischargeQuantity.name;
+            this.cube4[2].value = this.EnergyStorageRevenue.CurrentDischargeQuantity.value;
+            this.cube4[3].title = this.EnergyStorageRevenue.AccumulativeDischargeCharge.name;
+            this.cube4[3].value = this.EnergyStorageRevenue.AccumulativeDischargeCharge.value;
+            this.$nextTick(() => {
+              this.getEcharts();
+            });
+          }
+        })
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        });
     }
   },
   created() {
-    this.$nextTick(() => {
-      this.getEcharts();
-    });
+    this.getData();
   }
 };
 </script>

@@ -145,12 +145,13 @@
           />
         </g>
         <text
-          transform="matrix(1 0 0 1 73.25 156.25)"
+          transform="translate(87 156)"
           fill="#46A6B5"
           font-family="'MicrosoftYaHei-Bold'"
           font-size="18"
+          text-anchor="middle"
         >
-          KW
+          {{ unit }}
         </text>
         <text
           transform="translate(90 76)"
@@ -184,6 +185,10 @@ export default {
     },
     title: String,
     value: String,
+    unit: {
+      type: String,
+      default: "KW"
+    },
     rotate: {
       type: String,
       default: "0"
@@ -217,7 +222,7 @@ export default {
 
 @media screen and (max-width: 1300px) {
   .indicating-instrument-kw-box p {
-    transform: scale(0.7);
+    /*transform: scale(0.7);*/
   }
 }
 @media screen and (min-width: 1300px) {
