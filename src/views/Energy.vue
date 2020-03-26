@@ -375,7 +375,6 @@ export default {
         .then(res => {
           if (res.data.code === 0) {
             let data = res.data.data;
-            console.log(data);
             this.DailyCharge = data.DailyCharge;
             this.DailyDischarge = data.DailyDischarge;
             this.TheCurrentPower = data.TheCurrentPower;

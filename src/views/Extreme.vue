@@ -652,7 +652,6 @@ export default {
         .then(res => {
           if (res.data.code === 0) {
             let data = res.data.data;
-            console.log(data);
             this.TotalElectricityStatistics = data.TotalElectricityStatistics;
             this.MonomerHighLowPressure = data.MonomerHighLowPressure;
             this.EnvironmentTemp = data.EnvironmentTemp;

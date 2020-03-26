@@ -940,7 +940,6 @@ export default {
         .then(res => {
           if (res.data.code === 0) {
             let data = res.data.data;
-            console.log(data);
             this.usp = [];
             this.usp.push(data.SOC);
             this.usp.push(data.SOH);
