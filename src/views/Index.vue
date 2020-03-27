@@ -670,7 +670,7 @@ export default {
         yAxis: this.yAxis,
         grid: {
           left: "0",
-          right: "4%",
+          right: "10%",
           top: "20%",
           bottom: "10%",
           containLabel: true
@@ -804,33 +804,11 @@ export default {
             type: "bar",
             barGap: 0,
             data: this.Monthly_energy_consumption_statistics.SeriesData[0].data
-            // label: {
-            //   show: true,
-            //   position: "insideBottom",
-            //   // fontSize: "14px",
-            //   // color: "rgba(58,181,75,0.5)"
-            //   color: "#fff",
-            //   verticalAlign: "middle",
-            //   rotate: 90,
-            //   distance: 15,
-            //   align: "left"
-            // }
           },
           {
             name: this.Monthly_energy_consumption_statistics.SeriesData[1].name,
             type: "bar",
             data: this.Monthly_energy_consumption_statistics.SeriesData[1].data
-            // label: {
-            //   show: true,
-            //   position: "insideBottom",
-            //   // fontSize: "14px",
-            //   // color: "rgba(58,181,75,0.5)"
-            //   color: "#fff",
-            //   verticalAlign: "middle",
-            //   rotate: 90,
-            //   distance: 15,
-            //   align: "left"
-            // }
           }
         ]
       });
@@ -918,7 +896,7 @@ export default {
             type: "pie",
             name: this.Time_distribution_of_electricity_consumption.Name,
             radius: "55%",
-            center: ["50%", "60%"],
+            center: ["50%", "50%"],
             data: this.Time_distribution_of_electricity_consumption.Datas,
             emphasis: {
               itemStyle: {

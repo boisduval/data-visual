@@ -14,15 +14,20 @@
           <div class="flex">
             <ExtremeBorderMainLonger>
               <div class="flex-column" style="height: 100%">
-                <div class="flex" style="margin-bottom: 2px;">
-                  <ExtremeBg :title="MonomerHighLowPressure.Name">
-                    <div id="myChart2" class="charts"></div>
-                  </ExtremeBg>
-                </div>
+                <!--                <div class="flex" style="margin-bottom: 2px;">-->
+                <!--                  <ExtremeBg :title="MonomerHighLowPressure.Name">-->
+                <!--                    <div id="myChart2" class="charts"></div>-->
+                <!--                  </ExtremeBg>-->
+                <!--                </div>-->
+                <!--                <div class="flex">-->
+                <!--                  <ExtremeBg title="单体高低压统计">-->
+                <!--                    <div id="myChart3" class="charts"></div>-->
+                <!--                  </ExtremeBg>-->
+                <!--                </div>-->
                 <div class="flex">
-                  <ExtremeBg title="单体高低压统计">
-                    <div id="myChart3" class="charts"></div>
-                  </ExtremeBg>
+                  <ExtremeBgBigger>
+                    <div id="myChart2" class="charts"></div>
+                  </ExtremeBgBigger>
                 </div>
               </div>
             </ExtremeBorderMainLonger>
@@ -64,9 +69,9 @@
                         >
                           <p style="width: 50px">{{ val.name }}</p>
                           <p style="width: 120px">
-                            {{ val.value.value }}{{ val.value.unit }}
+                            {{ val.value.unit }}{{ val.value.value }}
                           </p>
-                          <p>{{ val.position.value }}{{ val.position.unit }}</p>
+                          <p>{{ val.position.unit }}{{ val.position.value }}</p>
                         </li>
                       </ul>
                     </happy-scroll>
@@ -197,7 +202,9 @@ export default {
             lineStyle: {
               color: "rgba(70,166,181,0.5)"
             }
-          }
+          },
+          min: this.TotalElectricityStatistics.YAxisMin,
+          max: this.TotalElectricityStatistics.YAxisMax
         },
         series: [
           {
@@ -250,113 +257,343 @@ export default {
           }
         ]
       });
+      // // 第二个图
+      // var myChart2 = this.$echarts.init(document.getElementById("myChart2"));
+      // myChart2.setOption({
+      //   color: ["#F7931F", "#D4155A"],
+      //   tooltip: {
+      //     trigger: "axis",
+      //     axisPointer: {
+      //       type: "shadow"
+      //     },
+      //     formatter: value => {
+      //       let str = value[0].name + "<br/>";
+      //       value.forEach(item => {
+      //         str +=
+      //           item.marker +
+      //           item.seriesName +
+      //           " : " +
+      //           item.data +
+      //           "<br/>";
+      //       });
+      //       return str;
+      //     }
+      //   },
+      //   grid: {
+      //     left: "4%",
+      //     right: "5%",
+      //     top: "20%",
+      //     bottom: "10%",
+      //     containLabel: true
+      //   },
+      //
+      //   xAxis: {
+      //     type: "value",
+      //     axisLabel: { color: "#46a6b5" }, // x轴字体颜色
+      //     axisLine: {
+      //       lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+      //     },
+      //     splitLine: {
+      //       show: false
+      //     }
+      //   },
+      //   yAxis: {
+      //     type: "category",
+      //     inverse: true,
+      //     data: ["1", "2", "3"],
+      //     axisLabel: { color: "#46a6b5" }, // x轴字体颜色
+      //     axisLine: {
+      //       lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+      //     },
+      //   },
+      //   series: [
+      //     {
+      //       name: this.MonomerHighLowPressure.SeriesData[0].name,
+      //       type: "bar",
+      //       data: [
+      //         this.MonomerHighLowPressure.SeriesData[0].data[0].value,
+      //         this.MonomerHighLowPressure.SeriesData[0].data[1].value,
+      //         this.MonomerHighLowPressure.SeriesData[0].data[2].value
+      //       ]
+      //     },
+      //     {
+      //       name: this.MonomerHighLowPressure.SeriesData[1].name,
+      //       type: "bar",
+      //       data: [
+      //         this.MonomerHighLowPressure.SeriesData[1].data[0].value,
+      //         this.MonomerHighLowPressure.SeriesData[1].data[1].value,
+      //         this.MonomerHighLowPressure.SeriesData[1].data[2].value
+      //       ]
+      //     }
+      //   ]
+      // });
+      // // 第三个图
+      // var myChart3 = this.$echarts.init(document.getElementById("myChart3"));
+      // myChart3.setOption({
+      //   color: ["#F7931F", "#D4155A"],
+      //   tooltip: {
+      //     trigger: "axis",
+      //     axisPointer: {
+      //       type: "shadow"
+      //     }
+      //   },
+      //   grid: {
+      //     left: "4%",
+      //     right: "5%",
+      //     top: "20%",
+      //     bottom: "10%",
+      //     containLabel: true
+      //   },
+      //
+      //   xAxis: {
+      //     type: "value",
+      //     axisLabel: { color: "#46a6b5" }, // x轴字体颜色
+      //     axisLine: {
+      //       lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+      //     },
+      //     splitLine: {
+      //       show: false
+      //     }
+      //   },
+      //   yAxis: {
+      //     type: "category",
+      //     inverse: true,
+      //     data: ["1", "2", "3"],
+      //     axisLabel: { color: "#46a6b5" }, // x轴字体颜色
+      //     axisLine: {
+      //       lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+      //     }
+      //   },
+      //   series: [
+      //     {
+      //       name: "U",
+      //       type: "bar",
+      //       data: [165, 170, 200],
+      //       label: this.seriesLabel
+      //     },
+      //     {
+      //       name: "V",
+      //       type: "bar",
+      //       label: this.seriesLabel,
+      //       data: [150, 105, 180]
+      //     }
+      //   ]
+      // });
       // 第二个图
       var myChart2 = this.$echarts.init(document.getElementById("myChart2"));
       myChart2.setOption({
-        color: ["#F7931F", "#D4155A"],
         tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "shadow"
+          type: "item",
+          formatter: function(param) {
+            let str =
+              param.data[4] +
+              "<br/>" +
+              param.data[3] +
+              " : " +
+              param.data[0] +
+              "<br/>" +
+              "次数 : " +
+              param.data[2];
+            return str;
           }
         },
-        grid: {
-          left: "4%",
-          right: "5%",
-          top: "20%",
-          bottom: "10%",
-          containLabel: true
-        },
-
-        xAxis: {
-          type: "value",
-          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
-          axisLine: {
-            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+        legend: {
+          right: 10,
+          data: [
+            "单体最高电压",
+            "单体最低电压",
+            "单体最高温度",
+            "单体最低温度"
+          ],
+          textStyle: {
+            color: "#46a6b5"
           },
-          splitLine: {
-            show: false
-          }
+          type: "scroll",
+          top: 10
         },
+        xAxis: [
+          {
+            type: "value",
+            name: "电压",
+            axisLabel: {
+              formatter: "{value} V",
+              color: "#46a6b5"
+            },
+            scale: true,
+            splitLine: {
+              lineStyle: {
+                type: "dashed",
+                color: "#46a6b5"
+              }
+            },
+            axisLine: {
+              lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+            }
+          },
+          {
+            type: "value",
+            name: "温度",
+            axisLabel: {
+              formatter: "{value} °C",
+              color: "#46a6b5"
+            },
+            scale: true,
+            splitLine: {
+              lineStyle: {
+                type: "dashed",
+                color: "#46a6b5"
+              }
+            },
+            axisLine: {
+              lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+            }
+          }
+        ],
         yAxis: {
-          type: "category",
-          inverse: true,
-          data: ["1", "2", "3"],
-          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
+          splitLine: {
+            lineStyle: {
+              type: "dashed",
+              color: "#46a6b5"
+            }
+          },
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
         },
         series: [
           {
-            name: this.MonomerHighLowPressure.SeriesData[0].name,
-            type: "bar",
-            data: [
-              this.MonomerHighLowPressure.SeriesData[0].data[0].value,
-              this.MonomerHighLowPressure.SeriesData[0].data[1].value,
-              this.MonomerHighLowPressure.SeriesData[0].data[2].value
-            ]
+            name: "单体最高电压",
+            data: this.MonomerHighLowDatas[0],
+            type: "scatter",
+            symbolSize: function(data) {
+              return Math.sqrt(data[2]) * 3;
+            },
+            emphasis: {
+              label: {
+                show: true,
+                formatter: function(param) {
+                  return param.data[3];
+                },
+                position: "top",
+                color: "#fff"
+              }
+            },
+            itemStyle: {
+              shadowBlur: 10,
+              shadowColor: "rgba(120, 36, 50, 0.5)",
+              shadowOffsetY: 5,
+              color: new this.$echarts.graphic.RadialGradient(0.4, 0.3, 1, [
+                {
+                  offset: 0,
+                  color: "rgb(251, 118, 123)"
+                },
+                {
+                  offset: 1,
+                  color: "rgb(204, 46, 72)"
+                }
+              ])
+            }
           },
           {
-            name: this.MonomerHighLowPressure.SeriesData[1].name,
-            type: "bar",
-            data: [
-              this.MonomerHighLowPressure.SeriesData[1].data[0].value,
-              this.MonomerHighLowPressure.SeriesData[1].data[1].value,
-              this.MonomerHighLowPressure.SeriesData[1].data[2].value
-            ]
-          }
-        ]
-      });
-      // 第三个图
-      var myChart3 = this.$echarts.init(document.getElementById("myChart3"));
-      myChart3.setOption({
-        color: ["#F7931F", "#D4155A"],
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "shadow"
-          }
-        },
-        grid: {
-          left: "4%",
-          right: "5%",
-          top: "20%",
-          bottom: "10%",
-          containLabel: true
-        },
-
-        xAxis: {
-          type: "value",
-          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
-          axisLine: {
-            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
-          },
-          splitLine: {
-            show: false
-          },
-        },
-        yAxis: {
-          type: "category",
-          inverse: true,
-          data: ["1", "2", "3"],
-          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
-          axisLine: {
-            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
-          }
-        },
-        series: [
-          {
-            name: "U",
-            type: "bar",
-            data: [165, 170, 200],
-            label: this.seriesLabel
+            name: "单体最低电压",
+            data: this.MonomerHighLowDatas[1],
+            type: "scatter",
+            symbolSize: function(data) {
+              return Math.sqrt(data[2]) * 3;
+            },
+            emphasis: {
+              label: {
+                show: true,
+                formatter: function(param) {
+                  return param.data[3];
+                },
+                position: "top",
+                color: "#fff"
+              }
+            },
+            itemStyle: {
+              shadowBlur: 10,
+              shadowColor: "rgba(25, 100, 150, 0.5)",
+              shadowOffsetY: 5,
+              color: new this.$echarts.graphic.RadialGradient(0.4, 0.3, 1, [
+                {
+                  offset: 0,
+                  color: "rgb(129, 227, 238)"
+                },
+                {
+                  offset: 1,
+                  color: "rgb(25, 183, 207)"
+                }
+              ])
+            }
           },
           {
-            name: "V",
-            type: "bar",
-            label: this.seriesLabel,
-            data: [150, 105, 180]
+            name: "单体最高温度",
+            data: this.MonomerHighLowDatas[2],
+            type: "scatter",
+            symbolSize: function(data) {
+              return Math.sqrt(data[2]) * 3;
+            },
+            emphasis: {
+              label: {
+                show: true,
+                formatter: function(param) {
+                  return param.data[3];
+                },
+                position: "top",
+                color: "#fff"
+              }
+            },
+            xAxisIndex: 1,
+            itemStyle: {
+              shadowBlur: 10,
+              shadowColor: "rgba(222, 120, 130, 0.5)",
+              shadowOffsetY: 5,
+              color: new this.$echarts.graphic.RadialGradient(0.4, 0.3, 1, [
+                {
+                  offset: 0,
+                  color: "rgb(255, 184, 89)"
+                },
+                {
+                  offset: 1,
+                  color: "rgb(247, 147, 31)"
+                }
+              ])
+            }
+          },
+          {
+            name: "单体最低温度",
+            data: this.MonomerHighLowDatas[3],
+            type: "scatter",
+            symbolSize: function(data) {
+              return Math.sqrt(data[2]) * 3;
+            },
+            emphasis: {
+              label: {
+                show: true,
+                formatter: function(param) {
+                  return param.data[3];
+                },
+                position: "top",
+                color: "#fff"
+              }
+            },
+            xAxisIndex: 1,
+            itemStyle: {
+              shadowBlur: 10,
+              shadowColor: "rgba(74, 190, 189, 0.5)",
+              shadowOffsetY: 5,
+              color: new this.$echarts.graphic.RadialGradient(0.4, 0.3, 1, [
+                {
+                  offset: 0,
+                  color: "rgb(154, 239, 198)"
+                },
+                {
+                  offset: 1,
+                  color: "rgb(81, 208, 171)"
+                }
+              ])
+            }
           }
         ]
       });
@@ -542,7 +779,7 @@ export default {
             this.SingleDifferentialPressure.SeriesData[2].name,
             this.SingleDifferentialPressure.SeriesData[3].name,
             this.SingleDifferentialPressure.SeriesData[4].name,
-            this.SingleDifferentialPressure.SeriesData[5].name,
+            this.SingleDifferentialPressure.SeriesData[5].name
           ],
           textStyle: {
             color: "#46a6b5"
@@ -579,7 +816,9 @@ export default {
             lineStyle: {
               color: "rgba(70,166,181,0.5)"
             }
-          }
+          },
+          min: this.SingleDifferentialPressure.YAxisMin,
+          max: this.SingleDifferentialPressure.YAxisMax
         },
         series: [
           {
@@ -629,14 +868,14 @@ export default {
             data: this.SingleDifferentialPressure.SeriesData[5].data,
             smooth: true,
             symbol: "none"
-          },
+          }
         ]
       });
       setTimeout(function() {
         window.onresize = () => {
           myChart1.resize();
           myChart2.resize();
-          myChart3.resize();
+          // myChart3.resize();
           myChart4.resize();
           myChart5.resize();
           myChart6.resize();
@@ -661,6 +900,7 @@ export default {
             this.InsulationExtremum = data.InsulationExtremum;
             this.MonomerMaximumVoltage = data.MonomerMaximumVoltage;
             this.MonomerMinimumVoltage = data.MonomerMinimumVoltage;
+            this.MonomerHighLowDatas = data.MonomerHighLowDatas.valueUnits;
             this.SingleDifferentialPressure = data.SingleDifferentialPressure;
             this.$nextTick(() => {
               this.getEcharts();

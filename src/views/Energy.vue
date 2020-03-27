@@ -71,7 +71,10 @@
             <BorderCenterLonger title="储能收益情况">
               <div class="flex-column" style="padding: 10% 5% 5%;height: 100%">
                 <div class="energy-visual flex">
-                  <EnergyEarnings value="34567"></EnergyEarnings>
+                  <EnergyEarnings
+                    :value="EnergyStorageRevenue.CumulativeTotalIncome.value"
+                    v-if="EnergyStorageRevenue"
+                  ></EnergyEarnings>
                 </div>
                 <div class="energy-text-box flex-row">
                   <div
@@ -234,9 +237,9 @@ export default {
           containLabel: true
         },
         tooltip: {
-          trigger: 'axis',
+          trigger: "axis",
           axisPointer: {
-            type: 'shadow'
+            type: "shadow"
           }
         },
         series: [
