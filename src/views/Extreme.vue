@@ -14,18 +14,11 @@
           <div class="flex">
             <ExtremeBorderMainLonger>
               <div class="flex-column" style="height: 100%">
-                <!--                <div class="flex" style="margin-bottom: 2px;">-->
-                <!--                  <ExtremeBg :title="MonomerHighLowPressure.Name">-->
-                <!--                    <div id="myChart2" class="charts"></div>-->
-                <!--                  </ExtremeBg>-->
-                <!--                </div>-->
-                <!--                <div class="flex">-->
-                <!--                  <ExtremeBg title="单体高低压统计">-->
-                <!--                    <div id="myChart3" class="charts"></div>-->
-                <!--                  </ExtremeBg>-->
-                <!--                </div>-->
                 <div class="flex">
-                  <ExtremeBgBigger>
+                  <ExtremeBgBigger
+                    :title="MonomerHighLowDatas.totalname"
+                    v-if="MonomerHighLowDatas"
+                  >
                     <div id="myChart2" class="charts"></div>
                   </ExtremeBgBigger>
                 </div>
@@ -90,12 +83,18 @@
               <div class="flex-row" style="height: 100%">
                 <div class="flex flex-column" style="margin-right: 2px;">
                   <div class="flex" style="margin-bottom: 2px;">
-                    <ExtremeBgSquare>
+                    <ExtremeBgSquare
+                      :title="MonomerMaximumVoltage.Name"
+                      v-if="MonomerMaximumVoltage"
+                    >
                       <div id="myChart5" class="charts"></div>
                     </ExtremeBgSquare>
                   </div>
                   <div class="flex">
-                    <ExtremeBgSquare>
+                    <ExtremeBgSquare
+                      :title="MonomerMinimumVoltage.Name"
+                      v-if="MonomerMinimumVoltage"
+                    >
                       <div id="myChart6" class="charts"></div>
                     </ExtremeBgSquare>
                   </div>
@@ -146,7 +145,8 @@ export default {
       InsulationExtremum: "",
       MonomerMaximumVoltage: "",
       MonomerMinimumVoltage: "",
-      SingleDifferentialPressure: ""
+      SingleDifferentialPressure: "",
+      MonomerHighLowDatas: ""
     };
   },
   methods: {
@@ -159,14 +159,7 @@ export default {
           trigger: "axis"
         },
         legend: {
-          data: [
-            this.TotalElectricityStatistics.SeriesData[0].name,
-            this.TotalElectricityStatistics.SeriesData[1].name,
-            this.TotalElectricityStatistics.SeriesData[2].name,
-            this.TotalElectricityStatistics.SeriesData[3].name,
-            this.TotalElectricityStatistics.SeriesData[4].name,
-            this.TotalElectricityStatistics.SeriesData[5].name
-          ],
+          data: this.TotalElectricityStatistics.legend,
           textStyle: {
             color: "#46a6b5"
           },
@@ -175,9 +168,9 @@ export default {
         },
         grid: {
           left: "1%",
-          right: "4%",
+          right: "6%",
           top: "20%",
-          bottom: "10%",
+          bottom: "5%",
           containLabel: true
         },
         xAxis: {
@@ -206,179 +199,8 @@ export default {
           min: this.TotalElectricityStatistics.YAxisMin,
           max: this.TotalElectricityStatistics.YAxisMax
         },
-        series: [
-          {
-            name: this.TotalElectricityStatistics.SeriesData[0].name,
-            type: "line",
-            stack: this.TotalElectricityStatistics.SeriesData[0].stack,
-            data: this.TotalElectricityStatistics.SeriesData[0].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.TotalElectricityStatistics.SeriesData[1].name,
-            type: "line",
-            stack: this.TotalElectricityStatistics.SeriesData[1].stack,
-            data: this.TotalElectricityStatistics.SeriesData[1].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.TotalElectricityStatistics.SeriesData[2].name,
-            type: "line",
-            stack: this.TotalElectricityStatistics.SeriesData[2].stack,
-            data: this.TotalElectricityStatistics.SeriesData[2].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.TotalElectricityStatistics.SeriesData[3].name,
-            type: "line",
-            stack: this.TotalElectricityStatistics.SeriesData[3].stack,
-            data: this.TotalElectricityStatistics.SeriesData[3].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.TotalElectricityStatistics.SeriesData[4].name,
-            type: "line",
-            stack: this.TotalElectricityStatistics.SeriesData[4].stack,
-            data: this.TotalElectricityStatistics.SeriesData[4].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.TotalElectricityStatistics.SeriesData[5].name,
-            type: "line",
-            stack: this.TotalElectricityStatistics.SeriesData[5].stack,
-            data: this.TotalElectricityStatistics.SeriesData[5].data,
-            smooth: true,
-            symbol: "none"
-          }
-        ]
+        series: this.TotalElectricityStatistics.series
       });
-      // // 第二个图
-      // var myChart2 = this.$echarts.init(document.getElementById("myChart2"));
-      // myChart2.setOption({
-      //   color: ["#F7931F", "#D4155A"],
-      //   tooltip: {
-      //     trigger: "axis",
-      //     axisPointer: {
-      //       type: "shadow"
-      //     },
-      //     formatter: value => {
-      //       let str = value[0].name + "<br/>";
-      //       value.forEach(item => {
-      //         str +=
-      //           item.marker +
-      //           item.seriesName +
-      //           " : " +
-      //           item.data +
-      //           "<br/>";
-      //       });
-      //       return str;
-      //     }
-      //   },
-      //   grid: {
-      //     left: "4%",
-      //     right: "5%",
-      //     top: "20%",
-      //     bottom: "10%",
-      //     containLabel: true
-      //   },
-      //
-      //   xAxis: {
-      //     type: "value",
-      //     axisLabel: { color: "#46a6b5" }, // x轴字体颜色
-      //     axisLine: {
-      //       lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
-      //     },
-      //     splitLine: {
-      //       show: false
-      //     }
-      //   },
-      //   yAxis: {
-      //     type: "category",
-      //     inverse: true,
-      //     data: ["1", "2", "3"],
-      //     axisLabel: { color: "#46a6b5" }, // x轴字体颜色
-      //     axisLine: {
-      //       lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
-      //     },
-      //   },
-      //   series: [
-      //     {
-      //       name: this.MonomerHighLowPressure.SeriesData[0].name,
-      //       type: "bar",
-      //       data: [
-      //         this.MonomerHighLowPressure.SeriesData[0].data[0].value,
-      //         this.MonomerHighLowPressure.SeriesData[0].data[1].value,
-      //         this.MonomerHighLowPressure.SeriesData[0].data[2].value
-      //       ]
-      //     },
-      //     {
-      //       name: this.MonomerHighLowPressure.SeriesData[1].name,
-      //       type: "bar",
-      //       data: [
-      //         this.MonomerHighLowPressure.SeriesData[1].data[0].value,
-      //         this.MonomerHighLowPressure.SeriesData[1].data[1].value,
-      //         this.MonomerHighLowPressure.SeriesData[1].data[2].value
-      //       ]
-      //     }
-      //   ]
-      // });
-      // // 第三个图
-      // var myChart3 = this.$echarts.init(document.getElementById("myChart3"));
-      // myChart3.setOption({
-      //   color: ["#F7931F", "#D4155A"],
-      //   tooltip: {
-      //     trigger: "axis",
-      //     axisPointer: {
-      //       type: "shadow"
-      //     }
-      //   },
-      //   grid: {
-      //     left: "4%",
-      //     right: "5%",
-      //     top: "20%",
-      //     bottom: "10%",
-      //     containLabel: true
-      //   },
-      //
-      //   xAxis: {
-      //     type: "value",
-      //     axisLabel: { color: "#46a6b5" }, // x轴字体颜色
-      //     axisLine: {
-      //       lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
-      //     },
-      //     splitLine: {
-      //       show: false
-      //     }
-      //   },
-      //   yAxis: {
-      //     type: "category",
-      //     inverse: true,
-      //     data: ["1", "2", "3"],
-      //     axisLabel: { color: "#46a6b5" }, // x轴字体颜色
-      //     axisLine: {
-      //       lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
-      //     }
-      //   },
-      //   series: [
-      //     {
-      //       name: "U",
-      //       type: "bar",
-      //       data: [165, 170, 200],
-      //       label: this.seriesLabel
-      //     },
-      //     {
-      //       name: "V",
-      //       type: "bar",
-      //       label: this.seriesLabel,
-      //       data: [150, 105, 180]
-      //     }
-      //   ]
-      // });
       // 第二个图
       var myChart2 = this.$echarts.init(document.getElementById("myChart2"));
       myChart2.setOption({
@@ -398,7 +220,6 @@ export default {
           }
         },
         legend: {
-          right: 10,
           data: [
             "单体最高电压",
             "单体最低电压",
@@ -409,22 +230,30 @@ export default {
             color: "#46a6b5"
           },
           type: "scroll",
-          top: 10
+          top: "12%"
+        },
+        grid: {
+          left: "1%",
+          right: "8%",
+          top: "20%",
+          bottom: "6%",
+          containLabel: true
         },
         xAxis: [
           {
             type: "value",
             name: "电压",
             axisLabel: {
-              formatter: "{value} V",
+              formatter: "{value} mV",
               color: "#46a6b5"
             },
             scale: true,
             splitLine: {
               lineStyle: {
                 type: "dashed",
-                color: "#46a6b5"
-              }
+                color: "rgba(70,166,181,0.5)"
+              },
+              show: false
             },
             axisLine: {
               lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -441,8 +270,9 @@ export default {
             splitLine: {
               lineStyle: {
                 type: "dashed",
-                color: "#46a6b5"
-              }
+                color: "rgba(70,166,181,0.5)"
+              },
+              show: false
             },
             axisLine: {
               lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -453,7 +283,7 @@ export default {
           splitLine: {
             lineStyle: {
               type: "dashed",
-              color: "#46a6b5"
+              color: "rgba(70,166,181,0.5)"
             }
           },
           axisLine: {
@@ -463,7 +293,7 @@ export default {
         series: [
           {
             name: "单体最高电压",
-            data: this.MonomerHighLowDatas[0],
+            data: this.MonomerHighLowDatas.valueUnits[0],
             type: "scatter",
             symbolSize: function(data) {
               return Math.sqrt(data[2]) * 3;
@@ -480,23 +310,23 @@ export default {
             },
             itemStyle: {
               shadowBlur: 10,
-              shadowColor: "rgba(120, 36, 50, 0.5)",
+              shadowColor: "rgba(16,103,120,0.5)",
               shadowOffsetY: 5,
               color: new this.$echarts.graphic.RadialGradient(0.4, 0.3, 1, [
                 {
                   offset: 0,
-                  color: "rgb(251, 118, 123)"
+                  color: "rgb(40,192,251)"
                 },
                 {
                   offset: 1,
-                  color: "rgb(204, 46, 72)"
+                  color: "rgb(30,133,204)"
                 }
               ])
             }
           },
           {
             name: "单体最低电压",
-            data: this.MonomerHighLowDatas[1],
+            data: this.MonomerHighLowDatas.valueUnits[1],
             type: "scatter",
             symbolSize: function(data) {
               return Math.sqrt(data[2]) * 3;
@@ -529,7 +359,7 @@ export default {
           },
           {
             name: "单体最高温度",
-            data: this.MonomerHighLowDatas[2],
+            data: this.MonomerHighLowDatas.valueUnits[2],
             type: "scatter",
             symbolSize: function(data) {
               return Math.sqrt(data[2]) * 3;
@@ -547,23 +377,23 @@ export default {
             xAxisIndex: 1,
             itemStyle: {
               shadowBlur: 10,
-              shadowColor: "rgba(222, 120, 130, 0.5)",
+              shadowColor: "rgba(99,222,118,0.5)",
               shadowOffsetY: 5,
               color: new this.$echarts.graphic.RadialGradient(0.4, 0.3, 1, [
                 {
                   offset: 0,
-                  color: "rgb(255, 184, 89)"
+                  color: "rgb(36,255,220)"
                 },
                 {
                   offset: 1,
-                  color: "rgb(247, 147, 31)"
+                  color: "rgb(81,247,199)"
                 }
               ])
             }
           },
           {
             name: "单体最低温度",
-            data: this.MonomerHighLowDatas[3],
+            data: this.MonomerHighLowDatas.valueUnits[3],
             type: "scatter",
             symbolSize: function(data) {
               return Math.sqrt(data[2]) * 3;
@@ -581,16 +411,16 @@ export default {
             xAxisIndex: 1,
             itemStyle: {
               shadowBlur: 10,
-              shadowColor: "rgba(74, 190, 189, 0.5)",
+              shadowColor: "rgba(83,190,126,0.5)",
               shadowOffsetY: 5,
               color: new this.$echarts.graphic.RadialGradient(0.4, 0.3, 1, [
                 {
                   offset: 0,
-                  color: "rgb(154, 239, 198)"
+                  color: "rgb(153,239,205)"
                 },
                 {
                   offset: 1,
-                  color: "rgb(81, 208, 171)"
+                  color: "rgb(67,208,203)"
                 }
               ])
             }
@@ -618,7 +448,7 @@ export default {
           left: "3%",
           right: "6%",
           top: "20%",
-          bottom: "10%",
+          bottom: "6%",
           containLabel: true
         },
         xAxis: [
@@ -678,26 +508,12 @@ export default {
           trigger: "item",
           formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
-        // grid: {
-        //   left: "3%",
-        //   right: "4%",
-        //   top: "4%",
-        //   containLabel: true
-        // },
-        visualMap: {
-          show: false,
-          min: 80,
-          max: 600,
-          inRange: {
-            colorLightness: [0.2, 1]
-          }
-        },
         series: [
           {
             name: this.MonomerMaximumVoltage.Name,
             type: "pie",
-            radius: "90%",
-            center: ["55%", "50%"],
+            radius: "80%",
+            center: ["55%", "60%"],
             data: this.MonomerMaximumVoltage.Datas.sort(function(a, b) {
               return a.value - b.value;
             }),
@@ -706,9 +522,9 @@ export default {
               color: "rgba(255, 255, 255, 0.3)",
               show: false
             },
-            itemStyle: {
-              color: "#c23531"
-            },
+            // itemStyle: {
+            //   color: "#4cc1c2"
+            // },
             animationType: "scale",
             animationEasing: "elasticOut",
             // eslint-disable-next-line no-unused-vars
@@ -725,26 +541,12 @@ export default {
           trigger: "item",
           formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
-        // grid: {
-        //   left: "3%",
-        //   right: "4%",
-        //   top: "4%",
-        //   containLabel: true
-        // },
-        visualMap: {
-          show: false,
-          min: 80,
-          max: 600,
-          inRange: {
-            colorLightness: [0.2, 1]
-          }
-        },
         series: [
           {
             name: this.MonomerMinimumVoltage.Name,
             type: "pie",
-            radius: "90%",
-            center: ["55%", "50%"],
+            radius: "80%",
+            center: ["55%", "60%"],
             data: this.MonomerMinimumVoltage.Datas.sort(function(a, b) {
               return a.value - b.value;
             }),
@@ -752,9 +554,6 @@ export default {
             label: {
               color: "rgba(255, 255, 255, 0.8)",
               show: false
-            },
-            itemStyle: {
-              color: "#c23531"
             },
             animationType: "scale",
             animationEasing: "elasticOut",
@@ -768,19 +567,11 @@ export default {
       // 第七个图
       var myChart7 = this.$echarts.init(document.getElementById("myChart7"));
       myChart7.setOption({
-        // color: ["#51D0AB", "#F7931E", "#D4155A"],
         tooltip: {
           trigger: "axis"
         },
         legend: {
-          data: [
-            this.SingleDifferentialPressure.SeriesData[0].name,
-            this.SingleDifferentialPressure.SeriesData[1].name,
-            this.SingleDifferentialPressure.SeriesData[2].name,
-            this.SingleDifferentialPressure.SeriesData[3].name,
-            this.SingleDifferentialPressure.SeriesData[4].name,
-            this.SingleDifferentialPressure.SeriesData[5].name
-          ],
+          data: this.SingleDifferentialPressure.legend,
           textStyle: {
             color: "#46a6b5"
           },
@@ -791,7 +582,7 @@ export default {
           left: "1%",
           right: "4%",
           top: "20%",
-          bottom: "10%",
+          bottom: "6%",
           containLabel: true
         },
         xAxis: {
@@ -820,56 +611,7 @@ export default {
           min: this.SingleDifferentialPressure.YAxisMin,
           max: this.SingleDifferentialPressure.YAxisMax
         },
-        series: [
-          {
-            name: this.SingleDifferentialPressure.SeriesData[0].name,
-            type: "line",
-            stack: this.SingleDifferentialPressure.SeriesData[0].stack,
-            data: this.SingleDifferentialPressure.SeriesData[0].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.SingleDifferentialPressure.SeriesData[1].name,
-            type: "line",
-            stack: this.SingleDifferentialPressure.SeriesData[1].stack,
-            data: this.SingleDifferentialPressure.SeriesData[1].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.SingleDifferentialPressure.SeriesData[2].name,
-            type: "line",
-            stack: this.SingleDifferentialPressure.SeriesData[2].stack,
-            data: this.SingleDifferentialPressure.SeriesData[2].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.SingleDifferentialPressure.SeriesData[3].name,
-            type: "line",
-            stack: this.SingleDifferentialPressure.SeriesData[3].stack,
-            data: this.SingleDifferentialPressure.SeriesData[3].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.SingleDifferentialPressure.SeriesData[4].name,
-            type: "line",
-            stack: this.SingleDifferentialPressure.SeriesData[4].stack,
-            data: this.SingleDifferentialPressure.SeriesData[4].data,
-            smooth: true,
-            symbol: "none"
-          },
-          {
-            name: this.SingleDifferentialPressure.SeriesData[5].name,
-            type: "line",
-            stack: this.SingleDifferentialPressure.SeriesData[5].stack,
-            data: this.SingleDifferentialPressure.SeriesData[5].data,
-            smooth: true,
-            symbol: "none"
-          }
-        ]
+        series: this.SingleDifferentialPressure.series
       });
       setTimeout(function() {
         window.onresize = () => {
@@ -900,8 +642,34 @@ export default {
             this.InsulationExtremum = data.InsulationExtremum;
             this.MonomerMaximumVoltage = data.MonomerMaximumVoltage;
             this.MonomerMinimumVoltage = data.MonomerMinimumVoltage;
-            this.MonomerHighLowDatas = data.MonomerHighLowDatas.valueUnits;
+            this.MonomerHighLowDatas = data.MonomerHighLowDatas;
             this.SingleDifferentialPressure = data.SingleDifferentialPressure;
+            this.SingleDifferentialPressure.legend = [];
+            this.SingleDifferentialPressure.series = [];
+            this.SingleDifferentialPressure.SeriesData.forEach(item => {
+              this.SingleDifferentialPressure.legend.push(item.name);
+              this.SingleDifferentialPressure.series.push({
+                name: item.name,
+                type: "line",
+                stack: item.stack,
+                data: item.data,
+                smooth: true,
+                symbol: "none"
+              });
+            });
+            this.TotalElectricityStatistics.legend = [];
+            this.TotalElectricityStatistics.series = [];
+            this.TotalElectricityStatistics.SeriesData.forEach(item => {
+              this.TotalElectricityStatistics.legend.push(item.name);
+              this.TotalElectricityStatistics.series.push({
+                name: item.name,
+                type: "line",
+                stack: item.stack,
+                data: item.data,
+                smooth: true,
+                symbol: "none"
+              });
+            });
             this.$nextTick(() => {
               this.getEcharts();
             });

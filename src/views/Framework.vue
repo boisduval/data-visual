@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <section class="flex-row">
-      <div class="flex2">
+      <div class="flex2" v-if="data">
         <svg
           version="1.1"
           id="图层_1"
@@ -5425,7 +5425,7 @@
           </g>
         </svg>
       </div>
-      <div class="flex flex-column">
+      <div class="flex flex-column" v-if="data">
         <div class="flex">
           <FrameworkBorder :title="WeeklyElectricityStatisticsBarChart.Name">
             <div class="flex-column" style="height: 100%">
@@ -5514,7 +5514,8 @@ export default {
       InverterModule: "",
       WeeklyElectricityStatisticsBarChart: "",
       WeeklyElectricityStatisticsDic: "",
-      DayOperationInformationLineChart: ""
+      DayOperationInformationLineChart: "",
+      data: ""
     };
   },
   methods: {
@@ -5608,16 +5609,16 @@ export default {
         .get(url)
         .then(res => {
           if (res.data.code === 0) {
-            let data = res.data.data;
-            this.InfoBoxGridSuppliesPower = data.InfoBoxGridSuppliesPower;
-            this.InfoBoxDistributionBox = data.InfoBoxDistributionBox;
-            this.InfoBoxLoad = data.InfoBoxLoad;
-            this.InfoBoxBattery = data.InfoBoxBattery;
-            this.InverterModule = data.InverterModule;
+            this.data = res.data.data;
+            this.InfoBoxGridSuppliesPower = this.data.InfoBoxGridSuppliesPower;
+            this.InfoBoxDistributionBox = this.data.InfoBoxDistributionBox;
+            this.InfoBoxLoad = this.data.InfoBoxLoad;
+            this.InfoBoxBattery = this.data.InfoBoxBattery;
+            this.InverterModule = this.data.InverterModule;
             this.WeeklyElectricityStatisticsBarChart =
-              data.WeeklyElectricityStatisticsBarChart;
+              this.data.WeeklyElectricityStatisticsBarChart;
             this.WeeklyElectricityStatisticsDic =
-              data.WeeklyElectricityStatisticsDic.valueUnits;
+              this.data.WeeklyElectricityStatisticsDic.valueUnits;
             this.batteryArr = [];
             this.batteryArr.push(
               this.WeeklyElectricityStatisticsDic.WeekCharge
@@ -5632,9 +5633,9 @@ export default {
               this.WeeklyElectricityStatisticsDic.MonthDischarging
             );
             this.DayOperationInformationLineChart =
-              data.DayOperationInformationLineChart;
+              this.data.DayOperationInformationLineChart;
             this.DayOperationInformationInfo =
-              data.DayOperationInformationInfo.valueUnits;
+              this.data.DayOperationInformationInfo.valueUnits;
             this.batteryArr1 = [];
             this.batteryArr1.push(this.DayOperationInformationInfo.DayCharge);
             this.batteryArr1.push(

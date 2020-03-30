@@ -11,6 +11,7 @@
               color="#0071bc"
               :title="Installed_system_power.name"
               class="circle"
+              v-if="Installed_system_power"
             >
               <div class="num">
                 <p>{{ Installed_system_power.value }}</p>
@@ -20,7 +21,7 @@
               </div>
             </Semicircle>
 
-            <Semicircle :title="SOC.name" class="circle">
+            <Semicircle :title="SOC.name" class="circle" v-if="SOC">
               <p>{{ SOC.value }}</p>
             </Semicircle>
 
@@ -28,6 +29,7 @@
               color="#39b54a"
               :title="System_residual_power.name"
               class="circle"
+              v-if="System_residual_power"
             >
               <div class="num">
                 <p>{{ System_residual_power.value }}</p>
@@ -431,9 +433,9 @@ export default {
           show: false
         }
       },
-      Installed_system_power: {},
-      SOC: {},
-      System_residual_power: {},
+      Installed_system_power: "",
+      SOC: "",
+      System_residual_power: "",
       Current_power_trend_of_the_system: {},
       Electricity_leaderboard: [],
       Charge_and_discharge_week_statistics: {},

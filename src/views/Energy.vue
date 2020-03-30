@@ -105,24 +105,24 @@ export default {
     return {
       cube4: [
         {
-          title: "当日储能收益",
+          title: "",
           color: "#D95854",
-          value: "3456"
+          value: ""
         },
         {
-          title: "储能累计总收益",
+          title: "",
           color: "#51D0AB",
-          value: "3456"
+          value: ""
         },
         {
-          title: "当日放电电量",
+          title: "",
           color: "#028C44",
-          value: "3456"
+          value: ""
         },
         {
-          title: "储能累计放电电量",
+          title: "",
           color: "#D4155A",
-          value: "3456"
+          value: ""
         }
       ],
       DailyCharge: "",

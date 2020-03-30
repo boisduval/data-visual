@@ -190,7 +190,7 @@ export default {
 }
 @media screen and (min-width: 1500px) {
   #title {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 </style>
