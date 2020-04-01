@@ -192,6 +192,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 999;
 }
 
 .border-svg {
@@ -200,12 +201,13 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 
 .border-content {
   width: 100%;
   height: 100%;
-  padding: calc(2%) calc(2% + 20px) calc(2% + 20px);
+  padding: 2% 2% 1% calc(2% + 20px);
   box-sizing: border-box;
 }
 #title {

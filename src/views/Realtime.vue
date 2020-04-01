@@ -629,13 +629,25 @@
               </div>
               <div class="bottom-right">
                 <BorderBgLongest title="电池单体电压">
-                  <div class="flex-row batter-box">
-                    <div v-for="item in battery" :key="item.id" class="battery">
-                      <Battery
-                        :batteryNum="item.num"
-                        :batteryValue="item.value"
-                      ></Battery>
-                    </div>
+                  <div style="height: 100%;" class="infinite-list-wrapper">
+                    <ul
+                      class="flex-row batter-box"
+                      v-infinite-scroll="load"
+                      infinite-scroll-disabled="disabled"
+                    >
+                      <li
+                        v-for="(item, index) in battery"
+                        :key="index"
+                        class="battery"
+                      >
+                        <Battery
+                          :batteryNum="item.bATTERY_INDEX + '号'"
+                          :batteryValue="item.vOLTAGE + ''"
+                        ></Battery>
+                      </li>
+                    </ul>
+                    <p v-if="loading" class="tips">加载中...</p>
+                    <p v-if="noMore" class="tips">没有更多了</p>
                   </div>
                 </BorderBgLongest>
               </div>
@@ -650,7 +662,6 @@
 
 <script>
 import { mapState } from "vuex";
-
 export default {
   data() {
     return {
@@ -676,181 +687,21 @@ export default {
           // textBorderWidth: 2
         }
       },
-      battery: [
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "111号",
-          value: "3.33"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        },
-        {
-          num: "1号",
-          value: "3.337"
-        }
-      ]
+      SingleCellVoltage: "",
+      count: 0,
+      maxCount: "",
+      loading: false,
+      battery: ""
     };
   },
   computed: {
-    ...mapState("nav", ["currentDevice"])
+    ...mapState("nav", ["currentDevice"]),
+    noMore() {
+      return this.count > this.maxCount;
+    },
+    disabled() {
+      return this.loading || this.noMore;
+    }
   },
   methods: {
     getEcharts() {
@@ -963,6 +814,14 @@ export default {
             this.TotalLoad = data.TotalLoad;
             this.DailyDischarge = data.DailyDischarge;
             this.DailyCharge = data.DailyCharge;
+            this.SingleCellVoltage = data.SingleCellVoltage;
+            if (this.SingleCellVoltage.length >= 42) {
+              this.battery = this.SingleCellVoltage.slice(0, 42);
+            } else if (this.SingleCellVoltage.length <= 42) {
+              this.battery = this.SingleCellVoltage.slice(0);
+            }
+
+            this.maxCount = Math.ceil(this.SingleCellVoltage.length / 42) - 1;
             this.$nextTick(() => {
               this.getEcharts();
             });
@@ -972,7 +831,37 @@ export default {
           // eslint-disable-next-line no-console
           console.error(err);
         });
+    },
+    load() {
+      this.loading = true;
+      this.count++;
+      if (this.count < this.maxCount) {
+        this.battery = [
+          ...this.battery,
+          ...this.SingleCellVoltage.slice(
+            42 * this.count,
+            42 * (this.count + 1)
+          )
+        ];
+      } else if (this.count === this.maxCount) {
+        this.battery = [
+          ...this.battery,
+          ...this.SingleCellVoltage.slice(42 * this.count)
+        ];
+      }
+      this.loading = false;
     }
+  },
+  mounted() {
+    this.$(".batter-box").niceScroll({
+      cursorborder: "none",
+      hwacceleration: true,
+      mousescrollstep: 30,
+      scrollspeed: 40,
+      preventmultitouchscrolling: true,
+      autohidemode: "leave",
+      hidecursordelay: 100
+    });
   }
 };
 </script>
@@ -1060,17 +949,34 @@ section {
 }
 
 .batter-box {
-  height: 100%;
+  height: 93%;
   flex-wrap: wrap;
+  overflow: auto;
 }
-
 .battery {
-  width: 4.6%;
-  height: 50%;
-  margin-left: 1px;
+  width: 4.75%;
+  height: calc(50% - 10px);
+  /*margin-left: 1px;*/
   margin-top: 10px;
 }
-
+.tips {
+  color: #46a6b5;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+}
+/deep/.happy-scroll-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+/deep/.happy-scroll-container .happy-scroll-content {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+/deep/.el-scrollbar__view {
+  height: 100%;
+}
 @media screen and (max-width: 1500px) {
   .left .usp-text .text-box p {
     font-size: 14px;
@@ -1082,4 +988,30 @@ section {
     font-size: 16px;
   }
 }
+/*css主要部分的样式*/
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+
+/*::-webkit-scrollbar {*/
+/*  width: 6px; !*对垂直流动条有效*!*/
+/*  height: 6px; !*对水平流动条有效*!*/
+/*}*/
+
+/*!*定义滚动条的轨道颜色、内阴影及圆角*!*/
+/*::-webkit-scrollbar-track {*/
+/*  border-radius: 4px;*/
+/*  opacity: 0;*/
+/*  transition: opacity 0.12s ease-out;*/
+/*}*/
+
+/*!*定义滑块颜色、内阴影及圆角*!*/
+/*::-webkit-scrollbar-thumb {*/
+/*  cursor: pointer;*/
+/*  border-radius: 4px;*/
+/*  background-color: rgba(144, 147, 153, 0.3);*/
+/*  transition: background-color 0.3s;*/
+/*}*/
+/*!*定义两端按钮的样式*!*/
+/*::-webkit-scrollbar-button {*/
+/*  opacity: 0;*/
+/*}*/
 </style>

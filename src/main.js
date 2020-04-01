@@ -4,11 +4,14 @@ import router from "./router";
 import store from "./store";
 // 引入插件
 import jquery from "jquery";
+import "jquery.nicescroll";
 import echarts from "echarts";
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import axios from "./httpConfig/http";
 import VueAxios from "vue-axios";
 import { HappyScroll } from "vue-happy-scroll";
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
 // 引入外部css
 import "swiper/dist/css/swiper.css";
 import "./assets/css/base.css";
@@ -54,6 +57,7 @@ Vue.config.productionTip = false;
 
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueAxios, axios);
+Vue.use(ElementUI);
 Vue.prototype.$ = jquery;
 Vue.prototype.$echarts = echarts;
 Vue.prototype.$axios = axios;
