@@ -100,6 +100,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
@@ -135,6 +137,9 @@ export default {
       AnnualRevenueStatistics: "",
       EnergyStorageRevenue: ""
     };
+  },
+  computed: {
+    ...mapState("nav", ["currentDevice"])
   },
   methods: {
     getEcharts() {
@@ -371,8 +376,7 @@ export default {
       }, 200);
     },
     getData() {
-      let url =
-        "/api/Statement/GetEnergyStatistics?SystemToken=0&DeviceSystemID=637103628712992044";
+      let url = `/api/Statement/GetEnergyStatistics?SystemToken=0&DeviceSystemID=${this.currentDevice.SystemID}`;
       this.$axios
         .get(url)
         .then(res => {
@@ -405,9 +409,6 @@ export default {
           console.error(err);
         });
     }
-  },
-  created() {
-    this.getData();
   }
 };
 </script>

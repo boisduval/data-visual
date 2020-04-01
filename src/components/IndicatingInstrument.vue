@@ -22,7 +22,7 @@
             dur="1.5s"
             type="rotate"
             from="0 90 119"
-            :to="this.rotate + ' 90 119'"
+            :to="rotate + ' 90 119'"
             repeatCount="1"
             fill="freeze"
           />

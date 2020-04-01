@@ -122,7 +122,8 @@
                               {{ val.value.value }}{{ val.value.unit }}
                             </p>
                             <p class="time">
-                              {{ val.position.value + ' ' }}{{ val.position.unit }}
+                              {{ val.position.value + " "
+                              }}{{ val.position.unit }}
                             </p>
                           </li>
                         </ul>
@@ -156,6 +157,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   methods: {
     getEcharts() {
@@ -236,7 +239,10 @@ export default {
           trigger: "axis"
         },
         legend: {
-          data: [this.AlarmShutdownTrend.SeriesData[0].name, this.AlarmShutdownTrend.SeriesData[1].name],
+          data: [
+            this.AlarmShutdownTrend.SeriesData[0].name,
+            this.AlarmShutdownTrend.SeriesData[1].name
+          ],
           textStyle: {
             color: "#46a6b5"
           },
@@ -414,9 +420,8 @@ export default {
             name: this.TheAlarmListOfTheTop.SeriesData[0].name,
             type: "bar",
             stack: this.TheAlarmListOfTheTop.SeriesData[0].stack,
-            data: this.TheAlarmListOfTheTop.SeriesData[0].data,
+            data: this.TheAlarmListOfTheTop.SeriesData[0].data
           }
-
         ]
       });
       // 第五个图
@@ -484,8 +489,7 @@ export default {
       }, 200);
     },
     getData() {
-      let url =
-        "/api/Statement/GetSystemSafety?SystemToken=0&DeviceSystemID=637103628712992044";
+      let url = `/api/Statement/GetSystemSafety?SystemToken=0&DeviceSystemID=${this.currentDevice.SystemID}`;
       this.$axios
         .get(url)
         .then(res => {
@@ -515,9 +519,6 @@ export default {
         });
     }
   },
-  created() {
-    this.getData();
-  },
   data() {
     return {
       SummaryOfWarningTimes: "",
@@ -534,6 +535,9 @@ export default {
       TheAlarmListOfTheTop: "",
       DownOnTheTopList: ""
     };
+  },
+  computed: {
+    ...mapState("nav", ["currentDevice"])
   }
 };
 </script>

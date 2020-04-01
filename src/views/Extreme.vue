@@ -115,6 +115,7 @@
 
 <script>
 import ExtremeInfo from "../components/ExtremeInfo";
+import { mapState } from "vuex";
 export default {
   components: { ExtremeInfo },
   data() {
@@ -148,6 +149,9 @@ export default {
       SingleDifferentialPressure: "",
       MonomerHighLowDatas: ""
     };
+  },
+  computed: {
+    ...mapState("nav", ["currentDevice"])
   },
   methods: {
     getEcharts() {
@@ -626,8 +630,7 @@ export default {
       }, 200);
     },
     getData() {
-      let url =
-        "/api/Statement/GetExtremumStatistical?SystemToken=0&DeviceSystemID=637103628712992044";
+      let url = `/api/Statement/GetExtremumStatistical?SystemToken=0&DeviceSystemID=${this.currentDevice.SystemID}`;
       this.$axios
         .get(url)
         .then(res => {
@@ -680,9 +683,6 @@ export default {
           console.error(err);
         });
     }
-  },
-  created() {
-    this.getData();
   }
 };
 </script>

@@ -40,13 +40,14 @@ export default {
         slideToClickedSlide: true,
         on: {
           slideChangeTransitionEnd: () => {
-            var dom = this.$(this.$(".swiper-slide-active")[0]);
+            var dom = this.$(".swiper-slide-active");
             var params = {
               SystemID: dom.data("id"),
               Para: dom.data("para"),
               Name: dom.data("name")
             };
             this.set_currentDevice(params);
+            this.$parent.getData();
           }
         }
       },
@@ -69,6 +70,7 @@ export default {
           if (res.data.code === 0) {
             this.slideItems = res.data.data;
             this.set_currentDevice(this.slideItems[0]);
+            this.$parent.getData();
           }
         })
         .catch(err => {
