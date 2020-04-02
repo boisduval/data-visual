@@ -23,6 +23,7 @@ section {
 .flex {
   flex: 1;
   min-height: 0;
+  min-width: 0;
 }
 .flex-column {
   display: flex;
@@ -40,22 +41,27 @@ section {
 .flex2 {
   flex: 2;
   min-height: 0;
+  min-width: 0;
 }
 .flex3 {
   flex: 3;
   min-height: 0;
+  min-width: 0;
 }
 .flex4 {
   flex: 4;
   min-height: 0;
+  min-width: 0;
 }
 .flex5 {
   flex: 5;
   min-height: 0;
+  min-width: 0;
 }
 .flex7 {
-    flex: 7;
-    min-height: 0;
+  flex: 7;
+  min-height: 0;
+  min-width: 0;
 }
 /* 图表部分 */
 .charts {
@@ -107,13 +113,15 @@ section {
     font-size: 18px;
   }
 }
-div,ul,li {
+div,
+ul,
+li {
   box-sizing: border-box;
 }
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 li {
-    list-style: none;
+  list-style: none;
 }

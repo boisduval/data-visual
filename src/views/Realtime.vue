@@ -860,7 +860,8 @@ export default {
       scrollspeed: 40,
       preventmultitouchscrolling: true,
       autohidemode: "leave",
-      hidecursordelay: 100
+      hidecursordelay: 100,
+      cursorcolor: "rgba(255,255,255,0.3)"
     });
   }
 };
@@ -965,18 +966,6 @@ section {
   text-align: center;
   margin-top: 5px;
 }
-/deep/.happy-scroll-container {
-  height: 100% !important;
-  width: 100% !important;
-}
-/deep/.happy-scroll-container .happy-scroll-content {
-  width: 100%;
-  display: block;
-  height: 100%;
-}
-/deep/.el-scrollbar__view {
-  height: 100%;
-}
 @media screen and (max-width: 1500px) {
   .left .usp-text .text-box p {
     font-size: 14px;
@@ -988,30 +977,4 @@ section {
     font-size: 16px;
   }
 }
-/*css主要部分的样式*/
-/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
-
-/*::-webkit-scrollbar {*/
-/*  width: 6px; !*对垂直流动条有效*!*/
-/*  height: 6px; !*对水平流动条有效*!*/
-/*}*/
-
-/*!*定义滚动条的轨道颜色、内阴影及圆角*!*/
-/*::-webkit-scrollbar-track {*/
-/*  border-radius: 4px;*/
-/*  opacity: 0;*/
-/*  transition: opacity 0.12s ease-out;*/
-/*}*/
-
-/*!*定义滑块颜色、内阴影及圆角*!*/
-/*::-webkit-scrollbar-thumb {*/
-/*  cursor: pointer;*/
-/*  border-radius: 4px;*/
-/*  background-color: rgba(144, 147, 153, 0.3);*/
-/*  transition: background-color 0.3s;*/
-/*}*/
-/*!*定义两端按钮的样式*!*/
-/*::-webkit-scrollbar-button {*/
-/*  opacity: 0;*/
-/*}*/
 </style>

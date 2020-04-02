@@ -89,45 +89,41 @@
             <SecurityBorderMain>
               <div class="flex-row" style="height: 100%">
                 <div class="flex" style="margin-right: 2px;">
-                  <SecurityBg :title="ClassifiedStatistic.Name">
+                  <SecurityBg
+                    :title="ClassifiedStatistic.Name"
+                    v-if="ClassifiedStatistic"
+                  >
                     <div id="myChart3" class="charts"></div>
                   </SecurityBg>
                 </div>
                 <div class="flex">
-                  <SecurityBg>
+                  <SecurityBg v-if="TheAlarmList">
                     <div class="info-box">
-                      <happy-scroll
-                        color="rgba(0,0,0,0.5)"
-                        size="8"
-                        resize
-                        hide-horizontal
-                      >
-                        <ul>
-                          <li
-                            class="flex-row"
-                            style="justify-content: space-between"
-                          >
-                            <p class="num">序号</p>
-                            <p class="flex">安全信息</p>
-                            <p class="time">发生时间</p>
-                          </li>
-                          <li
-                            v-for="(val, key) in TheAlarmList.valueUnits"
-                            :key="key"
-                            class="flex-row"
-                            style="justify-content: space-between"
-                          >
-                            <p class="num">{{ val.name }}</p>
-                            <p class="flex">
-                              {{ val.value.value }}{{ val.value.unit }}
-                            </p>
-                            <p class="time">
-                              {{ val.position.value + " "
-                              }}{{ val.position.unit }}
-                            </p>
-                          </li>
-                        </ul>
-                      </happy-scroll>
+                      <ul>
+                        <li
+                          class="flex-row"
+                          style="justify-content: space-between"
+                        >
+                          <p class="num">序号</p>
+                          <p class="flex">安全信息</p>
+                          <p class="time">发生时间</p>
+                        </li>
+                        <li
+                          v-for="(val, key) in TheAlarmList.valueUnits"
+                          :key="key"
+                          class="flex-row"
+                          style="justify-content: space-between"
+                        >
+                          <p class="num">{{ val.name }}</p>
+                          <p class="flex">
+                            {{ val.value.value }}{{ val.value.unit }}
+                          </p>
+                          <p class="time">
+                            {{ val.position.value + " "
+                            }}{{ val.position.unit }}
+                          </p>
+                        </li>
+                      </ul>
                     </div>
                   </SecurityBg>
                 </div>
@@ -138,12 +134,18 @@
             <SecurityBorderMain>
               <div class="flex-row" style="height: 100%">
                 <div class="flex" style="margin-right: 2px;">
-                  <SecurityBg :title="TheAlarmListOfTheTop.Name">
+                  <SecurityBg
+                    :title="TheAlarmListOfTheTop.Name"
+                    v-if="TheAlarmListOfTheTop"
+                  >
                     <div id="myChart4" class="charts"></div>
                   </SecurityBg>
                 </div>
                 <div class="flex">
-                  <SecurityBg :title="DownOnTheTopList.Name">
+                  <SecurityBg
+                    :title="DownOnTheTopList.Name"
+                    v-if="DownOnTheTopList"
+                  >
                     <div id="myChart5" class="charts"></div>
                   </SecurityBg>
                 </div>
@@ -538,6 +540,18 @@ export default {
   },
   computed: {
     ...mapState("nav", ["currentDevice"])
+  },
+  mounted() {
+    this.$(".info-box ul").niceScroll({
+      cursorborder: "none",
+      hwacceleration: true,
+      mousescrollstep: 30,
+      scrollspeed: 40,
+      preventmultitouchscrolling: true,
+      autohidemode: "leave",
+      hidecursordelay: 100,
+      cursorcolor: "rgba(255,255,255,0.3)"
+    });
   }
 };
 </script>

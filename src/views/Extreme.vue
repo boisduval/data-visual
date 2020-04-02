@@ -46,28 +46,20 @@
                     ></ExtremeInfo>
                   </div>
                   <div class="flex info-box">
-                    <happy-scroll
-                      color="rgba(0,0,0,0.5)"
-                      size="8"
-                      resize
-                      hide-horizontal
-                    >
-                      <ul>
-                        <li
-                          v-for="(val,
-                          key) in EachClusterInformation.valueUnits"
-                          :key="key"
-                          class="flex-row"
-                          style="justify-content: space-between"
-                        >
-                          <p style="width: 50px">{{ val.name }}</p>
-                          <p style="width: 120px">
-                            {{ val.value.unit }}{{ val.value.value }}
-                          </p>
-                          <p>{{ val.position.unit }}{{ val.position.value }}</p>
-                        </li>
-                      </ul>
-                    </happy-scroll>
+                    <ul>
+                      <li
+                        v-for="(val, key) in EachClusterInformation.valueUnits"
+                        :key="key"
+                        class="flex-row"
+                        style="justify-content: space-between"
+                      >
+                        <p style="width: 50px">{{ val.name }}</p>
+                        <p style="width: 120px">
+                          {{ val.value.unit }}{{ val.value.value }}
+                        </p>
+                        <p>{{ val.position.unit }}{{ val.position.value }}</p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </ExtremeBorderMain>
@@ -683,6 +675,18 @@ export default {
           console.error(err);
         });
     }
+  },
+  mounted() {
+    this.$(".info-box ul").niceScroll({
+      cursorborder: "none",
+      hwacceleration: true,
+      mousescrollstep: 30,
+      scrollspeed: 40,
+      preventmultitouchscrolling: true,
+      autohidemode: "leave",
+      hidecursordelay: 100,
+      cursorcolor: "rgba(255,255,255,0.3)"
+    });
   }
 };
 </script>

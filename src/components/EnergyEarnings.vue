@@ -699,10 +699,11 @@
         </g>
         <g id="text_x5F_energy_x5F_earnings_x5F_info">
           <text
-            transform="matrix(1 0 0 1 137.4873 71.167)"
+            transform="translate(223 71)"
             fill="#51D0AB"
             font-family="'MicrosoftYaHei'"
             font-size="48"
+            text-anchor="middle"
           >
             {{ value }}
           </text>

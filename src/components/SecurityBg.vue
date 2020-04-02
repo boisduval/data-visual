@@ -88,7 +88,7 @@
           y2="379.5"
         />
         <linearGradient
-          id="右_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
+          id="right_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
           gradientUnits="userSpaceOnUse"
           x1="363"
           y1="190"
@@ -99,15 +99,15 @@
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
         <rect
-          id="右_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
+          id="right_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
           x="363"
           y="1"
-          fill="url(#右_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
+          fill="url(#right_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
           width="16"
           height="378"
         />
         <linearGradient
-          id="左_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
+          id="left_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
           gradientUnits="userSpaceOnUse"
           x1="473"
           y1="190"
@@ -119,15 +119,15 @@
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
         <rect
-          id="左_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
+          id="left_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
           x="1"
           y="1"
-          fill="url(#左_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
+          fill="url(#left_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
           width="16"
           height="378"
         />
         <linearGradient
-          id="上_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
+          id="top_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
           gradientUnits="userSpaceOnUse"
           x1="433"
           y1="150"
@@ -139,15 +139,15 @@
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
         <rect
-          id="上_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
+          id="top_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
           x="1"
           y="1"
-          fill="url(#上_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
+          fill="url(#top_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
           width="378"
           height="16"
         />
         <linearGradient
-          id="下_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
+          id="bottom_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_"
           gradientUnits="userSpaceOnUse"
           x1="403"
           y1="150"
@@ -159,10 +159,10 @@
           <stop offset="0.9944" style="stop-color:#2BD0E3;stop-opacity:0.2" />
         </linearGradient>
         <rect
-          id="下_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
+          id="bottom_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
           x="1"
           y="363"
-          fill="url(#下_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
+          fill="url(#bottom_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left_1_)"
           width="378"
           height="16"
         />
