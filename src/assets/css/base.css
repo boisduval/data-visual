@@ -12,7 +12,7 @@ body {
 }
 .content {
   height: 100%;
-  padding-top: calc(2% + 30px);
+  /*padding-top: calc(2% + 30px);*/
   padding-bottom: 10px;
   margin: 0 10px;
   /* min-height: 900px; */

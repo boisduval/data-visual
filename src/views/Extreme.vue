@@ -33,6 +33,11 @@
                 <div class="flex-column" style="height: 100%">
                   <div>
                     <ExtremeInfo
+                      v-if="
+                        EnvironmentTemp &&
+                          MonomerAverageVoltage &&
+                          ClusterAverageVoltage
+                      "
                       :title1="EnvironmentTemp.name"
                       :title2="MonomerAverageVoltage.name"
                       :title3="ClusterAverageVoltage.name"

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home flex-column">
     <header class="header">
       <div class="left-nav">
         <div
@@ -31,7 +31,7 @@
       </p>
     </header>
     <!-- 内容 -->
-    <router-view></router-view>
+    <router-view class="flex"></router-view>
   </div>
 </template>
 
@@ -119,9 +119,10 @@ export default {
   background-size: auto 100%;
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
 }
 .header h1 {
   margin-bottom: 5%;
@@ -175,7 +176,7 @@ export default {
   color: #46a6b5;
   position: absolute;
   right: -4%;
-  top: 105%;
+  top: 100%;
   width: 200px;
 }
 @media screen and (max-width: 1300px) {
@@ -189,6 +190,9 @@ export default {
   #time {
     font-size: 12px;
   }
+  .header {
+    margin-bottom: 15px;
+  }
 }
 @media screen and (min-width: 1300px) {
   .header h1 {
@@ -200,6 +204,9 @@ export default {
   }
   #time {
     font-size: 14px;
+  }
+  .header {
+    margin-bottom: 18px;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -215,6 +222,9 @@ export default {
   }
   #time {
     font-size: 16px;
+  }
+  .header {
+    margin-bottom: 22px;
   }
 }
 </style>

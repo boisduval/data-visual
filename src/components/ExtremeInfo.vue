@@ -10,8 +10,8 @@
         id="图层_1"
         height="100%"
         width="100%"
-        viewBox="0 0 440 110"
-        enable-background="new 0 0 440 110"
+        viewBox="0 0 440 105"
+        enable-background="new 0 0 440 105"
         xml:space="preserve"
       >
         <g>
