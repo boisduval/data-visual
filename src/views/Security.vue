@@ -376,16 +376,24 @@ export default {
       var myChart4 = this.$echarts.init(document.getElementById("myChart4"));
       myChart4.setOption({
         tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            // 坐标轴指示器，坐标轴触发有效
-            type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+          type: "item",
+          formatter: function(param) {
+            return (
+              param.data[2] +
+              "<br/>" +
+              param.marker +
+              param.data[0] +
+              " : " +
+              param.data[1] +
+              "次"
+            );
           }
         },
         grid: {
-          left: "3%",
+          left: "0",
           right: "6%",
           bottom: "8%",
+          top: "15%",
           containLabel: true
         },
         xAxis: {
@@ -403,7 +411,6 @@ export default {
         },
         yAxis: {
           type: "category",
-          data: this.TheAlarmListOfTheTop.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -414,6 +421,12 @@ export default {
             // }
             show: false
           }
+        },
+        dataset: {
+          source: [
+            ["name", "amount", "product"],
+            ...this.TheAlarmListOfTheTop.SeriesData[0].data
+          ]
         },
         series: [
           {
@@ -422,7 +435,12 @@ export default {
             name: this.TheAlarmListOfTheTop.SeriesData[0].name,
             type: "bar",
             stack: this.TheAlarmListOfTheTop.SeriesData[0].stack,
-            data: this.TheAlarmListOfTheTop.SeriesData[0].data
+            encode: {
+              // Map the "amount" column to X axis.
+              x: "amount",
+              // Map the "product" column to Y axis
+              y: "product"
+            }
           }
         ]
       });
@@ -430,16 +448,24 @@ export default {
       var myChart5 = this.$echarts.init(document.getElementById("myChart5"));
       myChart5.setOption({
         tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            // 坐标轴指示器，坐标轴触发有效
-            type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+          trigger: "item",
+          formatter: function(param) {
+            return (
+              param.data[2] +
+              "<br/>" +
+              param.marker +
+              param.data[0] +
+              " : " +
+              param.data[1] +
+              "次"
+            );
           }
         },
         grid: {
-          left: "3%",
+          left: "0",
           right: "6%",
           bottom: "8%",
+          top: "15%",
           containLabel: true
         },
         xAxis: {
@@ -457,7 +483,6 @@ export default {
         },
         yAxis: {
           type: "category",
-          data: this.DownOnTheTopList.XAxisData,
           axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -469,12 +494,23 @@ export default {
             show: false
           }
         },
+        dataset: {
+          source: [
+            ["name", "amount", "product"],
+            ...this.DownOnTheTopList.SeriesData[0].data
+          ]
+        },
         series: [
           {
             name: this.DownOnTheTopList.SeriesData[0].name,
             type: "bar",
             stack: this.DownOnTheTopList.SeriesData[0].stack,
-            data: this.DownOnTheTopList.SeriesData[0].data,
+            encode: {
+              // Map the "amount" column to X axis.
+              x: "amount",
+              // Map the "product" column to Y axis
+              y: "product"
+            },
             color: "#ED1E7A",
             barCategoryGap: "40%"
           }

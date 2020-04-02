@@ -334,42 +334,50 @@
         <BorderMain class="box-c">
           <div class="bottom">
             <div class="bottom-l">
-              <BorderBg :title="Peak_statistics.Name">
-                <div id="myChart3" class="charts"></div>
-              </BorderBg>
-              <BorderBg style="margin-top:10px;" title="装机设备统计">
-                <div class="device-count flex-column">
-                  <div
-                    class="device-row"
-                    v-for="(item, index) in Installation_statistics"
-                    :key="index"
-                  >
-                    <p class="row-l">
-                      {{ item.name }}
-                    </p>
-                    <div class="row-r">
-                      <p class="num">
-                        {{ item.value }}
+              <div class="flex">
+                <BorderBg :title="Peak_statistics.Name">
+                  <div id="myChart3" class="charts"></div>
+                </BorderBg>
+              </div>
+              <div class="flex">
+                <BorderBg style="margin-top:10px;" title="装机设备统计">
+                  <div class="device-count flex-column">
+                    <div
+                      class="device-row"
+                      v-for="(item, index) in Installation_statistics"
+                      :key="index"
+                    >
+                      <p class="row-l">
+                        {{ item.name }}
                       </p>
-                      <p style="display:inline-block">
-                        {{ item.unit }}
-                      </p>
+                      <div class="row-r">
+                        <p class="num">
+                          {{ item.value }}
+                        </p>
+                        <p style="display:inline-block">
+                          {{ item.unit }}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </BorderBg>
+                </BorderBg>
+              </div>
             </div>
             <div class="bottom-c"></div>
             <div class="bottom-r">
-              <BorderBg :title="Peak_electricity_consumption_statistics.Name">
-                <div id="myChart4" class="charts"></div>
-              </BorderBg>
-              <BorderBg
-                style="margin-top:10px;"
-                :title="Trend_of_charge_and_discharge.Name"
-              >
-                <div id="myChart5" class="charts"></div>
-              </BorderBg>
+              <div class="flex">
+                <BorderBg :title="Peak_electricity_consumption_statistics.Name">
+                  <div id="myChart4" class="charts"></div>
+                </BorderBg>
+              </div>
+              <div class="flex">
+                <BorderBg
+                  style="margin-top:10px;"
+                  :title="Trend_of_charge_and_discharge.Name"
+                >
+                  <div id="myChart5" class="charts"></div>
+                </BorderBg>
+              </div>
             </div>
           </div>
         </BorderMain>
@@ -463,7 +471,7 @@ export default {
         xAxis: {
           type: "category",
           data: this.Current_power_trend_of_the_system.XAxisData,
-          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
@@ -501,7 +509,7 @@ export default {
           type: "category",
           axisTick: { show: false },
           data: this.Charge_and_discharge_week_statistics.XAxisData,
-          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           },
@@ -517,33 +525,11 @@ export default {
             type: "bar",
             barGap: 0,
             data: this.Charge_and_discharge_week_statistics.SeriesData[0].data
-            // label: {
-            //   show: true,
-            //   position: "insideBottom",
-            //   // fontSize: "14px",
-            //   // color: "rgba(58,181,75,0.5)"
-            //   color: "#fff",
-            //   verticalAlign: "middle",
-            //   rotate: 90,
-            //   distance: 15,
-            //   align: "left"
-            // }
           },
           {
             name: this.Charge_and_discharge_week_statistics.SeriesData[1].name,
             type: "bar",
             data: this.Charge_and_discharge_week_statistics.SeriesData[1].data
-            // label: {
-            //   show: true,
-            //   position: "insideBottom",
-            //   // fontSize: "14px",
-            //   // color: "rgba(58,181,75,0.5)"
-            //   color: "#fff",
-            //   verticalAlign: "middle",
-            //   rotate: 90,
-            //   distance: 15,
-            //   align: "left"
-            // }
           }
         ]
       });
@@ -560,7 +546,7 @@ export default {
         },
         grid: {
           left: "0",
-          right: "20%",
+          right: "0",
           top: "20%",
           bottom: "3%",
           containLabel: true
@@ -575,7 +561,7 @@ export default {
         yAxis: {
           type: "category",
           data: this.Peak_statistics.XAxisData,
-          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             show: false
           },
@@ -590,9 +576,8 @@ export default {
             type: "bar",
             label: {
               show: true,
-              position: "right",
-              color: "#46a6b5",
-              fontSize: "12px"
+              position: "inside",
+              color: "#fff"
             },
             data: this.Peak_statistics.SeriesData[0].data
           }
@@ -611,7 +596,7 @@ export default {
         },
         grid: {
           left: "0",
-          right: "20%",
+          right: "0",
           top: "20%",
           bottom: "3%",
           containLabel: true
@@ -626,7 +611,7 @@ export default {
         yAxis: {
           type: "category",
           data: this.Peak_electricity_consumption_statistics.XAxisData,
-          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             show: false
           },
@@ -643,9 +628,8 @@ export default {
             stack: "总量",
             label: {
               show: true,
-              position: "right",
-              color: "#46a6b5",
-              fontSize: "12px"
+              position: "inside",
+              color: "#fff"
             },
             data: this.Peak_electricity_consumption_statistics.SeriesData[0]
               .data
@@ -664,7 +648,7 @@ export default {
         xAxis: {
           type: "category",
           data: this.Trend_of_charge_and_discharge.XAxisData,
-          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
@@ -720,7 +704,7 @@ export default {
         xAxis: {
           type: "category",
           data: this.Dc_electrical_statistics.XAxisData,
-          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
 
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
@@ -790,7 +774,7 @@ export default {
           type: "category",
           axisTick: { show: false },
           data: this.Monthly_energy_consumption_statistics.XAxisData,
-          axisLabel: { color: "#46a6b5", fontSize: 12 }, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
             lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           },
@@ -990,10 +974,14 @@ section {
 .content-left,
 .content-right {
   flex: 1;
+  min-height: 0;
+  min-width: 0;
 }
 
 .content-center {
   flex: 2;
+  min-height: 0;
+  min-width: 0;
   /* margin: 0 10px; */
 }
 
@@ -1008,11 +996,15 @@ section {
 .box-r {
   flex: 1;
   margin-top: 10px;
+  min-height: 0;
+  min-width: 0;
   /* min-height: 0; */
 }
 
 .box-c {
   flex: 1;
+  min-height: 0;
+  min-width: 0;
   position: relative;
 }
 
@@ -1033,18 +1025,17 @@ section {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  min-width: 0;
 }
 
 .bottom-c {
   flex: 2;
+  min-height: 0;
+  min-width: 0;
   background: url("../assets/img/home_container.gif") center no-repeat;
   background-size: contain;
 }
-
-border-bg {
-  flex: 1;
-}
-
 /* 排行榜 */
 .order-row .row-l .num {
   /*width: 18px;*/
@@ -1118,6 +1109,8 @@ border-bg {
 
 .circle-box .circle {
   flex: 1;
+  min-height: 0;
+  min-width: 0;
 }
 
 @media screen and (max-width: 1300px) {
