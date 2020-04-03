@@ -148,7 +148,7 @@ export default {
     };
   },
   computed: {
-    ...mapState("nav", ["currentDevice"])
+    ...mapState("nav", ["currentDevice", "currentNum"])
   },
   methods: {
     getEcharts() {
@@ -693,6 +693,13 @@ export default {
       cursorcolor: "rgba(255,255,255,0.3)",
       oneaxismousemode: false
     });
+  },
+  created() {
+    if (this.currentDevice.SystemID) {
+      this.getData();
+    } else {
+      this.$parent.getData(this.getData);
+    }
   },
   beforeDestroy() {
     this.$(".nicescroll-rails.nicescroll-rails-vr").remove();

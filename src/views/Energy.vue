@@ -141,6 +141,13 @@ export default {
   computed: {
     ...mapState("nav", ["currentDevice"])
   },
+  created() {
+    if (this.currentDevice.SystemID) {
+      this.getData();
+    } else {
+      this.$parent.getData(this.getData);
+    }
+  },
   methods: {
     getEcharts() {
       // 第一个图

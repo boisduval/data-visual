@@ -5,7 +5,7 @@
       <nav>
         <swiper :options="swiperOption" ref="mySwiper">
           <swiper-slide
-            v-for="(item, index) in slideItems"
+            v-for="(item, index) in slideList"
             :key="index"
             class="swiper-slide"
             :data-id="item.SystemID"
@@ -32,7 +32,7 @@ export default {
         slidesPerView: 3,
         spaceBetween: 0,
         centeredSlides: true,
-        loop: true,
+        loop: false,
         pagination: {
           el: ".swiper-pagination",
           clickable: true
@@ -41,48 +41,34 @@ export default {
         on: {
           slideChangeTransitionEnd: () => {
             var dom = this.$(".swiper-slide-active");
+            var num = this.slideList.findIndex(
+              element => element.SystemID === dom.data("id")
+            );
             var params = {
               SystemID: dom.data("id"),
               Para: dom.data("para"),
               Name: dom.data("name")
             };
-            this.set_currentDevice(params);
+            this.set_current_device(params);
+            this.set_current_num(num);
             this.$parent.getData();
           }
         }
-      },
-      slideItems: [],
-      activeItem: ""
+      }
     };
   },
   computed: {
-    ...mapState("nav", ["currentDevice"])
-  },
-  methods: {
-    ...mapMutations("nav", ["set_currentDevice"]),
+    ...mapState("nav", ["currentDevice", "slideList", "currentNum"]),
     swiper() {
       return this.$refs.mySwiper.swiper;
-    },
-    getData() {
-      this.$axios
-        .get(`api/Statement/GetDeviceNames`)
-        .then(res => {
-          if (res.data.code === 0) {
-            this.slideItems = res.data.data;
-            this.set_currentDevice(this.slideItems[0]);
-            this.$parent.getData();
-          }
-        })
-        .catch(err => {
-          // eslint-disable-next-line no-console
-          console.error(err);
-        });
     }
   },
-  created() {
+  methods: {
+    ...mapMutations("nav", ["set_current_device", "set_current_num"])
+  },
+  mounted() {
     // eslint-disable-next-line no-console
-    console.log("this is current swiper instance object", this.swiper);
-    this.getData();
+    this.swiper.slideTo(this.currentNum, 1000, false);
   }
 };
 </script>

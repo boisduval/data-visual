@@ -587,6 +587,13 @@ export default {
   computed: {
     ...mapState("nav", ["currentDevice"])
   },
+  created() {
+    if (this.currentDevice.SystemID) {
+      this.getData();
+    } else {
+      this.$parent.getData(this.getData);
+    }
+  },
   // mounted() {
   //   this.$("ul").niceScroll({
   //     cursorborder: "none",

@@ -2,7 +2,7 @@
   <div class="content">
     <section>
       <div class="flex">
-        <Nav></Nav>
+        <Nav v-if="currentDevice"></Nav>
       </div>
       <div class="box-right flex-column">
         <!-- 上开始 -->
@@ -695,7 +695,7 @@ export default {
     };
   },
   computed: {
-    ...mapState("nav", ["currentDevice"]),
+    ...mapState("nav", ["currentDevice", "currentNum"]),
     noMore() {
       return this.count > this.maxCount;
     },
@@ -863,6 +863,13 @@ export default {
       hidecursordelay: 100,
       cursorcolor: "rgba(255,255,255,0.3)"
     });
+  },
+  created() {
+    if (this.currentDevice.SystemID) {
+      this.getData();
+    } else {
+      this.$parent.getData(this.getData);
+    }
   }
 };
 </script>

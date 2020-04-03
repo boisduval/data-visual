@@ -2,13 +2,22 @@ const state = {
   currentDevice: {
     Para: "",
     SystemID: "",
-    Name: ""
-  }
+    Name: "",
+    Num: ""
+  },
+  currentNum: "",
+  slideList: []
 };
 
 const mutations = {
-  set_currentDevice(state, params) {
+  set_current_device(state, params) {
     state.currentDevice = params;
+  },
+  set_slide_list(state, params) {
+    state.slideList = params;
+  },
+  set_current_num(state, params) {
+    state.currentNum = params;
   }
 };
 

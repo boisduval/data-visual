@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from "vuex";
+
 export default {
   data() {
     return {
@@ -72,15 +74,42 @@ export default {
       time: ""
     };
   },
+  computed: {
+    ...mapState("nav", ["currentDevice", "slideList", "currentNum"])
+  },
   methods: {
+    ...mapMutations("nav", [
+      "set_current_device",
+      "set_slide_list",
+      "set_current_num"
+    ]),
     // 获取时间
     getDate() {
       var date = new Date();
       date = date.toLocaleString();
       this.time = date;
+    },
+    getData(callback) {
+      this.$axios
+        .get(`api/Statement/GetDeviceNames`)
+        .then(res => {
+          if (res.data.code === 0) {
+            this.set_slide_list(res.data.data);
+            this.set_current_device(this.slideList[0]);
+            this.set_current_num(0);
+            if (typeof callback === "function") {
+              callback();
+            }
+          }
+        })
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        });
     }
   },
   created() {
+    this.getData();
     this.$nextTick(() => {
       this.$(this.$("#" + this.$route.name)[0]).addClass("is-active");
     });
