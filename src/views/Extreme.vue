@@ -690,8 +690,12 @@ export default {
       preventmultitouchscrolling: true,
       autohidemode: "leave",
       hidecursordelay: 100,
-      cursorcolor: "rgba(255,255,255,0.3)"
+      cursorcolor: "rgba(255,255,255,0.3)",
+      oneaxismousemode: false
     });
+  },
+  beforeDestroy() {
+    this.$(".nicescroll-rails.nicescroll-rails-vr").remove();
   }
 };
 </script>
@@ -708,13 +712,14 @@ section {
 ul {
   height: 100%;
   width: 100%;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
 }
 li {
   border: rgba(70, 166, 181, 0.5) solid 1px;
   margin-bottom: 2px;
   padding: 2px 20px;
   color: #46a6b5;
+  width: calc(100% - 2px);
 }
 /deep/.happy-scroll-container {
   height: 100% !important;

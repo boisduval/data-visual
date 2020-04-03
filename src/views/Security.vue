@@ -105,7 +105,7 @@
                           style="justify-content: space-between"
                         >
                           <p class="num">序号</p>
-                          <p class="flex">安全信息</p>
+                          <p class="flex" style="padding-right: 5px">安全信息</p>
                           <p class="time">发生时间</p>
                         </li>
                         <li
@@ -115,7 +115,7 @@
                           style="justify-content: space-between"
                         >
                           <p class="num">{{ val.name }}</p>
-                          <p class="flex">
+                          <p class="flex" style="padding-right: 5px">
                             {{ val.value.value }}{{ val.value.unit }}
                           </p>
                           <p class="time">
@@ -548,6 +548,16 @@ export default {
             this.DownOnTheTopList = data.DownOnTheTopList;
             this.$nextTick(() => {
               this.getEcharts();
+              this.$("ul").niceScroll({
+                cursorborder: "none",
+                hwacceleration: true,
+                mousescrollstep: 30,
+                scrollspeed: 40,
+                preventmultitouchscrolling: true,
+                autohidemode: "leave",
+                hidecursordelay: 100,
+                cursorcolor: "rgba(255,255,255,0.3)"
+              });
             });
           }
         })
@@ -577,17 +587,20 @@ export default {
   computed: {
     ...mapState("nav", ["currentDevice"])
   },
-  mounted() {
-    this.$(".info-box ul").niceScroll({
-      cursorborder: "none",
-      hwacceleration: true,
-      mousescrollstep: 30,
-      scrollspeed: 40,
-      preventmultitouchscrolling: true,
-      autohidemode: "leave",
-      hidecursordelay: 100,
-      cursorcolor: "rgba(255,255,255,0.3)"
-    });
+  // mounted() {
+  //   this.$("ul").niceScroll({
+  //     cursorborder: "none",
+  //     hwacceleration: true,
+  //     mousescrollstep: 30,
+  //     scrollspeed: 40,
+  //     preventmultitouchscrolling: true,
+  //     autohidemode: "leave",
+  //     hidecursordelay: 100,
+  //     cursorcolor: "rgba(255,255,255,0.3)"
+  //   });
+  // }
+  beforeDestroy() {
+    this.$(".nicescroll-rails.nicescroll-rails-vr").remove();
   }
 };
 </script>
@@ -604,13 +617,13 @@ section {
 ul {
   height: 100%;
   width: 100%;
-  overflow-y: auto;
 }
 li {
   border: rgba(70, 166, 181, 0.5) solid 1px;
   margin-bottom: 2px;
   padding: 2px 10px;
   color: #46a6b5;
+  width: calc(100% - 2px);
 }
 /deep/.happy-scroll-container {
   height: 100% !important;
@@ -624,10 +637,10 @@ li {
     font-size: 10px;
   }
   li .num {
-    width: 30px;
+    width: 35px;
   }
   li .time {
-    width: 110px;
+    width: 70px;
   }
 }
 
@@ -639,7 +652,7 @@ li {
     width: 35px;
   }
   li .time {
-    width: 125px;
+    width: 70px;
   }
 }
 
@@ -651,7 +664,7 @@ li {
     width: 50px;
   }
   li .time {
-    width: 140px;
+    width: 82px;
   }
 }
 </style>
