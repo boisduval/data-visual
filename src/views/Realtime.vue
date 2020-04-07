@@ -11,7 +11,7 @@
           <div class="left">
             <!--      usp      -->
             <BorderCenter>
-              <Usp class="usp-content"></Usp>
+              <div class="usp-content"></div>
               <div class="usp-text">
                 <div class="text-box" v-for="item in usp" :key="item.id">
                   <p class="label">{{ item.name }}</p>
@@ -738,9 +738,9 @@ export default {
 
         xAxis: {
           type: "value",
-          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
+          axisLabel: {color: "#46a6b5"}, // x轴字体颜色
           axisLine: {
-            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+            lineStyle: {color: "#46a6b5"} // x轴坐标轴颜色
           },
           splitLine: {
             show: false
@@ -750,9 +750,9 @@ export default {
           type: "category",
           inverse: true,
           data: ["输出\n视在\n功率", "输出\n有功\n功率"],
-          axisLabel: { color: "#46a6b5", lineHeight: 14 }, // x轴字体颜色
+          axisLabel: {color: "#46a6b5", lineHeight: 14}, // x轴字体颜色
           axisLine: {
-            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
+            lineStyle: {color: "#46a6b5"} // x轴坐标轴颜色
           }
         },
         series: [
@@ -782,7 +782,7 @@ export default {
           }
         ]
       });
-      setTimeout(function() {
+      setTimeout(function () {
         window.onresize = () => {
           myChart1.resize();
         };
@@ -904,6 +904,8 @@ section {
 .left .usp-content {
   padding: 0 10px;
   height: calc(80%);
+  background: url("../assets/img/usp.png") center no-repeat;
+  background-size: contain;
   /* border-bottom: 1px solid #46A6B5; */
 }
 

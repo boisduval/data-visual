@@ -5,7 +5,6 @@
         t="1584518930268"
         class="icon"
         viewBox="0 0 1024 1024"
-        enable-background="new 0 0 1024 1024"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         p-id="1174"
@@ -35,14 +34,14 @@
         ></path>
       </svg>
       <svg
-        t="1584519314863"
         class="icon"
+        v-else-if="type === 'close'"
+        t="1584519314863"
         viewBox="0 0 1024 1024"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         p-id="2316"
         height="100%"
-        v-else-if="type === 'close'"
       >
         <path
           d="M512 418.909091c-27.927273 0-46.545455-18.618182-46.545455-46.545455V46.545455c0-27.927273 18.618182-46.545455 46.545455-46.545455s46.545455 18.618182 46.545455 46.545455v325.818181c0 27.927273-18.618182 46.545455-46.545455 46.545455z"
@@ -77,6 +76,7 @@
         ></path>
       </svg>
     </div>
+    <div style="height: 100%" class="flex"></div>
     <div class="security-info-text flex-column flex-center">
       <p class="title">
         {{ title }}
@@ -112,9 +112,15 @@ export default {
   border-radius: 8px;
   justify-content: space-between;
   color: #fff;
+  position: relative;
 }
 .security-info-svg {
   height: 100%;
+  padding: 5% 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .security-info-text p {
   font-weight: bold;

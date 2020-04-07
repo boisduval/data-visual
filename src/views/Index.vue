@@ -104,12 +104,13 @@
             >
               <g id="图层_2">
                 <text
-                  transform="matrix(1 0 0 1 11.2148 91.1436)"
+                  transform="translate(80 91)"
                   fill="#FFFFFF"
                   font-family="'MicrosoftYaHei-Bold'"
                   font-size="60"
+                  text-anchor="end"
                 >
-                  {{ Weather_Forecast.tem }}
+                  {{ Math.abs(Weather_Forecast.tem) }}
                 </text>
                 <text
                   transform="matrix(1 0 0 1 86.7148 55)"
@@ -163,6 +164,29 @@
                   font-size="10"
                 >
                   {{ Weather_Forecast.air }} {{ Weather_Forecast.air_level }}
+                </text>
+                <text
+                  transform="matrix(1 0 0 1 90.25 75.75)"
+                  v-if="Weather_Forecast.tem < 0"
+                >
+                  <tspan
+                    x="0"
+                    y="0"
+                    fill="#FFFFFF"
+                    font-family="'MicrosoftYaHei-Bold'"
+                    font-size="10"
+                  >
+                    零
+                  </tspan>
+                  <tspan
+                    x="0"
+                    y="12"
+                    fill="#FFFFFF"
+                    font-family="'MicrosoftYaHei-Bold'"
+                    font-size="10"
+                  >
+                    下
+                  </tspan>
                 </text>
               </g>
               <g id="天气状态">

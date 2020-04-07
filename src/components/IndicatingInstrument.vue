@@ -15,17 +15,17 @@
         xml:space="preserve"
       >
         <g :transform="'rotate(' + rotate + ',90,119)'">
-          <animateTransform
-            attributeType="XML"
-            attributeName="transform"
-            begin="0s"
-            dur="1.5s"
-            type="rotate"
-            from="0 90 119"
-            :to="rotate + ' 90 119'"
-            repeatCount="1"
-            fill="freeze"
-          />
+          <!--          <animateTransform-->
+          <!--            attributeType="XML"-->
+          <!--            attributeName="transform"-->
+          <!--            begin="0s"-->
+          <!--            dur="1.5s"-->
+          <!--            type="rotate"-->
+          <!--            from="0 90 119"-->
+          <!--            :to="rotate + ' 90 119'"-->
+          <!--            repeatCount="1"-->
+          <!--            fill="freeze"-->
+          <!--          />-->
           <circle fill="#F7931E" cx="89.479" cy="119.523" r="11.749" />
           <polygon
             fill="#F7931E"
@@ -146,6 +146,7 @@
         </g>
       </svg>
     </div>
+    <div class="indicating-instrument-div"></div>
     <div class="title">
       <p>
         {{ title }}
@@ -180,6 +181,13 @@ export default {
 .indicating-instrument-box {
   width: 100%;
   height: 100%;
+  position: relative;
+}
+.indicating-instrument-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .indicating-instrument-box p {
   text-align: center;
@@ -194,7 +202,8 @@ export default {
   .indicating-instrument-box p {
     transform: scale(0.7);
   }
-  .indicating-instrument-svg {
+  .indicating-instrument-svg,
+  .indicating-instrument-div {
     height: 50%;
   }
 }
@@ -202,7 +211,8 @@ export default {
   .indicating-instrument-box p {
     font-size: 12px;
   }
-  .indicating-instrument-svg {
+  .indicating-instrument-svg,
+  .indicating-instrument-div {
     height: 70%;
   }
 }
@@ -210,7 +220,8 @@ export default {
   .indicating-instrument-box p {
     font-size: 16px;
   }
-  .indicating-instrument-svg {
+  .indicating-instrument-svg,
+  .indicating-instrument-div {
     height: 70%;
   }
 }

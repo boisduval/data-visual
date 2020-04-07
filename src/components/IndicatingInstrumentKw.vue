@@ -15,17 +15,17 @@
         xml:space="preserve"
       >
         <g class="rotate" :transform="'rotate(' + rotate + ',90,119)'">
-          <animateTransform
-            attributeType="XML"
-            attributeName="transform"
-            begin="0s"
-            dur="1.5s"
-            type="rotate"
-            from="0 90 119"
-            :to="this.rotate + ' 90 119'"
-            repeatCount="1"
-            fill="freeze"
-          />
+<!--          <animateTransform-->
+<!--            attributeType="XML"-->
+<!--            attributeName="transform"-->
+<!--            begin="0s"-->
+<!--            dur="1.5s"-->
+<!--            type="rotate"-->
+<!--            from="0 90 119"-->
+<!--            :to="this.rotate + ' 90 119'"-->
+<!--            repeatCount="1"-->
+<!--            fill="freeze"-->
+<!--          />-->
           <circle :fill="scaleColor" cx="89.63" cy="119.505" r="11.749" />
           <polygon
             :fill="scaleColor"
@@ -164,6 +164,7 @@
         </text>
       </svg>
     </div>
+    <div style="height: 85%;width: 100%"></div>
     <div class="title">
       <p>
         {{ title }}
@@ -201,9 +202,14 @@ export default {
 .indicating-instrument-kw-box {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .indicating-instrument-kw-svg {
   height: 85%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .indicating-instrument-kw-box p {
   text-align: center;

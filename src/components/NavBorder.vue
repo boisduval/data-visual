@@ -13,7 +13,6 @@
         enable-background="new 0 0 240 990"
         xml:space="preserve"
         preserveAspectRatio="none"
-        style=""
       >
         <g display="none">
           <image
