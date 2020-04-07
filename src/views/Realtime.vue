@@ -815,13 +815,13 @@ export default {
             this.DailyDischarge = data.DailyDischarge;
             this.DailyCharge = data.DailyCharge;
             this.SingleCellVoltage = data.SingleCellVoltage;
-            if (this.SingleCellVoltage.length >= 42) {
-              this.battery = this.SingleCellVoltage.slice(0, 42);
-            } else if (this.SingleCellVoltage.length <= 42) {
+            if (this.SingleCellVoltage.length >= 84) {
+              this.battery = this.SingleCellVoltage.slice(0, 84);
+            } else if (this.SingleCellVoltage.length <= 84) {
               this.battery = this.SingleCellVoltage.slice(0);
             }
 
-            this.maxCount = Math.ceil(this.SingleCellVoltage.length / 42) - 1;
+            this.maxCount = Math.ceil(this.SingleCellVoltage.length / 84) - 1;
             this.$nextTick(() => {
               this.getEcharts();
             });
@@ -839,14 +839,14 @@ export default {
         this.battery = [
           ...this.battery,
           ...this.SingleCellVoltage.slice(
-            42 * this.count,
-            42 * (this.count + 1)
+            84 * this.count,
+            84 * (this.count + 1)
           )
         ];
       } else if (this.count === this.maxCount) {
         this.battery = [
           ...this.battery,
-          ...this.SingleCellVoltage.slice(42 * this.count)
+          ...this.SingleCellVoltage.slice(84 * this.count)
         ];
       }
       this.loading = false;
