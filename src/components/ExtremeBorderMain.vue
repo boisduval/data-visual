@@ -313,7 +313,7 @@ export default {
   width: 100%;
   height: 100%;
   /* padding: 30px 20px; */
-  padding: 8% 5% 4%;
+  padding: 6% 5% 4%;
   box-sizing: border-box;
   min-height: 0;
   z-index: 9999;

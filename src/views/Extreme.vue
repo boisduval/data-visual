@@ -59,10 +59,15 @@
                         style="justify-content: space-between"
                       >
                         <p style="width: 50px">{{ val.name }}</p>
-                        <p style="width: 120px">
-                          {{ val.value.unit }}{{ val.value.value }}
+                        <div
+                          class="flex3 flex-row"
+                          style="padding-right: 5px;padding-left: 3%"
+                        >
+                          <p>{{ val.value.unit }}{{ val.value.value }}</p>
+                        </div>
+                        <p class="flex2">
+                          {{ val.position.unit }}{{ val.position.value }}
                         </p>
-                        <p>{{ val.position.unit }}{{ val.position.value }}</p>
                       </li>
                     </ul>
                   </div>
@@ -148,7 +153,8 @@ export default {
     };
   },
   computed: {
-    ...mapState("nav", ["currentDevice", "currentNum"])
+    ...mapState("nav", ["currentDevice", "currentNum"]),
+    ...mapState("os", ["os"])
   },
   methods: {
     getEcharts() {
@@ -682,17 +688,19 @@ export default {
     }
   },
   mounted() {
-    this.$(".info-box ul").niceScroll({
-      cursorborder: "none",
-      hwacceleration: true,
-      mousescrollstep: 30,
-      scrollspeed: 40,
-      preventmultitouchscrolling: true,
-      autohidemode: "leave",
-      hidecursordelay: 100,
-      cursorcolor: "rgba(255,255,255,0.3)",
-      oneaxismousemode: false
-    });
+    if (this.os !== "Mac") {
+      this.$(".info-box ul").niceScroll({
+        cursorborder: "none",
+        hwacceleration: true,
+        mousescrollstep: 30,
+        scrollspeed: 40,
+        preventmultitouchscrolling: true,
+        autohidemode: "leave",
+        hidecursordelay: 100,
+        cursorcolor: "rgba(255,255,255,0.3)",
+        oneaxismousemode: false
+      });
+    }
   },
   created() {
     if (this.currentDevice.SystemID) {
@@ -702,7 +710,9 @@ export default {
     }
   },
   beforeDestroy() {
-    this.$(".nicescroll-rails.nicescroll-rails-vr").remove();
+    if (this.$(".nicescroll-rails.nicescroll-rails-vr")) {
+      this.$(".nicescroll-rails.nicescroll-rails-vr").remove();
+    }
   }
 };
 </script>
@@ -719,7 +729,7 @@ section {
 ul {
   height: 100%;
   width: 100%;
-  /*overflow-y: auto;*/
+  overflow-y: auto;
 }
 li {
   border: rgba(70, 166, 181, 0.5) solid 1px;

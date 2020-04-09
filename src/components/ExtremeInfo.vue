@@ -706,12 +706,13 @@
         </text>
         <g>
           <text
-            transform="matrix(1 0 0 1 30.4883 52.0376)"
+            transform="matrix(1 0 0 1 71 52)"
             fill="#D95854"
             font-family="'MicrosoftYaHei-Bold'"
             font-size="30"
+            text-anchor="middle"
           >
-            {{ value1 }}
+            {{ value1}}
           </text>
         </g>
         <text
@@ -724,10 +725,11 @@
         </text>
         <g>
           <text
-            transform="matrix(1 0 0 1 172.3008 52.0376)"
+            transform="matrix(1 0 0 1 219 52)"
             fill="#51D0AB"
             font-family="'MicrosoftYaHei-Bold'"
             font-size="30"
+            text-anchor="middle"
           >
             {{ value2 }}
           </text>
@@ -742,10 +744,11 @@
         </text>
         <g>
           <text
-            transform="matrix(1 0 0 1 325.0371 52.0376)"
+            transform="matrix(1 0 0 1 370 52)"
             fill="#D4145A"
             font-family="'MicrosoftYaHei-Bold'"
             font-size="30"
+            text-anchor="middle"
           >
             {{ value3 }}
           </text>

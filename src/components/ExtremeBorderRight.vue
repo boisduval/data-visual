@@ -245,7 +245,7 @@ export default {
   width: 100%;
   height: 100%;
   /* padding: 30px 20px; */
-    padding: 4% 4% 3%;
+  padding: 4% 4% 3%;
   box-sizing: border-box;
   min-height: 0;
 }

@@ -15,17 +15,17 @@
         xml:space="preserve"
       >
         <g class="rotate" :transform="'rotate(' + rotate + ',90,119)'">
-<!--          <animateTransform-->
-<!--            attributeType="XML"-->
-<!--            attributeName="transform"-->
-<!--            begin="0s"-->
-<!--            dur="1.5s"-->
-<!--            type="rotate"-->
-<!--            from="0 90 119"-->
-<!--            :to="this.rotate + ' 90 119'"-->
-<!--            repeatCount="1"-->
-<!--            fill="freeze"-->
-<!--          />-->
+          <!--          <animateTransform-->
+          <!--            attributeType="XML"-->
+          <!--            attributeName="transform"-->
+          <!--            begin="0s"-->
+          <!--            dur="1.5s"-->
+          <!--            type="rotate"-->
+          <!--            from="0 90 119"-->
+          <!--            :to="this.rotate + ' 90 119'"-->
+          <!--            repeatCount="1"-->
+          <!--            fill="freeze"-->
+          <!--          />-->
           <circle :fill="scaleColor" cx="89.63" cy="119.505" r="11.749" />
           <polygon
             :fill="scaleColor"

@@ -15,7 +15,10 @@
         xml:space="preserve"
         preserveAspectRatio="none"
       >
-        <g id="线框_x5F_extremum_x5F_panel_x5F_below_x5F_left" :opacity="opacity">
+        <g
+          id="线框_x5F_extremum_x5F_panel_x5F_below_x5F_left"
+          :opacity="opacity"
+        >
           <line
             fill="none"
             stroke="#46A6B5"
@@ -161,7 +164,10 @@
             y2="113.974"
           />
         </g>
-        <g id="方块_x5F_extremum_x5F_panel_x5F_below_x5F_left" :opacity="opacity">
+        <g
+          id="方块_x5F_extremum_x5F_panel_x5F_below_x5F_left"
+          :opacity="opacity"
+        >
           <polygon
             fill="#46A6B5"
             points="103.839,18.702 97.687,18.702 101.359,10.826 107.513,10.826 	"

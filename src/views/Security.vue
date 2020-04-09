@@ -8,14 +8,14 @@
         <div class="flex">
           <SecurityBorderTop>
             <div class="flex-row" style="height: 100%">
-              <div class="flex" style="padding-right: 8px;">
+              <div class="flex" style="padding-right: 0.8%;">
                 <SecurityInfo
                   :title="SummaryOfWarningTimes.name"
                   :value="SummaryOfWarningTimes.value"
                   v-if="SummaryOfWarningTimes"
                 ></SecurityInfo>
               </div>
-              <div class="flex" style="padding-right: 8px;">
+              <div class="flex" style="padding-right: 0.8%;">
                 <SecurityInfo
                   type="protect"
                   :title="ProtectionTimesSummary.name"
@@ -24,7 +24,7 @@
                   bg-color="#F59B23"
                 ></SecurityInfo>
               </div>
-              <div class="flex" style="padding-right: 8px;">
+              <div class="flex" style="padding-right: 0.8%;">
                 <SecurityInfo
                   type="close"
                   :title="SummaryOfStoppingTimes.name"
@@ -33,7 +33,7 @@
                   bg-color="#00A7F0"
                 ></SecurityInfo>
               </div>
-              <div class="flex" style="padding-right: 8px;">
+              <div class="flex" style="padding-right: 0.8%;">
                 <SecurityInfo
                   type="safe"
                   :title="SafetyIndex.name"
@@ -42,7 +42,7 @@
                   bg-color="#8500FF"
                 ></SecurityInfo>
               </div>
-              <div class="flex" style="padding-right: 8px;">
+              <div class="flex" style="padding-right: 0.8%;">
                 <SecurityInfo
                   type="warning"
                   :title="NumberOfAlarmsOnThatDay.name"
@@ -51,7 +51,7 @@
                   bg-color="#8081FF"
                 ></SecurityInfo>
               </div>
-              <div class="flex" style="padding-right: 8px;">
+              <div class="flex" style="padding-right: 0.8%;">
                 <SecurityInfo
                   type="protect"
                   :title="ProtectionTimesOfTheDay.name"
@@ -60,7 +60,7 @@
                   bg-color="#EC808E"
                 ></SecurityInfo>
               </div>
-              <div class="flex" style="padding-right: 8px;">
+              <div class="flex" style="padding-right: 0.8%;">
                 <SecurityInfo
                   type="close"
                   :title="NumberOfDailyShutdowns.name"
@@ -105,7 +105,9 @@
                           style="justify-content: space-between"
                         >
                           <p class="num">序号</p>
-                          <p class="flex" style="padding-right: 5px">安全信息</p>
+                          <p class="flex" style="padding-right: 5px">
+                            安全信息
+                          </p>
                           <p class="time">发生时间</p>
                         </li>
                         <li
@@ -548,16 +550,18 @@ export default {
             this.DownOnTheTopList = data.DownOnTheTopList;
             this.$nextTick(() => {
               this.getEcharts();
-              this.$("ul").niceScroll({
-                cursorborder: "none",
-                hwacceleration: true,
-                mousescrollstep: 30,
-                scrollspeed: 40,
-                preventmultitouchscrolling: true,
-                autohidemode: "leave",
-                hidecursordelay: 100,
-                cursorcolor: "rgba(255,255,255,0.3)"
-              });
+              if (this.os !== "Mac") {
+                this.$("ul").niceScroll({
+                  cursorborder: "none",
+                  hwacceleration: true,
+                  mousescrollstep: 30,
+                  scrollspeed: 40,
+                  preventmultitouchscrolling: true,
+                  autohidemode: "leave",
+                  hidecursordelay: 100,
+                  cursorcolor: "rgba(255,255,255,0.3)"
+                });
+              }
             });
           }
         })
@@ -585,7 +589,8 @@ export default {
     };
   },
   computed: {
-    ...mapState("nav", ["currentDevice"])
+    ...mapState("nav", ["currentDevice"]),
+    ...mapState("os", ["os"])
   },
   created() {
     if (this.currentDevice.SystemID) {
@@ -594,20 +599,10 @@ export default {
       this.$parent.getData(this.getData);
     }
   },
-  // mounted() {
-  //   this.$("ul").niceScroll({
-  //     cursorborder: "none",
-  //     hwacceleration: true,
-  //     mousescrollstep: 30,
-  //     scrollspeed: 40,
-  //     preventmultitouchscrolling: true,
-  //     autohidemode: "leave",
-  //     hidecursordelay: 100,
-  //     cursorcolor: "rgba(255,255,255,0.3)"
-  //   });
-  // }
   beforeDestroy() {
-    this.$(".nicescroll-rails.nicescroll-rails-vr").remove();
+    if (this.$(".nicescroll-rails.nicescroll-rails-vr")) {
+      this.$(".nicescroll-rails.nicescroll-rails-vr").remove();
+    }
   }
 };
 </script>
@@ -624,6 +619,7 @@ section {
 ul {
   height: 100%;
   width: 100%;
+  overflow-y: auto;
 }
 li {
   border: rgba(70, 166, 181, 0.5) solid 1px;
@@ -647,7 +643,7 @@ li {
     width: 35px;
   }
   li .time {
-    width: 70px;
+    width: 73px;
   }
 }
 
@@ -659,7 +655,7 @@ li {
     width: 35px;
   }
   li .time {
-    width: 70px;
+    width: 75px;
   }
 }
 

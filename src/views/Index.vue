@@ -104,7 +104,7 @@
             >
               <g id="图层_2">
                 <text
-                  transform="translate(80 91)"
+                  transform="translate(87 91)"
                   fill="#FFFFFF"
                   font-family="'MicrosoftYaHei-Bold'"
                   font-size="60"
@@ -686,7 +686,7 @@ export default {
             textStyle: {
               color: "#46a6b5",
               // fontSize: "14px",
-              padding: [3, 5]
+              padding: [-5, 5]
             }
           },
           indicator: this.Event_statistics.IndicatorList,

@@ -9,13 +9,11 @@ import echarts from "echarts";
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import axios from "./httpConfig/http";
 import VueAxios from "vue-axios";
-import { HappyScroll } from "vue-happy-scroll";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 // 引入外部css
 import "swiper/dist/css/swiper.css";
 import "./assets/css/base.css";
-import "vue-happy-scroll/docs/happy-scroll.css";
 // 引入组件
 import BorderLeft from "./components/BorderLeft.vue";
 import BorderRight from "./components/BorderRight.vue";
@@ -96,7 +94,6 @@ Vue.component("SecurityBorderTop", SecurityBorderTop);
 Vue.component("SecurityBorderMain", SecurityBorderMain);
 Vue.component("SecurityBg", SecurityBg);
 Vue.component("SecurityInfo", SecurityInfo);
-Vue.component("happy-scroll", HappyScroll);
 
 new Vue({
   router,

@@ -309,8 +309,8 @@ export default {
 .border-content {
   width: 100%;
   height: 100%;
-  /* padding: 30px 20px; */
-  padding: 3% 3% 2%;
+  /*padding: 3% 3% 3%;*/
+  padding: 3%;
   box-sizing: border-box;
 }
 /*.pQVGrsax_0 {*/

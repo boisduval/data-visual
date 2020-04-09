@@ -629,7 +629,7 @@
               </div>
               <div class="bottom-right">
                 <BorderBgLongest title="电池单体电压">
-                  <div style="height: 100%;" class="infinite-list-wrapper">
+                  <div style="height: 100%;">
                     <ul
                       class="flex-row batter-box"
                       v-infinite-scroll="load"
@@ -696,6 +696,7 @@ export default {
   },
   computed: {
     ...mapState("nav", ["currentDevice", "currentNum"]),
+    ...mapState("os", ["os"]),
     noMore() {
       return this.count > this.maxCount;
     },
@@ -738,9 +739,9 @@ export default {
 
         xAxis: {
           type: "value",
-          axisLabel: {color: "#46a6b5"}, // x轴字体颜色
+          axisLabel: { color: "#46a6b5" }, // x轴字体颜色
           axisLine: {
-            lineStyle: {color: "#46a6b5"} // x轴坐标轴颜色
+            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           },
           splitLine: {
             show: false
@@ -750,9 +751,9 @@ export default {
           type: "category",
           inverse: true,
           data: ["输出\n视在\n功率", "输出\n有功\n功率"],
-          axisLabel: {color: "#46a6b5", lineHeight: 14}, // x轴字体颜色
+          axisLabel: { color: "#46a6b5", lineHeight: 14 }, // x轴字体颜色
           axisLine: {
-            lineStyle: {color: "#46a6b5"} // x轴坐标轴颜色
+            lineStyle: { color: "#46a6b5" } // x轴坐标轴颜色
           }
         },
         series: [
@@ -782,7 +783,7 @@ export default {
           }
         ]
       });
-      setTimeout(function () {
+      setTimeout(function() {
         window.onresize = () => {
           myChart1.resize();
         };
@@ -833,6 +834,7 @@ export default {
         });
     },
     load() {
+      console.log("ok");
       this.loading = true;
       this.count++;
       if (this.count < this.maxCount) {
@@ -853,22 +855,29 @@ export default {
     }
   },
   mounted() {
-    this.$(".batter-box").niceScroll({
-      cursorborder: "none",
-      hwacceleration: true,
-      mousescrollstep: 30,
-      scrollspeed: 40,
-      preventmultitouchscrolling: true,
-      autohidemode: "leave",
-      hidecursordelay: 100,
-      cursorcolor: "rgba(255,255,255,0.3)"
-    });
+    if (this.os !== "Mac") {
+      this.$(".batter-box").niceScroll({
+        cursorborder: "none",
+        hwacceleration: true,
+        mousescrollstep: 30,
+        scrollspeed: 40,
+        preventmultitouchscrolling: true,
+        autohidemode: "leave",
+        hidecursordelay: 100,
+        cursorcolor: "rgba(255,255,255,0.3)"
+      });
+    }
   },
   created() {
     if (this.currentDevice.SystemID) {
       this.getData();
     } else {
       this.$parent.getData(this.getData);
+    }
+  },
+  beforeDestroy() {
+    if (this.$(".nicescroll-rails.nicescroll-rails-vr")) {
+      this.$(".nicescroll-rails.nicescroll-rails-vr").remove();
     }
   }
 };
@@ -948,6 +957,7 @@ section {
 
 .bottom-box .bottom-right {
   flex: 7;
+  overflow: hidden;
 }
 
 .text-bottom .title {
