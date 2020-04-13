@@ -1,5 +1,8 @@
 <template>
-  <div class="security-info flex-row flex-column-center" :style="{ backgroundColor: bgColor }">
+  <div
+    class="security-info flex-row flex-column-center"
+    :style="{ backgroundColor: bgColor }"
+  >
     <div class="security-info-svg flex">
       <div class="security-info-svg-absolute">
         <svg
@@ -71,9 +74,8 @@
     </div>
     <div class="security-info-text flex-column flex-center">
       <p class="title">
-        <span v-if="type === 'safe'" :style="{color: bgColor}">
-          占位
-        </span>{{ title }}
+        <span v-if="type === 'safe'" :style="{ color: bgColor }"> 占位 </span
+        >{{ title }}
       </p>
       <p class="value">
         {{ value }}

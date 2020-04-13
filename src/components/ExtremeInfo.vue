@@ -712,7 +712,7 @@
             font-size="30"
             text-anchor="middle"
           >
-            {{ value1}}
+            {{ value1 }}
           </text>
         </g>
         <text

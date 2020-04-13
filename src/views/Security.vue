@@ -599,6 +599,18 @@ export default {
       this.$parent.getData(this.getData);
     }
   },
+  // mounted() {
+  //   this.$("ul").niceScroll({
+  //     cursorborder: "none",
+  //     hwacceleration: true,
+  //     mousescrollstep: 30,
+  //     scrollspeed: 40,
+  //     preventmultitouchscrolling: true,
+  //     autohidemode: "leave",
+  //     hidecursordelay: 100,
+  //     cursorcolor: "rgba(255,255,255,0.3)"
+  //   });
+  // }
   beforeDestroy() {
     if (this.$(".nicescroll-rails.nicescroll-rails-vr")) {
       this.$(".nicescroll-rails.nicescroll-rails-vr").remove();

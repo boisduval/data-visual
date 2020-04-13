@@ -217,15 +217,6 @@ export default {
 .indicating-instrument-kw-box .title {
   color: #46a6b5;
 }
-.rotate {
-  /*animation: rotate_before 2.2s linear 1;*/
-  /*-webkit-animation: rotate_before 2.2s linear 1;*/
-  /*-webkit-transform-origin: 90 119;*/
-  /*transform: rotate(0);*/
-  /*animation-fill-mode: forwards;*/
-  /*transition: all 2s linear;*/
-}
-
 @media screen and (max-width: 1300px) {
   .indicating-instrument-kw-box p {
     /*transform: scale(0.7);*/

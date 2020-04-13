@@ -31,10 +31,10 @@
                     <BorderBg>
                       <div
                         class="flex-column font-small flex-space-between"
-                        style="height:100%;padding:8% 1% 0;"
+                        style="height:100%;padding:8% 1%;"
                       >
                         <!-- 第一块开始 -->
-                        <p style="color:#46A6B5">
+                        <p style="color:#46A6B5;padding-bottom: 4%">
                           输入输出电压
                         </p>
                         <div class="text-bottom flex-column flex">
@@ -354,11 +354,11 @@
                   <div class="flex">
                     <BorderBgLonger>
                       <div style="display:flex;height:100%;">
-                        <div class="flex" v-if="TotalLoad">
+                        <div class="flex" id="abc" v-if="TotalLoad">
                           <IndicatingInstrument
                             :title="TotalLoad.data.name"
                             :value="TotalLoad.data.value + TotalLoad.data.unit"
-                            :rotate="TotalLoad.scale + ''"
+                            :rotate.sync="TotalLoad.scale + ''"
                           ></IndicatingInstrument>
                         </div>
                         <div class="flex" v-if="DailyCharge">
@@ -834,7 +834,6 @@ export default {
         });
     },
     load() {
-      console.log("ok");
       this.loading = true;
       this.count++;
       if (this.count < this.maxCount) {

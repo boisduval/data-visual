@@ -928,7 +928,6 @@ section {
 
 .energy-order {
   font-size: 16px;
-  padding: 5vh 5vh;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -936,9 +935,9 @@ section {
 }
 
 .order-row {
+  flex: 1;
   display: flex;
   justify-content: space-between;
-  margin: 0;
   color: #46a6b5;
 }
 
@@ -1000,7 +999,7 @@ section {
 
   .energy-order {
     font-size: 10px;
-    padding: 0 10px;
+    padding: 7% 10px 5%;
   }
 
   .device-row {
@@ -1026,7 +1025,7 @@ section {
 
   .energy-order {
     font-size: 12px;
-    padding: 0 20px;
+    padding: 7% 20px 5%;
   }
 
   .device-row {
@@ -1051,8 +1050,8 @@ section {
   }
 
   .energy-order {
-    font-size: 16px;
-    padding: 0 30px;
+    font-size: 15px;
+    padding: 7% 30px 5%;
   }
 
   .device-row {

@@ -14,24 +14,6 @@
         enable-background="new 0 0 180 180"
         xml:space="preserve"
       >
-        <g :transform="'rotate(' + rotate + ',90,119)'">
-          <!--          <animateTransform-->
-          <!--            attributeType="XML"-->
-          <!--            attributeName="transform"-->
-          <!--            begin="0s"-->
-          <!--            dur="1.5s"-->
-          <!--            type="rotate"-->
-          <!--            from="0 90 119"-->
-          <!--            :to="rotate + ' 90 119'"-->
-          <!--            repeatCount="1"-->
-          <!--            fill="freeze"-->
-          <!--          />-->
-          <circle fill="#F7931E" cx="89.479" cy="119.523" r="11.749" />
-          <polygon
-            fill="#F7931E"
-            points="85.927,126.347 62.341,100.69 94.649,113.757"
-          />
-        </g>
         <g>
           <g>
             <circle
@@ -146,6 +128,30 @@
         </g>
       </svg>
     </div>
+    <div
+      class="indicating-instrument-svg"
+      style="transition: all 1s ease-in-out;transform-origin: 50% 66%;"
+      :style="{ transform: delay ? 0 : 'rotate(' + rotate + 'deg)' }"
+    >
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="100%"
+        height="100%"
+        viewBox="0 0 180 180"
+        enable-background="new 0 0 180 180"
+        xml:space="preserve"
+      >
+        <g id="arrow">
+          <circle fill="#F7931E" cx="90" cy="119" r="12" />
+          <polygon fill="#F7931E" points="86,126 62,101 95,114" />
+        </g>
+      </svg>
+    </div>
+
     <div class="indicating-instrument-div"></div>
     <div class="title">
       <p>
@@ -171,8 +177,19 @@ export default {
     value: String,
     rotate: {
       type: String,
-      default: "20"
+      default: "0"
     }
+  },
+  data() {
+    return {
+      delay: true
+    };
+  },
+  methods: {},
+  mounted() {
+    setTimeout(() => {
+      this.delay = false;
+    }, 200);
   }
 };
 </script>

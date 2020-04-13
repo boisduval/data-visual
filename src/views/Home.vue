@@ -187,7 +187,6 @@ export default {
 .header {
   width: 90%;
   margin: 0 5%;
-  max-width: 1920px;
   background: url("../assets/img/header.png") center no-repeat;
   background-size: auto 100%;
   display: flex;

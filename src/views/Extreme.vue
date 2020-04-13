@@ -30,7 +30,10 @@
           <div class="flex flex-row">
             <div class="flex">
               <ExtremeBorderMain>
-                <div class="flex-column" style="height: 100%">
+                <div class="flex-column flex-center" style="height: 100%">
+                  <!--                  <p style="color: #46A6B5;text-align: center;font-size: 16px">-->
+                  <!--                    设备已离线-->
+                  <!--                  </p>-->
                   <div>
                     <ExtremeInfo
                       v-if="
@@ -65,7 +68,7 @@
                         >
                           <p>{{ val.value.unit }}{{ val.value.value }}</p>
                         </div>
-                        <p class="flex2">
+                        <p class="flex2" style="text-align: right">
                           {{ val.position.unit }}{{ val.position.value }}
                         </p>
                       </li>
