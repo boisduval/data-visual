@@ -826,6 +826,8 @@ export default {
             this.$nextTick(() => {
               this.getEcharts();
             });
+          } else {
+            this.open1(res.data.msg);
           }
         })
         .catch(err => {
@@ -851,6 +853,13 @@ export default {
         ];
       }
       this.loading = false;
+    },
+    open1(msg) {
+      this.$notify({
+        message: msg,
+        customClass: "notification",
+        offset: 80
+      });
     }
   },
   mounted() {

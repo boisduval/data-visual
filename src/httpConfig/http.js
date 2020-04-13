@@ -14,6 +14,7 @@ axios.interceptors.response.use(
     return response;
   },
   error => {
+    window.alert(error.response.status);
     return Promise.reject(error.response); // 返回接口返回的错误信息
   }
 );

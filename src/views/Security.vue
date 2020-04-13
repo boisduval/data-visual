@@ -75,12 +75,12 @@
         <div class="flex3 flex-row">
           <div class="flex">
             <SecurityBorderMain :title="MonthlyWarningShutdown.Name">
-              <div id="myChart1" class="charts"></div>
+              <div id="myChart1" class="charts" v-if="MonthlyWarningShutdown"></div>
             </SecurityBorderMain>
           </div>
           <div class="flex">
             <SecurityBorderMain :title="AlarmShutdownTrend.Name">
-              <div id="myChart2" class="charts"></div>
+              <div id="myChart2" class="charts" v-if="MonthlyWarningShutdown"></div>
             </SecurityBorderMain>
           </div>
         </div>
@@ -563,12 +563,34 @@ export default {
                 });
               }
             });
+          } else {
+            this.open1(res.data.msg);
+            this.SummaryOfWarningTimes = "";
+            this.ProtectionTimesSummary = "";
+            this.SummaryOfStoppingTimes = "";
+            this.SafetyIndex = "";
+            this.NumberOfAlarmsOnThatDay = "";
+            this.ProtectionTimesOfTheDay = "";
+            this.NumberOfDailyShutdowns = "";
+            this.MonthlyWarningShutdown = "";
+            this.ClassifiedStatistic = "";
+            this.TheAlarmList = "";
+            this.AlarmShutdownTrend = "";
+            this.TheAlarmListOfTheTop = "";
+            this.DownOnTheTopList = "";
           }
         })
         .catch(err => {
           // eslint-disable-next-line no-console
           console.error(err);
         });
+    },
+    open1(msg) {
+      this.$notify({
+        message: msg,
+        customClass: "notification",
+        offset: 80
+      });
     }
   },
   data() {

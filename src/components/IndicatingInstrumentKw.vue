@@ -14,24 +14,6 @@
         enable-background="new 0 0 180 180"
         xml:space="preserve"
       >
-        <g class="rotate" :transform="'rotate(' + rotate + ',90,119)'">
-          <!--          <animateTransform-->
-          <!--            attributeType="XML"-->
-          <!--            attributeName="transform"-->
-          <!--            begin="0s"-->
-          <!--            dur="1.5s"-->
-          <!--            type="rotate"-->
-          <!--            from="0 90 119"-->
-          <!--            :to="this.rotate + ' 90 119'"-->
-          <!--            repeatCount="1"-->
-          <!--            fill="freeze"-->
-          <!--          />-->
-          <circle :fill="scaleColor" cx="89.63" cy="119.505" r="11.749" />
-          <polygon
-            :fill="scaleColor"
-            points="84.948,125.676 63.368,98.311 94.598,113.781"
-          />
-        </g>
         <g id="indicating_x5F_instrument_x5F_scale">
           <g>
             <circle
@@ -164,6 +146,32 @@
         </text>
       </svg>
     </div>
+    <div
+      class="indicating-instrument-kw-svg"
+      style="transition: all 1s ease-in-out;transform-origin: 50% 66%;"
+      :style="{ transform: delay ? 0 : 'rotate(' + rotate + 'deg)' }"
+    >
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="100%"
+        height="100%"
+        viewBox="0 0 180 180"
+        enable-background="new 0 0 180 180"
+        xml:space="preserve"
+      >
+        <g>
+          <circle :fill="scaleColor" cx="89.63" cy="119.505" r="11.749" />
+          <polygon
+            :fill="scaleColor"
+            points="84.948,125.676 63.368,98.311 94.598,113.781"
+          />
+        </g>
+      </svg>
+    </div>
     <div style="height: 85%;width: 100%"></div>
     <div class="title">
       <p>
@@ -194,6 +202,16 @@ export default {
       type: String,
       default: "0"
     }
+  },
+  data() {
+    return {
+      delay: true
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.delay = false;
+    }, 200);
   }
 };
 </script>

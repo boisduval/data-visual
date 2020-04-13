@@ -682,12 +682,21 @@ export default {
             this.$nextTick(() => {
               this.getEcharts();
             });
+          } else {
+            this.open1(res.data.msg);
           }
         })
         .catch(err => {
           // eslint-disable-next-line no-console
           console.error(err);
         });
+    },
+    open1(msg) {
+      this.$notify({
+        message: msg,
+        customClass: "notification",
+        offset: 80
+      });
     }
   },
   mounted() {

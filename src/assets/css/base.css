@@ -128,3 +128,14 @@ ul {
 li {
   list-style: none;
 }
+.el-notification {
+  background-color: rgba(70, 166, 181, 0.8);
+  border: none;
+  box-shadow: 0 2px 12px 0 rgba(70, 166, 181, 0.35);
+}
+.el-notification__content {
+  color: #fff;
+}
+.el-notification__closeBtn {
+  color: #fff;
+}
