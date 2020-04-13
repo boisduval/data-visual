@@ -8,7 +8,11 @@
         <div class="flex2 flex-column">
           <div class="flex">
             <ExtremeBorderMainLonger :title="TotalElectricityStatistics.Name">
-              <div id="myChart1" class="charts"></div>
+              <div
+                id="myChart1"
+                class="charts"
+                v-if="TotalElectricityStatistics"
+              ></div>
             </ExtremeBorderMainLonger>
           </div>
           <div class="flex">
@@ -79,7 +83,11 @@
             </div>
             <div class="flex">
               <ExtremeBorderRight :title="InsulationExtremum.Name">
-                <div id="myChart4" class="charts"></div>
+                <div
+                  id="myChart4"
+                  class="charts"
+                  v-if="InsulationExtremum"
+                ></div>
               </ExtremeBorderRight>
             </div>
           </div>
@@ -105,7 +113,10 @@
                   </div>
                 </div>
                 <div class="flex3">
-                  <ExtremeBgBigger :title="SingleDifferentialPressure.Name">
+                  <ExtremeBgBigger
+                    :title="SingleDifferentialPressure.Name"
+                    v-if="SingleDifferentialPressure"
+                  >
                     <div id="myChart7" class="charts"></div>
                   </ExtremeBgBigger>
                 </div>
@@ -684,6 +695,17 @@ export default {
             });
           } else {
             this.open1(res.data.msg);
+            this.TotalElectricityStatistics = "";
+            this.MonomerHighLowPressure = "";
+            this.EnvironmentTemp = "";
+            this.MonomerAverageVoltage = "";
+            this.ClusterAverageVoltage = "";
+            this.EachClusterInformation = "";
+            this.InsulationExtremum = "";
+            this.MonomerMaximumVoltage = "";
+            this.MonomerMinimumVoltage = "";
+            this.MonomerHighLowDatas = "";
+            this.SingleDifferentialPressure = "";
           }
         })
         .catch(err => {

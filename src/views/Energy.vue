@@ -52,23 +52,23 @@
         <div class="flex5 flex-row">
           <div class="flex">
             <BorderCenterLonger :title="TotalElectricityStatistics.Name">
-              <div id="myChart1" class="charts"></div>
+              <div id="myChart1" class="charts" v-if="TotalElectricityStatistics"></div>
             </BorderCenterLonger>
           </div>
           <div class="flex">
             <BorderCenterLonger :title="AnnualRevenueStatistics.Name">
-              <div id="myChart2" class="charts"></div>
+              <div id="myChart2" class="charts" v-if="AnnualRevenueStatistics"></div>
             </BorderCenterLonger>
           </div>
         </div>
         <div class="flex5 flex-row">
           <div class="flex">
             <BorderCenterLonger :title="MonthlyIncome.Name">
-              <div id="myChart3" class="charts"></div>
+              <div id="myChart3" class="charts" v-if="MonthlyIncome"></div>
             </BorderCenterLonger>
           </div>
           <div class="flex">
-            <BorderCenterLonger title="储能收益情况">
+            <BorderCenterLonger :title="EnergyStorageRevenue?'储能收益情况':''">
               <div class="flex-column" style="padding: 10% 5% 5%;height: 100%">
                 <div class="energy-visual flex">
                   <EnergyEarnings
@@ -76,7 +76,7 @@
                     v-if="EnergyStorageRevenue"
                   ></EnergyEarnings>
                 </div>
-                <div class="energy-text-box flex-row">
+                <div class="energy-text-box flex-row" v-if="EnergyStorageRevenue">
                   <div
                     class="energy-text flex"
                     v-for="(item, index) in cube4"
@@ -411,6 +411,15 @@ export default {
             });
           } else {
             this.open1(res.data.msg);
+            this.DailyCharge = "";
+            this.DailyDischarge = "";
+            this.TheCurrentPower = "";
+            this.TheCumulativeCharge = "";
+            this.TheCumulativeDischarge = "";
+            this.TotalElectricityStatistics = "";
+            this.MonthlyIncome = "";
+            this.AnnualRevenueStatistics = "";
+            this.EnergyStorageRevenue = "";
           }
         })
         .catch(err => {

@@ -11,8 +11,8 @@
           <div class="left">
             <!--      usp      -->
             <BorderCenter>
-              <div class="usp-content"></div>
-              <div class="usp-text">
+              <div class="usp-content" v-if="usp"></div>
+              <div class="usp-text" v-if="usp">
                 <div class="text-box" v-for="item in usp" :key="item.id">
                   <p class="label">{{ item.name }}</p>
                   <p class="value">{{ item.value }}{{ item.unit }}</p>
@@ -28,7 +28,7 @@
                 <!-- 右左开始 -->
                 <div class="flex-column flex" style="margin-right:2px;">
                   <div class="flex" style="margin-bottom:2px;">
-                    <BorderBg>
+                    <BorderBg v-if="VoltageAndPositionU">
                       <div
                         class="flex-column font-small flex-space-between"
                         style="height:100%;padding:8% 1%;"
@@ -133,11 +133,8 @@
                     </BorderBg>
                   </div>
                   <div class="flex">
-                    <BorderBg>
-                      <div
-                        style="display:flex;height:90%;padding-top: 10%"
-                        v-if="PCSTemp"
-                      >
+                    <BorderBg v-if="PCSTemp">
+                      <div style="display:flex;height:90%;padding-top: 10%">
                         <div class="flex">
                           <Thermometer
                             :title="PCSTemp.InternalTemp.name"
@@ -163,11 +160,10 @@
                 <!-- 右左结束 -->
                 <!-- 右中开始 -->
                 <div class="flex" style="margin-right:2px;">
-                  <BorderBgHigher>
+                  <BorderBgHigher v-if="FacilityInfo">
                     <div
                       class="flex-column font-small flex-space-between"
                       style="height:100%;padding:8% 1% 0"
-                      v-if="FacilityInfo"
                     >
                       <!-- 第一块开始 -->
                       <p style="color:#46A6B5">
@@ -347,21 +343,23 @@
                 <!-- 右右开始 -->
                 <div class="right-right flex-column">
                   <div class="flex" style="margin-bottom:2px;">
-                    <BorderBgLonger>
+                    <BorderBgLonger v-if="OutputPower">
                       <div id="myChart1" class="charts"></div>
                     </BorderBgLonger>
                   </div>
                   <div class="flex">
-                    <BorderBgLonger>
+                    <BorderBgLonger
+                      v-if="TotalLoad && DailyCharge && DailyDischarge"
+                    >
                       <div style="display:flex;height:100%;">
-                        <div class="flex" id="abc" v-if="TotalLoad">
+                        <div class="flex">
                           <IndicatingInstrument
                             :title="TotalLoad.data.name"
                             :value="TotalLoad.data.value + TotalLoad.data.unit"
                             :rotate.sync="TotalLoad.scale + ''"
                           ></IndicatingInstrument>
                         </div>
-                        <div class="flex" v-if="DailyCharge">
+                        <div class="flex">
                           <IndicatingInstrument
                             :title="DailyCharge.data.name"
                             :value="
@@ -370,7 +368,7 @@
                             :rotate="DailyCharge.scale + ''"
                           ></IndicatingInstrument>
                         </div>
-                        <div class="flex" v-if="DailyDischarge">
+                        <div class="flex">
                           <IndicatingInstrument
                             :title="DailyDischarge.data.name"
                             :value="
@@ -397,16 +395,13 @@
             <div class="bottom-box">
               <div class="flex-column flex" style="margin-right:2px;">
                 <div class="flex" style="margin-bottom:2px;">
-                  <BorderBg>
+                  <BorderBg v-if="VoltageAndPosition && TempAndPosition">
                     <div
                       class="flex-column font-small"
                       style="height:100%;padding:10px 0;"
                     >
                       <!-- 电压开始 -->
-                      <div
-                        class="text-bottom flex-column flex"
-                        v-if="VoltageAndPosition"
-                      >
+                      <div class="text-bottom flex-column flex">
                         <p class="title">
                           {{ VoltageAndPosition.totalname }}
                         </p>
@@ -453,10 +448,7 @@
                       </div>
                       <!-- 电压结束 -->
                       <!-- 温度开始 -->
-                      <div
-                        class="text-bottom flex-column flex"
-                        v-if="TempAndPosition"
-                      >
+                      <div class="text-bottom flex-column flex">
                         <p class="title">
                           {{ TempAndPosition.totalname }}
                         </p>
@@ -498,16 +490,17 @@
                   </BorderBg>
                 </div>
                 <div class="flex">
-                  <BorderBg>
+                  <BorderBg
+                    v-if="
+                      InternalResistanceAndPosition && InsulationAndPosition
+                    "
+                  >
                     <div
                       class="flex-column font-small"
                       style="height:100%;padding:10px 0;"
                     >
                       <!-- 内阻开始 -->
-                      <div
-                        class="text-bottom flex-column flex"
-                        v-if="InternalResistanceAndPosition"
-                      >
+                      <div class="text-bottom flex-column flex">
                         <p class="title">
                           {{ InternalResistanceAndPosition.totalname }}
                         </p>
@@ -568,10 +561,7 @@
                       </div>
                       <!-- 内阻结束 -->
                       <!-- 绝缘开始 -->
-                      <div
-                        class="text-bottom flex-column flex"
-                        v-if="InsulationAndPosition"
-                      >
+                      <div class="text-bottom flex-column flex">
                         <p class="title">
                           {{ InsulationAndPosition.totalname }}
                         </p>
@@ -628,7 +618,7 @@
                 </div>
               </div>
               <div class="bottom-right">
-                <BorderBgLongest title="电池单体电压">
+                <BorderBgLongest :title="battery ? '电池单体电压' : ''">
                   <div style="height: 100%;">
                     <ul
                       class="flex-row batter-box"
@@ -828,6 +818,23 @@ export default {
             });
           } else {
             this.open1(res.data.msg);
+            this.VoltageAndPosition = "";
+            this.TempAndPosition = "";
+            this.InsulationAndPosition = "";
+            this.InternalResistanceAndPosition = "";
+            this.VoltageAndPositionU = "";
+            this.VoltageAndPositionV = "";
+            this.VoltageAndPositionW = "";
+            this.OutputCurrent = "";
+            this.PCSTemp = "";
+            this.FacilityInfo = "";
+            this.OutputPower = "";
+            this.TotalLoad = "";
+            this.DailyDischarge = "";
+            this.DailyCharge = "";
+            this.SingleCellVoltage = "";
+            this.usp = "";
+            this.battery = "";
           }
         })
         .catch(err => {
