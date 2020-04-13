@@ -40,16 +40,16 @@
                         <div class="text-bottom flex-column flex">
                           <div class="flex-column flex-center flex">
                             <div class="flex-row" v-if="VoltageAndPositionU">
-                              <p class="title flex">
+                              <p class="title">
                                 {{ VoltageAndPositionU.valueUnits.Input.name }}
                               </p>
-                              <p class="data flex">
+                              <p class="data flex" style="text-align: right;">
                                 {{ VoltageAndPositionU.valueUnits.Input.value
                                 }}{{
                                   VoltageAndPositionU.valueUnits.Input.unit
                                 }}
                               </p>
-                              <p class="data flex" style="text-align: right;">
+                              <p class="data flex right">
                                 {{ VoltageAndPositionU.valueUnits.Output.value
                                 }}{{
                                   VoltageAndPositionU.valueUnits.Output.unit
@@ -57,16 +57,16 @@
                               </p>
                             </div>
                             <div class="flex-row" v-if="VoltageAndPositionV">
-                              <p class="title flex">
+                              <p class="title">
                                 {{ VoltageAndPositionV.valueUnits.Input.name }}
                               </p>
-                              <p class="data flex">
+                              <p class="data flex" style="text-align: right">
                                 {{ VoltageAndPositionV.valueUnits.Input.value
                                 }}{{
                                   VoltageAndPositionV.valueUnits.Input.unit
                                 }}
                               </p>
-                              <p class="data flex" style="text-align: right;">
+                              <p class="data flex right">
                                 {{ VoltageAndPositionV.valueUnits.Output.value
                                 }}{{
                                   VoltageAndPositionV.valueUnits.Output.unit
@@ -74,16 +74,16 @@
                               </p>
                             </div>
                             <div class="flex-row" v-if="VoltageAndPositionW">
-                              <p class="title flex">
+                              <p class="title">
                                 {{ VoltageAndPositionW.valueUnits.Input.name }}
                               </p>
-                              <p class="data flex">
+                              <p class="data flex" style="text-align: right">
                                 {{ VoltageAndPositionW.valueUnits.Input.value
                                 }}{{
                                   VoltageAndPositionW.valueUnits.Input.unit
                                 }}
                               </p>
-                              <p class="data flex" style="text-align: right;">
+                              <p class="data flex right">
                                 {{ VoltageAndPositionW.valueUnits.Output.value
                                 }}{{
                                   VoltageAndPositionW.valueUnits.Output.unit
@@ -407,16 +407,16 @@
                         </p>
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
-                            <p class="title flex">
+                            <p class="title">
                               {{ VoltageAndPosition.valueUnits.Max.name }}
                             </p>
-                            <p class="data flex" style="text-align: center;">
+                            <p class="data flex" style="text-align: right;">
                               {{ VoltageAndPosition.valueUnits.Max.value.value
                               }}{{
                                 VoltageAndPosition.valueUnits.Max.value.unit
                               }}
                             </p>
-                            <p class="data flex" style="text-align: right;">
+                            <p class="data flex right">
                               {{
                                 VoltageAndPosition.valueUnits.Max.position
                                   .value
@@ -426,16 +426,16 @@
                             </p>
                           </div>
                           <div class="flex-row">
-                            <p class="title flex">
+                            <p class="title">
                               {{ VoltageAndPosition.valueUnits.Min.name }}
                             </p>
-                            <p class="data flex" style="text-align: center;">
+                            <p class="data flex" style="text-align: right;">
                               {{ VoltageAndPosition.valueUnits.Min.value.value
                               }}{{
                                 VoltageAndPosition.valueUnits.Min.value.unit
                               }}
                             </p>
-                            <p class="data flex" style="text-align: right;">
+                            <p class="data flex right">
                               {{
                                 VoltageAndPosition.valueUnits.Min.position
                                   .value
@@ -454,14 +454,14 @@
                         </p>
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
-                            <p class="title flex">
+                            <p class="title">
                               {{ TempAndPosition.valueUnits.Max.name }}
                             </p>
-                            <p class="data flex" style="text-align: center;">
+                            <p class="data flex" style="text-align: right;">
                               {{ TempAndPosition.valueUnits.Max.value.value
                               }}{{ TempAndPosition.valueUnits.Max.value.unit }}
                             </p>
-                            <p class="data flex" style="text-align: right;">
+                            <p class="data flex right">
                               {{ TempAndPosition.valueUnits.Max.position.value
                               }}{{
                                 TempAndPosition.valueUnits.Max.position.unit
@@ -469,14 +469,14 @@
                             </p>
                           </div>
                           <div class="flex-row">
-                            <p class="title flex">
+                            <p class="title">
                               {{ TempAndPosition.valueUnits.Min.name }}
                             </p>
-                            <p class="data flex" style="text-align: center;">
+                            <p class="data flex" style="text-align: right;">
                               {{ TempAndPosition.valueUnits.Min.value.value
                               }}{{ TempAndPosition.valueUnits.Min.value.unit }}
                             </p>
-                            <p class="data flex" style="text-align: right;">
+                            <p class="data flex right">
                               {{ TempAndPosition.valueUnits.Min.position.value
                               }}{{
                                 TempAndPosition.valueUnits.Min.position.unit
@@ -506,13 +506,13 @@
                         </p>
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
-                            <p class="title flex">
+                            <p class="title">
                               {{
                                 InternalResistanceAndPosition.valueUnits.Max
                                   .name
                               }}
                             </p>
-                            <p class="data flex" style="text-align: center;">
+                            <p class="data flex" style="text-align: right;">
                               {{
                                 InternalResistanceAndPosition.valueUnits.Max
                                   .value.value
@@ -521,7 +521,7 @@
                                   .value.unit
                               }}
                             </p>
-                            <p class="data flex" style="text-align: right;">
+                            <p class="data right flex">
                               {{
                                 InternalResistanceAndPosition.valueUnits.Max
                                   .position.value
@@ -532,13 +532,13 @@
                             </p>
                           </div>
                           <div class="flex-row">
-                            <p class="title flex">
+                            <p class="title">
                               {{
                                 InternalResistanceAndPosition.valueUnits.Min
                                   .name
                               }}
                             </p>
-                            <p class="data flex" style="text-align: center;">
+                            <p class="data flex" style="text-align: right;">
                               {{
                                 InternalResistanceAndPosition.valueUnits.Min
                                   .value.value
@@ -547,7 +547,7 @@
                                   .value.unit
                               }}
                             </p>
-                            <p class="data flex" style="text-align: right;">
+                            <p class="data right flex">
                               {{
                                 InternalResistanceAndPosition.valueUnits.Min
                                   .position.value
@@ -567,10 +567,10 @@
                         </p>
                         <div class="flex-column flex-center flex">
                           <div class="flex-row">
-                            <p class="title flex">
+                            <p class="title">
                               {{ InsulationAndPosition.valueUnits.Max.name }}
                             </p>
-                            <p class="data flex" style="text-align: center;">
+                            <p class="data flex" style="text-align: right;">
                               {{
                                 InsulationAndPosition.valueUnits.Max.value
                                   .value
@@ -578,7 +578,7 @@
                                 InsulationAndPosition.valueUnits.Max.value.unit
                               }}
                             </p>
-                            <p class="data flex" style="text-align: right;">
+                            <p class="data flex right">
                               {{
                                 InsulationAndPosition.valueUnits.Max.position
                                   .value
@@ -589,10 +589,10 @@
                             </p>
                           </div>
                           <div class="flex-row">
-                            <p class="title flex">
+                            <p class="title">
                               {{ InsulationAndPosition.valueUnits.Min.name }}
                             </p>
-                            <p class="data flex" style="text-align: center;">
+                            <p class="data flex" style="text-align: right;">
                               {{
                                 InsulationAndPosition.valueUnits.Min.value
                                   .value
@@ -600,7 +600,7 @@
                                 InsulationAndPosition.valueUnits.Min.value.unit
                               }}
                             </p>
-                            <p class="data flex" style="text-align: right;">
+                            <p class="data flex right">
                               {{
                                 InsulationAndPosition.valueUnits.Min.position
                                   .value
@@ -908,19 +908,19 @@ section {
   flex: 7;
 }
 
-.box-right .right-top {
+.box-right > .right-top {
   flex: 1;
   display: flex;
   min-height: 0;
 }
 
-.box-right .right-top .left {
+.box-right > .right-top .left {
   height: 100%;
   flex: 2;
   min-height: 0;
 }
 
-.box-right .right-top .right {
+.box-right > .right-top > .right {
   flex: 5;
   min-height: 0;
 }
@@ -999,6 +999,9 @@ section {
   font-size: 12px;
   text-align: center;
   margin-top: 5px;
+}
+.data.right {
+  text-align: right;
 }
 @media screen and (max-width: 1500px) {
   .left .usp-text .text-box p {
