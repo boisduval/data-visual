@@ -527,30 +527,24 @@ export default {
       myChart5.setOption({
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {c} ({d}%)"
+          formatter: "{a} <br/> {b} : {c} ({d}%)"
         },
         series: [
           {
             name: this.MonomerMaximumVoltage.Name,
             type: "pie",
-            radius: "80%",
-            center: ["55%", "60%"],
+            radius: "70%",
+            center: ["50%", "55%"],
             data: this.MonomerMaximumVoltage.Datas.sort(function(a, b) {
               return a.value - b.value;
             }),
-            roseType: "radius",
+            avoidLabelOverlap: false,
             label: {
-              color: "rgba(255, 255, 255, 0.3)",
-              show: false
+              show: false,
+              position: "center"
             },
-            // itemStyle: {
-            //   color: "#4cc1c2"
-            // },
-            animationType: "scale",
-            animationEasing: "elasticOut",
-            // eslint-disable-next-line no-unused-vars
-            animationDelay: function(idx) {
-              return Math.random() * 200;
+            labelLine: {
+              show: false
             }
           }
         ]
@@ -566,21 +560,18 @@ export default {
           {
             name: this.MonomerMinimumVoltage.Name,
             type: "pie",
-            radius: "80%",
-            center: ["55%", "60%"],
+            radius: "70%",
+            center: ["50%", "55%"],
             data: this.MonomerMinimumVoltage.Datas.sort(function(a, b) {
               return a.value - b.value;
             }),
-            roseType: "radius",
+            avoidLabelOverlap: false,
             label: {
-              color: "rgba(255, 255, 255, 0.8)",
-              show: false
+              show: false,
+              position: "center"
             },
-            animationType: "scale",
-            animationEasing: "elasticOut",
-            // eslint-disable-next-line no-unused-vars
-            animationDelay: function(idx) {
-              return Math.random() * 200;
+            labelLine: {
+              show: false
             }
           }
         ]
@@ -717,7 +708,8 @@ export default {
       this.$notify({
         message: msg,
         customClass: "notification",
-        offset: 80
+        offset: 80,
+        title: "系统消息"
       });
     }
   },

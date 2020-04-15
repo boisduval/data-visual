@@ -161,7 +161,6 @@
           />
         </g>
         <g
-          id="方块_x5F_extremum_x5F_panel_x5F_under_x5F_centre"
           :opacity="opacity"
         >
           <polygon
@@ -212,7 +211,7 @@
             fill="#46A6B5"
             points="22.701,18.182 16.549,18.182 20.221,10.306 26.375,10.306 	"
           />
-          <g id="方块_x5F_1_x5F_extremum_x5F_panel_x5F_under_x5F_centre">
+          <g>
             <polygon
               fill="#46A6B5"
               points="391.953,10.306 398.107,10.306 401.779,18.182 395.627,18.182 		"

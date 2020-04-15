@@ -175,7 +175,7 @@ export default {
 .border-content {
   width: 100%;
   height: 100%;
-  padding: 1% 10%;
+  padding: 1% 8%;
   box-sizing: border-box;
 }
 #title {

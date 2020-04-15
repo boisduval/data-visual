@@ -3,7 +3,6 @@
     <div class="indicating-instrument-svg">
       <svg
         version="1.1"
-        id="图层_1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
@@ -130,7 +129,7 @@
     </div>
     <div
       class="indicating-instrument-svg"
-      style="transition: all 1s ease-in-out;transform-origin: 50% 66%;"
+      style="transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;transform-origin: 50% 66%;"
       :style="{ transform: delay ? 0 : 'rotate(' + rotate + 'deg)' }"
     >
       <svg
@@ -145,7 +144,7 @@
         enable-background="new 0 0 180 180"
         xml:space="preserve"
       >
-        <g id="arrow">
+        <g>
           <circle fill="#F7931E" cx="90" cy="119" r="12" />
           <polygon fill="#F7931E" points="86,126 62,101 95,114" />
         </g>

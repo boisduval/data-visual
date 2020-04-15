@@ -108,6 +108,10 @@ export default {
   border-radius: 8px;
   justify-content: space-between;
   color: #fff;
+  transition: all 0.1s ease-in-out;
+}
+.security-info:hover {
+  transform: translateY(-3px);
 }
 .security-info-svg {
   position: relative;

@@ -3,7 +3,6 @@
     <div class="indicating-instrument-kw-svg">
       <svg
         version="1.1"
-        id="图层_1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
@@ -14,7 +13,7 @@
         enable-background="new 0 0 180 180"
         xml:space="preserve"
       >
-        <g id="indicating_x5F_instrument_x5F_scale">
+        <g>
           <g>
             <circle
               fill="none"

@@ -1138,7 +1138,9 @@
                   v-for="(item, index) in batteryArr"
                   :key="index"
                 >
-                  <div class="flex battery"></div>
+                  <div class="flex">
+                    <FrameworkBattery />
+                  </div>
                   <div class="batter-box-text">
                     <p class="title">
                       {{ item.name }}
@@ -1162,7 +1164,9 @@
                   v-for="(item, index) in batteryArr1"
                   :key="index"
                 >
-                  <div class="flex battery"></div>
+                  <div class="flex">
+                    <FrameworkBattery />
+                  </div>
                   <div class="batter-box-text">
                     <p class="title">
                       {{ item.name }}
@@ -1382,10 +1386,6 @@ section {
 .batter-box-text .value {
   color: #f7931f;
   text-align: center;
-}
-.battery {
-  background: url("../assets/img/battery1.png") center no-repeat;
-  background-size: contain;
 }
 .svg {
   height: 100%;

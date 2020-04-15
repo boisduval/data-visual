@@ -3,7 +3,6 @@
     <div class="extreme-border-main-longer-svg">
       <svg
         version="1.1"
-        id="图层_x5F_extremum_x5F_panel_x5F_below_x5F_left"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
@@ -16,7 +15,6 @@
         preserveAspectRatio="none"
       >
         <g
-          id="线框_x5F_extremum_x5F_panel_x5F_below_x5F_left"
           :opacity="opacity"
         >
           <line
@@ -165,7 +163,6 @@
           />
         </g>
         <g
-          id="方块_x5F_extremum_x5F_panel_x5F_below_x5F_left"
           :opacity="opacity"
         >
           <polygon
@@ -216,7 +213,7 @@
             fill="#46A6B5"
             points="22.619,18.702 16.466,18.702 20.138,10.826 26.292,10.826 	"
           />
-          <g id="方块_x5F_1_x5F_extremum_x5F_panel_x5F_below_x5F_left">
+          <g>
             <polygon
               fill="#46A6B5"
               points="555.953,10.826 562.107,10.826 565.779,18.702 559.627,18.702 		"

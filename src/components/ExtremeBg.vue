@@ -3,7 +3,6 @@
     <div class="extreme-bg-svg">
       <svg
         version="1.1"
-        id="图层_x5F_extremum_x5F_panel_x5F_shadow_x5F_below_x5F_left"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"

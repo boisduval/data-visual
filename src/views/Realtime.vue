@@ -864,6 +864,7 @@ export default {
     open1(msg) {
       this.$notify({
         message: msg,
+        title: "系统消息",
         customClass: "notification",
         offset: 80
       });
@@ -1002,6 +1003,9 @@ section {
 }
 .data.right {
   text-align: right;
+}
+.title {
+  margin-right: 4%;
 }
 @media screen and (max-width: 1500px) {
   .left .usp-text .text-box p {

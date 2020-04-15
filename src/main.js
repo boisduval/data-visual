@@ -52,7 +52,7 @@ import SecurityInfo from "./components/SecurityInfo";
 
 Vue.config.productionTip = false;
 Vue.config.productionGzip = true;
-Vue.config.productionGzipExtensions = ['js', 'css'];
+Vue.config.productionGzipExtensions = ["js", "css"];
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueAxios, axios);
 Vue.use(ElementUI);

@@ -588,6 +588,7 @@ export default {
     open1(msg) {
       this.$notify({
         message: msg,
+        title: "系统消息",
         customClass: "notification",
         offset: 80
       });

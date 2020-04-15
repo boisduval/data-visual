@@ -7,7 +7,6 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
         y="0px"
-        id="图层_1"
         height="100%"
         width="100%"
         viewBox="0 0 440 105"

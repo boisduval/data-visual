@@ -223,6 +223,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 999;
 }
 
 .security-border-top-svg {
@@ -231,6 +232,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 
 .security-border-top-content {

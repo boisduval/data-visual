@@ -15,7 +15,6 @@
         preserveAspectRatio="none"
       >
         <g
-          id="线框_x5F_带标题_x5F_extremum_x5F_panel_x5F_below_x5F_right"
           :opacity="opacity"
         >
           <line
@@ -101,7 +100,6 @@
           />
         </g>
         <g
-          id="方块_x5F_extremum_x5F_panel_x5F_below_x5F_right"
           :opacity="opacity"
         >
           <polygon
@@ -152,7 +150,7 @@
             fill="#46A6B5"
             points="86.075,3.803 92.229,3.803 95.901,11.679 89.749,11.679 	"
           />
-          <g id="方块_x5F_1_x5F_extremum_x5F_panel_x5F_below_x5F_right">
+          <g>
             <polygon
               fill="#46A6B5"
               points="893.338,485.233 899.49,485.233 903.162,493.108 897.01,493.108 		"
