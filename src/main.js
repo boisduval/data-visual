@@ -49,6 +49,7 @@ import SecurityBorderTop from "./components/SecurityBorderTop";
 import SecurityBorderMain from "./components/SecurityBorderMain";
 import SecurityBg from "./components/SecurityBg";
 import SecurityInfo from "./components/SecurityInfo";
+import LoginBorder from "./components/LoginBorder";
 
 Vue.config.productionTip = false;
 Vue.config.productionGzip = true;
@@ -95,6 +96,7 @@ Vue.component("SecurityBorderTop", SecurityBorderTop);
 Vue.component("SecurityBorderMain", SecurityBorderMain);
 Vue.component("SecurityBg", SecurityBg);
 Vue.component("SecurityInfo", SecurityInfo);
+Vue.component("LoginBorder", LoginBorder);
 
 new Vue({
   router,

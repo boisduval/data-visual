@@ -1304,7 +1304,8 @@ export default {
       }, 200);
     },
     getData() {
-      let url = "/api/Statement/GetSystemStructure?SystemToken=0";
+      let token = localStorage.getItem("token");
+      let url = `/api/Statement/GetSystemStructure?SystemToken=${token}`;
       this.$axios
         .get(url)
         .then(res => {

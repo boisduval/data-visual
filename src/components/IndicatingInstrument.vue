@@ -129,7 +129,7 @@
     </div>
     <div
       class="indicating-instrument-svg"
-      style="transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;transform-origin: 50% 66%;"
+      style="transition: all 1s ease-in-out;transform-origin: 50% 66%;"
       :style="{ transform: delay ? 0 : 'rotate(' + rotate + 'deg)' }"
     >
       <svg

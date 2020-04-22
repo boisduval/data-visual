@@ -529,7 +529,8 @@ export default {
       }, 200);
     },
     getData() {
-      let url = `/api/Statement/GetSystemSafety?SystemToken=0&DeviceSystemID=${this.currentDevice.SystemID}`;
+      let token = localStorage.getItem("token");
+      let url = `/api/Statement/GetSystemSafety?SystemToken=${token}&DeviceSystemID=${this.currentDevice.SystemID}`;
       this.$axios
         .get(url)
         .then(res => {

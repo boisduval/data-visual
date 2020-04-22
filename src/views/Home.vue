@@ -175,10 +175,10 @@ export default {
 </script>
 <style scoped>
 .home {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-image: url("../assets/img/bg.png");
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+  /*background-position: center center;*/
+  /*background-image: url("../assets/img/bg.png");*/
   height: 100%;
   min-width: 1400px;
   overflow: hidden;

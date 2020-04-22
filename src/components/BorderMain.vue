@@ -18,63 +18,63 @@
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M932,7.383L20.354,7.383"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M20.646,116.965L7.637,100.45"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M20.874,7.078L7.865,23.592"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M7.865,22.574L7.865,101.128"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M20.685,491.334L7.676,474.818"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M7.893,396.934L7.893,475.488"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M931.329,492.025L20.168,492.025"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M20.684,381.154L7.675,397.668"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M20.354,116.171L20.354,381.857"
           ></path>
@@ -82,21 +82,21 @@
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M944.045,100.428L931.037,116.942"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M944.138,23.299L931.129,6.785"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M943.817,101.105L943.817,22.551"
           ></path>
@@ -104,14 +104,14 @@
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M944.007,475.797L930.997,492.311"
           ></path>
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M943.79,476.467L943.79,397.912"
           ></path>
@@ -119,7 +119,7 @@
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M944.009,398.646L930.999,382.131"
           ></path>
@@ -127,7 +127,7 @@
           <path
             fill="none"
             stroke="#46A6B5"
-            stroke-width="2"
+            stroke-width="1"
             stroke-miterlimit="10"
             d="M931.329,382.744L931.329,116.148"
           ></path>

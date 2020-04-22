@@ -22,7 +22,7 @@
             </Semicircle>
 
             <Semicircle :title="SOC.name" class="circle" v-if="SOC">
-              <p>{{ SOC.value }}</p>
+              <p>{{ SOC.value }}{{ SOC.unit }}</p>
             </Semicircle>
 
             <Semicircle
@@ -211,12 +211,19 @@
             <div class="bottom-l">
               <div class="flex">
                 <BorderBg :title="Peak_statistics.Name">
-                  <div id="myChart3" class="charts" style="padding: 4% 5% 0"></div>
+                  <div
+                    id="myChart3"
+                    class="charts"
+                    style="padding: 4% 5% 0"
+                  ></div>
                 </BorderBg>
               </div>
               <div class="flex">
                 <BorderBg style="margin-top:10px;" title="装机设备统计">
-                  <div class="device-count flex-column" style="padding: 4% 5% 0;">
+                  <div
+                    class="device-count flex-column"
+                    style="padding: 4% 5% 0;"
+                  >
                     <div
                       class="device-row"
                       v-for="(item, index) in Installation_statistics"
@@ -242,7 +249,11 @@
             <div class="bottom-r">
               <div class="flex">
                 <BorderBg :title="Peak_electricity_consumption_statistics.Name">
-                  <div id="myChart4" class="charts" style="padding: 4% 5% 0;"></div>
+                  <div
+                    id="myChart4"
+                    class="charts"
+                    style="padding: 4% 5% 0;"
+                  ></div>
                 </BorderBg>
               </div>
               <div class="flex">
@@ -798,7 +809,8 @@ export default {
       }, 200);
     },
     getData() {
-      var url = "/api/Statement/GetSystemPage?SystemToken=0";
+      let token = localStorage.getItem("token");
+      var url = `/api/Statement/GetSystemPage?SystemToken=${token}`;
       this.$axios
         .get(url)
         .then(res => {
