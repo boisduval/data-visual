@@ -151,6 +151,9 @@ export default {
     }
   },
   created() {
+    if (!localStorage.getItem("token")) {
+      localStorage.setItem("token", "0");
+    }
     let operatingSystemInfo = this.getOperatingSystemInfo();
     this.set_os(operatingSystemInfo);
     this.getData();

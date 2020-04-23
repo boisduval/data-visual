@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="show">
     <section class="flex-row">
       <div class="flex2" v-if="data">
         <div style="height: 100%;width: 100%;position: relative" id="box">
@@ -1215,7 +1215,8 @@ export default {
       WeeklyElectricityStatisticsBarChart: "",
       WeeklyElectricityStatisticsDic: "",
       DayOperationInformationLineChart: "",
-      data: ""
+      data: "",
+      show: false
     };
   },
   methods: {
@@ -1344,6 +1345,7 @@ export default {
               this.DayOperationInformationInfo.DayDischarging
             );
             this.batteryArr1.push(this.DayOperationInformationInfo.DayPower);
+            this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
             });

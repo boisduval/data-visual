@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="show">
     <section>
       <div class="flex">
         <Nav></Nav>
@@ -135,7 +135,8 @@ export default {
       TotalElectricityStatistics: "",
       MonthlyIncome: "",
       AnnualRevenueStatistics: "",
-      EnergyStorageRevenue: ""
+      EnergyStorageRevenue: "",
+      show: false
     };
   },
   computed: {
@@ -407,11 +408,11 @@ export default {
             this.cube4[2].value = this.EnergyStorageRevenue.CurrentDischargeQuantity.value;
             this.cube4[3].title = this.EnergyStorageRevenue.AccumulativeDischargeCharge.name;
             this.cube4[3].value = this.EnergyStorageRevenue.AccumulativeDischargeCharge.value;
+            this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
             });
           } else {
-            this.open1(res.data.msg);
             this.DailyCharge = "";
             this.DailyDischarge = "";
             this.TheCurrentPower = "";
@@ -421,6 +422,8 @@ export default {
             this.MonthlyIncome = "";
             this.AnnualRevenueStatistics = "";
             this.EnergyStorageRevenue = "";
+            this.show = true;
+            this.open1(res.data.msg);
           }
         })
         .catch(err => {

@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="show">
     <section>
       <div class="flex">
         <Nav v-if="currentDevice"></Nav>
@@ -681,7 +681,8 @@ export default {
       count: 0,
       maxCount: "",
       loading: false,
-      battery: ""
+      battery: "",
+      show: false
     };
   },
   computed: {
@@ -814,11 +815,11 @@ export default {
             }
 
             this.maxCount = Math.ceil(this.SingleCellVoltage.length / 84) - 1;
+            this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
             });
           } else {
-            this.open1(res.data.msg);
             this.VoltageAndPosition = "";
             this.TempAndPosition = "";
             this.InsulationAndPosition = "";
@@ -836,6 +837,8 @@ export default {
             this.SingleCellVoltage = "";
             this.usp = "";
             this.battery = "";
+            this.show = true;
+            this.open1(res.data.msg);
           }
         })
         .catch(err => {

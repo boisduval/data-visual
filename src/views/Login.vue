@@ -45,7 +45,7 @@
                 <span style="color: rgba(0,0,0,0)">占位</span>密码
               </label>
               <input
-                type="text"
+                type="password"
                 class="flex value font-small"
                 v-model="formData.checkcode"
                 id="password"
@@ -110,7 +110,7 @@ export default {
         .then(res => {
           if (res.data.code === 0) {
             this.$message.success(res.data.msg);
-          } else if (res.data.code === 1001) {
+          } else if (res.data.code === 1005) {
             this.$message.warning(res.data.msg);
           } else if (res.data.code === 1000) {
             localStorage.setItem("token", res.data.token);

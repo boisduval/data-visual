@@ -549,6 +549,7 @@ export default {
             this.AlarmShutdownTrend = data.AlarmShutdownTrend;
             this.TheAlarmListOfTheTop = data.TheAlarmListOfTheTop;
             this.DownOnTheTopList = data.DownOnTheTopList;
+            this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
               if (this.os !== "Mac") {
@@ -565,7 +566,6 @@ export default {
               }
             });
           } else {
-            this.open1(res.data.msg);
             this.SummaryOfWarningTimes = "";
             this.ProtectionTimesSummary = "";
             this.SummaryOfStoppingTimes = "";
@@ -579,6 +579,8 @@ export default {
             this.AlarmShutdownTrend = "";
             this.TheAlarmListOfTheTop = "";
             this.DownOnTheTopList = "";
+            this.show = true;
+            this.open1(res.data.msg);
           }
         })
         .catch(err => {
@@ -609,7 +611,8 @@ export default {
       TheAlarmList: "",
       AlarmShutdownTrend: "",
       TheAlarmListOfTheTop: "",
-      DownOnTheTopList: ""
+      DownOnTheTopList: "",
+      show: false
     };
   },
   computed: {

@@ -1,6 +1,6 @@
 ￿
 <template>
-  <div class="content">
+  <div class="content" v-if="show">
     <section>
       <!-- 左边开始 -->
       <div class="content-left">
@@ -341,7 +341,8 @@ export default {
       Trend_of_charge_and_discharge: {},
       Event_statistics: {},
       Time_distribution_of_electricity_consumption: {},
-      Weather_Forecast: ""
+      Weather_Forecast: "",
+      show: false
     };
   },
   methods: {
@@ -837,6 +838,7 @@ export default {
             this.Time_distribution_of_electricity_consumption =
               data.Time_distribution_of_electricity_consumption;
             this.Weather_Forecast = data.Weather_Forecast;
+            this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
             });

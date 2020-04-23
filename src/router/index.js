@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import { Loading } from "element-ui";
+// import { Loading } from "element-ui";
 
 Vue.use(VueRouter);
 
@@ -73,26 +73,26 @@ const router = new VueRouter({
 });
 
 // 前置拦截
-router.beforeEach((to, from, next) => {
-  if (to.name === "login") {
-    next();
-  } else {
-    var token = localStorage.getItem("token");
-    if (token) {
-      next();
-    } else {
-      let loadingInstance = Loading.service({
-        fullscreen: true,
-        text: "正在跳转...",
-        background: "rgba(0, 0, 0, 0)",
-        customClass: "my-loading"
-      });
-      setTimeout(() => {
-        loadingInstance.close();
-        next("/login");
-      }, 1000);
-    }
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.name === "login") {
+//     next();
+//   } else {
+//     var token = localStorage.getItem("token");
+//     if (token) {
+//       next();
+//     } else {
+//       let loadingInstance = Loading.service({
+//         fullscreen: true,
+//         text: "正在跳转...",
+//         background: "rgba(0, 0, 0, 0)",
+//         customClass: "my-loading"
+//       });
+//       setTimeout(() => {
+//         loadingInstance.close();
+//         next("/login");
+//       }, 1000);
+//     }
+//   }
+// });
 
 export default router;

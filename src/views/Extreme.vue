@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="show">
     <section class="flex-row">
       <div class="flex">
         <Nav></Nav>
@@ -163,7 +163,8 @@ export default {
       MonomerMaximumVoltage: "",
       MonomerMinimumVoltage: "",
       SingleDifferentialPressure: "",
-      MonomerHighLowDatas: ""
+      MonomerHighLowDatas: "",
+      show: false
     };
   },
   computed: {
@@ -682,11 +683,11 @@ export default {
                 symbol: "none"
               });
             });
+            this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
             });
           } else {
-            this.open1(res.data.msg);
             this.TotalElectricityStatistics = "";
             this.MonomerHighLowPressure = "";
             this.EnvironmentTemp = "";
@@ -698,6 +699,8 @@ export default {
             this.MonomerMinimumVoltage = "";
             this.MonomerHighLowDatas = "";
             this.SingleDifferentialPressure = "";
+            this.show = true;
+            this.open1(res.data.msg);
           }
         })
         .catch(err => {
