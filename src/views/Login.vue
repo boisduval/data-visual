@@ -38,6 +38,7 @@
                 class="flex value font-small"
                 v-model="formData.phone"
                 id="tel"
+                autocomplete="off"
               />
             </div>
             <div class="form-item flex-row flex-column-center">

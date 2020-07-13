@@ -15,6 +15,7 @@
                 text-color="#51D0AB"
                 :rotate="DailyCharge.scale + ''"
                 :value="DailyCharge.data.value"
+                :unit="DailyCharge.data.unit"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
                 scale-color="#fff"
@@ -23,12 +24,14 @@
                 :title="DailyDischarge.data.name"
                 :rotate="DailyDischarge.scale + ''"
                 :value="DailyDischarge.data.value"
+                :unit="DailyDischarge.data.unit"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
                 v-if="TheCurrentPower"
                 :title="TheCurrentPower.data.name"
                 :rotate="TheCurrentPower.scale + ''"
                 :value="TheCurrentPower.data.value"
+                :unit="TheCurrentPower.data.unit"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
                 scale-color="#fff"
@@ -37,6 +40,7 @@
                 :title="TheCumulativeCharge.data.name"
                 :rotate="TheCumulativeCharge.scale + ''"
                 :value="TheCumulativeCharge.data.value"
+                :unit="TheCumulativeCharge.data.unit"
               ></IndicatingInstrumentKw>
               <IndicatingInstrumentKw
                 scale-color="#fff"
@@ -45,6 +49,7 @@
                 :title="TheCumulativeDischarge.data.name"
                 :rotate="TheCumulativeDischarge.scale + ''"
                 :value="TheCumulativeDischarge.data.value"
+                :unit="TheCumulativeDischarge.data.unit"
               ></IndicatingInstrumentKw>
             </div>
           </BorderCenterLongest>
@@ -375,13 +380,7 @@ export default {
           }
         ]
       });
-      setTimeout(function() {
-        window.onresize = () => {
-          myChart1.resize();
-          myChart2.resize();
-          myChart3.resize();
-        };
-      }, 200);
+
     },
     getData() {
       let token = localStorage.getItem("token");

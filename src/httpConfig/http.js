@@ -6,7 +6,8 @@ import { Loading } from "element-ui";
 
 // axios默认配置
 axios.defaults.timeout = 10000; // 超时时间
-axios.defaults.baseURL = "http://sf28090049.wicp.vip:8082/conn"; // 默认地址
+axios.defaults.baseURL = process.env.VUE_APP_API_URL; // 默认地址
+// axios.defaults.baseURL = "http://sf28090049.wicp.vip:18080/conn"; // 默认地址
 // axios.defaults.baseURL = 'http://192.168.0.100:8082/conn'
 // 路由响应拦截
 // http response 拦截器

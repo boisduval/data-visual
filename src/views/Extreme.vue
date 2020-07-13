@@ -686,6 +686,19 @@ export default {
             this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
+              if (this.os !== "Mac") {
+                this.$(".info-box ul").niceScroll({
+                  cursorborder: "none",
+                  hwacceleration: true,
+                  mousescrollstep: 30,
+                  scrollspeed: 40,
+                  preventmultitouchscrolling: true,
+                  autohidemode: "leave",
+                  hidecursordelay: 100,
+                  cursorcolor: "rgba(255,255,255,0.3)",
+                  oneaxismousemode: false
+                });
+              }
             });
           } else {
             this.TotalElectricityStatistics = "";
@@ -714,21 +727,6 @@ export default {
         customClass: "notification",
         offset: 80,
         title: "系统消息"
-      });
-    }
-  },
-  mounted() {
-    if (this.os !== "Mac") {
-      this.$(".info-box ul").niceScroll({
-        cursorborder: "none",
-        hwacceleration: true,
-        mousescrollstep: 30,
-        scrollspeed: 40,
-        preventmultitouchscrolling: true,
-        autohidemode: "leave",
-        hidecursordelay: 100,
-        cursorcolor: "rgba(255,255,255,0.3)",
-        oneaxismousemode: false
       });
     }
   },

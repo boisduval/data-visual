@@ -1,4 +1,3 @@
-￿
 <template>
   <div class="content" v-if="show">
     <section>
@@ -85,7 +84,9 @@
       <div class="content-center">
         <!-- 上半部分开始 -->
         <div class="box-c">
-          <div class="img"></div>
+          <div class="img" v-if="Hours">
+            <IndexBoard :days="Days" :hours="Hours" :minutes="Minutes" />
+          </div>
           <div
             style="position: absolute;bottom: 10px;left: 15px"
             v-if="Weather_Forecast"
@@ -305,7 +306,9 @@
 </template>
 
 <script>
+import IndexBoard from "../components/IndexBoard";
 export default {
+  components: { IndexBoard },
   data() {
     return {
       interval: "",
@@ -342,6 +345,9 @@ export default {
       Event_statistics: {},
       Time_distribution_of_electricity_consumption: {},
       Weather_Forecast: "",
+      Days: "",
+      Hours: "",
+      Minutes: "",
       show: false
     };
   },
@@ -838,6 +844,9 @@ export default {
             this.Time_distribution_of_electricity_consumption =
               data.Time_distribution_of_electricity_consumption;
             this.Weather_Forecast = data.Weather_Forecast;
+            this.Days = data.Safe_Running_Time_Day;
+            this.Hours = data.Safe_Running_Time_Hour;
+            this.Minutes = data.Safe_Running_Time_Minutes;
             this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
@@ -927,6 +936,7 @@ section {
   background: url("../assets/img/home_container.gif") center no-repeat;
   background-size: contain;
 }
+
 /* 排行榜 */
 .order-row .row-l .num {
   /*width: 18px;*/

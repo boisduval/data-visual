@@ -818,6 +818,18 @@ export default {
             this.show = true;
             this.$nextTick(() => {
               this.getEcharts();
+              if (this.os !== "Mac") {
+                this.$(".batter-box").niceScroll({
+                  cursorborder: "none",
+                  hwacceleration: true,
+                  mousescrollstep: 30,
+                  scrollspeed: 40,
+                  preventmultitouchscrolling: true,
+                  autohidemode: "leave",
+                  hidecursordelay: 100,
+                  cursorcolor: "rgba(255,255,255,0.3)"
+                });
+              }
             });
           } else {
             this.VoltageAndPosition = "";
@@ -871,20 +883,6 @@ export default {
         title: "系统消息",
         customClass: "notification",
         offset: 80
-      });
-    }
-  },
-  mounted() {
-    if (this.os !== "Mac") {
-      this.$(".batter-box").niceScroll({
-        cursorborder: "none",
-        hwacceleration: true,
-        mousescrollstep: 30,
-        scrollspeed: 40,
-        preventmultitouchscrolling: true,
-        autohidemode: "leave",
-        hidecursordelay: 100,
-        cursorcolor: "rgba(255,255,255,0.3)"
       });
     }
   },
